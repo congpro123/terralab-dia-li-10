@@ -1,4 +1,5 @@
 export function solarDeclination(day:number,tilt=23.5){return tilt*Math.sin((day-80)*Math.PI*2/365);}
+export function earthSunDirection(day:number,tilt=23.5){const phase=(day-80)*Math.PI*2/365;const sine=Math.sin(tilt*Math.PI/180);const x=Math.abs(sine)<1e-9?Math.sin(phase):Math.sin(solarDeclination(day,tilt)*Math.PI/180)/sine;return {x,z:Math.sign(Math.cos(phase))*Math.sqrt(Math.max(0,1-x*x))};}
 export function daylightHours(day:number,latitude:number,tilt=23.5){const dec=solarDeclination(day,tilt);return 24/Math.PI*Math.acos(Math.max(-1,Math.min(1,-Math.tan(latitude*Math.PI/180)*Math.tan(dec*Math.PI/180))));}
 export function dotCount(total:number,value:number){if(total<0||value<=0)throw new Error('Invalid dot parameters');return total/value;}
 export function annualClimate(temperature:(number|null)[],rain:(number|null)[]){if(temperature.length!==12||rain.length!==12||[...temperature,...rain].some(x=>x===null||!Number.isFinite(x)))return null;const t=temperature as number[],r=rain as number[];return {range:Math.max(...t)-Math.min(...t),totalRain:r.reduce((a,b)=>a+b,0)};}

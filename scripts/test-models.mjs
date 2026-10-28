@@ -1,11 +1,12 @@
 import assert from 'node:assert/strict';
-import {daylightHours,dotCount,annualClimate,catchmentIndices} from '../lib/models.ts';
+import {daylightHours,dotCount,annualClimate,catchmentIndices,earthSunDirection,solarDeclination} from '../lib/models.ts';
 import {grade,selfAssess,roundedScore} from '../lib/grading.ts';
 import {readFile} from 'node:fs/promises';
 const near=(a,b)=>assert.ok(Math.abs(a-b)<1e-9,`${a} != ${b}`);
 for(const lat of [-60,-30,0,30,60])near(daylightHours(80,lat),12);
 for(const day of [1,80,172,266,355])for(const lat of [-60,0,60])near(daylightHours(day,lat,0),12);
 near(daylightHours(172,40)+daylightHours(172,-40),24);assert.ok(daylightHours(172,40)>12);assert.ok(daylightHours(355,40)<12);
+for(const day of [1,80,125,172,220,266,355])for(const tilt of [0,23.5]){const sun=earthSunDirection(day,tilt);near(sun.x**2+sun.z**2,1);near(Math.sin(tilt*Math.PI/180)*sun.x,Math.sin(solarDeclination(day,tilt)*Math.PI/180));}
 near(dotCount(6000,100)*100,dotCount(6000,200)*200);assert.equal(dotCount(6000,100),60);assert.equal(dotCount(6000,200),30);
 const rain=[20,25,40,80,150,200,250,220,180,100,50,25],temp=[20,21,23,25,27,28,28,27,26,24,22,20];assert.deepEqual(annualClimate(temp,rain),{range:8,totalRain:1340});assert.equal(annualClimate(temp,[null,...rain.slice(1)]),null);
 for(const r of [0,20,100])for(const i of [0,50,100]){const m=catchmentIndices(r,i);near(m.runoff+m.infiltration,r);assert.ok(m.runoff>=0&&m.infiltration>=0);}

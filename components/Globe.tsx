@@ -1,5 +1,6 @@
 'use client';
 import {useEffect,useRef,useState} from 'react';
+import {earthSunDirection} from '@/lib/models';
 export default function Globe({kind='globe',day=80,hour=12,tilt=23.5,playing=true,boundary='divergent',continental=false,speed=1,onFailure}:{kind?:string;day?:number;hour?:number;tilt?:number;playing?:boolean;boundary?:string;continental?:boolean;speed?:number;onFailure?:()=>void}){
  const host=useRef<HTMLDivElement>(null);const [failed,setFailed]=useState(false);
  const state=useRef({day,hour,tilt,playing,boundary,continental,speed});state.current={day,hour,tilt,playing,boundary,continental,speed};
@@ -12,7 +13,7 @@ export default function Globe({kind='globe',day=80,hour=12,tilt=23.5,playing=tru
     const el=host.current;const renderer=new THREE.WebGLRenderer({alpha:true,antialias:true,powerPreference:'low-power'});renderer.setPixelRatio(Math.min(devicePixelRatio,1.7));renderer.setClearColor(0,0);renderer.outputColorSpace=THREE.SRGBColorSpace;el.appendChild(renderer.domElement);
     const scene=new THREE.Scene();const camera=new THREE.PerspectiveCamera(36,1,.1,100);camera.position.set(0,1,kind==='plates'?9:7.7);
     const controls=new OrbitControls(camera,renderer.domElement);controls.enableDamping=true;controls.enablePan=false;controls.minDistance=4.5;controls.maxDistance=12;controls.autoRotate=kind==='globe';controls.autoRotateSpeed=.45;
-    scene.add(new THREE.AmbientLight(0x8bb6b7,1.2));const key=new THREE.DirectionalLight(0xffefcf,3.1);key.position.set(-4,2,4);scene.add(key);const rim=new THREE.DirectionalLight(0x59c9d1,2);rim.position.set(3,0,-3);scene.add(rim);
+    scene.add(new THREE.AmbientLight(0x8bb6b7,kind==='earth'?.13:1.2));const key=new THREE.DirectionalLight(0xffefcf,3.1);key.position.set(-4,2,4);scene.add(key);const rim=new THREE.DirectionalLight(0x59c9d1,kind==='earth'?.12:2);rim.position.set(3,0,-3);scene.add(rim);
     const objects:import('three').Object3D[]=[];const arrows:import('three').ArrowHelper[]=[];const earthGroup=new THREE.Group();scene.add(earthGroup);
     let earth:import('three').Mesh|undefined;let texture:import('three').CanvasTexture|undefined;
     const mat=(color:number)=>new THREE.MeshStandardMaterial({color,roughness:.75,metalness:.05});
@@ -49,7 +50,7 @@ export default function Globe({kind='globe',day=80,hour=12,tilt=23.5,playing=tru
     const reduced=matchMedia('(prefers-reduced-motion: reduce)').matches;let elapsed=0;let last=performance.now();
     renderer.setAnimationLoop(()=>{
       if(cancelled)return;const s=state.current;const now=performance.now();const dt=Math.min((now-last)/1000,.05);last=now;if(s.playing&&!reduced)elapsed+=dt*s.speed;
-      if(kind==='earth'&&earth){earthGroup.rotation.z=-s.tilt*Math.PI/180;earth.rotation.y=s.hour/24*Math.PI*2+elapsed*.17;const angle=(s.day-80)/365*Math.PI*2;key.position.set(-Math.sin(angle)*5,0,Math.cos(angle)*5);}
+      if(kind==='earth'&&earth){earthGroup.rotation.z=-s.tilt*Math.PI/180;earth.rotation.y=s.hour/24*Math.PI*2+elapsed*.17;const sun=earthSunDirection(s.day,s.tilt);key.position.set(sun.x*5,0,sun.z*5);}
       if(kind==='plates'){const [a,b]=objects;const movement=Math.sin(elapsed*.35)*.35;if(s.boundary==='transform'){a.position.set(-1.25,0,movement);b.position.set(1.25,0,-movement);a.rotation.z=0;b.rotation.z=0;arrows[0].setDirection(new THREE.Vector3(0,0,-1));arrows[1].setDirection(new THREE.Vector3(0,0,1));}else{const divergent=s.boundary==='divergent';const sign=divergent?1:-1;a.position.set(-1.3-sign*movement,divergent||s.continental?0:-.17,0);b.position.set(1.3+sign*movement,0,0);a.rotation.z=divergent?0:s.continental?.12:-.23;b.rotation.z=!divergent&&s.continental?-.12:0;arrows[0].setDirection(new THREE.Vector3(-sign,0,0));arrows[1].setDirection(new THREE.Vector3(sign,0,0));}}
       controls.autoRotate=kind==='globe'&&!reduced&&s.playing;controls.update();renderer.render(scene,camera);
     });

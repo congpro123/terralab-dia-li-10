@@ -1,0 +1,8 @@
+import {sqliteTable,text,integer} from 'drizzle-orm/sqlite-core';
+export const users=sqliteTable('users',{id:text('id').primaryKey(),username:text('username').notNull().unique(),name:text('name').notNull(),passwordHash:text('password_hash').notNull(),salt:text('salt').notNull(),role:text('role').notNull().default('student'),createdAt:text('created_at').notNull()});
+export const sessions=sqliteTable('sessions',{id:text('id').primaryKey(),userId:text('user_id').notNull().references(()=>users.id),expires:integer('expires').notNull()});
+export const progress=sqliteTable('progress',{id:text('id').primaryKey(),userId:text('user_id').notNull().references(()=>users.id),lessonId:text('lesson_id').notNull(),data:text('data').notNull(),revision:integer('revision').notNull(),updatedAt:text('updated_at').notNull()});
+export const attempts=sqliteTable('attempts',{id:text('id').primaryKey(),userId:text('user_id').notNull().references(()=>users.id),lessonId:text('lesson_id').notNull(),version:text('version').notNull(),data:text('data').notNull(),createdAt:text('created_at').notNull()});
+export const contentVersions=sqliteTable('content_versions',{id:text('id').primaryKey(),lessonId:text('lesson_id').notNull(),authorId:text('author_id').notNull(),reviewerId:text('reviewer_id'),status:text('status').notNull(),data:text('data').notNull(),createdAt:text('created_at').notNull()});
+export const audit=sqliteTable('audit',{id:text('id').primaryKey(),userId:text('user_id').notNull(),action:text('action').notNull(),target:text('target').notNull(),createdAt:text('created_at').notNull()});
+export const rateLimits=sqliteTable('rate_limits',{id:text('id').primaryKey(),count:integer('count').notNull(),expires:integer('expires').notNull()});

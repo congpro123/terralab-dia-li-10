@@ -1,0 +1,30 @@
+import assert from 'node:assert/strict';
+import {readFile,writeFile} from 'node:fs/promises';
+const base='http://127.0.0.1:5173',config=JSON.parse(await readFile(new URL('../.sites-runtime/demo-access.json',import.meta.url),'utf8'));
+async function call(route,body,cookie=''){const r=await fetch(base+'/api/'+route,{method:body===undefined?'GET':'POST',headers:{...(cookie?{Cookie:cookie}:{}),...(body===undefined?{}:{'Content-Type':'application/json'})},...(body===undefined?{}:{body:JSON.stringify(body)})});const data=await r.json();return {status:r.status,data,cookie:r.headers.get('set-cookie')?.split(';')[0]??''};}
+const a=await call('auth/login',config.admin),b=await call('auth/login',config.reviewer);assert.equal(a.data.user.role,'admin');assert.equal(b.data.user.role,'reviewer');
+const original=(await call('lessons/LES-02')).data;
+assert.equal((await call('admin/setup',{code:config.setupCode},b.cookie)).status,409);
+assert.equal((await call('admin/roles',{userId:a.data.user.id,role:'admin'},b.cookie)).status,403);
+assert.equal((await call('admin/roles',{userId:a.data.user.id,role:'student'},a.cookie)).status,400);
+const broken=structuredClone(original.units);delete broken[0].check;
+assert.equal((await call('admin/content',{lessonId:'LES-02',units:broken},a.cookie)).status,400);
+const units=structuredClone(original.units);units[0].body.vi+='\nKiểm tra xuất bản có kiểm soát.';units[0].term.vi+=' (kiểm thử)';
+const draft=await call('admin/content',{lessonId:'LES-02',units},a.cookie);assert.equal(draft.status,200);const id=draft.data.id;
+assert.equal((await call('admin/review',{id,action:'publish'},b.cookie)).status,403);
+assert.equal((await call('admin/review',{id,action:'submit'},a.cookie)).status,200);
+assert.equal((await call('admin/review',{id,action:'publish'},a.cookie)).status,403);
+assert.equal((await call('admin/review',{id,action:'publish'},b.cookie)).status,200);
+assert.equal((await call('lessons/LES-02')).data.version,id);
+assert.equal((await call('glossary')).data.terms.find(t=>t.id===units[0].id).term.vi,units[0].term.vi);
+// Restore the exact initial material through the same independent review workflow.
+const restore=await call('admin/content',{lessonId:'LES-02',units:original.units},a.cookie);
+assert.equal((await call('admin/review',{id:restore.data.id,action:'submit'},a.cookie)).status,200);
+assert.equal((await call('admin/review',{id:restore.data.id,action:'publish'},b.cookie)).status,200);
+assert.deepEqual((await call('lessons/LES-02')).data.units,original.units);
+const versions=(await call('admin/overview',undefined,a.cookie)).data.versions;
+assert.equal(versions.find(v=>v.id===id).status,'archived');
+assert.equal(versions.find(v=>v.id===restore.data.id).status,'published');
+for(const cookie of [a.cookie,b.cookie])await call('auth/logout',{},cookie);
+await writeFile(new URL('../outputs/admin-checks.json',import.meta.url),JSON.stringify({passed:true,checkedAt:new Date().toISOString(),checks:['one-time admin activation','reviewer cannot assign roles','admin cannot demote self','complete bilingual schema required','review before publication','independent author and reviewer','published lesson and glossary agree','immutable archive and exact restoration']},null,2));
+console.log('PASS content administration: permissions, validation, independent review, glossary, archive and restoration.');

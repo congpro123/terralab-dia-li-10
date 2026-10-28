@@ -1,0 +1,12 @@
+import {env} from 'cloudflare:workers';
+import type {User} from './types';
+export const database=()=>{if(!env.DB) throw new Error('Database unavailable'); return env.DB;};
+const hex=(a:ArrayBuffer)=>Array.from(new Uint8Array(a),b=>b.toString(16).padStart(2,'0')).join('');
+export const randomId=()=>crypto.randomUUID();
+export const randomSalt=()=>hex(crypto.getRandomValues(new Uint8Array(16)).buffer);
+export async function hashPassword(password:string,salt:string){const key=await crypto.subtle.importKey('raw',new TextEncoder().encode(password),'PBKDF2',false,['deriveBits']);return hex(await crypto.subtle.deriveBits({name:'PBKDF2',hash:'SHA-256',salt:new TextEncoder().encode(salt),iterations:100000},key,256));}
+export async function digest(value:string){return hex(await crypto.subtle.digest('SHA-256',new TextEncoder().encode(value)));}
+export async function getUser(request:Request):Promise<User|null>{const token=request.headers.get('cookie')?.match(/(?:^|;\s*)terra_session=([^;]+)/)?.[1];if(!token)return null;const row=await database().prepare('SELECT u.id,u.username,u.name,u.role FROM users u JOIN sessions s ON s.user_id=u.id WHERE s.id=? AND s.expires>?').bind(await digest(token),Date.now()).first<User>();return row??null;}
+export async function sessionCookie(userId:string,request:Request){const token=randomId()+randomId();const db=database();await db.prepare('INSERT INTO sessions (id,user_id,expires) VALUES (?,?,?)').bind(await digest(token),userId,Date.now()+7*86400000).run();return `terra_session=${token}; Path=/; HttpOnly; SameSite=Strict; Max-Age=604800${new URL(request.url).protocol==='https:'?'; Secure':''}`;}
+export async function auditLog(user:User,action:string,target:string){await database().prepare('INSERT INTO audit (id,user_id,action,target,created_at) VALUES (?,?,?,?,?)').bind(randomId(),user.id,action,target,new Date().toISOString()).run();}
+export async function rateLimit(key:string,max=10,ms=900000){const id=await digest(key);const db=database();const now=Date.now();await db.prepare('INSERT INTO rate_limits (id,count,expires) VALUES (?,1,?) ON CONFLICT(id) DO UPDATE SET count=CASE WHEN expires<? THEN 1 ELSE count+1 END, expires=CASE WHEN expires<? THEN excluded.expires ELSE expires END').bind(id,now+ms,now,now).run();const row=await db.prepare('SELECT count FROM rate_limits WHERE id=?').bind(id).first<{count:number}>();return (row?.count??max+1)<=max;}

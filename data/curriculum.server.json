@@ -1,0 +1,3800 @@
+[
+  {
+    "id": "LES-02",
+    "n": 2,
+    "chapter": 1,
+    "title": "Một số phương pháp biểu hiện các đối tượng địa lí trên bản đồ",
+    "titleEn": "Representing geographical features on maps",
+    "goal": "Phân biệt bốn phương pháp biểu hiện; chọn đúng phương pháp cho ít nhất 3/4 tình huống và giải thích bằng đặc điểm dữ liệu.",
+    "minutes": 35,
+    "practical": false,
+    "threeD": false,
+    "topics": [
+      {
+        "id": "TH-02-01",
+        "vi": "Phương pháp kí hiệu",
+        "en": "Symbol method",
+        "scene": "SCENE-02-01"
+      },
+      {
+        "id": "TH-02-02",
+        "vi": "Kí hiệu đường chuyển động",
+        "en": "Flow line method",
+        "scene": "SCENE-02-02"
+      },
+      {
+        "id": "TH-02-03",
+        "vi": "Phương pháp chấm điểm",
+        "en": "Dot method",
+        "scene": "SCENE-02-03"
+      },
+      {
+        "id": "TH-02-04",
+        "vi": "Bản đồ biểu đồ",
+        "en": "Cartodiagram method",
+        "scene": "SCENE-02-04"
+      }
+    ],
+    "sim": {
+      "id": "SIM-02",
+      "title": "Phòng thực hành lựa chọn phương pháp bản đồ",
+      "initial": "Một lớp mỏ khoáng sản đang bật; chú giải mở; chưa chọn phương pháp.",
+      "steps": "Chọn dữ liệu → dự đoán phương pháp → đổi lớp biểu hiện → đọc chú giải → giải thích lựa chọn.",
+      "params": "Bộ dữ liệu 4 loại; phương pháp 4 lựa chọn; giá trị một chấm 100 hoặc 200 người.",
+      "science": "Lựa chọn phương pháp phải phù hợp bản chất, phân bố và đặc tính dữ liệu; kí hiệu không phải ảnh chụp đối tượng.",
+      "inquiry": "PRE-02: Nếu tăng giá trị một chấm từ 100 lên 200 người, số chấm biểu diễn 6000 người đổi thế nào? POST-02: Quan sát hai bản đồ và giải thích vì sao số chấm giảm nhưng tổng dân số không đổi. Nhiệm vụ: Chọn hai giá trị một chấm; ghi số chấm; kiểm tổng số người. Tiêu chí giải thích: 60 thành 30 chấm; mỗi chấm gấp đôi giá trị nên tổng giữ nguyên. Hai câu này không tính thay bộ 10 câu cuối bài.",
+      "data": "DATA-02: dữ liệu tự biên soạn 4 lớp, gắn nhãn minh họa, không phải số liệu dân số thực tế.",
+      "fallback": "Bốn hình bản đồ có chú giải và bảng dữ liệu thay cho thao tác kéo thả."
+    },
+    "questions": [
+      {
+        "id": "Q-02-001",
+        "theory": "TH-02-01",
+        "type": "mcq",
+        "bloom": "Nhận biết",
+        "stem": "Muốn thể hiện vị trí từng mỏ khoáng sản nên chọn phương pháp nào?",
+        "options": [
+          "Kí hiệu",
+          "Đường chuyển động",
+          "Chấm điểm dân số",
+          "Biểu đồ cơ cấu đặt theo vùng"
+        ],
+        "answer": "A",
+        "explanation": "Kí hiệu định vị từng mỏ; các lựa chọn còn lại không biểu hiện trực tiếp vị trí mỏ.",
+        "points": 1,
+        "rubric": "Chọn đúng 1 phương án được 1 điểm; sai hoặc bỏ trống 0.",
+        "unit": "Theo đề; không áp dụng nếu không có số",
+        "tolerance": "Không áp dụng"
+      },
+      {
+        "id": "Q-02-002",
+        "theory": "TH-02-02",
+        "type": "mcq",
+        "bloom": "Thông hiểu",
+        "stem": "Mũi tên rộng khác nhau trên bản đồ dòng hàng hóa thường dùng để thể hiện gì?",
+        "options": [
+          "Độ cao và độ dốc địa hình",
+          "Hướng và quy mô dòng",
+          "Thời gian khai thác khoáng sản",
+          "Cơ cấu dân số theo tuổi"
+        ],
+        "answer": "B",
+        "explanation": "Mũi tên biểu thị hướng, độ rộng theo chú giải biểu thị quy mô; không suy ra độ cao, giờ hay đất.",
+        "points": 1,
+        "rubric": "Chọn đúng 1 phương án được 1 điểm; sai hoặc bỏ trống 0.",
+        "unit": "Theo đề; không áp dụng nếu không có số",
+        "tolerance": "Không áp dụng"
+      },
+      {
+        "id": "Q-02-003",
+        "theory": "TH-02-03",
+        "type": "mcq",
+        "bloom": "Vận dụng",
+        "stem": "Một chấm tương ứng 200 người. Khu vực có 15 chấm biểu diễn bao nhiêu người?",
+        "options": [
+          "750 người",
+          "1500 người",
+          "3000 người",
+          "30000 người"
+        ],
+        "answer": "C",
+        "explanation": "15 × 200 = 3000 người; các số khác không đúng phép nhân theo chú giải.",
+        "points": 1,
+        "rubric": "Chọn đúng 1 phương án được 1 điểm; sai hoặc bỏ trống 0.",
+        "unit": "Theo đề; không áp dụng nếu không có số",
+        "tolerance": "Không áp dụng"
+      },
+      {
+        "id": "Q-02-004",
+        "theory": "TH-02-04",
+        "type": "mcq",
+        "bloom": "Vận dụng",
+        "stem": "Để so sánh cơ cấu sản lượng ba ngành giữa các vùng, lựa chọn phù hợp nhất là gì?",
+        "options": [
+          "Đường chuyển động không chia thành phần",
+          "Các chấm cùng giá trị",
+          "Một kí hiệu điểm không phân loại",
+          "Biểu đồ cơ cấu đặt tại các vùng"
+        ],
+        "answer": "D",
+        "explanation": "Biểu đồ vùng thể hiện cơ cấu; điểm hoặc mũi tên đơn thuần thiếu thông tin thành phần.",
+        "points": 1,
+        "rubric": "Chọn đúng 1 phương án được 1 điểm; sai hoặc bỏ trống 0.",
+        "unit": "Theo đề; không áp dụng nếu không có số",
+        "tolerance": "Không áp dụng"
+      },
+      {
+        "id": "Q-02-005",
+        "theory": "TH-02-03",
+        "type": "tf",
+        "bloom": "Nhận biết",
+        "stem": "Một chấm trên mọi bản đồ luôn biểu diễn 100 người.",
+        "options": [
+          "Đúng",
+          "Sai"
+        ],
+        "answer": "Sai",
+        "explanation": "Giá trị một chấm phụ thuộc chú giải của từng bản đồ.",
+        "points": 1,
+        "rubric": "Mỗi nhận định độc lập 1 điểm; đúng đáp án 1, sai/bỏ trống 0; không chấm gộp 4 nhận định.",
+        "unit": "Không áp dụng",
+        "tolerance": "Không áp dụng"
+      },
+      {
+        "id": "Q-02-006",
+        "theory": "TH-02-01",
+        "type": "tf",
+        "bloom": "Thông hiểu",
+        "stem": "Đọc chú giải giúp hiểu đúng ý nghĩa kí hiệu.",
+        "options": [
+          "Đúng",
+          "Sai"
+        ],
+        "answer": "Đúng",
+        "explanation": "Chú giải xác định ý nghĩa và đơn vị biểu hiện.",
+        "points": 1,
+        "rubric": "Mỗi nhận định độc lập 1 điểm; đúng đáp án 1, sai/bỏ trống 0; không chấm gộp 4 nhận định.",
+        "unit": "Không áp dụng",
+        "tolerance": "Không áp dụng"
+      },
+      {
+        "id": "Q-02-007",
+        "theory": "TH-02-03",
+        "type": "tf",
+        "bloom": "Thông hiểu",
+        "stem": "Thay giá trị một chấm phải giữ đúng tổng lượng dữ liệu biểu diễn.",
+        "options": [
+          "Đúng",
+          "Sai"
+        ],
+        "answer": "Đúng",
+        "explanation": "Số chấm cần thay tương ứng để không làm đổi dữ liệu gốc.",
+        "points": 1,
+        "rubric": "Mỗi nhận định độc lập 1 điểm; đúng đáp án 1, sai/bỏ trống 0; không chấm gộp 4 nhận định.",
+        "unit": "Không áp dụng",
+        "tolerance": "Không áp dụng"
+      },
+      {
+        "id": "Q-02-008",
+        "theory": "TH-02-02",
+        "type": "tf",
+        "bloom": "Vận dụng",
+        "stem": "Đường chuyển động chỉ thể hiện được vị trí đứng yên.",
+        "options": [
+          "Đúng",
+          "Sai"
+        ],
+        "answer": "Sai",
+        "explanation": "Đường chuyển động biểu hiện hướng và có thể cả quy mô di chuyển.",
+        "points": 1,
+        "rubric": "Mỗi nhận định độc lập 1 điểm; đúng đáp án 1, sai/bỏ trống 0; không chấm gộp 4 nhận định.",
+        "unit": "Không áp dụng",
+        "tolerance": "Không áp dụng"
+      },
+      {
+        "id": "Q-02-009",
+        "theory": "TH-02-03",
+        "type": "short",
+        "bloom": "Thông hiểu",
+        "stem": "Nêu hai thông tin phải kiểm tra trong chú giải trước khi đọc bản đồ chấm điểm.",
+        "options": [],
+        "answer": "Ý nghĩa đối tượng được biểu hiện; giá trị và đơn vị của một chấm.",
+        "explanation": "Ý nghĩa đối tượng được biểu hiện; giá trị và đơn vị của một chấm.",
+        "points": 2,
+        "rubric": "Mỗi ý đúng 1 điểm; chấp nhận cách diễn đạt tương đương. Không khớp biến thể đã duyệt thì chuyển review theo ý nghĩa, không chấm sai chỉ vì khác từ.",
+        "unit": "Theo dữ kiện câu hỏi; giữ đơn vị khi nhắc số",
+        "tolerance": "Chấm ý nghĩa theo rubric; chưa có tự động chấm ngữ nghĩa được duyệt"
+      },
+      {
+        "id": "Q-02-010",
+        "theory": "TH-02-03",
+        "type": "short",
+        "bloom": "Vận dụng cao",
+        "stem": "Có 6000 người. So sánh số chấm khi 1 chấm bằng 100 và 200 người; giải thích vì sao bản đồ vẫn biểu diễn cùng tổng dân số.",
+        "options": [],
+        "answer": "60 chấm và 30 chấm; số chấm giảm một nửa vì giá trị mỗi chấm tăng gấp đôi; tổng vẫn 6000 người.",
+        "explanation": "60 chấm và 30 chấm; số chấm giảm một nửa vì giá trị mỗi chấm tăng gấp đôi; tổng vẫn 6000 người.",
+        "points": 2,
+        "rubric": "1 điểm tính đúng hai số; 1 điểm giải thích mối quan hệ. Không khớp biến thể đã duyệt thì chuyển review theo ý nghĩa, không chấm sai chỉ vì khác từ.",
+        "unit": "Theo dữ kiện câu hỏi; giữ đơn vị khi nhắc số",
+        "tolerance": "Chấm ý nghĩa theo rubric; chưa có tự động chấm ngữ nghĩa được duyệt"
+      }
+    ]
+  },
+  {
+    "id": "LES-03",
+    "n": 3,
+    "chapter": 1,
+    "title": "Sử dụng bản đồ trong học tập và đời sống, một số ứng dụng của GPS và bản đồ số trong đời sống",
+    "titleEn": "Maps, GPS and digital navigation",
+    "goal": "Đọc tọa độ, chọn tuyến đường theo tiêu chí cho trước; giải thích vai trò GPS và xử lý tình huống từ chối quyền vị trí.",
+    "minutes": 35,
+    "practical": false,
+    "threeD": false,
+    "topics": [
+      {
+        "id": "TH-03-01",
+        "vi": "Sử dụng bản đồ",
+        "en": "Map use",
+        "scene": "SCENE-03-01"
+      },
+      {
+        "id": "TH-03-02",
+        "vi": "Nguyên lí GPS",
+        "en": "GPS positioning",
+        "scene": "SCENE-03-02"
+      },
+      {
+        "id": "TH-03-03",
+        "vi": "Bản đồ số và tọa độ",
+        "en": "Digital maps and coordinates",
+        "scene": "SCENE-03-03"
+      },
+      {
+        "id": "TH-03-04",
+        "vi": "Định vị và tìm đường",
+        "en": "Positioning and route planning",
+        "scene": "SCENE-03-04"
+      }
+    ],
+    "sim": {
+      "id": "SIM-03",
+      "title": "Bản đồ số và định vị giả lập",
+      "initial": "Vị trí giả lập A; chưa xin quyền truy cập vị trí thật; hai tuyến A đến B.",
+      "steps": "Đọc kí hiệu → đặt tọa độ → chọn điểm đến → so sánh tuyến → chọn theo khoảng cách hoặc thời gian.",
+      "params": "Tuyến 4 km/20 phút hoặc 6 km/12 phút; chế độ vị trí giả lập hoặc quyền vị trí.",
+      "science": "Máy thu GPS dùng tín hiệu vệ tinh để xác định vị trí; bản đồ và thuật toán định tuyến là các thành phần riêng.",
+      "inquiry": "PRE-03: Tuyến 4 km có chắc đến nhanh hơn tuyến 6 km không? POST-03: Dùng thời gian 20 và 12 phút để giải thích lựa chọn và nêu một điều có thể làm thời gian thực thay đổi. Nhiệm vụ: Chọn tiêu chí ngắn nhất rồi nhanh nhất; ghi tuyến thay đổi. Tiêu chí giải thích: 6 km/12 phút nhanh hơn theo dữ liệu; thời gian có thể đổi do điều kiện thực. Hai câu này không tính thay bộ 10 câu cuối bài.",
+      "data": "DATA-03: đồ thị đường tự biên soạn; nếu dùng bản đồ thực phải duyệt giấy phép và ghi nguồn.",
+      "fallback": "Bản đồ tĩnh có tọa độ và hai tuyến đánh dấu; chọn bằng bảng."
+    },
+    "questions": [
+      {
+        "id": "Q-03-001",
+        "theory": "TH-03-02",
+        "type": "mcq",
+        "bloom": "Nhận biết",
+        "stem": "GPS chủ yếu cung cấp thông tin nào?",
+        "options": [
+          "Cơ cấu sử dụng đất",
+          "Mức độ ô nhiễm không khí",
+          "Vị trí của máy thu",
+          "Mật độ dân số khu vực"
+        ],
+        "answer": "C",
+        "explanation": "GPS hỗ trợ xác định vị trí; các thông tin chuyên đề khác cần nguồn dữ liệu riêng.",
+        "points": 1,
+        "rubric": "Chọn đúng 1 phương án được 1 điểm; sai hoặc bỏ trống 0.",
+        "unit": "Theo đề; không áp dụng nếu không có số",
+        "tolerance": "Không áp dụng"
+      },
+      {
+        "id": "Q-03-002",
+        "theory": "TH-03-01",
+        "type": "mcq",
+        "bloom": "Thông hiểu",
+        "stem": "Muốn đọc khoảng cách trên bản đồ giấy cần chú ý yếu tố nào?",
+        "options": [
+          "Tỉ lệ bản đồ",
+          "Khoảng cách hiển thị giữa hai kí hiệu chưa đổi tỉ lệ",
+          "Diện tích toàn tờ bản đồ",
+          "Số lượng đối tượng trong chú giải"
+        ],
+        "answer": "A",
+        "explanation": "Tỉ lệ liên hệ khoảng cách bản đồ và thực địa; các yếu tố còn lại không thay thế được tỉ lệ.",
+        "points": 1,
+        "rubric": "Chọn đúng 1 phương án được 1 điểm; sai hoặc bỏ trống 0.",
+        "unit": "Theo đề; không áp dụng nếu không có số",
+        "tolerance": "Không áp dụng"
+      },
+      {
+        "id": "Q-03-003",
+        "theory": "TH-03-04",
+        "type": "mcq",
+        "bloom": "Vận dụng",
+        "stem": "Hai tuyến 4 km/20 phút và 6 km/12 phút. Cần đến nhanh nhất thì chọn tuyến nào?",
+        "options": [
+          "4 km vì mọi tuyến ngắn hơn đều nhanh hơn",
+          "6 km vì mất 12 phút",
+          "Hai tuyến mất cùng thời gian vì cùng điểm đầu cuối",
+          "4 km vì quãng đường là tiêu chí duy nhất"
+        ],
+        "answer": "B",
+        "explanation": "12 phút ít hơn 20 phút; khoảng cách ngắn không bảo đảm thời gian ngắn.",
+        "points": 1,
+        "rubric": "Chọn đúng 1 phương án được 1 điểm; sai hoặc bỏ trống 0.",
+        "unit": "Theo đề; không áp dụng nếu không có số",
+        "tolerance": "Không áp dụng"
+      },
+      {
+        "id": "Q-03-004",
+        "theory": "TH-03-04",
+        "type": "mcq",
+        "bloom": "Vận dụng",
+        "stem": "Bị từ chối quyền vị trí, ứng dụng học tập nên làm gì?",
+        "options": [
+          "Khóa toàn bộ bài khi không có tọa độ thật",
+          "Tự suy ra tọa độ chính xác mà không có nguồn",
+          "Yêu cầu bật quyền vị trí mới được đọc lý thuyết",
+          "Cho dùng vị trí giả lập và hướng dẫn rõ"
+        ],
+        "answer": "D",
+        "explanation": "Vị trí giả lập giữ hoạt động học và tôn trọng lựa chọn; không vượt quyền hoặc khóa bài.",
+        "points": 1,
+        "rubric": "Chọn đúng 1 phương án được 1 điểm; sai hoặc bỏ trống 0.",
+        "unit": "Theo đề; không áp dụng nếu không có số",
+        "tolerance": "Không áp dụng"
+      },
+      {
+        "id": "Q-03-005",
+        "theory": "TH-03-02",
+        "type": "tf",
+        "bloom": "Nhận biết",
+        "stem": "GPS và bản đồ số là cùng một thành phần.",
+        "options": [
+          "Đúng",
+          "Sai"
+        ],
+        "answer": "Sai",
+        "explanation": "GPS hỗ trợ định vị; bản đồ số biểu diễn và khai thác thông tin không gian.",
+        "points": 1,
+        "rubric": "Mỗi nhận định độc lập 1 điểm; đúng đáp án 1, sai/bỏ trống 0; không chấm gộp 4 nhận định.",
+        "unit": "Không áp dụng",
+        "tolerance": "Không áp dụng"
+      },
+      {
+        "id": "Q-03-006",
+        "theory": "TH-03-01",
+        "type": "tf",
+        "bloom": "Thông hiểu",
+        "stem": "Cần đọc chú giải trước khi suy luận kí hiệu bản đồ.",
+        "options": [
+          "Đúng",
+          "Sai"
+        ],
+        "answer": "Đúng",
+        "explanation": "Kí hiệu và đơn vị phải được hiểu theo chú giải.",
+        "points": 1,
+        "rubric": "Mỗi nhận định độc lập 1 điểm; đúng đáp án 1, sai/bỏ trống 0; không chấm gộp 4 nhận định.",
+        "unit": "Không áp dụng",
+        "tolerance": "Không áp dụng"
+      },
+      {
+        "id": "Q-03-007",
+        "theory": "TH-03-04",
+        "type": "tf",
+        "bloom": "Thông hiểu",
+        "stem": "Tuyến ngắn nhất luôn là tuyến nhanh nhất.",
+        "options": [
+          "Đúng",
+          "Sai"
+        ],
+        "answer": "Sai",
+        "explanation": "Thời gian phụ thuộc tốc độ, điều kiện tuyến và các hạn chế.",
+        "points": 1,
+        "rubric": "Mỗi nhận định độc lập 1 điểm; đúng đáp án 1, sai/bỏ trống 0; không chấm gộp 4 nhận định.",
+        "unit": "Không áp dụng",
+        "tolerance": "Không áp dụng"
+      },
+      {
+        "id": "Q-03-008",
+        "theory": "TH-03-02",
+        "type": "tf",
+        "bloom": "Vận dụng",
+        "stem": "Vị trí định vị có thể có sai số.",
+        "options": [
+          "Đúng",
+          "Sai"
+        ],
+        "answer": "Đúng",
+        "explanation": "Điều kiện thu tín hiệu và thiết bị ảnh hưởng độ chính xác.",
+        "points": 1,
+        "rubric": "Mỗi nhận định độc lập 1 điểm; đúng đáp án 1, sai/bỏ trống 0; không chấm gộp 4 nhận định.",
+        "unit": "Không áp dụng",
+        "tolerance": "Không áp dụng"
+      },
+      {
+        "id": "Q-03-009",
+        "theory": "TH-03-03",
+        "type": "short",
+        "bloom": "Thông hiểu",
+        "stem": "Nêu hai ứng dụng của bản đồ số trong đời sống.",
+        "options": [],
+        "answer": "Tìm đường; xác định vị trí hoặc tìm địa điểm theo mục đích.",
+        "explanation": "Tìm đường; xác định vị trí hoặc tìm địa điểm theo mục đích.",
+        "points": 2,
+        "rubric": "Mỗi ứng dụng phù hợp 1 điểm; chấp nhận ví dụ khác đúng. Không khớp biến thể đã duyệt thì chuyển review theo ý nghĩa, không chấm sai chỉ vì khác từ.",
+        "unit": "Theo dữ kiện câu hỏi; giữ đơn vị khi nhắc số",
+        "tolerance": "Chấm ý nghĩa theo rubric; chưa có tự động chấm ngữ nghĩa được duyệt"
+      },
+      {
+        "id": "Q-03-010",
+        "theory": "TH-03-04",
+        "type": "short",
+        "bloom": "Vận dụng cao",
+        "stem": "Chọn tuyến đi cấp cứu giữa 4 km/20 phút và 6 km/12 phút. Nêu lựa chọn và một giới hạn của kết luận.",
+        "options": [],
+        "answer": "Chọn 6 km/12 phút theo dữ liệu cho; thời gian có thể đổi do giao thông hoặc điều kiện thực tế.",
+        "explanation": "Chọn 6 km/12 phút theo dữ liệu cho; thời gian có thể đổi do giao thông hoặc điều kiện thực tế.",
+        "points": 2,
+        "rubric": "1 điểm lựa chọn và lí do; 1 điểm giới hạn dữ liệu. Không khớp biến thể đã duyệt thì chuyển review theo ý nghĩa, không chấm sai chỉ vì khác từ.",
+        "unit": "Theo dữ kiện câu hỏi; giữ đơn vị khi nhắc số",
+        "tolerance": "Chấm ý nghĩa theo rubric; chưa có tự động chấm ngữ nghĩa được duyệt"
+      }
+    ]
+  },
+  {
+    "id": "LES-04",
+    "n": 4,
+    "chapter": 2,
+    "title": "Sự hình thành Trái Đất, vỏ Trái Đất và vật liệu cấu tạo vỏ Trái Đất",
+    "titleEn": "Earth formation, crust and rocks",
+    "goal": "Mô tả khái quát quá trình hình thành; phân biệt vỏ lục địa và đại dương, khoáng vật và đá bằng ít nhất hai đặc điểm.",
+    "minutes": 35,
+    "practical": false,
+    "threeD": true,
+    "topics": [
+      {
+        "id": "TH-04-01",
+        "vi": "Sự hình thành Trái Đất",
+        "en": "Formation of Earth",
+        "scene": "SCENE-04-01"
+      },
+      {
+        "id": "TH-04-02",
+        "vi": "Vỏ lục địa và vỏ đại dương",
+        "en": "Continental and oceanic crust",
+        "scene": "SCENE-04-02"
+      },
+      {
+        "id": "TH-04-03",
+        "vi": "Khoáng vật và đá",
+        "en": "Minerals and rocks",
+        "scene": "SCENE-04-03"
+      },
+      {
+        "id": "TH-04-04",
+        "vi": "Các nhóm đá và quá trình địa chất",
+        "en": "Rock groups and geological processes",
+        "scene": "SCENE-04-04"
+      }
+    ],
+    "sim": {
+      "id": "SIM-04",
+      "title": "Mặt cắt vỏ Trái Đất và bộ sưu tập đá",
+      "initial": "Góc nhìn toàn cầu, màu phân biệt lớp; tỉ lệ chiều dày được ghi là phóng đại.",
+      "steps": "Xem chuỗi hình thành khái quát → mở mặt cắt → chọn loại vỏ → xem mẫu → phân loại đá.",
+      "params": "Bật vỏ lục địa hoặc đại dương; chọn mẫu magma, trầm tích, biến chất; mức phóng đại minh họa.",
+      "science": "Vỏ Trái Đất là lớp ngoài cùng; khoáng vật là thành phần cấu tạo nhiều loại đá; nhóm đá gắn với quá trình hình thành.",
+      "inquiry": "PRE-04: Cắt vào mô hình Trái Đất, em dự đoán vỏ là toàn bộ phần rắn hay chỉ lớp ngoài cùng? POST-04: Dùng mặt cắt chỉ vị trí vỏ và giải thích vì sao hình phóng đại không cho phép đo chiều dày thực. Nhiệm vụ: Chọn lớp vỏ; bật chú thích phóng đại; so hai loại vỏ theo thẻ mô tả. Tiêu chí giải thích: Vỏ là lớp ngoài; mô hình không đồng tỉ lệ nên cần số liệu và nguồn để đọc kích thước thực. Hai câu này không tính thay bộ 10 câu cuối bài.",
+      "data": "DATA-04: sơ đồ tự dựng và ảnh mẫu có quyền sử dụng; chiều dày và giả thuyết hình thành cần SME chốt theo sách.",
+      "fallback": "Sơ đồ mặt cắt và ảnh mẫu có mô tả văn bản."
+    },
+    "questions": [
+      {
+        "id": "Q-04-001",
+        "theory": "TH-04-03",
+        "type": "mcq",
+        "bloom": "Nhận biết",
+        "stem": "Vật liệu thường cấu tạo nên đá là gì?",
+        "options": [
+          "Chỉ có chất hữu cơ",
+          "Khoáng vật",
+          "Chỉ có nước và không khí",
+          "Chỉ có vật liệu nhân tạo"
+        ],
+        "answer": "B",
+        "explanation": "Đá thường gồm một hay nhiều khoáng vật; các lựa chọn kia không phải thành phần phân loại này.",
+        "points": 1,
+        "rubric": "Chọn đúng 1 phương án được 1 điểm; sai hoặc bỏ trống 0.",
+        "unit": "Theo đề; không áp dụng nếu không có số",
+        "tolerance": "Không áp dụng"
+      },
+      {
+        "id": "Q-04-002",
+        "theory": "TH-04-02",
+        "type": "mcq",
+        "bloom": "Thông hiểu",
+        "stem": "Vỏ Trái Đất nằm ở vị trí nào?",
+        "options": [
+          "Nằm dưới nhân trong",
+          "Nằm ngoài toàn bộ khí quyển",
+          "Ngoài cùng phần rắn của Trái Đất",
+          "Toàn bộ vật chất rắn từ mặt đất đến tâm"
+        ],
+        "answer": "C",
+        "explanation": "Vỏ là lớp ngoài cùng phần rắn; không phải nhân, khí quyển hay vật thể khác.",
+        "points": 1,
+        "rubric": "Chọn đúng 1 phương án được 1 điểm; sai hoặc bỏ trống 0.",
+        "unit": "Theo đề; không áp dụng nếu không có số",
+        "tolerance": "Không áp dụng"
+      },
+      {
+        "id": "Q-04-003",
+        "theory": "TH-04-04",
+        "type": "mcq",
+        "bloom": "Vận dụng",
+        "stem": "Magma nguội và kết tinh tạo nhóm đá nào?",
+        "options": [
+          "Đá magma",
+          "Đá trầm tích do bồi tụ",
+          "Đá biến chất không qua nóng chảy",
+          "Đất hình thành do sinh vật"
+        ],
+        "answer": "A",
+        "explanation": "Đá magma hình thành từ vật chất nóng chảy kết tinh; hai nhóm đá khác có quá trình khác.",
+        "points": 1,
+        "rubric": "Chọn đúng 1 phương án được 1 điểm; sai hoặc bỏ trống 0.",
+        "unit": "Theo đề; không áp dụng nếu không có số",
+        "tolerance": "Không áp dụng"
+      },
+      {
+        "id": "Q-04-004",
+        "theory": "TH-04-04",
+        "type": "mcq",
+        "bloom": "Vận dụng",
+        "stem": "Để phân loại mẫu đá đáng tin hơn, cần làm gì?",
+        "options": [
+          "Chỉ dựa màu sắc trong ảnh",
+          "Chỉ dựa kích thước của mẫu",
+          "Chỉ dựa nơi nhặt mẫu",
+          "Kết hợp thành phần, cấu tạo và quá trình hình thành"
+        ],
+        "answer": "D",
+        "explanation": "Nhiều bằng chứng hỗ trợ phân loại; màu, ảnh hoặc tên file riêng lẻ không đủ.",
+        "points": 1,
+        "rubric": "Chọn đúng 1 phương án được 1 điểm; sai hoặc bỏ trống 0.",
+        "unit": "Theo đề; không áp dụng nếu không có số",
+        "tolerance": "Không áp dụng"
+      },
+      {
+        "id": "Q-04-005",
+        "theory": "TH-04-02",
+        "type": "tf",
+        "bloom": "Nhận biết",
+        "stem": "Vỏ lục địa và vỏ đại dương hoàn toàn giống nhau.",
+        "options": [
+          "Đúng",
+          "Sai"
+        ],
+        "answer": "Sai",
+        "explanation": "Chúng khác về độ dày, thành phần và đặc điểm cấu tạo.",
+        "points": 1,
+        "rubric": "Mỗi nhận định độc lập 1 điểm; đúng đáp án 1, sai/bỏ trống 0; không chấm gộp 4 nhận định.",
+        "unit": "Không áp dụng",
+        "tolerance": "Không áp dụng"
+      },
+      {
+        "id": "Q-04-006",
+        "theory": "TH-04-03",
+        "type": "tf",
+        "bloom": "Thông hiểu",
+        "stem": "Đá có thể gồm một hoặc nhiều khoáng vật.",
+        "options": [
+          "Đúng",
+          "Sai"
+        ],
+        "answer": "Đúng",
+        "explanation": "Thành phần khoáng vật là một đặc trưng của đá.",
+        "points": 1,
+        "rubric": "Mỗi nhận định độc lập 1 điểm; đúng đáp án 1, sai/bỏ trống 0; không chấm gộp 4 nhận định.",
+        "unit": "Không áp dụng",
+        "tolerance": "Không áp dụng"
+      },
+      {
+        "id": "Q-04-007",
+        "theory": "TH-04-02",
+        "type": "tf",
+        "bloom": "Thông hiểu",
+        "stem": "Mô hình mặt cắt phóng đại thể hiện đúng mọi tỉ lệ thực.",
+        "options": [
+          "Đúng",
+          "Sai"
+        ],
+        "answer": "Sai",
+        "explanation": "Phải đọc chú thích phần phóng đại để tránh suy diễn kích thước thực.",
+        "points": 1,
+        "rubric": "Mỗi nhận định độc lập 1 điểm; đúng đáp án 1, sai/bỏ trống 0; không chấm gộp 4 nhận định.",
+        "unit": "Không áp dụng",
+        "tolerance": "Không áp dụng"
+      },
+      {
+        "id": "Q-04-008",
+        "theory": "TH-04-04",
+        "type": "tf",
+        "bloom": "Vận dụng",
+        "stem": "Nhiệt và áp suất có thể làm biến đổi đá.",
+        "options": [
+          "Đúng",
+          "Sai"
+        ],
+        "answer": "Đúng",
+        "explanation": "Biến chất gắn với điều kiện nhiệt và áp suất phù hợp.",
+        "points": 1,
+        "rubric": "Mỗi nhận định độc lập 1 điểm; đúng đáp án 1, sai/bỏ trống 0; không chấm gộp 4 nhận định.",
+        "unit": "Không áp dụng",
+        "tolerance": "Không áp dụng"
+      },
+      {
+        "id": "Q-04-009",
+        "theory": "TH-04-03",
+        "type": "short",
+        "bloom": "Thông hiểu",
+        "stem": "Phân biệt ngắn gọn khoáng vật và đá.",
+        "options": [],
+        "answer": "Khoáng vật là vật chất tự nhiên có đặc tính nhất định; đá là tập hợp một hay nhiều khoáng vật theo cách trình bày đã được SME duyệt.",
+        "explanation": "Khoáng vật là vật chất tự nhiên có đặc tính nhất định; đá là tập hợp một hay nhiều khoáng vật theo cách trình bày đã được SME duyệt.",
+        "points": 2,
+        "rubric": "1 điểm mỗi khái niệm; chấp nhận diễn đạt tương đương phù hợp chương trình. Không khớp biến thể đã duyệt thì chuyển review theo ý nghĩa, không chấm sai chỉ vì khác từ.",
+        "unit": "Theo dữ kiện câu hỏi; giữ đơn vị khi nhắc số",
+        "tolerance": "Chấm ý nghĩa theo rubric; chưa có tự động chấm ngữ nghĩa được duyệt"
+      },
+      {
+        "id": "Q-04-010",
+        "theory": "TH-04-04",
+        "type": "short",
+        "bloom": "Vận dụng cao",
+        "stem": "Một mẫu bị biến đổi bởi nhiệt và áp suất nhưng không nóng chảy hoàn toàn. Đề xuất nhóm đá và bằng chứng cần bổ sung.",
+        "options": [],
+        "answer": "Có thể là đá biến chất; cần xem cấu tạo, thành phần khoáng vật hoặc bối cảnh địa chất để xác nhận.",
+        "explanation": "Có thể là đá biến chất; cần xem cấu tạo, thành phần khoáng vật hoặc bối cảnh địa chất để xác nhận.",
+        "points": 2,
+        "rubric": "1 điểm nhận định có điều kiện; 1 điểm bằng chứng phù hợp. Không khớp biến thể đã duyệt thì chuyển review theo ý nghĩa, không chấm sai chỉ vì khác từ.",
+        "unit": "Theo dữ kiện câu hỏi; giữ đơn vị khi nhắc số",
+        "tolerance": "Chấm ý nghĩa theo rubric; chưa có tự động chấm ngữ nghĩa được duyệt"
+      }
+    ]
+  },
+  {
+    "id": "LES-05",
+    "n": 5,
+    "chapter": 2,
+    "title": "Hệ quả địa lí các chuyển động của Trái Đất",
+    "titleEn": "Geographical effects of Earth’s motions",
+    "goal": "Giải thích ngày đêm và mùa; tính đúng giờ theo múi đơn giản và bác bỏ quan niệm mùa chỉ do khoảng cách đến Mặt Trời.",
+    "minutes": 35,
+    "practical": false,
+    "threeD": true,
+    "topics": [
+      {
+        "id": "TH-05-01",
+        "vi": "Tự quay quanh trục",
+        "en": "Rotation",
+        "scene": "SCENE-05-01"
+      },
+      {
+        "id": "TH-05-02",
+        "vi": "Chuyển động quanh Mặt Trời",
+        "en": "Revolution",
+        "scene": "SCENE-05-02"
+      },
+      {
+        "id": "TH-05-03",
+        "vi": "Ngày đêm và giờ múi",
+        "en": "Day night and time zones",
+        "scene": "SCENE-05-03"
+      },
+      {
+        "id": "TH-05-04",
+        "vi": "Mùa và độ dài ngày đêm",
+        "en": "Seasons and day length",
+        "scene": "SCENE-05-04"
+      }
+    ],
+    "sim": {
+      "id": "SIM-05",
+      "title": "Trái Đất Mặt Trời và hệ quả chuyển động",
+      "initial": "Vị trí xuân phân trong mô hình; góc nghiêng 23,5 độ so với pháp tuyến mặt phẳng quỹ đạo; đang dừng.",
+      "steps": "Dự đoán → chạy tự quay → quan sát sáng tối → chạy quanh Mặt Trời → so sánh hai bán cầu → tính giờ.",
+      "params": "Ngày trong năm 1–365; giờ 0–23; vĩ độ -66 đến 66; tốc độ 0,5/1/2/4; góc nghiêng 0 hoặc 23,5 độ ở chế độ thử nghiệm.",
+      "science": "Tự quay gây luân phiên ngày đêm; trục nghiêng giữ hướng gần ổn định khi chuyển động quanh Mặt Trời tạo khác biệt chiếu sáng theo mùa. Tỉ lệ và tốc độ được giản lược.",
+      "inquiry": "PRE-05: Khi đổi góc nghiêng trục từ 23,5 độ về 0 độ so với pháp tuyến quỹ đạo, khác biệt mùa do trục nghiêng sẽ thay đổi ra sao? POST-05: Giữ cùng vị trí quỹ đạo, so chiếu sáng hai cấu hình; giải thích tác động trục nghiêng và một giới hạn của mô hình. Nhiệm vụ: Chạy một vòng năm ở hai cấu hình; giữ cùng vĩ độ; ghi khác biệt chiếu sáng. Tiêu chí giải thích: Khác biệt mùa do trục nghiêng giảm hoặc mất trong mô hình; không đồng nghĩa mọi nhân tố khí hậu khác mất. Hai câu này không tính thay bộ 10 câu cuối bài.",
+      "data": "DATA-05: hình học tự dựng, lịch giản lược 365 ngày; không dùng làm lịch thiên văn chính xác.",
+      "fallback": "Chuỗi 4 sơ đồ mùa và vòng sáng tối theo từng giờ với nút chuyển bước."
+    },
+    "questions": [
+      {
+        "id": "Q-05-001",
+        "theory": "TH-05-01",
+        "type": "mcq",
+        "bloom": "Nhận biết",
+        "stem": "Chuyển động nào trực tiếp tạo luân phiên ngày đêm?",
+        "options": [
+          "Chuyển động quanh Mặt Trời",
+          "Sự thay đổi khoảng cách Trái Đất–Mặt Trời",
+          "Chuyển động tự quay quanh trục",
+          "Sự thay đổi hình dạng quỹ đạo theo ngày"
+        ],
+        "answer": "A",
+        "explanation": "Tự quay đưa các nơi lần lượt vào vùng chiếu sáng và vùng tối; các hiện tượng kia không giải thích chu kì này.",
+        "points": 1,
+        "rubric": "Chọn đúng 1 phương án được 1 điểm; sai hoặc bỏ trống 0.",
+        "unit": "Theo đề; không áp dụng nếu không có số",
+        "tolerance": "Không áp dụng"
+      },
+      {
+        "id": "Q-05-002",
+        "theory": "TH-05-04",
+        "type": "mcq",
+        "bloom": "Thông hiểu",
+        "stem": "Nhân tố chính tạo mùa trong mô hình là gì?",
+        "options": [
+          "Khoảng cách tới Mặt Trời thay đổi trong một ngày",
+          "Chỉ việc Trái Đất tự quay",
+          "Trục nghiêng và chuyển động quanh Mặt Trời",
+          "Sự phân chia các múi giờ"
+        ],
+        "answer": "C",
+        "explanation": "Trục nghiêng và chuyển động quỹ đạo làm thay góc chiếu, thời gian chiếu; các lựa chọn khác không đủ.",
+        "points": 1,
+        "rubric": "Chọn đúng 1 phương án được 1 điểm; sai hoặc bỏ trống 0.",
+        "unit": "Theo đề; không áp dụng nếu không có số",
+        "tolerance": "Không áp dụng"
+      },
+      {
+        "id": "Q-05-003",
+        "theory": "TH-05-03",
+        "type": "mcq",
+        "bloom": "Vận dụng",
+        "stem": "UTC là 8 giờ cùng ngày. Theo quy ước UTC+7, giờ địa phương là bao nhiêu?",
+        "options": [
+          "1 giờ cùng ngày",
+          "15 giờ cùng ngày",
+          "8 giờ cùng ngày",
+          "17 giờ cùng ngày"
+        ],
+        "answer": "B",
+        "explanation": "8 + 7 = 15 giờ, chưa vượt ngày; các đáp án khác cộng trừ sai.",
+        "points": 1,
+        "rubric": "Chọn đúng 1 phương án được 1 điểm; sai hoặc bỏ trống 0.",
+        "unit": "Theo đề; không áp dụng nếu không có số",
+        "tolerance": "Không áp dụng"
+      },
+      {
+        "id": "Q-05-004",
+        "theory": "TH-05-04",
+        "type": "mcq",
+        "bloom": "Vận dụng",
+        "stem": "Khi bán cầu Bắc nghiêng về phía Mặt Trời, kết luận phù hợp là gì?",
+        "options": [
+          "Cả hai bán cầu luôn nhận chiếu sáng giống nhau",
+          "Bán cầu Nam nhận chiếu sáng theo mùa thuận lợi hơn",
+          "Hai bán cầu đồng thời bước vào mùa đông",
+          "Bắc có xu hướng mùa hạ, Nam có xu hướng mùa đông"
+        ],
+        "answer": "D",
+        "explanation": "Hai bán cầu có mùa đối lập do hướng nghiêng; không thể suy luận cả hai giống nhau.",
+        "points": 1,
+        "rubric": "Chọn đúng 1 phương án được 1 điểm; sai hoặc bỏ trống 0.",
+        "unit": "Theo đề; không áp dụng nếu không có số",
+        "tolerance": "Không áp dụng"
+      },
+      {
+        "id": "Q-05-005",
+        "theory": "TH-05-04",
+        "type": "tf",
+        "bloom": "Nhận biết",
+        "stem": "Mùa hè luôn xảy ra vì Trái Đất gần Mặt Trời nhất.",
+        "options": [
+          "Đúng",
+          "Sai"
+        ],
+        "answer": "Sai",
+        "explanation": "Mùa chủ yếu do trục nghiêng và sự thay đổi chiếu sáng khi Trái Đất chuyển động quanh Mặt Trời.",
+        "points": 1,
+        "rubric": "Mỗi nhận định độc lập 1 điểm; đúng đáp án 1, sai/bỏ trống 0; không chấm gộp 4 nhận định.",
+        "unit": "Không áp dụng",
+        "tolerance": "Không áp dụng"
+      },
+      {
+        "id": "Q-05-006",
+        "theory": "TH-05-03",
+        "type": "tf",
+        "bloom": "Thông hiểu",
+        "stem": "Nơi ở phía đông có giờ địa phương theo Mặt Trời sớm hơn phía tây.",
+        "options": [
+          "Đúng",
+          "Sai"
+        ],
+        "answer": "Đúng",
+        "explanation": "Trong cách tính cơ bản, tự quay từ tây sang đông dẫn đến khác biệt giờ theo kinh độ.",
+        "points": 1,
+        "rubric": "Mỗi nhận định độc lập 1 điểm; đúng đáp án 1, sai/bỏ trống 0; không chấm gộp 4 nhận định.",
+        "unit": "Không áp dụng",
+        "tolerance": "Không áp dụng"
+      },
+      {
+        "id": "Q-05-007",
+        "theory": "TH-05-02",
+        "type": "tf",
+        "bloom": "Thông hiểu",
+        "stem": "Tăng tốc hoạt ảnh làm thay đổi nguyên nhân tạo mùa.",
+        "options": [
+          "Đúng",
+          "Sai"
+        ],
+        "answer": "Sai",
+        "explanation": "Tốc độ phát chỉ rút ngắn thời gian quan sát, không đổi cơ chế minh họa.",
+        "points": 1,
+        "rubric": "Mỗi nhận định độc lập 1 điểm; đúng đáp án 1, sai/bỏ trống 0; không chấm gộp 4 nhận định.",
+        "unit": "Không áp dụng",
+        "tolerance": "Không áp dụng"
+      },
+      {
+        "id": "Q-05-008",
+        "theory": "TH-05-02",
+        "type": "tf",
+        "bloom": "Vận dụng",
+        "stem": "Mô hình có thể phóng đại kích thước Trái Đất để dễ quan sát.",
+        "options": [
+          "Đúng",
+          "Sai"
+        ],
+        "answer": "Đúng",
+        "explanation": "Phải ghi rõ tỉ lệ minh họa để không nhầm với kích thước thực.",
+        "points": 1,
+        "rubric": "Mỗi nhận định độc lập 1 điểm; đúng đáp án 1, sai/bỏ trống 0; không chấm gộp 4 nhận định.",
+        "unit": "Không áp dụng",
+        "tolerance": "Không áp dụng"
+      },
+      {
+        "id": "Q-05-009",
+        "theory": "TH-05-01",
+        "type": "short",
+        "bloom": "Thông hiểu",
+        "stem": "Giải thích vì sao một địa điểm lần lượt có ngày và đêm.",
+        "options": [],
+        "answer": "Trái Đất tự quay; địa điểm luân phiên ở phía được Mặt Trời chiếu sáng và phía khuất sáng.",
+        "explanation": "Trái Đất tự quay; địa điểm luân phiên ở phía được Mặt Trời chiếu sáng và phía khuất sáng.",
+        "points": 2,
+        "rubric": "1 điểm tự quay; 1 điểm vị trí tương đối với nguồn sáng. Không khớp biến thể đã duyệt thì chuyển review theo ý nghĩa, không chấm sai chỉ vì khác từ.",
+        "unit": "Theo dữ kiện câu hỏi; giữ đơn vị khi nhắc số",
+        "tolerance": "Chấm ý nghĩa theo rubric; chưa có tự động chấm ngữ nghĩa được duyệt"
+      },
+      {
+        "id": "Q-05-010",
+        "theory": "TH-05-04",
+        "type": "short",
+        "bloom": "Vận dụng cao",
+        "stem": "Nếu cho trục vuông góc mặt phẳng quỹ đạo trong mô hình, sự phân hóa mùa do trục nghiêng thay đổi thế nào? Nêu giới hạn.",
+        "options": [],
+        "answer": "Sự khác biệt chiếu sáng theo mùa do độ nghiêng giảm mạnh hoặc mất trong mô hình giản lược; mô hình không bao quát mọi yếu tố khí hậu.",
+        "explanation": "Sự khác biệt chiếu sáng theo mùa do độ nghiêng giảm mạnh hoặc mất trong mô hình giản lược; mô hình không bao quát mọi yếu tố khí hậu.",
+        "points": 2,
+        "rubric": "1 điểm dự đoán có cơ chế; 1 điểm nêu giới hạn. Không khớp biến thể đã duyệt thì chuyển review theo ý nghĩa, không chấm sai chỉ vì khác từ.",
+        "unit": "Theo dữ kiện câu hỏi; giữ đơn vị khi nhắc số",
+        "tolerance": "Chấm ý nghĩa theo rubric; chưa có tự động chấm ngữ nghĩa được duyệt"
+      }
+    ]
+  },
+  {
+    "id": "LES-06",
+    "n": 6,
+    "chapter": 3,
+    "title": "Thạch quyển, thuyết kiến tạo mảng",
+    "titleEn": "Lithosphere and plate tectonics",
+    "goal": "Nhận diện ba kiểu ranh giới mảng; giải thích mối liên hệ có điều kiện giữa chuyển động mảng, địa hình, động đất và núi lửa.",
+    "minutes": 35,
+    "practical": false,
+    "threeD": true,
+    "topics": [
+      {
+        "id": "TH-06-01",
+        "vi": "Thạch quyển",
+        "en": "Lithosphere",
+        "scene": "SCENE-06-01"
+      },
+      {
+        "id": "TH-06-02",
+        "vi": "Các mảng kiến tạo",
+        "en": "Tectonic plates",
+        "scene": "SCENE-06-02"
+      },
+      {
+        "id": "TH-06-03",
+        "vi": "Ranh giới mảng",
+        "en": "Plate boundaries",
+        "scene": "SCENE-06-03"
+      },
+      {
+        "id": "TH-06-04",
+        "vi": "Hệ quả chuyển động mảng",
+        "en": "Effects of plate motion",
+        "scene": "SCENE-06-04"
+      }
+    ],
+    "sim": {
+      "id": "SIM-06",
+      "title": "Ba kiểu ranh giới mảng",
+      "initial": "Hai mảng ở trạng thái phân kì; tốc độ tương đối 1 đơn vị minh họa; hoạt ảnh dừng.",
+      "steps": "Chọn phân kì → xem tạo vỏ mới → chọn hội tụ → xem hút chìm hoặc va chạm → chọn trượt bằng → so sánh.",
+      "params": "Kiểu ranh giới 3 loại; vật liệu đại dương/lục địa; tốc độ minh họa 1–3; bật mặt cắt.",
+      "science": "Thạch quyển gồm vỏ và phần trên cứng của lớp phủ; các ranh giới có cơ chế khác nhau, không phải mọi núi lửa đều ở ranh giới.",
+      "inquiry": "PRE-06: Mọi hai mảng xích lại có nhất thiết tạo cùng một dạng núi lửa không? POST-06: So hội tụ đại dương lục địa và lục địa lục địa; giải thích một điểm khác về cơ chế và hệ quả. Nhiệm vụ: Chạy hai cảnh hội tụ cùng tốc độ minh họa, bật mặt cắt và ghi vị trí biến dạng. Tiêu chí giải thích: Cơ chế hút chìm và va chạm khác nhau; không gán mọi hội tụ cùng núi lửa. Hai câu này không tính thay bộ 10 câu cuối bài.",
+      "data": "DATA-06: hình tự dựng; ranh giới thực nếu thêm cần nguồn GIS và ngày phiên bản.",
+      "fallback": "Ba sơ đồ động theo bước kèm mũi tên và bảng so sánh."
+    },
+    "questions": [
+      {
+        "id": "Q-06-001",
+        "theory": "TH-06-01",
+        "type": "mcq",
+        "bloom": "Nhận biết",
+        "stem": "Thạch quyển gồm thành phần nào?",
+        "options": [
+          "Chỉ gồm lớp vỏ lục địa",
+          "Chỉ gồm lớp vỏ đại dương",
+          "Toàn bộ vỏ và toàn bộ lớp phủ",
+          "Vỏ và phần trên cứng của lớp phủ"
+        ],
+        "answer": "D",
+        "explanation": "Thạch quyển bao gồm vỏ và phần trên cứng của lớp phủ; không đồng nhất với một thành phần kia.",
+        "points": 1,
+        "rubric": "Chọn đúng 1 phương án được 1 điểm; sai hoặc bỏ trống 0.",
+        "unit": "Theo đề; không áp dụng nếu không có số",
+        "tolerance": "Không áp dụng"
+      },
+      {
+        "id": "Q-06-002",
+        "theory": "TH-06-03",
+        "type": "mcq",
+        "bloom": "Thông hiểu",
+        "stem": "Hai mảng tách xa nhau thuộc ranh giới nào?",
+        "options": [
+          "Phân kì",
+          "Hội tụ",
+          "Trượt bằng",
+          "Va chạm lục địa"
+        ],
+        "answer": "A",
+        "explanation": "Phân kì là tách xa; hội tụ là xích lại, trượt bằng là trượt ngang tương đối.",
+        "points": 1,
+        "rubric": "Chọn đúng 1 phương án được 1 điểm; sai hoặc bỏ trống 0.",
+        "unit": "Theo đề; không áp dụng nếu không có số",
+        "tolerance": "Không áp dụng"
+      },
+      {
+        "id": "Q-06-003",
+        "theory": "TH-06-04",
+        "type": "mcq",
+        "bloom": "Vận dụng",
+        "stem": "Hai mảng trượt ngang dọc đứt gãy. Hiện tượng cần liên hệ trực tiếp nhất là gì?",
+        "options": [
+          "Hình thành mùa theo bán cầu",
+          "Động đất",
+          "Thay đổi giờ địa phương",
+          "Bồi tụ do dòng sông"
+        ],
+        "answer": "B",
+        "explanation": "Chuyển động và giải phóng ứng suất dọc đứt gãy liên quan động đất; các hiện tượng khác có cơ chế khác.",
+        "points": 1,
+        "rubric": "Chọn đúng 1 phương án được 1 điểm; sai hoặc bỏ trống 0.",
+        "unit": "Theo đề; không áp dụng nếu không có số",
+        "tolerance": "Không áp dụng"
+      },
+      {
+        "id": "Q-06-004",
+        "theory": "TH-06-04",
+        "type": "mcq",
+        "bloom": "Vận dụng",
+        "stem": "Vì sao không thể suy ra mọi ranh giới hội tụ đều có cùng núi lửa?",
+        "options": [
+          "Vì mọi hội tụ đều không làm biến dạng",
+          "Vì mọi mảng đều có cùng thành phần",
+          "Vì loại mảng và cơ chế hội tụ khác nhau",
+          "Vì khoảng cách tới Mặt Trời thay đổi"
+        ],
+        "answer": "C",
+        "explanation": "Hút chìm và va chạm lục địa có hệ quả khác; các lựa chọn khác không giải thích cơ chế.",
+        "points": 1,
+        "rubric": "Chọn đúng 1 phương án được 1 điểm; sai hoặc bỏ trống 0.",
+        "unit": "Theo đề; không áp dụng nếu không có số",
+        "tolerance": "Không áp dụng"
+      },
+      {
+        "id": "Q-06-005",
+        "theory": "TH-06-01",
+        "type": "tf",
+        "bloom": "Nhận biết",
+        "stem": "Thạch quyển và vỏ Trái Đất hoàn toàn đồng nghĩa.",
+        "options": [
+          "Đúng",
+          "Sai"
+        ],
+        "answer": "Sai",
+        "explanation": "Thạch quyển còn gồm phần trên cứng của lớp phủ.",
+        "points": 1,
+        "rubric": "Mỗi nhận định độc lập 1 điểm; đúng đáp án 1, sai/bỏ trống 0; không chấm gộp 4 nhận định.",
+        "unit": "Không áp dụng",
+        "tolerance": "Không áp dụng"
+      },
+      {
+        "id": "Q-06-006",
+        "theory": "TH-06-03",
+        "type": "tf",
+        "bloom": "Thông hiểu",
+        "stem": "Ranh giới phân kì có hai mảng chuyển động tách nhau.",
+        "options": [
+          "Đúng",
+          "Sai"
+        ],
+        "answer": "Đúng",
+        "explanation": "Đó là đặc trưng chuyển động tương đối của phân kì.",
+        "points": 1,
+        "rubric": "Mỗi nhận định độc lập 1 điểm; đúng đáp án 1, sai/bỏ trống 0; không chấm gộp 4 nhận định.",
+        "unit": "Không áp dụng",
+        "tolerance": "Không áp dụng"
+      },
+      {
+        "id": "Q-06-007",
+        "theory": "TH-06-04",
+        "type": "tf",
+        "bloom": "Thông hiểu",
+        "stem": "Mọi núi lửa đều nằm đúng trên ranh giới mảng.",
+        "options": [
+          "Đúng",
+          "Sai"
+        ],
+        "answer": "Sai",
+        "explanation": "Có hoạt động núi lửa nội mảng, vì vậy cần tránh khẳng định tuyệt đối.",
+        "points": 1,
+        "rubric": "Mỗi nhận định độc lập 1 điểm; đúng đáp án 1, sai/bỏ trống 0; không chấm gộp 4 nhận định.",
+        "unit": "Không áp dụng",
+        "tolerance": "Không áp dụng"
+      },
+      {
+        "id": "Q-06-008",
+        "theory": "TH-06-04",
+        "type": "tf",
+        "bloom": "Vận dụng",
+        "stem": "Tốc độ hoạt ảnh phải phân biệt với tốc độ kiến tạo thực.",
+        "options": [
+          "Đúng",
+          "Sai"
+        ],
+        "answer": "Đúng",
+        "explanation": "Mô hình thường tăng tốc để người học quan sát được.",
+        "points": 1,
+        "rubric": "Mỗi nhận định độc lập 1 điểm; đúng đáp án 1, sai/bỏ trống 0; không chấm gộp 4 nhận định.",
+        "unit": "Không áp dụng",
+        "tolerance": "Không áp dụng"
+      },
+      {
+        "id": "Q-06-009",
+        "theory": "TH-06-03",
+        "type": "short",
+        "bloom": "Thông hiểu",
+        "stem": "Nêu khác biệt chuyển động giữa hội tụ và trượt bằng.",
+        "options": [],
+        "answer": "Hội tụ là hai mảng xích lại; trượt bằng là trượt ngang tương đối dọc ranh giới.",
+        "explanation": "Hội tụ là hai mảng xích lại; trượt bằng là trượt ngang tương đối dọc ranh giới.",
+        "points": 2,
+        "rubric": "Mỗi kiểu đúng 1 điểm. Không khớp biến thể đã duyệt thì chuyển review theo ý nghĩa, không chấm sai chỉ vì khác từ.",
+        "unit": "Theo dữ kiện câu hỏi; giữ đơn vị khi nhắc số",
+        "tolerance": "Chấm ý nghĩa theo rubric; chưa có tự động chấm ngữ nghĩa được duyệt"
+      },
+      {
+        "id": "Q-06-010",
+        "theory": "TH-06-04",
+        "type": "short",
+        "bloom": "Vận dụng cao",
+        "stem": "So sánh hội tụ đại dương lục địa và va chạm hai lục địa; nêu một điểm chung và một khác biệt.",
+        "options": [],
+        "answer": "Cùng xích lại và gây biến dạng; trường hợp đầu thường có hút chìm mảng đại dương, trường hợp sau gắn với dày vỏ và nâng núi theo mô hình đã duyệt.",
+        "explanation": "Cùng xích lại và gây biến dạng; trường hợp đầu thường có hút chìm mảng đại dương, trường hợp sau gắn với dày vỏ và nâng núi theo mô hình đã duyệt.",
+        "points": 2,
+        "rubric": "1 điểm điểm chung; 1 điểm khác biệt có cơ chế. Không khớp biến thể đã duyệt thì chuyển review theo ý nghĩa, không chấm sai chỉ vì khác từ.",
+        "unit": "Theo dữ kiện câu hỏi; giữ đơn vị khi nhắc số",
+        "tolerance": "Chấm ý nghĩa theo rubric; chưa có tự động chấm ngữ nghĩa được duyệt"
+      }
+    ]
+  },
+  {
+    "id": "LES-07",
+    "n": 7,
+    "chapter": 3,
+    "title": "Nội lực và ngoại lực",
+    "titleEn": "Internal and external forces",
+    "goal": "Phân loại nội lực, ngoại lực; sắp xếp phong hóa, bóc mòn, vận chuyển, bồi tụ và giải thích tương tác tạo địa hình.",
+    "minutes": 35,
+    "practical": false,
+    "threeD": true,
+    "topics": [
+      {
+        "id": "TH-07-01",
+        "vi": "Nội lực",
+        "en": "Endogenic forces",
+        "scene": "SCENE-07-01"
+      },
+      {
+        "id": "TH-07-02",
+        "vi": "Ngoại lực",
+        "en": "Exogenic forces",
+        "scene": "SCENE-07-02"
+      },
+      {
+        "id": "TH-07-03",
+        "vi": "Phong hóa và bóc mòn",
+        "en": "Weathering and erosion",
+        "scene": "SCENE-07-03"
+      },
+      {
+        "id": "TH-07-04",
+        "vi": "Vận chuyển và bồi tụ",
+        "en": "Transport and deposition",
+        "scene": "SCENE-07-04"
+      }
+    ],
+    "sim": {
+      "id": "SIM-07",
+      "title": "Địa hình chịu nội lực và dòng chảy",
+      "initial": "Địa hình dốc trung bình, mưa thấp, chưa nâng địa hình, không có lớp so sánh.",
+      "steps": "Nâng địa hình theo bước → phong hóa → mưa chảy tràn → bóc mòn và vận chuyển → bồi tụ nơi năng lượng giảm.",
+      "params": "Độ dốc 3 mức; mưa 3 mức; che phủ 0/50/100%; số bước 1–10; nâng địa hình bật tắt.",
+      "science": "Các quá trình có thể đồng thời diễn ra; quan hệ mô phỏng là định tính, không dự báo tốc độ xói mòn thực.",
+      "inquiry": "PRE-07: Giữ mưa và độ dốc, giảm che phủ sẽ làm vật liệu bị dòng chảy lấy đi thay đổi thế nào trong mô hình? POST-07: Dựa vào hai lần chạy, phân biệt phong hóa tại chỗ, vận chuyển và bồi tụ; nêu giới hạn định lượng. Nhiệm vụ: Giữ mưa và dốc; so che phủ 100% và 0%; ghi nơi vật liệu mất và tích tụ. Tiêu chí giải thích: Xu hướng theo quy tắc đã duyệt; không quy thành tấn đất mất thực tế nếu chưa hiệu chuẩn. Hai câu này không tính thay bộ 10 câu cuối bài.",
+      "data": "DATA-07: địa hình và quy tắc minh họa tự dựng; không dùng tính mất đất thực tế.",
+      "fallback": "Sơ đồ quá trình 2D với ba trạng thái địa hình và bảng quan sát."
+    },
+    "questions": [
+      {
+        "id": "Q-07-001",
+        "theory": "TH-07-03",
+        "type": "mcq",
+        "bloom": "Nhận biết",
+        "stem": "Quá trình phá hủy đá tại chỗ được gọi là gì?",
+        "options": [
+          "Phong hóa",
+          "Vận chuyển",
+          "Bồi tụ",
+          "Hút chìm"
+        ],
+        "answer": "A",
+        "explanation": "Phong hóa diễn ra tại chỗ; những lựa chọn kia thuộc các hiện tượng khác.",
+        "points": 1,
+        "rubric": "Chọn đúng 1 phương án được 1 điểm; sai hoặc bỏ trống 0.",
+        "unit": "Theo đề; không áp dụng nếu không có số",
+        "tolerance": "Không áp dụng"
+      },
+      {
+        "id": "Q-07-002",
+        "theory": "TH-07-01",
+        "type": "mcq",
+        "bloom": "Thông hiểu",
+        "stem": "Nguồn tác động nào gắn với nội lực?",
+        "options": [
+          "Năng lượng do gió tạo ra",
+          "Năng lượng bên trong Trái Đất",
+          "Năng lượng dòng chảy trên mặt",
+          "Năng lượng sóng biển tại bờ"
+        ],
+        "answer": "B",
+        "explanation": "Nội lực liên quan năng lượng bên trong; tín hiệu, bản đồ và lịch không phải nguồn nội lực.",
+        "points": 1,
+        "rubric": "Chọn đúng 1 phương án được 1 điểm; sai hoặc bỏ trống 0.",
+        "unit": "Theo đề; không áp dụng nếu không có số",
+        "tolerance": "Không áp dụng"
+      },
+      {
+        "id": "Q-07-003",
+        "theory": "TH-07-04",
+        "type": "mcq",
+        "bloom": "Vận dụng",
+        "stem": "Khi dòng chảy giảm khả năng mang vật liệu, quá trình nào dễ xảy ra?",
+        "options": [
+          "Tự quay của Trái Đất",
+          "Hút chìm mảng",
+          "Bồi tụ",
+          "Phong hóa tại chỗ"
+        ],
+        "answer": "C",
+        "explanation": "Vật liệu có thể lắng đọng khi khả năng mang giảm; các hiện tượng khác không giải thích sự lắng này.",
+        "points": 1,
+        "rubric": "Chọn đúng 1 phương án được 1 điểm; sai hoặc bỏ trống 0.",
+        "unit": "Theo đề; không áp dụng nếu không có số",
+        "tolerance": "Không áp dụng"
+      },
+      {
+        "id": "Q-07-004",
+        "theory": "TH-07-03",
+        "type": "mcq",
+        "bloom": "Vận dụng",
+        "stem": "Muốn kiểm tra tác động của che phủ lên xói mòn trong mô hình cần làm gì?",
+        "options": [
+          "Đồng thời tăng mưa và giảm độ dốc",
+          "Đổi lớp phủ nhưng không theo dõi vật liệu",
+          "So hai địa hình có mọi điều kiện khác nhau",
+          "Giữ mưa và dốc, chỉ đổi che phủ"
+        ],
+        "answer": "D",
+        "explanation": "So sánh có kiểm soát giúp tách tác động của biến; các cách khác không kiểm tra được quan hệ.",
+        "points": 1,
+        "rubric": "Chọn đúng 1 phương án được 1 điểm; sai hoặc bỏ trống 0.",
+        "unit": "Theo đề; không áp dụng nếu không có số",
+        "tolerance": "Không áp dụng"
+      },
+      {
+        "id": "Q-07-005",
+        "theory": "TH-07-03",
+        "type": "tf",
+        "bloom": "Nhận biết",
+        "stem": "Phong hóa nhất thiết phải đưa vật liệu đi xa.",
+        "options": [
+          "Đúng",
+          "Sai"
+        ],
+        "answer": "Sai",
+        "explanation": "Phong hóa là biến đổi phá hủy tại chỗ; vận chuyển là quá trình khác.",
+        "points": 1,
+        "rubric": "Mỗi nhận định độc lập 1 điểm; đúng đáp án 1, sai/bỏ trống 0; không chấm gộp 4 nhận định.",
+        "unit": "Không áp dụng",
+        "tolerance": "Không áp dụng"
+      },
+      {
+        "id": "Q-07-006",
+        "theory": "TH-07-01",
+        "type": "tf",
+        "bloom": "Thông hiểu",
+        "stem": "Nội lực và ngoại lực cùng góp phần hình thành địa hình.",
+        "options": [
+          "Đúng",
+          "Sai"
+        ],
+        "answer": "Đúng",
+        "explanation": "Địa hình phản ánh sự phối hợp của nhiều quá trình.",
+        "points": 1,
+        "rubric": "Mỗi nhận định độc lập 1 điểm; đúng đáp án 1, sai/bỏ trống 0; không chấm gộp 4 nhận định.",
+        "unit": "Không áp dụng",
+        "tolerance": "Không áp dụng"
+      },
+      {
+        "id": "Q-07-007",
+        "theory": "TH-07-04",
+        "type": "tf",
+        "bloom": "Thông hiểu",
+        "stem": "Bồi tụ chỉ xuất hiện trên đỉnh núi.",
+        "options": [
+          "Đúng",
+          "Sai"
+        ],
+        "answer": "Sai",
+        "explanation": "Bồi tụ có thể xảy ra nơi năng lượng vận chuyển giảm, không giới hạn ở đỉnh núi.",
+        "points": 1,
+        "rubric": "Mỗi nhận định độc lập 1 điểm; đúng đáp án 1, sai/bỏ trống 0; không chấm gộp 4 nhận định.",
+        "unit": "Không áp dụng",
+        "tolerance": "Không áp dụng"
+      },
+      {
+        "id": "Q-07-008",
+        "theory": "TH-07-03",
+        "type": "tf",
+        "bloom": "Vận dụng",
+        "stem": "Không nên dùng mô hình định tính để công bố lượng đất mất chính xác.",
+        "options": [
+          "Đúng",
+          "Sai"
+        ],
+        "answer": "Đúng",
+        "explanation": "Định lượng cần số liệu và mô hình được hiệu chuẩn.",
+        "points": 1,
+        "rubric": "Mỗi nhận định độc lập 1 điểm; đúng đáp án 1, sai/bỏ trống 0; không chấm gộp 4 nhận định.",
+        "unit": "Không áp dụng",
+        "tolerance": "Không áp dụng"
+      },
+      {
+        "id": "Q-07-009",
+        "theory": "TH-07-03",
+        "type": "short",
+        "bloom": "Thông hiểu",
+        "stem": "Phân biệt phong hóa và vận chuyển.",
+        "options": [],
+        "answer": "Phong hóa làm biến đổi phá hủy vật liệu tại chỗ; vận chuyển đưa vật liệu từ nơi này sang nơi khác.",
+        "explanation": "Phong hóa làm biến đổi phá hủy vật liệu tại chỗ; vận chuyển đưa vật liệu từ nơi này sang nơi khác.",
+        "points": 2,
+        "rubric": "Mỗi quá trình đúng 1 điểm. Không khớp biến thể đã duyệt thì chuyển review theo ý nghĩa, không chấm sai chỉ vì khác từ.",
+        "unit": "Theo dữ kiện câu hỏi; giữ đơn vị khi nhắc số",
+        "tolerance": "Chấm ý nghĩa theo rubric; chưa có tự động chấm ngữ nghĩa được duyệt"
+      },
+      {
+        "id": "Q-07-010",
+        "theory": "TH-07-03",
+        "type": "short",
+        "bloom": "Vận dụng cao",
+        "stem": "Thiết kế thí nghiệm trong mô hình để so sánh sườn có và không có che phủ.",
+        "options": [],
+        "answer": "Giữ cùng độ dốc, mưa và số bước; chỉ đổi che phủ, quan sát vật liệu bị lấy đi và vùng tích tụ; kết luận chỉ trong mô hình.",
+        "explanation": "Giữ cùng độ dốc, mưa và số bước; chỉ đổi che phủ, quan sát vật liệu bị lấy đi và vùng tích tụ; kết luận chỉ trong mô hình.",
+        "points": 2,
+        "rubric": "1 điểm kiểm soát biến; 1 điểm chỉ báo và giới hạn kết luận. Không khớp biến thể đã duyệt thì chuyển review theo ý nghĩa, không chấm sai chỉ vì khác từ.",
+        "unit": "Theo dữ kiện câu hỏi; giữ đơn vị khi nhắc số",
+        "tolerance": "Chấm ý nghĩa theo rubric; chưa có tự động chấm ngữ nghĩa được duyệt"
+      }
+    ]
+  },
+  {
+    "id": "LES-08",
+    "n": 8,
+    "chapter": 3,
+    "title": "Thực hành: Sự phân bố các vành đai động đất, núi lửa",
+    "titleEn": "Earthquake and volcano belts",
+    "goal": "Chồng ba lớp dữ liệu; nhận diện hai vùng tập trung và viết nhận xét có dẫn chứng về ranh giới mảng, kể cả ngoại lệ.",
+    "minutes": 50,
+    "practical": true,
+    "threeD": false,
+    "topics": [
+      {
+        "id": "TH-08-01",
+        "vi": "Đọc bản đồ động đất",
+        "en": "Reading earthquake maps",
+        "scene": "SCENE-08-01"
+      },
+      {
+        "id": "TH-08-02",
+        "vi": "Phân bố núi lửa",
+        "en": "Volcano distribution",
+        "scene": "SCENE-08-02"
+      },
+      {
+        "id": "TH-08-03",
+        "vi": "Đối chiếu ranh giới mảng",
+        "en": "Comparing plate boundaries",
+        "scene": "SCENE-08-03"
+      },
+      {
+        "id": "TH-08-04",
+        "vi": "Nhận xét từ dữ liệu",
+        "en": "Evidence based interpretation",
+        "scene": "SCENE-08-04"
+      }
+    ],
+    "sim": {
+      "id": "SIM-08",
+      "title": "Bản đồ động đất núi lửa và mảng",
+      "initial": "Bản đồ toàn cầu, ba lớp tắt; bộ sự kiện có thời gian và chú giải rõ.",
+      "steps": "Bật động đất → bật núi lửa → bật ranh giới → chọn hai vùng → ghi nhận xét và ngoại lệ.",
+      "params": "Lớp bật tắt; khoảng độ lớn theo bộ dữ liệu; khoảng thời gian của bản chụp.",
+      "science": "Phân bố động đất và núi lửa có liên hệ với kiến tạo nhưng dữ liệu lấy mẫu không phải dự báo nguy cơ.",
+      "inquiry": "PRE-08: Khi bật ranh giới mảng, các điểm động đất và núi lửa có phân bố ngẫu nhiên hoàn toàn không? POST-08: Nêu hai vùng có mối liên hệ rõ từ bản đồ đã duyệt và một giới hạn hoặc ngoại lệ. Nhiệm vụ: Chồng ba lớp, chọn hai vùng, ghi dẫn chứng và thời kì của snapshot. Tiêu chí giải thích: Nêu vị trí và liên hệ có dẫn chứng; không kết luận vùng không có điểm là an toàn tuyệt đối. Hai câu này không tính thay bộ 10 câu cuối bài.",
+      "data": "DATA-08: snapshot USGS động đất, lớp núi lửa và ranh giới cần chọn nguồn, giấy phép, hệ tọa độ, ngày chụp; chưa có dữ liệu thực trong backlog.",
+      "fallback": "Bản đồ tĩnh từng lớp và bảng thuộc tính có bộ lọc văn bản."
+    },
+    "questions": [
+      {
+        "id": "Q-08-001",
+        "theory": "TH-08-03",
+        "type": "mcq",
+        "bloom": "Nhận biết",
+        "stem": "Để so động đất với ranh giới mảng phải bật những lớp nào?",
+        "options": [
+          "Chỉ lớp núi lửa",
+          "Chỉ lớp lượng mưa",
+          "Động đất và ranh giới mảng",
+          "Động đất và mạng lưới sông"
+        ],
+        "answer": "C",
+        "explanation": "Cần cả hai lớp muốn đối chiếu; các lớp còn lại không cung cấp đủ đối tượng.",
+        "points": 1,
+        "rubric": "Chọn đúng 1 phương án được 1 điểm; sai hoặc bỏ trống 0.",
+        "unit": "Theo đề; không áp dụng nếu không có số",
+        "tolerance": "Không áp dụng"
+      },
+      {
+        "id": "Q-08-002",
+        "theory": "TH-08-04",
+        "type": "mcq",
+        "bloom": "Thông hiểu",
+        "stem": "Trước khi so hai bản đồ sự kiện cần kiểm tra gì?",
+        "options": [
+          "Màu nền của hai bản đồ",
+          "Phạm vi thời gian và chú giải",
+          "Chỉ số lượng kí hiệu, bỏ qua thời gian",
+          "Chỉ tên của hai tờ bản đồ"
+        ],
+        "answer": "B",
+        "explanation": "Khác thời kì và chú giải có thể gây so sánh sai; yếu tố giao diện không thay thế được metadata.",
+        "points": 1,
+        "rubric": "Chọn đúng 1 phương án được 1 điểm; sai hoặc bỏ trống 0.",
+        "unit": "Theo đề; không áp dụng nếu không có số",
+        "tolerance": "Không áp dụng"
+      },
+      {
+        "id": "Q-08-003",
+        "theory": "TH-08-04",
+        "type": "mcq",
+        "bloom": "Vận dụng",
+        "stem": "Bộ lọc trả 0 sự kiện. Kết luận phù hợp nhất là gì?",
+        "options": [
+          "Không có sự kiện phù hợp trong tập đang xem",
+          "Khu vực tuyệt đối không có nguy cơ",
+          "Khu vực không có sự vận động kiến tạo",
+          "Khu vực sẽ không xảy ra động đất trong tương lai"
+        ],
+        "answer": "A",
+        "explanation": "Kết quả chỉ mô tả dữ liệu theo bộ lọc; không suy ra an toàn tuyệt đối hoặc các đặc điểm khác.",
+        "points": 1,
+        "rubric": "Chọn đúng 1 phương án được 1 điểm; sai hoặc bỏ trống 0.",
+        "unit": "Theo đề; không áp dụng nếu không có số",
+        "tolerance": "Không áp dụng"
+      },
+      {
+        "id": "Q-08-004",
+        "theory": "TH-08-02",
+        "type": "mcq",
+        "bloom": "Vận dụng",
+        "stem": "Một số núi lửa nằm ngoài ranh giới hiển thị. Nên làm gì?",
+        "options": [
+          "Xóa các điểm để khớp nhận định ban đầu",
+          "Chuyển các điểm về đường ranh giới",
+          "Coi mọi điểm nội mảng đều là sai số",
+          "Kiểm tra nguồn, độ chính xác và khả năng hoạt động nội mảng"
+        ],
+        "answer": "D",
+        "explanation": "Cần kiểm tra chất lượng và giải thích ngoại lệ; không chỉnh dữ liệu để ép khớp kết luận.",
+        "points": 1,
+        "rubric": "Chọn đúng 1 phương án được 1 điểm; sai hoặc bỏ trống 0.",
+        "unit": "Theo đề; không áp dụng nếu không có số",
+        "tolerance": "Không áp dụng"
+      },
+      {
+        "id": "Q-08-005",
+        "theory": "TH-08-04",
+        "type": "tf",
+        "bloom": "Nhận biết",
+        "stem": "Cần đọc thời gian thu thập dữ liệu động đất.",
+        "options": [
+          "Đúng",
+          "Sai"
+        ],
+        "answer": "Đúng",
+        "explanation": "Phạm vi thời gian ảnh hưởng các sự kiện có trong tập.",
+        "points": 1,
+        "rubric": "Mỗi nhận định độc lập 1 điểm; đúng đáp án 1, sai/bỏ trống 0; không chấm gộp 4 nhận định.",
+        "unit": "Không áp dụng",
+        "tolerance": "Không áp dụng"
+      },
+      {
+        "id": "Q-08-006",
+        "theory": "TH-08-03",
+        "type": "tf",
+        "bloom": "Thông hiểu",
+        "stem": "Điểm động đất và núi lửa luôn trùng nhau tuyệt đối.",
+        "options": [
+          "Đúng",
+          "Sai"
+        ],
+        "answer": "Sai",
+        "explanation": "Hai loại hiện tượng có phân bố liên quan nhưng không trùng hoàn toàn.",
+        "points": 1,
+        "rubric": "Mỗi nhận định độc lập 1 điểm; đúng đáp án 1, sai/bỏ trống 0; không chấm gộp 4 nhận định.",
+        "unit": "Không áp dụng",
+        "tolerance": "Không áp dụng"
+      },
+      {
+        "id": "Q-08-007",
+        "theory": "TH-08-04",
+        "type": "tf",
+        "bloom": "Thông hiểu",
+        "stem": "Không có điểm trên bản đồ đồng nghĩa không có nguy cơ động đất.",
+        "options": [
+          "Đúng",
+          "Sai"
+        ],
+        "answer": "Sai",
+        "explanation": "Bản đồ có thể chỉ gồm sự kiện trong thời gian hoặc ngưỡng nhất định.",
+        "points": 1,
+        "rubric": "Mỗi nhận định độc lập 1 điểm; đúng đáp án 1, sai/bỏ trống 0; không chấm gộp 4 nhận định.",
+        "unit": "Không áp dụng",
+        "tolerance": "Không áp dụng"
+      },
+      {
+        "id": "Q-08-008",
+        "theory": "TH-08-04",
+        "type": "tf",
+        "bloom": "Vận dụng",
+        "stem": "Nhận xét cần kèm vùng quan sát và dẫn chứng.",
+        "options": [
+          "Đúng",
+          "Sai"
+        ],
+        "answer": "Đúng",
+        "explanation": "Dẫn chứng giúp kiểm tra lập luận và tránh mô tả chung chung.",
+        "points": 1,
+        "rubric": "Mỗi nhận định độc lập 1 điểm; đúng đáp án 1, sai/bỏ trống 0; không chấm gộp 4 nhận định.",
+        "unit": "Không áp dụng",
+        "tolerance": "Không áp dụng"
+      },
+      {
+        "id": "Q-08-009",
+        "theory": "TH-08-03",
+        "type": "short",
+        "bloom": "Thông hiểu",
+        "stem": "Nêu hai bước để kiểm tra mối liên hệ giữa động đất và ranh giới mảng.",
+        "options": [],
+        "answer": "Bật hai lớp cùng phạm vi bản đồ; đối chiếu phân bố và ghi dẫn chứng tại các vùng cụ thể.",
+        "explanation": "Bật hai lớp cùng phạm vi bản đồ; đối chiếu phân bố và ghi dẫn chứng tại các vùng cụ thể.",
+        "points": 2,
+        "rubric": "1 điểm lớp và phạm vi; 1 điểm đối chiếu có dẫn chứng. Không khớp biến thể đã duyệt thì chuyển review theo ý nghĩa, không chấm sai chỉ vì khác từ.",
+        "unit": "Theo dữ kiện câu hỏi; giữ đơn vị khi nhắc số",
+        "tolerance": "Chấm ý nghĩa theo rubric; chưa có tự động chấm ngữ nghĩa được duyệt"
+      },
+      {
+        "id": "Q-08-010",
+        "theory": "TH-08-04",
+        "type": "short",
+        "bloom": "Vận dụng cao",
+        "stem": "Bản đồ một tháng không có động đất tại X. Có thể kết luận X không có nguy cơ không? Giải thích và đề xuất kiểm tra thêm.",
+        "options": [],
+        "answer": "Không; tập thời gian ngắn và ngưỡng ghi nhận có giới hạn; cần chuỗi dài hơn, nguồn và thông tin kiến tạo phù hợp.",
+        "explanation": "Không; tập thời gian ngắn và ngưỡng ghi nhận có giới hạn; cần chuỗi dài hơn, nguồn và thông tin kiến tạo phù hợp.",
+        "points": 2,
+        "rubric": "1 điểm bác bỏ suy luận tuyệt đối; 1 điểm kiểm tra bổ sung. Không khớp biến thể đã duyệt thì chuyển review theo ý nghĩa, không chấm sai chỉ vì khác từ.",
+        "unit": "Theo dữ kiện câu hỏi; giữ đơn vị khi nhắc số",
+        "tolerance": "Chấm ý nghĩa theo rubric; chưa có tự động chấm ngữ nghĩa được duyệt"
+      }
+    ]
+  },
+  {
+    "id": "LES-09",
+    "n": 9,
+    "chapter": 4,
+    "title": "Khí quyển, các yếu tố khí hậu",
+    "titleEn": "Atmosphere and climate elements",
+    "goal": "Mô tả cấu trúc khí quyển; giải thích liên hệ nhiệt độ, khí áp, gió, ẩm và mưa trong kịch bản có kiểm soát.",
+    "minutes": 35,
+    "practical": false,
+    "threeD": false,
+    "topics": [
+      {
+        "id": "TH-09-01",
+        "vi": "Thành phần và cấu trúc khí quyển",
+        "en": "Atmospheric composition and structure",
+        "scene": "SCENE-09-01"
+      },
+      {
+        "id": "TH-09-02",
+        "vi": "Nhiệt độ không khí",
+        "en": "Air temperature",
+        "scene": "SCENE-09-02"
+      },
+      {
+        "id": "TH-09-03",
+        "vi": "Khí áp và gió",
+        "en": "Air pressure and wind",
+        "scene": "SCENE-09-03"
+      },
+      {
+        "id": "TH-09-04",
+        "vi": "Độ ẩm mây và mưa",
+        "en": "Humidity clouds and precipitation",
+        "scene": "SCENE-09-04"
+      },
+      {
+        "id": "TH-09-05",
+        "vi": "Nhân tố khí hậu",
+        "en": "Climate controls",
+        "scene": "SCENE-09-05"
+      },
+      {
+        "id": "TH-09-06",
+        "vi": "Quan hệ các yếu tố khí hậu",
+        "en": "Relationships among climate elements",
+        "scene": "SCENE-09-06"
+      }
+    ],
+    "sim": {
+      "id": "SIM-09",
+      "title": "Khí quyển và các thí nghiệm khí tượng",
+      "initial": "Thí nghiệm áp suất không quay; hai vùng cùng áp; khối khí chưa nâng; nhãn đơn vị bật.",
+      "steps": "Khám phá cấu trúc → tạo chênh áp → xem gió lí tưởng → nâng khối khí → so ngưng tụ theo quy tắc đã duyệt.",
+      "params": "Áp suất 1000/1010/1020 hPa ở chế độ lí tưởng; độ ẩm 3 mức; nhiệt độ 3 mức; độ cao theo bước.",
+      "science": "Gió thực chịu nhiều lực; mô hình lí tưởng bỏ qua quay và ma sát ở thí nghiệm cơ bản, phải ghi giới hạn ngay tại màn hình.",
+      "inquiry": "PRE-09: Trong thí nghiệm không quay và bỏ qua ma sát, gió đổi hướng thế nào khi đảo vùng áp cao và áp thấp? POST-09: Đảo hai vùng áp suất và quan sát vector; giải thích vì sao kết quả không mô tả đủ mọi gió thực. Nhiệm vụ: Giữ các biến khác, so 1020/1000 hPa và 1000/1020 hPa; ghi vector. Tiêu chí giải thích: Vector đổi theo chênh áp; gió thực còn chịu lực và điều kiện mô hình đã bỏ qua. Hai câu này không tính thay bộ 10 câu cuối bài.",
+      "data": "DATA-09: thông số giả lập có đơn vị; cấu trúc tầng và quy tắc ngưng tụ cần SME duyệt.",
+      "fallback": "Sơ đồ áp suất và mây theo bước; bảng quan hệ có mô tả bằng chữ."
+    },
+    "questions": [
+      {
+        "id": "Q-09-001",
+        "theory": "TH-09-02",
+        "type": "mcq",
+        "bloom": "Nhận biết",
+        "stem": "Yếu tố nào mô tả mức nóng lạnh của không khí?",
+        "options": [
+          "Nhiệt độ",
+          "Khí áp",
+          "Độ ẩm",
+          "Lượng mưa"
+        ],
+        "answer": "A",
+        "explanation": "Nhiệt độ biểu thị trạng thái nóng lạnh; các đại lượng khác đo đặc điểm khác.",
+        "points": 1,
+        "rubric": "Chọn đúng 1 phương án được 1 điểm; sai hoặc bỏ trống 0.",
+        "unit": "Theo đề; không áp dụng nếu không có số",
+        "tolerance": "Không áp dụng"
+      },
+      {
+        "id": "Q-09-002",
+        "theory": "TH-09-03",
+        "type": "mcq",
+        "bloom": "Thông hiểu",
+        "stem": "Trong thí nghiệm lí tưởng bỏ qua quay và ma sát, gió được mô tả thế nào?",
+        "options": [
+          "Từ áp thấp về áp cao",
+          "Từ áp cao về áp thấp",
+          "Luôn song song đường đẳng áp trong mô hình này",
+          "Không phụ thuộc chênh lệch áp suất"
+        ],
+        "answer": "B",
+        "explanation": "Chênh áp tạo chuyển động từ cao đến thấp trong giả định đã nêu; không được áp dụng máy móc cho mọi gió thực.",
+        "points": 1,
+        "rubric": "Chọn đúng 1 phương án được 1 điểm; sai hoặc bỏ trống 0.",
+        "unit": "Theo đề; không áp dụng nếu không có số",
+        "tolerance": "Không áp dụng"
+      },
+      {
+        "id": "Q-09-003",
+        "theory": "TH-09-04",
+        "type": "mcq",
+        "bloom": "Vận dụng",
+        "stem": "Muốn kiểm tra tác động của độ ẩm lên ngưng tụ cần cách nào?",
+        "options": [
+          "Đổi cả độ ẩm và nhiệt độ tùy ý",
+          "Đổi vị trí rồi bỏ qua nhiệt độ ban đầu",
+          "Giữ cấu hình khác, chỉ thay độ ẩm",
+          "So hai lần chạy không ghi điều kiện"
+        ],
+        "answer": "C",
+        "explanation": "Đổi riêng độ ẩm giúp so sánh có kiểm soát; màu và đổi nhiều biến không đủ kết luận.",
+        "points": 1,
+        "rubric": "Chọn đúng 1 phương án được 1 điểm; sai hoặc bỏ trống 0.",
+        "unit": "Theo đề; không áp dụng nếu không có số",
+        "tolerance": "Không áp dụng"
+      },
+      {
+        "id": "Q-09-004",
+        "theory": "TH-09-06",
+        "type": "mcq",
+        "bloom": "Vận dụng",
+        "stem": "Kết quả mô hình khí hậu định tính nên dùng để làm gì?",
+        "options": [
+          "Dự báo chính xác lượng mưa ngày mai",
+          "Thay mọi dữ liệu quan trắc khí tượng",
+          "Tính chắc chắn mức nhiệt của một trạm thật",
+          "Giải thích mối quan hệ trong giả định đã nêu"
+        ],
+        "answer": "D",
+        "explanation": "Mô hình học tập minh họa quan hệ; chưa hiệu chuẩn không thể thay quan trắc hoặc dự báo.",
+        "points": 1,
+        "rubric": "Chọn đúng 1 phương án được 1 điểm; sai hoặc bỏ trống 0.",
+        "unit": "Theo đề; không áp dụng nếu không có số",
+        "tolerance": "Không áp dụng"
+      },
+      {
+        "id": "Q-09-005",
+        "theory": "TH-09-05",
+        "type": "tf",
+        "bloom": "Nhận biết",
+        "stem": "Khí hậu và thời tiết là hai khái niệm hoàn toàn đồng nhất.",
+        "options": [
+          "Đúng",
+          "Sai"
+        ],
+        "answer": "Sai",
+        "explanation": "Thời tiết mô tả trạng thái khí quyển trong thời gian ngắn; khí hậu gắn đặc điểm lâu dài.",
+        "points": 1,
+        "rubric": "Mỗi nhận định độc lập 1 điểm; đúng đáp án 1, sai/bỏ trống 0; không chấm gộp 4 nhận định.",
+        "unit": "Không áp dụng",
+        "tolerance": "Không áp dụng"
+      },
+      {
+        "id": "Q-09-006",
+        "theory": "TH-09-06",
+        "type": "tf",
+        "bloom": "Thông hiểu",
+        "stem": "Nhiệt độ, khí áp, gió, ẩm và mưa có quan hệ với nhau.",
+        "options": [
+          "Đúng",
+          "Sai"
+        ],
+        "answer": "Đúng",
+        "explanation": "Cần xem chúng trong hệ thống và điều kiện cụ thể.",
+        "points": 1,
+        "rubric": "Mỗi nhận định độc lập 1 điểm; đúng đáp án 1, sai/bỏ trống 0; không chấm gộp 4 nhận định.",
+        "unit": "Không áp dụng",
+        "tolerance": "Không áp dụng"
+      },
+      {
+        "id": "Q-09-007",
+        "theory": "TH-09-04",
+        "type": "tf",
+        "bloom": "Thông hiểu",
+        "stem": "Độ ẩm cao luôn bảo đảm có mưa tại mọi thời điểm.",
+        "options": [
+          "Đúng",
+          "Sai"
+        ],
+        "answer": "Sai",
+        "explanation": "Mưa còn phụ thuộc ngưng tụ, phát triển giọt và các điều kiện khác.",
+        "points": 1,
+        "rubric": "Mỗi nhận định độc lập 1 điểm; đúng đáp án 1, sai/bỏ trống 0; không chấm gộp 4 nhận định.",
+        "unit": "Không áp dụng",
+        "tolerance": "Không áp dụng"
+      },
+      {
+        "id": "Q-09-008",
+        "theory": "TH-09-06",
+        "type": "tf",
+        "bloom": "Vận dụng",
+        "stem": "So sánh mô hình cần ghi lại các biến đã giữ nguyên.",
+        "options": [
+          "Đúng",
+          "Sai"
+        ],
+        "answer": "Đúng",
+        "explanation": "Điều này giúp xác định tác động của biến được thay đổi.",
+        "points": 1,
+        "rubric": "Mỗi nhận định độc lập 1 điểm; đúng đáp án 1, sai/bỏ trống 0; không chấm gộp 4 nhận định.",
+        "unit": "Không áp dụng",
+        "tolerance": "Không áp dụng"
+      },
+      {
+        "id": "Q-09-009",
+        "theory": "TH-09-06",
+        "type": "short",
+        "bloom": "Thông hiểu",
+        "stem": "Nêu hai yếu tố khí hậu và đại lượng hoặc đơn vị thường dùng tương ứng.",
+        "options": [],
+        "answer": "Nhiệt độ với độ C; khí áp với hPa; có thể chấp nhận lượng mưa mm hoặc yếu tố khác được duyệt.",
+        "explanation": "Nhiệt độ với độ C; khí áp với hPa; có thể chấp nhận lượng mưa mm hoặc yếu tố khác được duyệt.",
+        "points": 2,
+        "rubric": "Mỗi cặp hợp lệ 1 điểm. Không khớp biến thể đã duyệt thì chuyển review theo ý nghĩa, không chấm sai chỉ vì khác từ.",
+        "unit": "Theo dữ kiện câu hỏi; giữ đơn vị khi nhắc số",
+        "tolerance": "Chấm ý nghĩa theo rubric; chưa có tự động chấm ngữ nghĩa được duyệt"
+      },
+      {
+        "id": "Q-09-010",
+        "theory": "TH-09-03",
+        "type": "short",
+        "bloom": "Vận dụng cao",
+        "stem": "Thí nghiệm gió bỏ qua sự quay Trái Đất. Vì sao không nên kết luận mọi gió thực đều đi thẳng từ áp cao về áp thấp?",
+        "options": [],
+        "answer": "Thực tế còn tác động của quay Trái Đất, ma sát và điều kiện địa hình; kết quả chỉ đúng trong giả định mô hình.",
+        "explanation": "Thực tế còn tác động của quay Trái Đất, ma sát và điều kiện địa hình; kết quả chỉ đúng trong giả định mô hình.",
+        "points": 2,
+        "rubric": "1 điểm yếu tố bị bỏ qua; 1 điểm giới hạn áp dụng. Không khớp biến thể đã duyệt thì chuyển review theo ý nghĩa, không chấm sai chỉ vì khác từ.",
+        "unit": "Theo dữ kiện câu hỏi; giữ đơn vị khi nhắc số",
+        "tolerance": "Chấm ý nghĩa theo rubric; chưa có tự động chấm ngữ nghĩa được duyệt"
+      }
+    ]
+  },
+  {
+    "id": "LES-10",
+    "n": 10,
+    "chapter": 4,
+    "title": "Thực hành: Đọc bản đồ các đới và các kiểu khí hậu trên Trái Đất, phân tích biểu đồ một số kiểu khí hậu",
+    "titleEn": "Climate maps and climographs",
+    "goal": "Đọc bản đồ khí hậu; tính biên độ nhiệt và tổng mưa từ 12 tháng; so sánh hai trạm, nhận diện kiểu có căn cứ.",
+    "minutes": 50,
+    "practical": true,
+    "threeD": false,
+    "topics": [
+      {
+        "id": "TH-10-01",
+        "vi": "Bản đồ các đới khí hậu",
+        "en": "Climate zone maps",
+        "scene": "SCENE-10-01"
+      },
+      {
+        "id": "TH-10-02",
+        "vi": "Các kiểu khí hậu",
+        "en": "Climate types",
+        "scene": "SCENE-10-02"
+      },
+      {
+        "id": "TH-10-03",
+        "vi": "Biểu đồ nhiệt độ lượng mưa",
+        "en": "Climographs",
+        "scene": "SCENE-10-03"
+      },
+      {
+        "id": "TH-10-04",
+        "vi": "So sánh và nhận diện",
+        "en": "Climate comparison and identification",
+        "scene": "SCENE-10-04"
+      }
+    ],
+    "sim": {
+      "id": "SIM-10",
+      "title": "Bản đồ khí hậu và biểu đồ liên kết",
+      "initial": "Trạm A đang chọn, 12 tháng đầy đủ, hai trục đơn vị tách rõ.",
+      "steps": "Chọn trạm → đọc chú giải → đọc bảng → tính chỉ số → so B → nhận định và dẫn chứng.",
+      "params": "Trạm A hoặc B; tháng 1–12; bật đường nhiệt hoặc cột mưa; chế độ so sánh.",
+      "science": "Phân loại khí hậu cần kết hợp nhiệt, mưa, phân bố mùa và vị trí; dữ liệu tự dựng chỉ phục vụ thao tác.",
+      "inquiry": "PRE-10: Nếu tổng mưa hai trạm bằng nhau, hai trạm có chắc cùng kiểu khí hậu không? POST-10: Dùng phân bố mưa theo tháng và chế độ nhiệt để đánh giá nhận định ban đầu. Nhiệm vụ: Tính biên độ và tổng mưa trạm A; so hai trạm sau khi trạm B được SME duyệt. Tiêu chí giải thích: A có biên độ 8 độ C, tổng mưa 1340 mm; một tổng năm không đủ xác định kiểu khí hậu. Hai câu này không tính thay bộ 10 câu cuối bài.",
+      "data": "DATA-10: trạm A giả lập T=[20,21,23,25,27,28,28,27,26,24,22,20] độ C; P=[20,25,40,80,150,200,250,220,180,100,50,25] mm. B cần SME biên soạn; không gán A là trạm thực.",
+      "fallback": "Bảng 12 tháng truy cập bàn phím và ảnh biểu đồ có mô tả."
+    },
+    "questions": [
+      {
+        "id": "Q-10-001",
+        "theory": "TH-10-03",
+        "type": "mcq",
+        "bloom": "Nhận biết",
+        "stem": "Trên biểu đồ khí hậu, lượng mưa thường dùng đơn vị nào?",
+        "options": [
+          "hPa",
+          "mm",
+          "°C",
+          "m³/s"
+        ],
+        "answer": "B",
+        "explanation": "mm là đơn vị lượng mưa; hPa khí áp, km độ dài, m³/s lưu lượng.",
+        "points": 1,
+        "rubric": "Chọn đúng 1 phương án được 1 điểm; sai hoặc bỏ trống 0.",
+        "unit": "Theo đề; không áp dụng nếu không có số",
+        "tolerance": "Không áp dụng"
+      },
+      {
+        "id": "Q-10-002",
+        "theory": "TH-10-03",
+        "type": "mcq",
+        "bloom": "Thông hiểu",
+        "stem": "Biên độ nhiệt năm tính thế nào?",
+        "options": [
+          "Tổng nhiệt độ 12 tháng",
+          "Tổng mưa chia nhiệt độ trung bình",
+          "Nhiệt tháng cao nhất trừ thấp nhất",
+          "Nhiệt tháng đầu trừ tháng cuối trong mọi trường hợp"
+        ],
+        "answer": "C",
+        "explanation": "Biên độ là chênh lệch cực đại và cực tiểu; các cách khác không phải định nghĩa này.",
+        "points": 1,
+        "rubric": "Chọn đúng 1 phương án được 1 điểm; sai hoặc bỏ trống 0.",
+        "unit": "Theo đề; không áp dụng nếu không có số",
+        "tolerance": "Không áp dụng"
+      },
+      {
+        "id": "Q-10-003",
+        "theory": "TH-10-03",
+        "type": "mcq",
+        "bloom": "Vận dụng",
+        "stem": "Với DATA-10 trạm A, biên độ nhiệt là bao nhiêu?",
+        "options": [
+          "8°C",
+          "28°C",
+          "48°C",
+          "4°C"
+        ],
+        "answer": "A",
+        "explanation": "28 − 20 = 8 độ C; 28 là cực đại, 48 là cộng sai, 4 không đúng phép tính.",
+        "points": 1,
+        "rubric": "Chọn đúng 1 phương án được 1 điểm; sai hoặc bỏ trống 0.",
+        "unit": "Theo đề; không áp dụng nếu không có số",
+        "tolerance": "Không áp dụng"
+      },
+      {
+        "id": "Q-10-004",
+        "theory": "TH-10-03",
+        "type": "mcq",
+        "bloom": "Vận dụng",
+        "stem": "Với DATA-10 trạm A, tổng mưa 12 tháng là bao nhiêu?",
+        "options": [
+          "250 mm",
+          "1200 mm",
+          "1440 mm",
+          "1340 mm"
+        ],
+        "answer": "D",
+        "explanation": "Cộng 12 giá trị P được 1340 mm; 250 là một tháng, các tổng khác không khớp.",
+        "points": 1,
+        "rubric": "Chọn đúng 1 phương án được 1 điểm; sai hoặc bỏ trống 0.",
+        "unit": "Theo đề; không áp dụng nếu không có số",
+        "tolerance": "Không áp dụng"
+      },
+      {
+        "id": "Q-10-005",
+        "theory": "TH-10-03",
+        "type": "tf",
+        "bloom": "Nhận biết",
+        "stem": "Cần đọc riêng đơn vị của trục nhiệt độ và lượng mưa.",
+        "options": [
+          "Đúng",
+          "Sai"
+        ],
+        "answer": "Đúng",
+        "explanation": "Hai yếu tố dùng các đơn vị và thang đo khác nhau.",
+        "points": 1,
+        "rubric": "Mỗi nhận định độc lập 1 điểm; đúng đáp án 1, sai/bỏ trống 0; không chấm gộp 4 nhận định.",
+        "unit": "Không áp dụng",
+        "tolerance": "Không áp dụng"
+      },
+      {
+        "id": "Q-10-006",
+        "theory": "TH-10-03",
+        "type": "tf",
+        "bloom": "Thông hiểu",
+        "stem": "Thiếu một tháng mưa có thể mặc định là 0 mà không ghi chú.",
+        "options": [
+          "Đúng",
+          "Sai"
+        ],
+        "answer": "Sai",
+        "explanation": "Thiếu dữ liệu khác với số 0 đã quan trắc.",
+        "points": 1,
+        "rubric": "Mỗi nhận định độc lập 1 điểm; đúng đáp án 1, sai/bỏ trống 0; không chấm gộp 4 nhận định.",
+        "unit": "Không áp dụng",
+        "tolerance": "Không áp dụng"
+      },
+      {
+        "id": "Q-10-007",
+        "theory": "TH-10-04",
+        "type": "tf",
+        "bloom": "Thông hiểu",
+        "stem": "Hai trạm cùng tổng mưa năm có thể khác mùa mưa.",
+        "options": [
+          "Đúng",
+          "Sai"
+        ],
+        "answer": "Đúng",
+        "explanation": "Phân bố lượng mưa theo tháng có thể khác nhau.",
+        "points": 1,
+        "rubric": "Mỗi nhận định độc lập 1 điểm; đúng đáp án 1, sai/bỏ trống 0; không chấm gộp 4 nhận định.",
+        "unit": "Không áp dụng",
+        "tolerance": "Không áp dụng"
+      },
+      {
+        "id": "Q-10-008",
+        "theory": "TH-10-02",
+        "type": "tf",
+        "bloom": "Vận dụng",
+        "stem": "Một tháng nhiệt độ đủ để kết luận chắc chắn kiểu khí hậu.",
+        "options": [
+          "Đúng",
+          "Sai"
+        ],
+        "answer": "Sai",
+        "explanation": "Cần chuỗi đặc trưng năm và các bằng chứng bổ sung.",
+        "points": 1,
+        "rubric": "Mỗi nhận định độc lập 1 điểm; đúng đáp án 1, sai/bỏ trống 0; không chấm gộp 4 nhận định.",
+        "unit": "Không áp dụng",
+        "tolerance": "Không áp dụng"
+      },
+      {
+        "id": "Q-10-009",
+        "theory": "TH-10-03",
+        "type": "short",
+        "bloom": "Thông hiểu",
+        "stem": "Từ DATA-10, nêu tháng có lượng mưa lớn nhất và giá trị tương ứng.",
+        "options": [],
+        "answer": "Tháng 7; 250 mm.",
+        "explanation": "Tháng 7; 250 mm.",
+        "points": 2,
+        "rubric": "1 điểm tháng; 1 điểm giá trị và đơn vị. Không khớp biến thể đã duyệt thì chuyển review theo ý nghĩa, không chấm sai chỉ vì khác từ.",
+        "unit": "Theo dữ kiện câu hỏi; giữ đơn vị khi nhắc số",
+        "tolerance": "Chấm ý nghĩa theo rubric; chưa có tự động chấm ngữ nghĩa được duyệt"
+      },
+      {
+        "id": "Q-10-010",
+        "theory": "TH-10-04",
+        "type": "short",
+        "bloom": "Vận dụng cao",
+        "stem": "Hai trạm có cùng tổng mưa năm nhưng khác phân bố theo tháng. Có nên kết luận cùng kiểu khí hậu không? Nêu dữ liệu cần thêm.",
+        "options": [],
+        "answer": "Chưa đủ; cần chế độ nhiệt, mùa mưa khô, vị trí hoặc tiêu chí phân loại được duyệt.",
+        "explanation": "Chưa đủ; cần chế độ nhiệt, mùa mưa khô, vị trí hoặc tiêu chí phân loại được duyệt.",
+        "points": 2,
+        "rubric": "1 điểm nhận định chưa đủ; 1 điểm ít nhất hai bằng chứng bổ sung. Không khớp biến thể đã duyệt thì chuyển review theo ý nghĩa, không chấm sai chỉ vì khác từ.",
+        "unit": "Theo dữ kiện câu hỏi; giữ đơn vị khi nhắc số",
+        "tolerance": "Chấm ý nghĩa theo rubric; chưa có tự động chấm ngữ nghĩa được duyệt"
+      }
+    ]
+  },
+  {
+    "id": "LES-11",
+    "n": 11,
+    "chapter": 5,
+    "title": "Thủy quyển, nước trên lục địa",
+    "titleEn": "Hydrosphere and continental waters",
+    "goal": "Nhận biết các thành phần thủy quyển; giải thích đường đi nước và ít nhất hai nhân tố ảnh hưởng chế độ sông.",
+    "minutes": 35,
+    "practical": false,
+    "threeD": true,
+    "topics": [
+      {
+        "id": "TH-11-01",
+        "vi": "Thủy quyển",
+        "en": "Hydrosphere",
+        "scene": "SCENE-11-01"
+      },
+      {
+        "id": "TH-11-02",
+        "vi": "Vòng tuần hoàn nước",
+        "en": "Water cycle",
+        "scene": "SCENE-11-02"
+      },
+      {
+        "id": "TH-11-03",
+        "vi": "Sông hồ và nước ngầm",
+        "en": "Rivers lakes and groundwater",
+        "scene": "SCENE-11-03"
+      },
+      {
+        "id": "TH-11-04",
+        "vi": "Chế độ nước sông",
+        "en": "River regime",
+        "scene": "SCENE-11-04"
+      },
+      {
+        "id": "TH-11-05",
+        "vi": "Vai trò của nước",
+        "en": "Roles of water",
+        "scene": "SCENE-11-05"
+      }
+    ],
+    "sim": {
+      "id": "SIM-11",
+      "title": "Lưu vực và vòng tuần hoàn nước",
+      "initial": "Mưa mức vừa, bốc hơi mức vừa, đất thấm trung bình; các kho nước hiển thị tương đối.",
+      "steps": "Theo dõi bốc hơi → ngưng tụ → mưa → chảy tràn và thấm → dòng ngầm → ra biển.",
+      "params": "Mưa thấp/vừa/cao; thấm thấp/cao; bốc hơi thấp/cao; hồ bật tắt.",
+      "science": "Nước di chuyển giữa các kho qua nhiều quá trình; dòng sông chịu ảnh hưởng khí hậu, địa hình, đất đá và tác động con người.",
+      "inquiry": "PRE-11: Giữ lượng mưa, khi khả năng thấm giảm thì chảy tràn và bổ sung nước ngầm có thể đổi ra sao? POST-11: Đối chiếu hai kịch bản và giải thích đường đi của nước, kèm điều kiện giữ nguyên. Nhiệm vụ: Chỉ đổi khả năng thấm; theo dõi mũi tên chảy tràn và thấm; ghi hai kho liên quan. Tiêu chí giải thích: Theo quy tắc mô hình, phần chảy tràn có thể tăng và bổ sung nước ngầm giảm; nêu điều kiện và giới hạn. Hai câu này không tính thay bộ 10 câu cuối bài.",
+      "data": "DATA-11: sơ đồ và chỉ số tương đối tự biên soạn; nếu tính lưu lượng thực phải bổ sung dữ liệu và hiệu chuẩn.",
+      "fallback": "Sơ đồ vòng nước 2D và bảng mô tả từng kho cùng thao tác chọn đường đi."
+    },
+    "questions": [
+      {
+        "id": "Q-11-001",
+        "theory": "TH-11-01",
+        "type": "mcq",
+        "bloom": "Nhận biết",
+        "stem": "Thủy quyển bao gồm gì?",
+        "options": [
+          "Chỉ nước biển và đại dương",
+          "Chỉ nước ở thể lỏng",
+          "Nước trên Trái Đất trong các dạng tồn tại",
+          "Chỉ nước trên lục địa"
+        ],
+        "answer": "C",
+        "explanation": "Thủy quyển có nhiều kho và trạng thái nước; các lựa chọn chỉ một phần.",
+        "points": 1,
+        "rubric": "Chọn đúng 1 phương án được 1 điểm; sai hoặc bỏ trống 0.",
+        "unit": "Theo đề; không áp dụng nếu không có số",
+        "tolerance": "Không áp dụng"
+      },
+      {
+        "id": "Q-11-002",
+        "theory": "TH-11-02",
+        "type": "mcq",
+        "bloom": "Thông hiểu",
+        "stem": "Nước từ bề mặt chuyển thành hơi gọi là gì?",
+        "options": [
+          "Bốc hơi",
+          "Ngưng tụ",
+          "Thấm",
+          "Bồi tụ"
+        ],
+        "answer": "A",
+        "explanation": "Bốc hơi là chuyển từ lỏng sang hơi; các hiện tượng khác không mô tả quá trình này.",
+        "points": 1,
+        "rubric": "Chọn đúng 1 phương án được 1 điểm; sai hoặc bỏ trống 0.",
+        "unit": "Theo đề; không áp dụng nếu không có số",
+        "tolerance": "Không áp dụng"
+      },
+      {
+        "id": "Q-11-003",
+        "theory": "TH-11-04",
+        "type": "mcq",
+        "bloom": "Vận dụng",
+        "stem": "Giữ mưa như nhau, đất thấm kém hơn trong mô hình có thể làm gì?",
+        "options": [
+          "Giảm mọi dòng chảy ngay lập tức",
+          "Tăng phần chảy tràn theo giả định",
+          "Làm nước ngầm luôn tăng cùng mức",
+          "Không thể ảnh hưởng đường đi của nước"
+        ],
+        "answer": "B",
+        "explanation": "Khả năng thấm giảm có thể tăng chảy tràn; cần giữ các điều kiện khác và đọc giới hạn mô hình.",
+        "points": 1,
+        "rubric": "Chọn đúng 1 phương án được 1 điểm; sai hoặc bỏ trống 0.",
+        "unit": "Theo đề; không áp dụng nếu không có số",
+        "tolerance": "Không áp dụng"
+      },
+      {
+        "id": "Q-11-004",
+        "theory": "TH-11-04",
+        "type": "mcq",
+        "bloom": "Vận dụng",
+        "stem": "Để giải thích chế độ nước sông nên xem tập yếu tố nào?",
+        "options": [
+          "Chỉ nhiệt độ tại cửa sông",
+          "Chỉ chiều dài của sông",
+          "Chỉ diện tích mặt cắt tại một ngày",
+          "Mưa, địa hình, đất đá, hồ và tác động con người"
+        ],
+        "answer": "D",
+        "explanation": "Chế độ sông là kết quả nhiều nhân tố; các lựa chọn đơn lẻ không đủ.",
+        "points": 1,
+        "rubric": "Chọn đúng 1 phương án được 1 điểm; sai hoặc bỏ trống 0.",
+        "unit": "Theo đề; không áp dụng nếu không có số",
+        "tolerance": "Không áp dụng"
+      },
+      {
+        "id": "Q-11-005",
+        "theory": "TH-11-02",
+        "type": "tf",
+        "bloom": "Nhận biết",
+        "stem": "Nước bốc hơi không còn thuộc vòng tuần hoàn nước.",
+        "options": [
+          "Đúng",
+          "Sai"
+        ],
+        "answer": "Sai",
+        "explanation": "Nước chuyển sang khí quyển và tiếp tục tham gia tuần hoàn.",
+        "points": 1,
+        "rubric": "Mỗi nhận định độc lập 1 điểm; đúng đáp án 1, sai/bỏ trống 0; không chấm gộp 4 nhận định.",
+        "unit": "Không áp dụng",
+        "tolerance": "Không áp dụng"
+      },
+      {
+        "id": "Q-11-006",
+        "theory": "TH-11-03",
+        "type": "tf",
+        "bloom": "Thông hiểu",
+        "stem": "Hồ và nước ngầm là các dạng nước trên lục địa.",
+        "options": [
+          "Đúng",
+          "Sai"
+        ],
+        "answer": "Đúng",
+        "explanation": "Chúng là những kho nước lục địa quan trọng.",
+        "points": 1,
+        "rubric": "Mỗi nhận định độc lập 1 điểm; đúng đáp án 1, sai/bỏ trống 0; không chấm gộp 4 nhận định.",
+        "unit": "Không áp dụng",
+        "tolerance": "Không áp dụng"
+      },
+      {
+        "id": "Q-11-007",
+        "theory": "TH-11-04",
+        "type": "tf",
+        "bloom": "Thông hiểu",
+        "stem": "Mọi sông có chế độ nước hoàn toàn giống nhau.",
+        "options": [
+          "Đúng",
+          "Sai"
+        ],
+        "answer": "Sai",
+        "explanation": "Nguồn cấp và điều kiện lưu vực khác nhau tạo chế độ khác nhau.",
+        "points": 1,
+        "rubric": "Mỗi nhận định độc lập 1 điểm; đúng đáp án 1, sai/bỏ trống 0; không chấm gộp 4 nhận định.",
+        "unit": "Không áp dụng",
+        "tolerance": "Không áp dụng"
+      },
+      {
+        "id": "Q-11-008",
+        "theory": "TH-11-04",
+        "type": "tf",
+        "bloom": "Vận dụng",
+        "stem": "Thay đổi sử dụng đất có thể ảnh hưởng dòng chảy.",
+        "options": [
+          "Đúng",
+          "Sai"
+        ],
+        "answer": "Đúng",
+        "explanation": "Thấm, chảy tràn và khả năng trữ nước có thể thay đổi.",
+        "points": 1,
+        "rubric": "Mỗi nhận định độc lập 1 điểm; đúng đáp án 1, sai/bỏ trống 0; không chấm gộp 4 nhận định.",
+        "unit": "Không áp dụng",
+        "tolerance": "Không áp dụng"
+      },
+      {
+        "id": "Q-11-009",
+        "theory": "TH-11-02",
+        "type": "short",
+        "bloom": "Thông hiểu",
+        "stem": "Nêu hai con đường nước mưa có thể đi sau khi xuống đất.",
+        "options": [],
+        "answer": "Chảy tràn vào sông hồ; thấm xuống đất bổ sung nước ngầm.",
+        "explanation": "Chảy tràn vào sông hồ; thấm xuống đất bổ sung nước ngầm.",
+        "points": 2,
+        "rubric": "Mỗi đường đi đúng 1 điểm. Không khớp biến thể đã duyệt thì chuyển review theo ý nghĩa, không chấm sai chỉ vì khác từ.",
+        "unit": "Theo dữ kiện câu hỏi; giữ đơn vị khi nhắc số",
+        "tolerance": "Chấm ý nghĩa theo rubric; chưa có tự động chấm ngữ nghĩa được duyệt"
+      },
+      {
+        "id": "Q-11-010",
+        "theory": "TH-11-04",
+        "type": "short",
+        "bloom": "Vận dụng cao",
+        "stem": "Giữ mưa không đổi, giảm thấm của đất. Dự đoán hai thay đổi và nêu điều kiện kết luận.",
+        "options": [],
+        "answer": "Có thể tăng chảy tràn, giảm bổ sung nước ngầm; kết luận trong cấu hình mô hình khi các biến khác giữ nguyên.",
+        "explanation": "Có thể tăng chảy tràn, giảm bổ sung nước ngầm; kết luận trong cấu hình mô hình khi các biến khác giữ nguyên.",
+        "points": 2,
+        "rubric": "1 điểm hai thay đổi hợp lí; 1 điểm điều kiện và giới hạn. Không khớp biến thể đã duyệt thì chuyển review theo ý nghĩa, không chấm sai chỉ vì khác từ.",
+        "unit": "Theo dữ kiện câu hỏi; giữ đơn vị khi nhắc số",
+        "tolerance": "Chấm ý nghĩa theo rubric; chưa có tự động chấm ngữ nghĩa được duyệt"
+      }
+    ]
+  },
+  {
+    "id": "LES-12",
+    "n": 12,
+    "chapter": 5,
+    "title": "Nước biển và đại dương",
+    "titleEn": "Seas and oceans",
+    "goal": "So sánh độ muối, nhiệt độ; phân biệt sóng, thủy triều, dòng biển và giải thích nguyên nhân chủ yếu theo từng hiện tượng.",
+    "minutes": 35,
+    "practical": false,
+    "threeD": true,
+    "topics": [
+      {
+        "id": "TH-12-01",
+        "vi": "Độ muối và nhiệt độ biển",
+        "en": "Ocean salinity and temperature",
+        "scene": "SCENE-12-01"
+      },
+      {
+        "id": "TH-12-02",
+        "vi": "Sóng biển",
+        "en": "Ocean waves",
+        "scene": "SCENE-12-02"
+      },
+      {
+        "id": "TH-12-03",
+        "vi": "Thủy triều",
+        "en": "Tides",
+        "scene": "SCENE-12-03"
+      },
+      {
+        "id": "TH-12-04",
+        "vi": "Dòng biển",
+        "en": "Ocean currents",
+        "scene": "SCENE-12-04"
+      }
+    ],
+    "sim": {
+      "id": "SIM-12",
+      "title": "Ba hiện tượng biển và phân bố tính chất nước",
+      "initial": "Chế độ sóng do gió; phao đánh dấu; hoạt ảnh dừng; các mô hình tách cảnh.",
+      "steps": "Chạy sóng và theo phao → chuyển cảnh triều → thay vị trí tương đối → xem dòng biển và tính chất nước.",
+      "params": "Gió 3 mức; pha Mặt Trăng 4 vị trí khái quát; lớp dòng nóng/lạnh; lớp muối/nhiệt định tính.",
+      "science": "Sóng do gió truyền năng lượng; triều do tác động hấp dẫn của Mặt Trăng và Mặt Trời cùng động lực hệ; dòng biển là chuyển động có hướng của khối nước.",
+      "inquiry": "PRE-12: Khi sóng truyền qua, phao có luôn di chuyển cùng đỉnh sóng tới bờ không? POST-12: Quan sát phao để phân biệt dao động hạt nước, truyền năng lượng và dòng biển. Nhiệm vụ: Đánh dấu phao và một đỉnh sóng; chạy dừng theo bước; so quãng đi của chúng. Tiêu chí giải thích: Trong mô hình giản lược, phao dao động quanh vị trí tham chiếu còn năng lượng sóng truyền đi; không đồng nhất với dòng biển. Hai câu này không tính thay bộ 10 câu cuối bài.",
+      "data": "DATA-12: sơ đồ tự dựng; bản đồ dòng và muối thực cần nguồn, độ phân giải, thời gian và giấy phép.",
+      "fallback": "Hoạt ảnh 2D theo ba cảnh và bảng so sánh nguyên nhân đặc trưng."
+    },
+    "questions": [
+      {
+        "id": "Q-12-001",
+        "theory": "TH-12-01",
+        "type": "mcq",
+        "bloom": "Nhận biết",
+        "stem": "Đại lượng biểu thị lượng muối hòa tan trong nước biển là gì?",
+        "options": [
+          "Độ muối",
+          "Lưu lượng",
+          "Khí áp",
+          "Độ ẩm không khí"
+        ],
+        "answer": "A",
+        "explanation": "Độ muối phản ánh hàm lượng muối; ba đại lượng khác đo đặc điểm khác.",
+        "points": 1,
+        "rubric": "Chọn đúng 1 phương án được 1 điểm; sai hoặc bỏ trống 0.",
+        "unit": "Theo đề; không áp dụng nếu không có số",
+        "tolerance": "Không áp dụng"
+      },
+      {
+        "id": "Q-12-002",
+        "theory": "TH-12-02",
+        "type": "mcq",
+        "bloom": "Thông hiểu",
+        "stem": "Nguồn tạo phần lớn sóng mặt biển thông thường được học ở đây là gì?",
+        "options": [
+          "Dòng sông",
+          "Gió",
+          "Chỉ lực hấp dẫn Mặt Trăng",
+          "Chỉ biến đổi nhiệt trong nước"
+        ],
+        "answer": "B",
+        "explanation": "Gió truyền năng lượng tạo sóng mặt phổ biến; không được đồng nhất mọi loại sóng với cơ chế này.",
+        "points": 1,
+        "rubric": "Chọn đúng 1 phương án được 1 điểm; sai hoặc bỏ trống 0.",
+        "unit": "Theo đề; không áp dụng nếu không có số",
+        "tolerance": "Không áp dụng"
+      },
+      {
+        "id": "Q-12-003",
+        "theory": "TH-12-02",
+        "type": "mcq",
+        "bloom": "Vận dụng",
+        "stem": "Trong mô hình sóng giản lược, phao chủ yếu thể hiện điều gì?",
+        "options": [
+          "Chuyển động mãi cùng đỉnh sóng",
+          "Chuyển động thẳng về bờ ở mọi thời điểm",
+          "Dao động khi năng lượng sóng truyền qua",
+          "Không bao giờ chuyển động khi có sóng"
+        ],
+        "answer": "C",
+        "explanation": "Dao động phao phân biệt chuyển động hạt nước và truyền sóng; lựa chọn khác sai với mô hình này.",
+        "points": 1,
+        "rubric": "Chọn đúng 1 phương án được 1 điểm; sai hoặc bỏ trống 0.",
+        "unit": "Theo đề; không áp dụng nếu không có số",
+        "tolerance": "Không áp dụng"
+      },
+      {
+        "id": "Q-12-004",
+        "theory": "TH-12-03",
+        "type": "mcq",
+        "bloom": "Vận dụng",
+        "stem": "Ứng dụng triều khái quát dùng cho học tập nên ghi giới hạn nào?",
+        "options": [
+          "Cho giờ triều chính xác ở mọi cảng",
+          "Thay bảng triều dùng cho hàng hải",
+          "Không cần xét độ sâu và đường bờ",
+          "Không dùng dự báo giờ triều địa phương"
+        ],
+        "answer": "D",
+        "explanation": "Triều địa phương phụ thuộc điều kiện và số liệu riêng; sơ đồ học tập không thay dự báo.",
+        "points": 1,
+        "rubric": "Chọn đúng 1 phương án được 1 điểm; sai hoặc bỏ trống 0.",
+        "unit": "Theo đề; không áp dụng nếu không có số",
+        "tolerance": "Không áp dụng"
+      },
+      {
+        "id": "Q-12-005",
+        "theory": "TH-12-03",
+        "type": "tf",
+        "bloom": "Nhận biết",
+        "stem": "Thủy triều chỉ do gió tạo ra.",
+        "options": [
+          "Đúng",
+          "Sai"
+        ],
+        "answer": "Sai",
+        "explanation": "Triều liên quan lực hấp dẫn của Mặt Trăng và Mặt Trời và động lực hệ.",
+        "points": 1,
+        "rubric": "Mỗi nhận định độc lập 1 điểm; đúng đáp án 1, sai/bỏ trống 0; không chấm gộp 4 nhận định.",
+        "unit": "Không áp dụng",
+        "tolerance": "Không áp dụng"
+      },
+      {
+        "id": "Q-12-006",
+        "theory": "TH-12-04",
+        "type": "tf",
+        "bloom": "Thông hiểu",
+        "stem": "Dòng biển có thể vận chuyển nhiệt giữa các khu vực.",
+        "options": [
+          "Đúng",
+          "Sai"
+        ],
+        "answer": "Đúng",
+        "explanation": "Chuyển động khối nước góp phần phân bố lại nhiệt.",
+        "points": 1,
+        "rubric": "Mỗi nhận định độc lập 1 điểm; đúng đáp án 1, sai/bỏ trống 0; không chấm gộp 4 nhận định.",
+        "unit": "Không áp dụng",
+        "tolerance": "Không áp dụng"
+      },
+      {
+        "id": "Q-12-007",
+        "theory": "TH-12-01",
+        "type": "tf",
+        "bloom": "Thông hiểu",
+        "stem": "Độ muối nước biển tại mọi nơi và mọi thời điểm bằng nhau.",
+        "options": [
+          "Đúng",
+          "Sai"
+        ],
+        "answer": "Sai",
+        "explanation": "Bốc hơi, mưa và nguồn nước ngọt làm độ muối biến đổi.",
+        "points": 1,
+        "rubric": "Mỗi nhận định độc lập 1 điểm; đúng đáp án 1, sai/bỏ trống 0; không chấm gộp 4 nhận định.",
+        "unit": "Không áp dụng",
+        "tolerance": "Không áp dụng"
+      },
+      {
+        "id": "Q-12-008",
+        "theory": "TH-12-02",
+        "type": "tf",
+        "bloom": "Vận dụng",
+        "stem": "Sóng và dòng biển cần được phân biệt.",
+        "options": [
+          "Đúng",
+          "Sai"
+        ],
+        "answer": "Đúng",
+        "explanation": "Một hiện tượng truyền dao động năng lượng, một hiện tượng có chuyển động khối nước có hướng theo mô tả cơ bản.",
+        "points": 1,
+        "rubric": "Mỗi nhận định độc lập 1 điểm; đúng đáp án 1, sai/bỏ trống 0; không chấm gộp 4 nhận định.",
+        "unit": "Không áp dụng",
+        "tolerance": "Không áp dụng"
+      },
+      {
+        "id": "Q-12-009",
+        "theory": "TH-12-02",
+        "type": "short",
+        "bloom": "Thông hiểu",
+        "stem": "Nêu khác biệt cơ bản giữa sóng biển và dòng biển.",
+        "options": [],
+        "answer": "Sóng là sự truyền dao động năng lượng; dòng biển là dòng chuyển động có hướng của khối nước theo quy mô đang xét.",
+        "explanation": "Sóng là sự truyền dao động năng lượng; dòng biển là dòng chuyển động có hướng của khối nước theo quy mô đang xét.",
+        "points": 2,
+        "rubric": "Mỗi ý đúng 1 điểm. Không khớp biến thể đã duyệt thì chuyển review theo ý nghĩa, không chấm sai chỉ vì khác từ.",
+        "unit": "Theo dữ kiện câu hỏi; giữ đơn vị khi nhắc số",
+        "tolerance": "Chấm ý nghĩa theo rubric; chưa có tự động chấm ngữ nghĩa được duyệt"
+      },
+      {
+        "id": "Q-12-010",
+        "theory": "TH-12-03",
+        "type": "short",
+        "bloom": "Vận dụng cao",
+        "stem": "Vì sao không dùng mô hình bốn pha Mặt Trăng để xác định giờ nước lớn chính xác cho một cảng?",
+        "options": [],
+        "answer": "Mô hình khái quát bỏ qua địa hình bờ đáy, đặc điểm truyền triều và dữ liệu địa phương; cần dự báo hoặc quan trắc được kiểm định.",
+        "explanation": "Mô hình khái quát bỏ qua địa hình bờ đáy, đặc điểm truyền triều và dữ liệu địa phương; cần dự báo hoặc quan trắc được kiểm định.",
+        "points": 2,
+        "rubric": "1 điểm giới hạn mô hình; 1 điểm nhu cầu dữ liệu thích hợp. Không khớp biến thể đã duyệt thì chuyển review theo ý nghĩa, không chấm sai chỉ vì khác từ.",
+        "unit": "Theo dữ kiện câu hỏi; giữ đơn vị khi nhắc số",
+        "tolerance": "Chấm ý nghĩa theo rubric; chưa có tự động chấm ngữ nghĩa được duyệt"
+      }
+    ]
+  },
+  {
+    "id": "LES-13",
+    "n": 13,
+    "chapter": 5,
+    "title": "Thực hành: Phân tích chế độ nước của sông Hồng",
+    "titleEn": "Analysing the Red River’s flow regime",
+    "goal": "Đọc 12 tháng lưu lượng; xác định cực trị, tính chỉ số theo quy tắc; nhận diện mùa và giải thích có dẫn chứng từ nguồn đã duyệt.",
+    "minutes": 50,
+    "practical": true,
+    "threeD": false,
+    "topics": [
+      {
+        "id": "TH-13-01",
+        "vi": "Bảng lưu lượng tháng",
+        "en": "Monthly discharge table",
+        "scene": "SCENE-13-01"
+      },
+      {
+        "id": "TH-13-02",
+        "vi": "Mùa lũ và mùa cạn",
+        "en": "High flow and low flow seasons",
+        "scene": "SCENE-13-02"
+      },
+      {
+        "id": "TH-13-03",
+        "vi": "Chỉ số lưu lượng",
+        "en": "Discharge indicators",
+        "scene": "SCENE-13-03"
+      },
+      {
+        "id": "TH-13-04",
+        "vi": "Biểu đồ và giải thích chế độ nước",
+        "en": "Hydrograph interpretation",
+        "scene": "SCENE-13-04"
+      }
+    ],
+    "sim": {
+      "id": "SIM-13",
+      "title": "Phân tích bảng và biểu đồ lưu lượng",
+      "initial": "Chưa chọn dữ liệu thật; chế độ luyện thao tác dùng DEMO-13 được gắn nhãn, trạm và năm thực để trống chờ duyệt.",
+      "steps": "Kiểm tra trạm năm đơn vị → vẽ biểu đồ → chọn cực trị → tính chỉ số → chọn mùa theo quy tắc → viết giải thích.",
+      "params": "Bộ dữ liệu; tháng 1–12; bật đường trung bình; quy tắc nhận diện mùa do SME duyệt.",
+      "science": "Lưu lượng thay đổi theo nguồn cấp, mưa lưu vực và điều tiết; không gán dữ liệu luyện tập là số liệu quan trắc sông Hồng.",
+      "inquiry": "PRE-13: Chỉ nhìn tháng lưu lượng lớn nhất có đủ xác định cả mùa lũ của sông Hồng không? POST-13: Dùng toàn chuỗi và quy tắc được SME duyệt để nhận diện mùa; chỉ ra trạm, thời kì và giới hạn của dữ liệu. Nhiệm vụ: Kiểm nguồn; vẽ 12 tháng; bật trung bình; chọn dải tháng theo quy tắc; ghi bằng chứng. Tiêu chí giải thích: Cần cả chuỗi và quy tắc, không chỉ cực đại. DEMO chỉ dùng luyện thao tác; kết luận sông Hồng cần số liệu thật. Hai câu này không tính thay bộ 10 câu cuối bài.",
+      "data": "DATA-13 cần nguồn SGK hoặc thủy văn hợp lệ, trạm, năm/kì và quyền dùng. DEMO-13=[1000,900,800,1000,1500,3000,5000,6000,4000,2500,1500,1100] m³/s là số tự dựng để kiểm tra thao tác, không phải số liệu sông Hồng.",
+      "fallback": "Bảng 12 tháng và ảnh biểu đồ mô tả bằng văn bản, nhập chỉ số qua bàn phím."
+    },
+    "questions": [
+      {
+        "id": "Q-13-001",
+        "theory": "TH-13-01",
+        "type": "mcq",
+        "bloom": "Nhận biết",
+        "stem": "Đơn vị thường dùng cho lưu lượng sông là gì?",
+        "options": [
+          "mm",
+          "m³/s",
+          "m³",
+          "km²"
+        ],
+        "answer": "B",
+        "explanation": "m³/s đo thể tích nước qua mặt cắt mỗi giây; các đơn vị kia đo mưa, nhiệt và áp suất.",
+        "points": 1,
+        "rubric": "Chọn đúng 1 phương án được 1 điểm; sai hoặc bỏ trống 0.",
+        "unit": "Theo đề; không áp dụng nếu không có số",
+        "tolerance": "Không áp dụng"
+      },
+      {
+        "id": "Q-13-002",
+        "theory": "TH-13-01",
+        "type": "mcq",
+        "bloom": "Thông hiểu",
+        "stem": "Trước khi phân tích số liệu sông Hồng cần kiểm tra gì?",
+        "options": [
+          "Chỉ số lượng tháng có trong bảng",
+          "Chỉ màu đường biểu diễn",
+          "Trạm, thời kì và đơn vị",
+          "Chỉ giá trị lưu lượng lớn nhất"
+        ],
+        "answer": "C",
+        "explanation": "Không gian, thời gian và đơn vị xác định ý nghĩa bộ số liệu; các yếu tố giao diện không đủ.",
+        "points": 1,
+        "rubric": "Chọn đúng 1 phương án được 1 điểm; sai hoặc bỏ trống 0.",
+        "unit": "Theo đề; không áp dụng nếu không có số",
+        "tolerance": "Không áp dụng"
+      },
+      {
+        "id": "Q-13-003",
+        "theory": "TH-13-03",
+        "type": "mcq",
+        "bloom": "Vận dụng",
+        "stem": "Trong DEMO-13 tự dựng, tháng có lưu lượng lớn nhất là tháng nào?",
+        "options": [
+          "Tháng 8",
+          "Tháng 3",
+          "Tháng 1",
+          "Tháng 12"
+        ],
+        "answer": "A",
+        "explanation": "Tháng 8 đạt 6000 m³/s, lớn nhất tập minh họa; không được coi là kết luận thực về sông Hồng.",
+        "points": 1,
+        "rubric": "Chọn đúng 1 phương án được 1 điểm; sai hoặc bỏ trống 0.",
+        "unit": "Theo đề; không áp dụng nếu không có số",
+        "tolerance": "Không áp dụng"
+      },
+      {
+        "id": "Q-13-004",
+        "theory": "TH-13-03",
+        "type": "mcq",
+        "bloom": "Vận dụng",
+        "stem": "DEMO-13 có cực đại 6000 và cực tiểu 800 m³/s. Tỉ số cực đại/cực tiểu là bao nhiêu?",
+        "options": [
+          "0,13 lần",
+          "5,2 lần",
+          "6,0 lần",
+          "7,5 lần"
+        ],
+        "answer": "D",
+        "explanation": "6000 / 800 = 7,5 lần; các giá trị khác không đúng phép chia theo yêu cầu.",
+        "points": 1,
+        "rubric": "Chọn đúng 1 phương án được 1 điểm; sai hoặc bỏ trống 0.",
+        "unit": "Theo đề; không áp dụng nếu không có số",
+        "tolerance": "Không áp dụng"
+      },
+      {
+        "id": "Q-13-005",
+        "theory": "TH-13-01",
+        "type": "tf",
+        "bloom": "Nhận biết",
+        "stem": "Số liệu DEMO-13 là quan trắc thật của sông Hồng.",
+        "options": [
+          "Đúng",
+          "Sai"
+        ],
+        "answer": "Sai",
+        "explanation": "DEMO-13 là dữ liệu tự dựng; dữ liệu sông Hồng thật cần nguồn và trạm thời kì rõ ràng.",
+        "points": 1,
+        "rubric": "Mỗi nhận định độc lập 1 điểm; đúng đáp án 1, sai/bỏ trống 0; không chấm gộp 4 nhận định.",
+        "unit": "Không áp dụng",
+        "tolerance": "Không áp dụng"
+      },
+      {
+        "id": "Q-13-006",
+        "theory": "TH-13-01",
+        "type": "tf",
+        "bloom": "Thông hiểu",
+        "stem": "Thiếu tháng phải được phân biệt với tháng lưu lượng bằng 0.",
+        "options": [
+          "Đúng",
+          "Sai"
+        ],
+        "answer": "Đúng",
+        "explanation": "Hai tình trạng mang ý nghĩa dữ liệu khác nhau.",
+        "points": 1,
+        "rubric": "Mỗi nhận định độc lập 1 điểm; đúng đáp án 1, sai/bỏ trống 0; không chấm gộp 4 nhận định.",
+        "unit": "Không áp dụng",
+        "tolerance": "Không áp dụng"
+      },
+      {
+        "id": "Q-13-007",
+        "theory": "TH-13-03",
+        "type": "tf",
+        "bloom": "Thông hiểu",
+        "stem": "Cộng các lưu lượng tháng là đủ để có thể tích nước năm.",
+        "options": [
+          "Đúng",
+          "Sai"
+        ],
+        "answer": "Sai",
+        "explanation": "Muốn tính thể tích cần tích phân hoặc quy đổi lưu lượng theo thời gian tương ứng.",
+        "points": 1,
+        "rubric": "Mỗi nhận định độc lập 1 điểm; đúng đáp án 1, sai/bỏ trống 0; không chấm gộp 4 nhận định.",
+        "unit": "Không áp dụng",
+        "tolerance": "Không áp dụng"
+      },
+      {
+        "id": "Q-13-008",
+        "theory": "TH-13-02",
+        "type": "tf",
+        "bloom": "Vận dụng",
+        "stem": "Nhận diện mùa cần nêu quy tắc và đối chiếu cả chuỗi tháng.",
+        "options": [
+          "Đúng",
+          "Sai"
+        ],
+        "answer": "Đúng",
+        "explanation": "Tránh suy luận từ một điểm cực trị duy nhất.",
+        "points": 1,
+        "rubric": "Mỗi nhận định độc lập 1 điểm; đúng đáp án 1, sai/bỏ trống 0; không chấm gộp 4 nhận định.",
+        "unit": "Không áp dụng",
+        "tolerance": "Không áp dụng"
+      },
+      {
+        "id": "Q-13-009",
+        "theory": "TH-13-03",
+        "type": "short",
+        "bloom": "Thông hiểu",
+        "stem": "Tính chênh lệch cực đại và cực tiểu trong DEMO-13, kèm đơn vị.",
+        "options": [],
+        "answer": "6000 − 800 = 5200 m³/s.",
+        "explanation": "6000 − 800 = 5200 m³/s.",
+        "points": 2,
+        "rubric": "1 điểm phép tính; 1 điểm kết quả và đơn vị; dung sai 0,5 m³/s nếu nhập số. Không khớp biến thể đã duyệt thì chuyển review theo ý nghĩa, không chấm sai chỉ vì khác từ.",
+        "unit": "m³/s; làm tròn số nguyên",
+        "tolerance": "±0,5 m³/s sau đổi về cùng đơn vị; phải có đơn vị đúng"
+      },
+      {
+        "id": "Q-13-010",
+        "theory": "TH-13-04",
+        "type": "short",
+        "bloom": "Vận dụng cao",
+        "stem": "Một biểu đồ sông không có tên trạm và năm. Hãy nêu hai điều cần bổ sung trước khi rút kết luận về sông Hồng và vì sao.",
+        "options": [],
+        "answer": "Cần trạm đo và thời kì số liệu hoặc nguồn; khác trạm hoặc kì có chế độ khác, không đủ căn cứ gán cho toàn sông.",
+        "explanation": "Cần trạm đo và thời kì số liệu hoặc nguồn; khác trạm hoặc kì có chế độ khác, không đủ căn cứ gán cho toàn sông.",
+        "points": 2,
+        "rubric": "1 điểm hai metadata; 1 điểm ảnh hưởng đến kết luận. Không khớp biến thể đã duyệt thì chuyển review theo ý nghĩa, không chấm sai chỉ vì khác từ.",
+        "unit": "Theo dữ kiện câu hỏi; giữ đơn vị khi nhắc số",
+        "tolerance": "Chấm ý nghĩa theo rubric; chưa có tự động chấm ngữ nghĩa được duyệt"
+      }
+    ]
+  },
+  {
+    "id": "LES-14",
+    "n": 14,
+    "chapter": 6,
+    "title": "Đất trên Trái Đất",
+    "titleEn": "Soils on Earth",
+    "goal": "Nhận diện thành phần và phẫu diện đất; giải thích tác động của các nhân tố hình thành, phân bố và bảo vệ đất.",
+    "minutes": 35,
+    "practical": false,
+    "threeD": true,
+    "topics": [
+      {
+        "id": "TH-14-01",
+        "vi": "Khái niệm và thành phần đất",
+        "en": "Soil and its components",
+        "scene": "SCENE-14-01"
+      },
+      {
+        "id": "TH-14-02",
+        "vi": "Nhân tố hình thành đất",
+        "en": "Soil forming factors",
+        "scene": "SCENE-14-02"
+      },
+      {
+        "id": "TH-14-03",
+        "vi": "Phẫu diện và quá trình hình thành",
+        "en": "Soil profile and formation",
+        "scene": "SCENE-14-03"
+      },
+      {
+        "id": "TH-14-04",
+        "vi": "Nhóm đất và phân bố",
+        "en": "Soil groups and distribution",
+        "scene": "SCENE-14-04"
+      },
+      {
+        "id": "TH-14-05",
+        "vi": "Vai trò và bảo vệ đất",
+        "en": "Soil functions and conservation",
+        "scene": "SCENE-14-05"
+      }
+    ],
+    "sim": {
+      "id": "SIM-14",
+      "title": "Phẫu diện đất và nhân tố hình thành",
+      "initial": "Phẫu diện đại diện được ghi minh họa, chưa chọn tầng, bộ nhân tố chuẩn.",
+      "steps": "Mở mặt cắt → chọn tầng → đọc thành phần → so hai điều kiện hình thành → chọn biện pháp bảo vệ.",
+      "params": "Khí hậu 3 kịch bản; sinh vật 2 mức; đá mẹ 2 loại; thời gian theo giai đoạn định tính.",
+      "science": "Đất hình thành do tác động tổng hợp của đá mẹ, khí hậu, sinh vật, địa hình, thời gian và con người; mô hình không tăng tốc quá trình thực để dự báo.",
+      "inquiry": "PRE-14: Hai nơi cùng đá mẹ có nhất thiết tạo cùng loại đất không? POST-14: So hai kịch bản khác khí hậu hoặc sinh vật; giải thích tác động tổng hợp của các nhân tố. Nhiệm vụ: Giữ đá mẹ; đổi một nhân tố; đọc phẫu diện và ghi điều kiện còn lại. Tiêu chí giải thích: Đất có thể khác vì nhiều nhân tố phối hợp; sơ đồ không cho phép dự báo thời gian hình thành thực. Hai câu này không tính thay bộ 10 câu cuối bài.",
+      "data": "DATA-14: sơ đồ tự dựng; ảnh phẫu diện và phân loại nhóm đất cần SME cùng giấy phép nguồn ảnh.",
+      "fallback": "Ảnh phẫu diện có điểm chú giải và bảng nhân tố."
+    },
+    "questions": [
+      {
+        "id": "Q-14-001",
+        "theory": "TH-14-01",
+        "type": "mcq",
+        "bloom": "Nhận biết",
+        "stem": "Đất thường gồm những thành phần nào?",
+        "options": [
+          "Chỉ có nước và không khí",
+          "Chỉ có các mảnh đá",
+          "Khoáng, hữu cơ, nước và không khí",
+          "Chỉ có chất hữu cơ"
+        ],
+        "answer": "C",
+        "explanation": "Đất là hệ gồm nhiều thành phần; mỗi lựa chọn một thành phần là chưa đầy đủ.",
+        "points": 1,
+        "rubric": "Chọn đúng 1 phương án được 1 điểm; sai hoặc bỏ trống 0.",
+        "unit": "Theo đề; không áp dụng nếu không có số",
+        "tolerance": "Không áp dụng"
+      },
+      {
+        "id": "Q-14-002",
+        "theory": "TH-14-02",
+        "type": "mcq",
+        "bloom": "Thông hiểu",
+        "stem": "Nhân tố nào cung cấp vật chất khoáng ban đầu cho quá trình hình thành đất?",
+        "options": [
+          "Đá mẹ",
+          "Địa hình",
+          "Thời gian",
+          "Hướng gió"
+        ],
+        "answer": "A",
+        "explanation": "Đá mẹ cung cấp vật liệu; các khái niệm kia không phải nguồn khoáng hình thành đất.",
+        "points": 1,
+        "rubric": "Chọn đúng 1 phương án được 1 điểm; sai hoặc bỏ trống 0.",
+        "unit": "Theo đề; không áp dụng nếu không có số",
+        "tolerance": "Không áp dụng"
+      },
+      {
+        "id": "Q-14-003",
+        "theory": "TH-14-05",
+        "type": "mcq",
+        "bloom": "Vận dụng",
+        "stem": "Muốn giảm xói mòn đất trên sườn dốc, lựa chọn hợp lí là gì?",
+        "options": [
+          "Loại bỏ hoàn toàn thảm thực vật",
+          "Duy trì che phủ phù hợp",
+          "Tăng chảy tràn tập trung trên sườn",
+          "Để đất trống trong mùa mưa"
+        ],
+        "answer": "B",
+        "explanation": "Che phủ phù hợp giúp bảo vệ đất; các phương án khác không giảm tác động hoặc không có tác dụng thực.",
+        "points": 1,
+        "rubric": "Chọn đúng 1 phương án được 1 điểm; sai hoặc bỏ trống 0.",
+        "unit": "Theo đề; không áp dụng nếu không có số",
+        "tolerance": "Không áp dụng"
+      },
+      {
+        "id": "Q-14-004",
+        "theory": "TH-14-04",
+        "type": "mcq",
+        "bloom": "Vận dụng",
+        "stem": "Thấy hai tầng đất cùng màu, kết luận nào thận trọng nhất?",
+        "options": [
+          "Chắc chắn cùng nhóm đất",
+          "Chắc chắn cùng thời gian hình thành",
+          "Không cần kiểm tra thành phần",
+          "Cần thêm thành phần, cấu tạo và điều kiện hình thành"
+        ],
+        "answer": "D",
+        "explanation": "Màu đơn lẻ không đủ phân loại; tuổi và nhóm không thể khẳng định từ màu.",
+        "points": 1,
+        "rubric": "Chọn đúng 1 phương án được 1 điểm; sai hoặc bỏ trống 0.",
+        "unit": "Theo đề; không áp dụng nếu không có số",
+        "tolerance": "Không áp dụng"
+      },
+      {
+        "id": "Q-14-005",
+        "theory": "TH-14-01",
+        "type": "tf",
+        "bloom": "Nhận biết",
+        "stem": "Đất chỉ là đá vụn và không có thành phần hữu cơ.",
+        "options": [
+          "Đúng",
+          "Sai"
+        ],
+        "answer": "Sai",
+        "explanation": "Đất có thành phần khoáng, hữu cơ, nước, không khí và hoạt động sinh vật.",
+        "points": 1,
+        "rubric": "Mỗi nhận định độc lập 1 điểm; đúng đáp án 1, sai/bỏ trống 0; không chấm gộp 4 nhận định.",
+        "unit": "Không áp dụng",
+        "tolerance": "Không áp dụng"
+      },
+      {
+        "id": "Q-14-006",
+        "theory": "TH-14-02",
+        "type": "tf",
+        "bloom": "Thông hiểu",
+        "stem": "Thời gian là một nhân tố hình thành đất.",
+        "options": [
+          "Đúng",
+          "Sai"
+        ],
+        "answer": "Đúng",
+        "explanation": "Quá trình hình thành và phát triển diễn ra theo thời gian.",
+        "points": 1,
+        "rubric": "Mỗi nhận định độc lập 1 điểm; đúng đáp án 1, sai/bỏ trống 0; không chấm gộp 4 nhận định.",
+        "unit": "Không áp dụng",
+        "tolerance": "Không áp dụng"
+      },
+      {
+        "id": "Q-14-007",
+        "theory": "TH-14-03",
+        "type": "tf",
+        "bloom": "Thông hiểu",
+        "stem": "Một sơ đồ phẫu diện đại diện cho mọi loại đất.",
+        "options": [
+          "Đúng",
+          "Sai"
+        ],
+        "answer": "Sai",
+        "explanation": "Phẫu diện khác nhau tùy điều kiện và nhóm đất.",
+        "points": 1,
+        "rubric": "Mỗi nhận định độc lập 1 điểm; đúng đáp án 1, sai/bỏ trống 0; không chấm gộp 4 nhận định.",
+        "unit": "Không áp dụng",
+        "tolerance": "Không áp dụng"
+      },
+      {
+        "id": "Q-14-008",
+        "theory": "TH-14-05",
+        "type": "tf",
+        "bloom": "Vận dụng",
+        "stem": "Bảo vệ thảm thực vật có thể góp phần bảo vệ đất.",
+        "options": [
+          "Đúng",
+          "Sai"
+        ],
+        "answer": "Đúng",
+        "explanation": "Che phủ và hệ rễ có thể giảm xói mòn và hỗ trợ chức năng đất.",
+        "points": 1,
+        "rubric": "Mỗi nhận định độc lập 1 điểm; đúng đáp án 1, sai/bỏ trống 0; không chấm gộp 4 nhận định.",
+        "unit": "Không áp dụng",
+        "tolerance": "Không áp dụng"
+      },
+      {
+        "id": "Q-14-009",
+        "theory": "TH-14-02",
+        "type": "short",
+        "bloom": "Thông hiểu",
+        "stem": "Nêu hai nhân tố hình thành đất và cách một nhân tố tác động.",
+        "options": [],
+        "answer": "Ví dụ khí hậu và đá mẹ; khí hậu ảnh hưởng phong hóa, ẩm và quá trình hình thành đất.",
+        "explanation": "Ví dụ khí hậu và đá mẹ; khí hậu ảnh hưởng phong hóa, ẩm và quá trình hình thành đất.",
+        "points": 2,
+        "rubric": "1 điểm hai nhân tố; 1 điểm giải thích đúng một tác động. Không khớp biến thể đã duyệt thì chuyển review theo ý nghĩa, không chấm sai chỉ vì khác từ.",
+        "unit": "Theo dữ kiện câu hỏi; giữ đơn vị khi nhắc số",
+        "tolerance": "Chấm ý nghĩa theo rubric; chưa có tự động chấm ngữ nghĩa được duyệt"
+      },
+      {
+        "id": "Q-14-010",
+        "theory": "TH-14-02",
+        "type": "short",
+        "bloom": "Vận dụng cao",
+        "stem": "Hai nơi cùng đá mẹ nhưng đất khác nhau. Giải thích khả năng này và nêu dữ liệu cần so sánh.",
+        "options": [],
+        "answer": "Khí hậu, sinh vật, địa hình, thời gian hoặc sử dụng đất khác nhau có thể tạo khác biệt; cần so ít nhất hai nhân tố đó.",
+        "explanation": "Khí hậu, sinh vật, địa hình, thời gian hoặc sử dụng đất khác nhau có thể tạo khác biệt; cần so ít nhất hai nhân tố đó.",
+        "points": 2,
+        "rubric": "1 điểm nguyên nhân tổng hợp; 1 điểm bằng chứng cần thu thập. Không khớp biến thể đã duyệt thì chuyển review theo ý nghĩa, không chấm sai chỉ vì khác từ.",
+        "unit": "Theo dữ kiện câu hỏi; giữ đơn vị khi nhắc số",
+        "tolerance": "Chấm ý nghĩa theo rubric; chưa có tự động chấm ngữ nghĩa được duyệt"
+      }
+    ]
+  },
+  {
+    "id": "LES-15",
+    "n": 15,
+    "chapter": 6,
+    "title": "Sinh quyển",
+    "titleEn": "Biosphere",
+    "goal": "Mô tả phạm vi sinh quyển; giải thích ít nhất hai mối liên hệ giữa phân bố sinh vật với khí hậu, đất và địa hình.",
+    "minutes": 35,
+    "practical": false,
+    "threeD": false,
+    "topics": [
+      {
+        "id": "TH-15-01",
+        "vi": "Khái niệm và phạm vi sinh quyển",
+        "en": "Biosphere and its extent",
+        "scene": "SCENE-15-01"
+      },
+      {
+        "id": "TH-15-02",
+        "vi": "Nhân tố phân bố sinh vật",
+        "en": "Controls on organism distribution",
+        "scene": "SCENE-15-02"
+      },
+      {
+        "id": "TH-15-03",
+        "vi": "Khí hậu đất và địa hình",
+        "en": "Climate soil and relief",
+        "scene": "SCENE-15-03"
+      },
+      {
+        "id": "TH-15-04",
+        "vi": "Phân bố và vai trò sinh vật",
+        "en": "Distribution and roles of organisms",
+        "scene": "SCENE-15-04"
+      }
+    ],
+    "sim": {
+      "id": "SIM-15",
+      "title": "Sinh vật và điều kiện môi trường",
+      "initial": "Ba môi trường giả lập A B C; chưa gán nhóm sinh vật; số liệu định tính.",
+      "steps": "Đọc điều kiện → dự đoán nhóm sinh vật → ghép → thay một điều kiện → phân tích giới hạn.",
+      "params": "Nhiệt 3 mức; ẩm 3 mức; độ cao 3 mức; lớp đất và sinh vật.",
+      "science": "Phân bố sinh vật chịu tác động phối hợp của môi trường và lịch sử, con người; không suy một nhân tố quyết định tuyệt đối.",
+      "inquiry": "PRE-15: Hai vùng cùng nhiệt độ nhưng khác độ ẩm có chắc cùng thảm thực vật không? POST-15: So thẻ điều kiện và giải thích ít nhất hai nhân tố ảnh hưởng phân bố sinh vật. Nhiệm vụ: Giữ nhiệt độ; đổi độ ẩm; đối chiếu đất và nhóm sinh vật được gợi ý. Tiêu chí giải thích: Không kết luận chỉ từ nhiệt độ; cần ẩm, đất, địa hình và tác động khác. Hai câu này không tính thay bộ 10 câu cuối bài.",
+      "data": "DATA-15: ba môi trường giả lập; ảnh loài có giấy phép; bản đồ thực cần nguồn và hệ phân loại.",
+      "fallback": "Bảng môi trường và thẻ ghép bằng nút chọn."
+    },
+    "questions": [
+      {
+        "id": "Q-15-001",
+        "theory": "TH-15-01",
+        "type": "mcq",
+        "bloom": "Nhận biết",
+        "stem": "Sinh quyển gắn với thành phần nào của tự nhiên?",
+        "options": [
+          "Sinh vật và phạm vi có sự sống",
+          "Chỉ thực vật trên lục địa",
+          "Chỉ động vật trên bề mặt đất",
+          "Chỉ sinh vật trong đại dương"
+        ],
+        "answer": "A",
+        "explanation": "Sinh quyển gắn sự sống; các lựa chọn còn lại không bao quát phạm vi này.",
+        "points": 1,
+        "rubric": "Chọn đúng 1 phương án được 1 điểm; sai hoặc bỏ trống 0.",
+        "unit": "Theo đề; không áp dụng nếu không có số",
+        "tolerance": "Không áp dụng"
+      },
+      {
+        "id": "Q-15-002",
+        "theory": "TH-15-03",
+        "type": "mcq",
+        "bloom": "Thông hiểu",
+        "stem": "Tổ hợp nào phù hợp để xem xét phân bố thảm thực vật?",
+        "options": [
+          "Chỉ nhiệt độ trung bình",
+          "Nhiệt, ẩm, đất và địa hình",
+          "Chỉ vị trí theo kinh độ",
+          "Chỉ màu đất ở bề mặt"
+        ],
+        "answer": "B",
+        "explanation": "Các điều kiện môi trường phối hợp tác động; tên và một yếu tố riêng lẻ không đủ.",
+        "points": 1,
+        "rubric": "Chọn đúng 1 phương án được 1 điểm; sai hoặc bỏ trống 0.",
+        "unit": "Theo đề; không áp dụng nếu không có số",
+        "tolerance": "Không áp dụng"
+      },
+      {
+        "id": "Q-15-003",
+        "theory": "TH-15-02",
+        "type": "mcq",
+        "bloom": "Vận dụng",
+        "stem": "Hai khu vực cùng nhiệt nhưng khác độ ẩm. Kết luận phù hợp là gì?",
+        "options": [
+          "Chắc chắn cùng mọi loài",
+          "Không thể có thực vật ở cả hai",
+          "Có thể khác thảm thực vật do khác ẩm",
+          "Chắc chắn có cùng mùa sinh trưởng"
+        ],
+        "answer": "C",
+        "explanation": "Độ ẩm khác có thể tạo khác biệt; không thể khẳng định mọi loài giống nhau.",
+        "points": 1,
+        "rubric": "Chọn đúng 1 phương án được 1 điểm; sai hoặc bỏ trống 0.",
+        "unit": "Theo đề; không áp dụng nếu không có số",
+        "tolerance": "Không áp dụng"
+      },
+      {
+        "id": "Q-15-004",
+        "theory": "TH-15-02",
+        "type": "mcq",
+        "bloom": "Vận dụng",
+        "stem": "Muốn giải thích đáng tin cậy sự khác nhau về thảm thực vật giữa hai vùng, cần làm gì?",
+        "options": [
+          "Chỉ dựa vào một yếu tố nhiệt độ",
+          "Chỉ dựa vào vĩ độ của hai nơi",
+          "Chỉ dựa vào màu trên bản đồ",
+          "Kết hợp nhiệt, ẩm, đất, địa hình và tác động con người"
+        ],
+        "answer": "D",
+        "explanation": "Phân bố thảm thực vật chịu tác động phối hợp của nhiều nhân tố; một chỉ số nhiệt, vĩ độ hoặc màu bản đồ riêng lẻ chưa đủ.",
+        "points": 1,
+        "rubric": "Chọn đúng 1 phương án được 1 điểm; sai hoặc bỏ trống 0.",
+        "unit": "Theo đề; không áp dụng nếu không có số",
+        "tolerance": "Không áp dụng"
+      },
+      {
+        "id": "Q-15-005",
+        "theory": "TH-15-01",
+        "type": "tf",
+        "bloom": "Nhận biết",
+        "stem": "Sinh quyển chỉ gồm sinh vật trên đất liền.",
+        "options": [
+          "Đúng",
+          "Sai"
+        ],
+        "answer": "Sai",
+        "explanation": "Sự sống còn có ở nước và những phần khí quyển phù hợp.",
+        "points": 1,
+        "rubric": "Mỗi nhận định độc lập 1 điểm; đúng đáp án 1, sai/bỏ trống 0; không chấm gộp 4 nhận định.",
+        "unit": "Không áp dụng",
+        "tolerance": "Không áp dụng"
+      },
+      {
+        "id": "Q-15-006",
+        "theory": "TH-15-04",
+        "type": "tf",
+        "bloom": "Thông hiểu",
+        "stem": "Con người có thể làm thay đổi phân bố sinh vật.",
+        "options": [
+          "Đúng",
+          "Sai"
+        ],
+        "answer": "Đúng",
+        "explanation": "Sử dụng đất và các tác động khác có thể làm biến đổi môi trường sống.",
+        "points": 1,
+        "rubric": "Mỗi nhận định độc lập 1 điểm; đúng đáp án 1, sai/bỏ trống 0; không chấm gộp 4 nhận định.",
+        "unit": "Không áp dụng",
+        "tolerance": "Không áp dụng"
+      },
+      {
+        "id": "Q-15-007",
+        "theory": "TH-15-02",
+        "type": "tf",
+        "bloom": "Thông hiểu",
+        "stem": "Một yếu tố nhiệt độ đủ giải thích mọi phân bố loài.",
+        "options": [
+          "Đúng",
+          "Sai"
+        ],
+        "answer": "Sai",
+        "explanation": "Phân bố do nhiều nhân tố và lịch sử tương tác.",
+        "points": 1,
+        "rubric": "Mỗi nhận định độc lập 1 điểm; đúng đáp án 1, sai/bỏ trống 0; không chấm gộp 4 nhận định.",
+        "unit": "Không áp dụng",
+        "tolerance": "Không áp dụng"
+      },
+      {
+        "id": "Q-15-008",
+        "theory": "TH-15-04",
+        "type": "tf",
+        "bloom": "Vận dụng",
+        "stem": "Bảo vệ sinh cảnh có ý nghĩa đối với sinh quyển.",
+        "options": [
+          "Đúng",
+          "Sai"
+        ],
+        "answer": "Đúng",
+        "explanation": "Sinh cảnh cung cấp điều kiện tồn tại của sinh vật.",
+        "points": 1,
+        "rubric": "Mỗi nhận định độc lập 1 điểm; đúng đáp án 1, sai/bỏ trống 0; không chấm gộp 4 nhận định.",
+        "unit": "Không áp dụng",
+        "tolerance": "Không áp dụng"
+      },
+      {
+        "id": "Q-15-009",
+        "theory": "TH-15-02",
+        "type": "short",
+        "bloom": "Thông hiểu",
+        "stem": "Nêu hai nhân tố tự nhiên ảnh hưởng sự phân bố sinh vật.",
+        "options": [],
+        "answer": "Khí hậu; đất hoặc địa hình.",
+        "explanation": "Khí hậu; đất hoặc địa hình.",
+        "points": 2,
+        "rubric": "Mỗi nhân tố hợp lệ 1 điểm. Không khớp biến thể đã duyệt thì chuyển review theo ý nghĩa, không chấm sai chỉ vì khác từ.",
+        "unit": "Theo dữ kiện câu hỏi; giữ đơn vị khi nhắc số",
+        "tolerance": "Chấm ý nghĩa theo rubric; chưa có tự động chấm ngữ nghĩa được duyệt"
+      },
+      {
+        "id": "Q-15-010",
+        "theory": "TH-15-02",
+        "type": "short",
+        "bloom": "Vận dụng cao",
+        "stem": "Vì sao hai vùng cùng nhiệt độ có thể khác thảm thực vật? Đề xuất hai biến cần đối chiếu.",
+        "options": [],
+        "answer": "Có thể khác lượng mưa, mùa khô, đất, địa hình hoặc tác động con người; đối chiếu ít nhất hai biến phù hợp.",
+        "explanation": "Có thể khác lượng mưa, mùa khô, đất, địa hình hoặc tác động con người; đối chiếu ít nhất hai biến phù hợp.",
+        "points": 2,
+        "rubric": "1 điểm giải thích đa nhân tố; 1 điểm hai biến cần kiểm tra. Không khớp biến thể đã duyệt thì chuyển review theo ý nghĩa, không chấm sai chỉ vì khác từ.",
+        "unit": "Theo dữ kiện câu hỏi; giữ đơn vị khi nhắc số",
+        "tolerance": "Chấm ý nghĩa theo rubric; chưa có tự động chấm ngữ nghĩa được duyệt"
+      }
+    ]
+  },
+  {
+    "id": "LES-16",
+    "n": 16,
+    "chapter": 6,
+    "title": "Thực hành: Tìm hiểu sự phân bố đất và sinh vật trên Trái Đất",
+    "titleEn": "World distribution of soils and organisms",
+    "goal": "Chồng lớp đất, sinh vật và khí hậu; so sánh hai vùng và giải thích mối quan hệ bằng ít nhất hai dẫn chứng trên bản đồ.",
+    "minutes": 50,
+    "practical": true,
+    "threeD": false,
+    "topics": [
+      {
+        "id": "TH-16-01",
+        "vi": "Bản đồ đất",
+        "en": "Soil maps",
+        "scene": "SCENE-16-01"
+      },
+      {
+        "id": "TH-16-02",
+        "vi": "Bản đồ sinh vật",
+        "en": "Vegetation maps",
+        "scene": "SCENE-16-02"
+      },
+      {
+        "id": "TH-16-03",
+        "vi": "So sánh vùng",
+        "en": "Regional comparison",
+        "scene": "SCENE-16-03"
+      },
+      {
+        "id": "TH-16-04",
+        "vi": "Giải thích liên hệ tự nhiên",
+        "en": "Explaining natural relationships",
+        "scene": "SCENE-16-04"
+      }
+    ],
+    "sim": {
+      "id": "SIM-16",
+      "title": "Đối chiếu lớp đất sinh vật và khí hậu",
+      "initial": "Lớp đất bật, hai lớp còn lại tắt; chú giải theo đúng hệ phân loại phiên bản.",
+      "steps": "Bật từng lớp → chọn A B → đọc thuộc tính → lập bảng so sánh → nêu quan hệ và ngoại lệ.",
+      "params": "Vùng A B; lớp đất/sinh vật/khí hậu; mức zoom trong độ phân giải cho phép.",
+      "science": "Đất và sinh vật có liên hệ với điều kiện khí hậu, địa hình và tác động con người; chồng lớp không tự chứng minh quan hệ nhân quả duy nhất.",
+      "inquiry": "PRE-16: Màu giống nhau trên bản đồ đất và bản đồ sinh vật có chắc mang cùng ý nghĩa không? POST-16: Đọc hai chú giải và lập bảng hai vùng; giải thích mối liên hệ bằng dữ liệu thay vì chỉ màu. Nhiệm vụ: Chồng lớp đất, sinh vật và khí hậu; ghi thuộc tính A B; tìm một ngoại lệ. Tiêu chí giải thích: Phải đọc chú giải riêng và đối chiếu thuộc tính; chồng lớp chưa tự chứng minh nguyên nhân duy nhất. Hai câu này không tính thay bộ 10 câu cuối bài.",
+      "data": "DATA-16: cần bộ đất, thảm thực vật và khí hậu có hệ phân loại tương thích, nguồn, ngày, tỉ lệ và quyền tái phân phối; snapshot ngoại tuyến sau khi duyệt.",
+      "fallback": "Ba bản đồ tĩnh cùng phạm vi và bảng tra theo vùng."
+    },
+    "questions": [
+      {
+        "id": "Q-16-001",
+        "theory": "TH-16-01",
+        "type": "mcq",
+        "bloom": "Nhận biết",
+        "stem": "Để đối chiếu đất với sinh vật cần đọc điều gì trước?",
+        "options": [
+          "Chỉ diện tích các vùng màu",
+          "Chỉ tên vùng được chọn",
+          "Chỉ đường biên quốc gia",
+          "Chú giải từng lớp và phạm vi bản đồ"
+        ],
+        "answer": "D",
+        "explanation": "Chú giải và phạm vi cho biết cách hiểu, so sánh; các yếu tố kia không thay thế được.",
+        "points": 1,
+        "rubric": "Chọn đúng 1 phương án được 1 điểm; sai hoặc bỏ trống 0.",
+        "unit": "Theo đề; không áp dụng nếu không có số",
+        "tolerance": "Không áp dụng"
+      },
+      {
+        "id": "Q-16-002",
+        "theory": "TH-16-03",
+        "type": "mcq",
+        "bloom": "Thông hiểu",
+        "stem": "Muốn lập bảng so hai vùng, thao tác thích hợp là gì?",
+        "options": [
+          "Chọn A B rồi ghi thuộc tính cùng các lớp",
+          "Chỉ so màu mà không đọc chú giải",
+          "So vùng khác nhau trên mỗi lớp",
+          "Chỉ ghi thuộc tính của một lớp"
+        ],
+        "answer": "A",
+        "explanation": "Cần ghi thông tin so sánh theo cùng tiêu chí; thao tác khác không tạo bằng chứng.",
+        "points": 1,
+        "rubric": "Chọn đúng 1 phương án được 1 điểm; sai hoặc bỏ trống 0.",
+        "unit": "Theo đề; không áp dụng nếu không có số",
+        "tolerance": "Không áp dụng"
+      },
+      {
+        "id": "Q-16-003",
+        "theory": "TH-16-03",
+        "type": "mcq",
+        "bloom": "Vận dụng",
+        "stem": "Hai bản đồ dùng hệ phân loại khác nhau. Nên làm gì?",
+        "options": [
+          "Coi mọi màu giống nhau là tương đương",
+          "Đối chiếu định nghĩa và ánh xạ được chuyên gia duyệt",
+          "Đổi tên nhóm chỉ để chúng khớp nhau",
+          "Bỏ qua sự khác biệt về phân loại"
+        ],
+        "answer": "B",
+        "explanation": "Khác định nghĩa có thể làm sai so sánh; cần ánh xạ rõ và chuyên gia duyệt.",
+        "points": 1,
+        "rubric": "Chọn đúng 1 phương án được 1 điểm; sai hoặc bỏ trống 0.",
+        "unit": "Theo đề; không áp dụng nếu không có số",
+        "tolerance": "Không áp dụng"
+      },
+      {
+        "id": "Q-16-004",
+        "theory": "TH-16-04",
+        "type": "mcq",
+        "bloom": "Vận dụng",
+        "stem": "Thấy đất và sinh vật trùng vùng trên bản đồ, kết luận nào hợp lí?",
+        "options": [
+          "Đất là nguyên nhân duy nhất",
+          "Không cần thêm bằng chứng nào",
+          "Có liên hệ không gian, cần xét thêm các nhân tố",
+          "Đất và sinh vật luôn trùng hoàn toàn ở mọi nơi"
+        ],
+        "answer": "C",
+        "explanation": "Chồng lớp cho bằng chứng không gian; chưa đủ xác định nguyên nhân duy nhất.",
+        "points": 1,
+        "rubric": "Chọn đúng 1 phương án được 1 điểm; sai hoặc bỏ trống 0.",
+        "unit": "Theo đề; không áp dụng nếu không có số",
+        "tolerance": "Không áp dụng"
+      },
+      {
+        "id": "Q-16-005",
+        "theory": "TH-16-01",
+        "type": "tf",
+        "bloom": "Nhận biết",
+        "stem": "Màu giống nhau trên hai bản đồ luôn mang cùng ý nghĩa.",
+        "options": [
+          "Đúng",
+          "Sai"
+        ],
+        "answer": "Sai",
+        "explanation": "Phải đọc chú giải riêng của từng bản đồ.",
+        "points": 1,
+        "rubric": "Mỗi nhận định độc lập 1 điểm; đúng đáp án 1, sai/bỏ trống 0; không chấm gộp 4 nhận định.",
+        "unit": "Không áp dụng",
+        "tolerance": "Không áp dụng"
+      },
+      {
+        "id": "Q-16-006",
+        "theory": "TH-16-03",
+        "type": "tf",
+        "bloom": "Thông hiểu",
+        "stem": "Cần biết tỉ lệ hoặc độ phân giải dữ liệu khi so sánh.",
+        "options": [
+          "Đúng",
+          "Sai"
+        ],
+        "answer": "Đúng",
+        "explanation": "Mức chi tiết ảnh hưởng suy luận từ bản đồ.",
+        "points": 1,
+        "rubric": "Mỗi nhận định độc lập 1 điểm; đúng đáp án 1, sai/bỏ trống 0; không chấm gộp 4 nhận định.",
+        "unit": "Không áp dụng",
+        "tolerance": "Không áp dụng"
+      },
+      {
+        "id": "Q-16-007",
+        "theory": "TH-16-04",
+        "type": "tf",
+        "bloom": "Thông hiểu",
+        "stem": "Chỉ cần tên vùng, không cần thuộc tính khi lập luận.",
+        "options": [
+          "Đúng",
+          "Sai"
+        ],
+        "answer": "Sai",
+        "explanation": "Lập luận cần dẫn chứng từ các lớp dữ liệu.",
+        "points": 1,
+        "rubric": "Mỗi nhận định độc lập 1 điểm; đúng đáp án 1, sai/bỏ trống 0; không chấm gộp 4 nhận định.",
+        "unit": "Không áp dụng",
+        "tolerance": "Không áp dụng"
+      },
+      {
+        "id": "Q-16-008",
+        "theory": "TH-16-03",
+        "type": "tf",
+        "bloom": "Vận dụng",
+        "stem": "Có thể dùng bảng thuộc tính làm phương án truy cập thay bản đồ kéo thả.",
+        "options": [
+          "Đúng",
+          "Sai"
+        ],
+        "answer": "Đúng",
+        "explanation": "Bảng cho phép đọc cùng thông tin bằng bàn phím và công cụ hỗ trợ.",
+        "points": 1,
+        "rubric": "Mỗi nhận định độc lập 1 điểm; đúng đáp án 1, sai/bỏ trống 0; không chấm gộp 4 nhận định.",
+        "unit": "Không áp dụng",
+        "tolerance": "Không áp dụng"
+      },
+      {
+        "id": "Q-16-009",
+        "theory": "TH-16-03",
+        "type": "short",
+        "bloom": "Thông hiểu",
+        "stem": "Nêu hai trường nên có trong bảng so sánh đất và sinh vật của hai vùng.",
+        "options": [],
+        "answer": "Tên hoặc nhóm đất; kiểu thảm thực vật; có thể thêm khí hậu để giải thích.",
+        "explanation": "Tên hoặc nhóm đất; kiểu thảm thực vật; có thể thêm khí hậu để giải thích.",
+        "points": 2,
+        "rubric": "Mỗi trường liên quan 1 điểm. Không khớp biến thể đã duyệt thì chuyển review theo ý nghĩa, không chấm sai chỉ vì khác từ.",
+        "unit": "Theo dữ kiện câu hỏi; giữ đơn vị khi nhắc số",
+        "tolerance": "Chấm ý nghĩa theo rubric; chưa có tự động chấm ngữ nghĩa được duyệt"
+      },
+      {
+        "id": "Q-16-010",
+        "theory": "TH-16-04",
+        "type": "short",
+        "bloom": "Vận dụng cao",
+        "stem": "Một vùng đất và thảm thực vật không khớp xu hướng chung. Đề xuất cách phân tích ngoại lệ.",
+        "options": [],
+        "answer": "Kiểm tra tỉ lệ, nguồn và thời gian; xem khí hậu, địa hình và sử dụng đất; không sửa dữ liệu để ép khớp.",
+        "explanation": "Kiểm tra tỉ lệ, nguồn và thời gian; xem khí hậu, địa hình và sử dụng đất; không sửa dữ liệu để ép khớp.",
+        "points": 2,
+        "rubric": "1 điểm kiểm tra chất lượng; 1 điểm giả thuyết hoặc biến bổ sung hợp lí. Không khớp biến thể đã duyệt thì chuyển review theo ý nghĩa, không chấm sai chỉ vì khác từ.",
+        "unit": "Theo dữ kiện câu hỏi; giữ đơn vị khi nhắc số",
+        "tolerance": "Chấm ý nghĩa theo rubric; chưa có tự động chấm ngữ nghĩa được duyệt"
+      }
+    ]
+  },
+  {
+    "id": "LES-17",
+    "n": 17,
+    "chapter": 7,
+    "title": "Vỏ địa lí, quy luật thống nhất và hoàn chỉnh của vỏ địa lí",
+    "titleEn": "Unity and integrity of the geographical envelope",
+    "goal": "Nhận diện các thành phần vỏ địa lí; dựng ít nhất ba mắt xích nguyên nhân hệ quả và nêu giới hạn mô hình.",
+    "minutes": 35,
+    "practical": false,
+    "threeD": false,
+    "topics": [
+      {
+        "id": "TH-17-01",
+        "vi": "Vỏ địa lí",
+        "en": "Geographical envelope",
+        "scene": "SCENE-17-01"
+      },
+      {
+        "id": "TH-17-02",
+        "vi": "Các thành phần tự nhiên",
+        "en": "Natural components",
+        "scene": "SCENE-17-02"
+      },
+      {
+        "id": "TH-17-03",
+        "vi": "Thống nhất và hoàn chỉnh",
+        "en": "Unity and integrity",
+        "scene": "SCENE-17-03"
+      },
+      {
+        "id": "TH-17-04",
+        "vi": "Tác động dây chuyền",
+        "en": "Cascading effects",
+        "scene": "SCENE-17-04"
+      }
+    ],
+    "sim": {
+      "id": "SIM-17",
+      "title": "Mạng quan hệ trong lưu vực",
+      "initial": "Kịch bản nền, che phủ 100%; các chỉ báo ở mốc tương đối 1; chú giải tác động tăng giảm mở.",
+      "steps": "Dự đoán → giảm che phủ → theo đường tác động tới thấm dòng chảy đất → ghi chuỗi → thử phục hồi.",
+      "params": "Che phủ 0/50/100%; mưa 3 mức; bật một tác động mỗi lần; không tính số lượng thiệt hại thực.",
+      "science": "Các thành phần tự nhiên tác động qua lại; sơ đồ học tập là giản lược và không khẳng định mọi thay đổi đều tuyến tính.",
+      "inquiry": "PRE-17: Giảm che phủ trong lưu vực có thể chỉ ảnh hưởng một thành phần tự nhiên không? POST-17: Lập ít nhất ba liên hệ từ che phủ tới thấm, chảy tràn, đất hoặc bồi tụ; nêu điều kiện của chuỗi. Nhiệm vụ: Đổi che phủ, chạy từng bước, theo đường tác động và so với trạng thái nền. Tiêu chí giải thích: Có chuỗi tác động và tương tác; mô hình định tính không khẳng định mọi quan hệ tuyến tính hoặc tức thì. Hai câu này không tính thay bộ 10 câu cuối bài.",
+      "data": "DATA-17: mạng quy tắc tự biên soạn cần chuyên gia duyệt từng cạnh và điều kiện; không gán hệ số thực.",
+      "fallback": "Sơ đồ nguyên nhân hệ quả 2D và bảng chuỗi tác động bằng chữ."
+    },
+    "questions": [
+      {
+        "id": "Q-17-001",
+        "theory": "TH-17-01",
+        "type": "mcq",
+        "bloom": "Nhận biết",
+        "stem": "Vỏ địa lí được nghiên cứu như thế nào trong bài này?",
+        "options": [
+          "Các thành phần rời rạc không liên quan",
+          "Hệ các thành phần tự nhiên có tương tác",
+          "Chỉ thành phần đất và đá",
+          "Chỉ thành phần khí hậu"
+        ],
+        "answer": "B",
+        "explanation": "Bài nhấn mạnh quan hệ hệ thống; một thành phần riêng hoặc phủ nhận liên hệ là không đủ.",
+        "points": 1,
+        "rubric": "Chọn đúng 1 phương án được 1 điểm; sai hoặc bỏ trống 0.",
+        "unit": "Theo đề; không áp dụng nếu không có số",
+        "tolerance": "Không áp dụng"
+      },
+      {
+        "id": "Q-17-002",
+        "theory": "TH-17-04",
+        "type": "mcq",
+        "bloom": "Thông hiểu",
+        "stem": "Giảm che phủ có thể tác động tới dòng chảy vì sao?",
+        "options": [
+          "Chỉ thay đổi màu trên bản đồ",
+          "Không thể làm thay đổi đường đi nước",
+          "Có thể thay đổi thấm và chảy tràn",
+          "Luôn tạo tác động giống nhau ở mọi lưu vực"
+        ],
+        "answer": "C",
+        "explanation": "Che phủ liên quan thấm và chảy tràn trong điều kiện phù hợp; các giải thích khác không có cơ chế.",
+        "points": 1,
+        "rubric": "Chọn đúng 1 phương án được 1 điểm; sai hoặc bỏ trống 0.",
+        "unit": "Theo đề; không áp dụng nếu không có số",
+        "tolerance": "Không áp dụng"
+      },
+      {
+        "id": "Q-17-003",
+        "theory": "TH-17-04",
+        "type": "mcq",
+        "bloom": "Vận dụng",
+        "stem": "Muốn chứng minh một chuỗi tác động trong mô hình, cần ghi gì?",
+        "options": [
+          "Biến thay đổi, các mắt xích và kết quả",
+          "Chỉ hình dạng địa hình cuối cùng",
+          "Chỉ tên thành phần ban đầu",
+          "Chỉ kết quả mà không ghi điều kiện"
+        ],
+        "answer": "A",
+        "explanation": "Cần truy nguyên chuỗi và kết quả; các yếu tố khác không đủ giải thích.",
+        "points": 1,
+        "rubric": "Chọn đúng 1 phương án được 1 điểm; sai hoặc bỏ trống 0.",
+        "unit": "Theo đề; không áp dụng nếu không có số",
+        "tolerance": "Không áp dụng"
+      },
+      {
+        "id": "Q-17-004",
+        "theory": "TH-17-03",
+        "type": "mcq",
+        "bloom": "Vận dụng",
+        "stem": "Kết quả mô hình hệ thống định tính nên được diễn giải thế nào?",
+        "options": [
+          "Luôn dự báo đúng mọi lưu vực",
+          "Mọi chỉ số đều là số đo quan trắc",
+          "Mọi tác động đều tức thì và tuyến tính",
+          "Là xu hướng trong giả định, cần dữ liệu để kiểm chứng thực tế"
+        ],
+        "answer": "D",
+        "explanation": "Mô hình giản lược không thay kiểm chứng; không được coi hệ số và độ trễ là số đo thực.",
+        "points": 1,
+        "rubric": "Chọn đúng 1 phương án được 1 điểm; sai hoặc bỏ trống 0.",
+        "unit": "Theo đề; không áp dụng nếu không có số",
+        "tolerance": "Không áp dụng"
+      },
+      {
+        "id": "Q-17-005",
+        "theory": "TH-17-03",
+        "type": "tf",
+        "bloom": "Nhận biết",
+        "stem": "Các thành phần tự nhiên hoàn toàn độc lập.",
+        "options": [
+          "Đúng",
+          "Sai"
+        ],
+        "answer": "Sai",
+        "explanation": "Chúng có quan hệ và tác động qua lại.",
+        "points": 1,
+        "rubric": "Mỗi nhận định độc lập 1 điểm; đúng đáp án 1, sai/bỏ trống 0; không chấm gộp 4 nhận định.",
+        "unit": "Không áp dụng",
+        "tolerance": "Không áp dụng"
+      },
+      {
+        "id": "Q-17-006",
+        "theory": "TH-17-04",
+        "type": "tf",
+        "bloom": "Thông hiểu",
+        "stem": "Một thay đổi có thể dẫn tới chuỗi hệ quả.",
+        "options": [
+          "Đúng",
+          "Sai"
+        ],
+        "answer": "Đúng",
+        "explanation": "Đó là biểu hiện cần phân tích trong hệ thống tự nhiên.",
+        "points": 1,
+        "rubric": "Mỗi nhận định độc lập 1 điểm; đúng đáp án 1, sai/bỏ trống 0; không chấm gộp 4 nhận định.",
+        "unit": "Không áp dụng",
+        "tolerance": "Không áp dụng"
+      },
+      {
+        "id": "Q-17-007",
+        "theory": "TH-17-01",
+        "type": "tf",
+        "bloom": "Thông hiểu",
+        "stem": "Sơ đồ mô hình luôn bao quát mọi quan hệ ngoài thực tế.",
+        "options": [
+          "Đúng",
+          "Sai"
+        ],
+        "answer": "Sai",
+        "explanation": "Mô hình chỉ chọn các quan hệ phục vụ mục tiêu học tập.",
+        "points": 1,
+        "rubric": "Mỗi nhận định độc lập 1 điểm; đúng đáp án 1, sai/bỏ trống 0; không chấm gộp 4 nhận định.",
+        "unit": "Không áp dụng",
+        "tolerance": "Không áp dụng"
+      },
+      {
+        "id": "Q-17-008",
+        "theory": "TH-17-03",
+        "type": "tf",
+        "bloom": "Vận dụng",
+        "stem": "Cần nêu điều kiện khi giải thích quan hệ nhân quả.",
+        "options": [
+          "Đúng",
+          "Sai"
+        ],
+        "answer": "Đúng",
+        "explanation": "Tác động phụ thuộc bối cảnh và các biến khác.",
+        "points": 1,
+        "rubric": "Mỗi nhận định độc lập 1 điểm; đúng đáp án 1, sai/bỏ trống 0; không chấm gộp 4 nhận định.",
+        "unit": "Không áp dụng",
+        "tolerance": "Không áp dụng"
+      },
+      {
+        "id": "Q-17-009",
+        "theory": "TH-17-04",
+        "type": "short",
+        "bloom": "Thông hiểu",
+        "stem": "Nêu chuỗi hai mắt xích có thể xảy ra khi giảm che phủ trong lưu vực.",
+        "options": [],
+        "answer": "Giảm che phủ → giảm bảo vệ mặt đất hoặc thay đổi thấm → tăng chảy tràn/xói mòn trong điều kiện phù hợp.",
+        "explanation": "Giảm che phủ → giảm bảo vệ mặt đất hoặc thay đổi thấm → tăng chảy tràn/xói mòn trong điều kiện phù hợp.",
+        "points": 2,
+        "rubric": "1 điểm mỗi mắt xích có cơ chế hợp lí. Không khớp biến thể đã duyệt thì chuyển review theo ý nghĩa, không chấm sai chỉ vì khác từ.",
+        "unit": "Theo dữ kiện câu hỏi; giữ đơn vị khi nhắc số",
+        "tolerance": "Chấm ý nghĩa theo rubric; chưa có tự động chấm ngữ nghĩa được duyệt"
+      },
+      {
+        "id": "Q-17-010",
+        "theory": "TH-17-04",
+        "type": "short",
+        "bloom": "Vận dụng cao",
+        "stem": "Lập chuỗi ít nhất ba mắt xích từ mất rừng tới biến đổi dòng chảy hoặc đất, rồi nêu giới hạn của kết luận.",
+        "options": [],
+        "answer": "Giảm che phủ → giảm giữ nước/bảo vệ đất → tăng chảy tràn hoặc xói mòn → tăng vật liệu về hạ lưu; phụ thuộc mưa, dốc, đất và can thiệp.",
+        "explanation": "Giảm che phủ → giảm giữ nước/bảo vệ đất → tăng chảy tràn hoặc xói mòn → tăng vật liệu về hạ lưu; phụ thuộc mưa, dốc, đất và can thiệp.",
+        "points": 2,
+        "rubric": "1 điểm chuỗi có ít nhất ba liên hệ đúng; 1 điểm giới hạn đa nhân tố. Không khớp biến thể đã duyệt thì chuyển review theo ý nghĩa, không chấm sai chỉ vì khác từ.",
+        "unit": "Theo dữ kiện câu hỏi; giữ đơn vị khi nhắc số",
+        "tolerance": "Chấm ý nghĩa theo rubric; chưa có tự động chấm ngữ nghĩa được duyệt"
+      }
+    ]
+  },
+  {
+    "id": "LES-18",
+    "n": 18,
+    "chapter": 7,
+    "title": "Quy luật địa đới và quy luật phi địa đới",
+    "titleEn": "Latitudinal zonality and azonality",
+    "goal": "Phân biệt địa đới và phi địa đới; giải thích phân hóa theo vĩ độ, độ cao và vị trí lục địa bằng dẫn chứng.",
+    "minutes": 35,
+    "practical": false,
+    "threeD": false,
+    "topics": [
+      {
+        "id": "TH-18-01",
+        "vi": "Quy luật địa đới",
+        "en": "Latitudinal zonality",
+        "scene": "SCENE-18-01"
+      },
+      {
+        "id": "TH-18-02",
+        "vi": "Quy luật phi địa đới",
+        "en": "Azonality",
+        "scene": "SCENE-18-02"
+      },
+      {
+        "id": "TH-18-03",
+        "vi": "Đai cao",
+        "en": "Altitudinal zonation",
+        "scene": "SCENE-18-03"
+      },
+      {
+        "id": "TH-18-04",
+        "vi": "Phân hóa theo vị trí lục địa",
+        "en": "Continentality related differentiation",
+        "scene": "SCENE-18-04"
+      }
+    ],
+    "sim": {
+      "id": "SIM-18",
+      "title": "Hai lát cắt vĩ độ độ cao và vị trí lục địa",
+      "initial": "Chế độ vĩ độ, độ cao cố định; nhãn dữ liệu minh họa; chưa chọn điểm so sánh.",
+      "steps": "Di chuyển theo vĩ độ → giữ vĩ độ tăng độ cao → theo hướng biển vào lục địa → so nguyên nhân.",
+      "params": "Vĩ độ 0–60; độ cao 0/1000/2000/3000 m; vị trí biển ven/nội địa; lớp nhiệt ẩm/sinh vật.",
+      "science": "Địa đới gắn phân hóa theo vĩ độ; phi địa đới liên quan các nhân tố như độ cao và phân bố lục địa đại dương; cùng tác động trong thực tế.",
+      "inquiry": "PRE-18: Đổi độ cao tại cùng vĩ độ có tương đương với đổi vĩ độ ở cùng độ cao không? POST-18: So hai lát cắt và nêu nguyên nhân để phân biệt địa đới, đai cao và giới hạn chung của sơ đồ. Nhiệm vụ: So cặp khác vĩ độ ở độ cao gần nhau rồi cặp khác độ cao tại cùng vĩ độ; ghi biến kiểm soát. Tiêu chí giải thích: Hai trục phân hóa khác nhau; đai cao còn phụ thuộc vĩ độ, sườn và điều kiện địa phương. Hai câu này không tính thay bộ 10 câu cuối bài.",
+      "data": "DATA-18: lát cắt tự dựng; hệ thống thuật ngữ, giới hạn và ví dụ địa ô cần đối chiếu SGK bởi SME.",
+      "fallback": "Ba lát cắt 2D theo bước, bảng so sánh hai điểm và mô tả bằng chữ."
+    },
+    "questions": [
+      {
+        "id": "Q-18-001",
+        "theory": "TH-18-01",
+        "type": "mcq",
+        "bloom": "Nhận biết",
+        "stem": "Phân hóa tự nhiên theo vĩ độ gắn chủ yếu với quy luật nào?",
+        "options": [
+          "Địa đới",
+          "Đai cao",
+          "Phân hóa theo hướng sườn",
+          "Phân hóa biển–lục địa"
+        ],
+        "answer": "A",
+        "explanation": "Địa đới mô tả phân hóa theo vĩ độ; các hiện tượng kia thuộc cơ chế khác.",
+        "points": 1,
+        "rubric": "Chọn đúng 1 phương án được 1 điểm; sai hoặc bỏ trống 0.",
+        "unit": "Theo đề; không áp dụng nếu không có số",
+        "tolerance": "Không áp dụng"
+      },
+      {
+        "id": "Q-18-002",
+        "theory": "TH-18-03",
+        "type": "mcq",
+        "bloom": "Thông hiểu",
+        "stem": "Phân hóa theo độ cao là biểu hiện thuộc nhóm nào trong bài?",
+        "options": [
+          "Chỉ địa đới",
+          "Phi địa đới",
+          "Chỉ theo kinh độ",
+          "Chỉ theo khoảng cách tới biển"
+        ],
+        "answer": "B",
+        "explanation": "Độ cao là nhân tố phi địa đới; không phải thay đổi vĩ độ.",
+        "points": 1,
+        "rubric": "Chọn đúng 1 phương án được 1 điểm; sai hoặc bỏ trống 0.",
+        "unit": "Theo đề; không áp dụng nếu không có số",
+        "tolerance": "Không áp dụng"
+      },
+      {
+        "id": "Q-18-003",
+        "theory": "TH-18-03",
+        "type": "mcq",
+        "bloom": "Vận dụng",
+        "stem": "Muốn tách ảnh hưởng độ cao, cặp so sánh nào phù hợp hơn?",
+        "options": [
+          "Hai điểm đổi mọi điều kiện",
+          "Hai bán cầu khác nhau về mùa và độ cao",
+          "Hai điểm gần cùng vĩ độ, khác độ cao, ghi các điều kiện khác",
+          "Hai điểm cùng độ cao nhưng khác hoàn toàn vĩ độ"
+        ],
+        "answer": "C",
+        "explanation": "So cặp có kiểm soát làm rõ độ cao; phải ghi giới hạn khi các điều kiện còn khác.",
+        "points": 1,
+        "rubric": "Chọn đúng 1 phương án được 1 điểm; sai hoặc bỏ trống 0.",
+        "unit": "Theo đề; không áp dụng nếu không có số",
+        "tolerance": "Không áp dụng"
+      },
+      {
+        "id": "Q-18-004",
+        "theory": "TH-18-03",
+        "type": "mcq",
+        "bloom": "Vận dụng",
+        "stem": "Vì sao không dùng một sơ đồ đai cao cho mọi dãy núi?",
+        "options": [
+          "Vì độ cao không ảnh hưởng tự nhiên",
+          "Vì chỉ địa đới có ý nghĩa",
+          "Vì mọi sườn đều nhận cùng nhiệt và ẩm",
+          "Vì vĩ độ, sườn đón gió và điều kiện địa phương khác"
+        ],
+        "answer": "D",
+        "explanation": "Mốc và thành phần đai phụ thuộc nhiều điều kiện; không phủ nhận quy luật chung.",
+        "points": 1,
+        "rubric": "Chọn đúng 1 phương án được 1 điểm; sai hoặc bỏ trống 0.",
+        "unit": "Theo đề; không áp dụng nếu không có số",
+        "tolerance": "Không áp dụng"
+      },
+      {
+        "id": "Q-18-005",
+        "theory": "TH-18-02",
+        "type": "tf",
+        "bloom": "Nhận biết",
+        "stem": "Mọi phân hóa tự nhiên đều chỉ do vĩ độ.",
+        "options": [
+          "Đúng",
+          "Sai"
+        ],
+        "answer": "Sai",
+        "explanation": "Độ cao, phân bố lục địa đại dương và các yếu tố khác cũng tác động.",
+        "points": 1,
+        "rubric": "Mỗi nhận định độc lập 1 điểm; đúng đáp án 1, sai/bỏ trống 0; không chấm gộp 4 nhận định.",
+        "unit": "Không áp dụng",
+        "tolerance": "Không áp dụng"
+      },
+      {
+        "id": "Q-18-006",
+        "theory": "TH-18-02",
+        "type": "tf",
+        "bloom": "Thông hiểu",
+        "stem": "Địa đới và phi địa đới có thể cùng thể hiện tại một khu vực.",
+        "options": [
+          "Đúng",
+          "Sai"
+        ],
+        "answer": "Đúng",
+        "explanation": "Các quy luật phối hợp tạo tính đa dạng tự nhiên.",
+        "points": 1,
+        "rubric": "Mỗi nhận định độc lập 1 điểm; đúng đáp án 1, sai/bỏ trống 0; không chấm gộp 4 nhận định.",
+        "unit": "Không áp dụng",
+        "tolerance": "Không áp dụng"
+      },
+      {
+        "id": "Q-18-007",
+        "theory": "TH-18-03",
+        "type": "tf",
+        "bloom": "Thông hiểu",
+        "stem": "Mốc đai cao của mọi núi luôn giống nhau.",
+        "options": [
+          "Đúng",
+          "Sai"
+        ],
+        "answer": "Sai",
+        "explanation": "Mốc đai khác theo vĩ độ, sườn và điều kiện địa phương.",
+        "points": 1,
+        "rubric": "Mỗi nhận định độc lập 1 điểm; đúng đáp án 1, sai/bỏ trống 0; không chấm gộp 4 nhận định.",
+        "unit": "Không áp dụng",
+        "tolerance": "Không áp dụng"
+      },
+      {
+        "id": "Q-18-008",
+        "theory": "TH-18-04",
+        "type": "tf",
+        "bloom": "Vận dụng",
+        "stem": "So sánh cần chỉ rõ trục vĩ độ hay độ cao đang thay đổi.",
+        "options": [
+          "Đúng",
+          "Sai"
+        ],
+        "answer": "Đúng",
+        "explanation": "Điều này giúp xác định nguyên nhân phân hóa đang xét.",
+        "points": 1,
+        "rubric": "Mỗi nhận định độc lập 1 điểm; đúng đáp án 1, sai/bỏ trống 0; không chấm gộp 4 nhận định.",
+        "unit": "Không áp dụng",
+        "tolerance": "Không áp dụng"
+      },
+      {
+        "id": "Q-18-009",
+        "theory": "TH-18-01",
+        "type": "short",
+        "bloom": "Thông hiểu",
+        "stem": "Phân biệt ngắn gọn địa đới và đai cao.",
+        "options": [],
+        "answer": "Địa đới là phân hóa gắn vĩ độ; đai cao là phân hóa theo độ cao thuộc phi địa đới trong phạm vi bài học.",
+        "explanation": "Địa đới là phân hóa gắn vĩ độ; đai cao là phân hóa theo độ cao thuộc phi địa đới trong phạm vi bài học.",
+        "points": 2,
+        "rubric": "Mỗi phân biệt đúng 1 điểm. Không khớp biến thể đã duyệt thì chuyển review theo ý nghĩa, không chấm sai chỉ vì khác từ.",
+        "unit": "Theo dữ kiện câu hỏi; giữ đơn vị khi nhắc số",
+        "tolerance": "Chấm ý nghĩa theo rubric; chưa có tự động chấm ngữ nghĩa được duyệt"
+      },
+      {
+        "id": "Q-18-010",
+        "theory": "TH-18-02",
+        "type": "short",
+        "bloom": "Vận dụng cao",
+        "stem": "Thiết kế hai phép so sánh để phân biệt tác động vĩ độ và độ cao; nêu điều kiện cần giữ hoặc ghi lại.",
+        "options": [],
+        "answer": "So khác vĩ độ ở độ cao gần tương đương; so khác độ cao tại vĩ độ gần nhau; ghi mùa, vị trí, hướng sườn và giới hạn kiểm soát.",
+        "explanation": "So khác vĩ độ ở độ cao gần tương đương; so khác độ cao tại vĩ độ gần nhau; ghi mùa, vị trí, hướng sườn và giới hạn kiểm soát.",
+        "points": 2,
+        "rubric": "1 điểm hai phép so sánh; 1 điểm biến kiểm soát và giới hạn. Không khớp biến thể đã duyệt thì chuyển review theo ý nghĩa, không chấm sai chỉ vì khác từ.",
+        "unit": "Theo dữ kiện câu hỏi; giữ đơn vị khi nhắc số",
+        "tolerance": "Chấm ý nghĩa theo rubric; chưa có tự động chấm ngữ nghĩa được duyệt"
+      }
+    ]
+  }
+]

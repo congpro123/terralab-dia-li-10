@@ -1,0 +1,655 @@
+[
+  {
+    "id": "LES-02",
+    "n": 2,
+    "chapter": 1,
+    "title": "Một số phương pháp biểu hiện các đối tượng địa lí trên bản đồ",
+    "titleEn": "Representing geographical features on maps",
+    "goal": "Phân biệt bốn phương pháp biểu hiện; chọn đúng phương pháp cho ít nhất 3/4 tình huống và giải thích bằng đặc điểm dữ liệu.",
+    "minutes": 35,
+    "practical": false,
+    "threeD": false,
+    "topics": [
+      {
+        "id": "TH-02-01",
+        "vi": "Phương pháp kí hiệu",
+        "en": "Symbol method",
+        "scene": "SCENE-02-01"
+      },
+      {
+        "id": "TH-02-02",
+        "vi": "Kí hiệu đường chuyển động",
+        "en": "Flow line method",
+        "scene": "SCENE-02-02"
+      },
+      {
+        "id": "TH-02-03",
+        "vi": "Phương pháp chấm điểm",
+        "en": "Dot method",
+        "scene": "SCENE-02-03"
+      },
+      {
+        "id": "TH-02-04",
+        "vi": "Bản đồ biểu đồ",
+        "en": "Cartodiagram method",
+        "scene": "SCENE-02-04"
+      }
+    ]
+  },
+  {
+    "id": "LES-03",
+    "n": 3,
+    "chapter": 1,
+    "title": "Sử dụng bản đồ trong học tập và đời sống, một số ứng dụng của GPS và bản đồ số trong đời sống",
+    "titleEn": "Maps, GPS and digital navigation",
+    "goal": "Đọc tọa độ, chọn tuyến đường theo tiêu chí cho trước; giải thích vai trò GPS và xử lý tình huống từ chối quyền vị trí.",
+    "minutes": 35,
+    "practical": false,
+    "threeD": false,
+    "topics": [
+      {
+        "id": "TH-03-01",
+        "vi": "Sử dụng bản đồ",
+        "en": "Map use",
+        "scene": "SCENE-03-01"
+      },
+      {
+        "id": "TH-03-02",
+        "vi": "Nguyên lí GPS",
+        "en": "GPS positioning",
+        "scene": "SCENE-03-02"
+      },
+      {
+        "id": "TH-03-03",
+        "vi": "Bản đồ số và tọa độ",
+        "en": "Digital maps and coordinates",
+        "scene": "SCENE-03-03"
+      },
+      {
+        "id": "TH-03-04",
+        "vi": "Định vị và tìm đường",
+        "en": "Positioning and route planning",
+        "scene": "SCENE-03-04"
+      }
+    ]
+  },
+  {
+    "id": "LES-04",
+    "n": 4,
+    "chapter": 2,
+    "title": "Sự hình thành Trái Đất, vỏ Trái Đất và vật liệu cấu tạo vỏ Trái Đất",
+    "titleEn": "Earth formation, crust and rocks",
+    "goal": "Mô tả khái quát quá trình hình thành; phân biệt vỏ lục địa và đại dương, khoáng vật và đá bằng ít nhất hai đặc điểm.",
+    "minutes": 35,
+    "practical": false,
+    "threeD": true,
+    "topics": [
+      {
+        "id": "TH-04-01",
+        "vi": "Sự hình thành Trái Đất",
+        "en": "Formation of Earth",
+        "scene": "SCENE-04-01"
+      },
+      {
+        "id": "TH-04-02",
+        "vi": "Vỏ lục địa và vỏ đại dương",
+        "en": "Continental and oceanic crust",
+        "scene": "SCENE-04-02"
+      },
+      {
+        "id": "TH-04-03",
+        "vi": "Khoáng vật và đá",
+        "en": "Minerals and rocks",
+        "scene": "SCENE-04-03"
+      },
+      {
+        "id": "TH-04-04",
+        "vi": "Các nhóm đá và quá trình địa chất",
+        "en": "Rock groups and geological processes",
+        "scene": "SCENE-04-04"
+      }
+    ]
+  },
+  {
+    "id": "LES-05",
+    "n": 5,
+    "chapter": 2,
+    "title": "Hệ quả địa lí các chuyển động của Trái Đất",
+    "titleEn": "Geographical effects of Earth’s motions",
+    "goal": "Giải thích ngày đêm và mùa; tính đúng giờ theo múi đơn giản và bác bỏ quan niệm mùa chỉ do khoảng cách đến Mặt Trời.",
+    "minutes": 35,
+    "practical": false,
+    "threeD": true,
+    "topics": [
+      {
+        "id": "TH-05-01",
+        "vi": "Tự quay quanh trục",
+        "en": "Rotation",
+        "scene": "SCENE-05-01"
+      },
+      {
+        "id": "TH-05-02",
+        "vi": "Chuyển động quanh Mặt Trời",
+        "en": "Revolution",
+        "scene": "SCENE-05-02"
+      },
+      {
+        "id": "TH-05-03",
+        "vi": "Ngày đêm và giờ múi",
+        "en": "Day night and time zones",
+        "scene": "SCENE-05-03"
+      },
+      {
+        "id": "TH-05-04",
+        "vi": "Mùa và độ dài ngày đêm",
+        "en": "Seasons and day length",
+        "scene": "SCENE-05-04"
+      }
+    ]
+  },
+  {
+    "id": "LES-06",
+    "n": 6,
+    "chapter": 3,
+    "title": "Thạch quyển, thuyết kiến tạo mảng",
+    "titleEn": "Lithosphere and plate tectonics",
+    "goal": "Nhận diện ba kiểu ranh giới mảng; giải thích mối liên hệ có điều kiện giữa chuyển động mảng, địa hình, động đất và núi lửa.",
+    "minutes": 35,
+    "practical": false,
+    "threeD": true,
+    "topics": [
+      {
+        "id": "TH-06-01",
+        "vi": "Thạch quyển",
+        "en": "Lithosphere",
+        "scene": "SCENE-06-01"
+      },
+      {
+        "id": "TH-06-02",
+        "vi": "Các mảng kiến tạo",
+        "en": "Tectonic plates",
+        "scene": "SCENE-06-02"
+      },
+      {
+        "id": "TH-06-03",
+        "vi": "Ranh giới mảng",
+        "en": "Plate boundaries",
+        "scene": "SCENE-06-03"
+      },
+      {
+        "id": "TH-06-04",
+        "vi": "Hệ quả chuyển động mảng",
+        "en": "Effects of plate motion",
+        "scene": "SCENE-06-04"
+      }
+    ]
+  },
+  {
+    "id": "LES-07",
+    "n": 7,
+    "chapter": 3,
+    "title": "Nội lực và ngoại lực",
+    "titleEn": "Internal and external forces",
+    "goal": "Phân loại nội lực, ngoại lực; sắp xếp phong hóa, bóc mòn, vận chuyển, bồi tụ và giải thích tương tác tạo địa hình.",
+    "minutes": 35,
+    "practical": false,
+    "threeD": true,
+    "topics": [
+      {
+        "id": "TH-07-01",
+        "vi": "Nội lực",
+        "en": "Endogenic forces",
+        "scene": "SCENE-07-01"
+      },
+      {
+        "id": "TH-07-02",
+        "vi": "Ngoại lực",
+        "en": "Exogenic forces",
+        "scene": "SCENE-07-02"
+      },
+      {
+        "id": "TH-07-03",
+        "vi": "Phong hóa và bóc mòn",
+        "en": "Weathering and erosion",
+        "scene": "SCENE-07-03"
+      },
+      {
+        "id": "TH-07-04",
+        "vi": "Vận chuyển và bồi tụ",
+        "en": "Transport and deposition",
+        "scene": "SCENE-07-04"
+      }
+    ]
+  },
+  {
+    "id": "LES-08",
+    "n": 8,
+    "chapter": 3,
+    "title": "Thực hành: Sự phân bố các vành đai động đất, núi lửa",
+    "titleEn": "Earthquake and volcano belts",
+    "goal": "Chồng ba lớp dữ liệu; nhận diện hai vùng tập trung và viết nhận xét có dẫn chứng về ranh giới mảng, kể cả ngoại lệ.",
+    "minutes": 50,
+    "practical": true,
+    "threeD": false,
+    "topics": [
+      {
+        "id": "TH-08-01",
+        "vi": "Đọc bản đồ động đất",
+        "en": "Reading earthquake maps",
+        "scene": "SCENE-08-01"
+      },
+      {
+        "id": "TH-08-02",
+        "vi": "Phân bố núi lửa",
+        "en": "Volcano distribution",
+        "scene": "SCENE-08-02"
+      },
+      {
+        "id": "TH-08-03",
+        "vi": "Đối chiếu ranh giới mảng",
+        "en": "Comparing plate boundaries",
+        "scene": "SCENE-08-03"
+      },
+      {
+        "id": "TH-08-04",
+        "vi": "Nhận xét từ dữ liệu",
+        "en": "Evidence based interpretation",
+        "scene": "SCENE-08-04"
+      }
+    ]
+  },
+  {
+    "id": "LES-09",
+    "n": 9,
+    "chapter": 4,
+    "title": "Khí quyển, các yếu tố khí hậu",
+    "titleEn": "Atmosphere and climate elements",
+    "goal": "Mô tả cấu trúc khí quyển; giải thích liên hệ nhiệt độ, khí áp, gió, ẩm và mưa trong kịch bản có kiểm soát.",
+    "minutes": 35,
+    "practical": false,
+    "threeD": false,
+    "topics": [
+      {
+        "id": "TH-09-01",
+        "vi": "Thành phần và cấu trúc khí quyển",
+        "en": "Atmospheric composition and structure",
+        "scene": "SCENE-09-01"
+      },
+      {
+        "id": "TH-09-02",
+        "vi": "Nhiệt độ không khí",
+        "en": "Air temperature",
+        "scene": "SCENE-09-02"
+      },
+      {
+        "id": "TH-09-03",
+        "vi": "Khí áp và gió",
+        "en": "Air pressure and wind",
+        "scene": "SCENE-09-03"
+      },
+      {
+        "id": "TH-09-04",
+        "vi": "Độ ẩm mây và mưa",
+        "en": "Humidity clouds and precipitation",
+        "scene": "SCENE-09-04"
+      },
+      {
+        "id": "TH-09-05",
+        "vi": "Nhân tố khí hậu",
+        "en": "Climate controls",
+        "scene": "SCENE-09-05"
+      },
+      {
+        "id": "TH-09-06",
+        "vi": "Quan hệ các yếu tố khí hậu",
+        "en": "Relationships among climate elements",
+        "scene": "SCENE-09-06"
+      }
+    ]
+  },
+  {
+    "id": "LES-10",
+    "n": 10,
+    "chapter": 4,
+    "title": "Thực hành: Đọc bản đồ các đới và các kiểu khí hậu trên Trái Đất, phân tích biểu đồ một số kiểu khí hậu",
+    "titleEn": "Climate maps and climographs",
+    "goal": "Đọc bản đồ khí hậu; tính biên độ nhiệt và tổng mưa từ 12 tháng; so sánh hai trạm, nhận diện kiểu có căn cứ.",
+    "minutes": 50,
+    "practical": true,
+    "threeD": false,
+    "topics": [
+      {
+        "id": "TH-10-01",
+        "vi": "Bản đồ các đới khí hậu",
+        "en": "Climate zone maps",
+        "scene": "SCENE-10-01"
+      },
+      {
+        "id": "TH-10-02",
+        "vi": "Các kiểu khí hậu",
+        "en": "Climate types",
+        "scene": "SCENE-10-02"
+      },
+      {
+        "id": "TH-10-03",
+        "vi": "Biểu đồ nhiệt độ lượng mưa",
+        "en": "Climographs",
+        "scene": "SCENE-10-03"
+      },
+      {
+        "id": "TH-10-04",
+        "vi": "So sánh và nhận diện",
+        "en": "Climate comparison and identification",
+        "scene": "SCENE-10-04"
+      }
+    ]
+  },
+  {
+    "id": "LES-11",
+    "n": 11,
+    "chapter": 5,
+    "title": "Thủy quyển, nước trên lục địa",
+    "titleEn": "Hydrosphere and continental waters",
+    "goal": "Nhận biết các thành phần thủy quyển; giải thích đường đi nước và ít nhất hai nhân tố ảnh hưởng chế độ sông.",
+    "minutes": 35,
+    "practical": false,
+    "threeD": true,
+    "topics": [
+      {
+        "id": "TH-11-01",
+        "vi": "Thủy quyển",
+        "en": "Hydrosphere",
+        "scene": "SCENE-11-01"
+      },
+      {
+        "id": "TH-11-02",
+        "vi": "Vòng tuần hoàn nước",
+        "en": "Water cycle",
+        "scene": "SCENE-11-02"
+      },
+      {
+        "id": "TH-11-03",
+        "vi": "Sông hồ và nước ngầm",
+        "en": "Rivers lakes and groundwater",
+        "scene": "SCENE-11-03"
+      },
+      {
+        "id": "TH-11-04",
+        "vi": "Chế độ nước sông",
+        "en": "River regime",
+        "scene": "SCENE-11-04"
+      },
+      {
+        "id": "TH-11-05",
+        "vi": "Vai trò của nước",
+        "en": "Roles of water",
+        "scene": "SCENE-11-05"
+      }
+    ]
+  },
+  {
+    "id": "LES-12",
+    "n": 12,
+    "chapter": 5,
+    "title": "Nước biển và đại dương",
+    "titleEn": "Seas and oceans",
+    "goal": "So sánh độ muối, nhiệt độ; phân biệt sóng, thủy triều, dòng biển và giải thích nguyên nhân chủ yếu theo từng hiện tượng.",
+    "minutes": 35,
+    "practical": false,
+    "threeD": true,
+    "topics": [
+      {
+        "id": "TH-12-01",
+        "vi": "Độ muối và nhiệt độ biển",
+        "en": "Ocean salinity and temperature",
+        "scene": "SCENE-12-01"
+      },
+      {
+        "id": "TH-12-02",
+        "vi": "Sóng biển",
+        "en": "Ocean waves",
+        "scene": "SCENE-12-02"
+      },
+      {
+        "id": "TH-12-03",
+        "vi": "Thủy triều",
+        "en": "Tides",
+        "scene": "SCENE-12-03"
+      },
+      {
+        "id": "TH-12-04",
+        "vi": "Dòng biển",
+        "en": "Ocean currents",
+        "scene": "SCENE-12-04"
+      }
+    ]
+  },
+  {
+    "id": "LES-13",
+    "n": 13,
+    "chapter": 5,
+    "title": "Thực hành: Phân tích chế độ nước của sông Hồng",
+    "titleEn": "Analysing the Red River’s flow regime",
+    "goal": "Đọc 12 tháng lưu lượng; xác định cực trị, tính chỉ số theo quy tắc; nhận diện mùa và giải thích có dẫn chứng từ nguồn đã duyệt.",
+    "minutes": 50,
+    "practical": true,
+    "threeD": false,
+    "topics": [
+      {
+        "id": "TH-13-01",
+        "vi": "Bảng lưu lượng tháng",
+        "en": "Monthly discharge table",
+        "scene": "SCENE-13-01"
+      },
+      {
+        "id": "TH-13-02",
+        "vi": "Mùa lũ và mùa cạn",
+        "en": "High flow and low flow seasons",
+        "scene": "SCENE-13-02"
+      },
+      {
+        "id": "TH-13-03",
+        "vi": "Chỉ số lưu lượng",
+        "en": "Discharge indicators",
+        "scene": "SCENE-13-03"
+      },
+      {
+        "id": "TH-13-04",
+        "vi": "Biểu đồ và giải thích chế độ nước",
+        "en": "Hydrograph interpretation",
+        "scene": "SCENE-13-04"
+      }
+    ]
+  },
+  {
+    "id": "LES-14",
+    "n": 14,
+    "chapter": 6,
+    "title": "Đất trên Trái Đất",
+    "titleEn": "Soils on Earth",
+    "goal": "Nhận diện thành phần và phẫu diện đất; giải thích tác động của các nhân tố hình thành, phân bố và bảo vệ đất.",
+    "minutes": 35,
+    "practical": false,
+    "threeD": true,
+    "topics": [
+      {
+        "id": "TH-14-01",
+        "vi": "Khái niệm và thành phần đất",
+        "en": "Soil and its components",
+        "scene": "SCENE-14-01"
+      },
+      {
+        "id": "TH-14-02",
+        "vi": "Nhân tố hình thành đất",
+        "en": "Soil forming factors",
+        "scene": "SCENE-14-02"
+      },
+      {
+        "id": "TH-14-03",
+        "vi": "Phẫu diện và quá trình hình thành",
+        "en": "Soil profile and formation",
+        "scene": "SCENE-14-03"
+      },
+      {
+        "id": "TH-14-04",
+        "vi": "Nhóm đất và phân bố",
+        "en": "Soil groups and distribution",
+        "scene": "SCENE-14-04"
+      },
+      {
+        "id": "TH-14-05",
+        "vi": "Vai trò và bảo vệ đất",
+        "en": "Soil functions and conservation",
+        "scene": "SCENE-14-05"
+      }
+    ]
+  },
+  {
+    "id": "LES-15",
+    "n": 15,
+    "chapter": 6,
+    "title": "Sinh quyển",
+    "titleEn": "Biosphere",
+    "goal": "Mô tả phạm vi sinh quyển; giải thích ít nhất hai mối liên hệ giữa phân bố sinh vật với khí hậu, đất và địa hình.",
+    "minutes": 35,
+    "practical": false,
+    "threeD": false,
+    "topics": [
+      {
+        "id": "TH-15-01",
+        "vi": "Khái niệm và phạm vi sinh quyển",
+        "en": "Biosphere and its extent",
+        "scene": "SCENE-15-01"
+      },
+      {
+        "id": "TH-15-02",
+        "vi": "Nhân tố phân bố sinh vật",
+        "en": "Controls on organism distribution",
+        "scene": "SCENE-15-02"
+      },
+      {
+        "id": "TH-15-03",
+        "vi": "Khí hậu đất và địa hình",
+        "en": "Climate soil and relief",
+        "scene": "SCENE-15-03"
+      },
+      {
+        "id": "TH-15-04",
+        "vi": "Phân bố và vai trò sinh vật",
+        "en": "Distribution and roles of organisms",
+        "scene": "SCENE-15-04"
+      }
+    ]
+  },
+  {
+    "id": "LES-16",
+    "n": 16,
+    "chapter": 6,
+    "title": "Thực hành: Tìm hiểu sự phân bố đất và sinh vật trên Trái Đất",
+    "titleEn": "World distribution of soils and organisms",
+    "goal": "Chồng lớp đất, sinh vật và khí hậu; so sánh hai vùng và giải thích mối quan hệ bằng ít nhất hai dẫn chứng trên bản đồ.",
+    "minutes": 50,
+    "practical": true,
+    "threeD": false,
+    "topics": [
+      {
+        "id": "TH-16-01",
+        "vi": "Bản đồ đất",
+        "en": "Soil maps",
+        "scene": "SCENE-16-01"
+      },
+      {
+        "id": "TH-16-02",
+        "vi": "Bản đồ sinh vật",
+        "en": "Vegetation maps",
+        "scene": "SCENE-16-02"
+      },
+      {
+        "id": "TH-16-03",
+        "vi": "So sánh vùng",
+        "en": "Regional comparison",
+        "scene": "SCENE-16-03"
+      },
+      {
+        "id": "TH-16-04",
+        "vi": "Giải thích liên hệ tự nhiên",
+        "en": "Explaining natural relationships",
+        "scene": "SCENE-16-04"
+      }
+    ]
+  },
+  {
+    "id": "LES-17",
+    "n": 17,
+    "chapter": 7,
+    "title": "Vỏ địa lí, quy luật thống nhất và hoàn chỉnh của vỏ địa lí",
+    "titleEn": "Unity and integrity of the geographical envelope",
+    "goal": "Nhận diện các thành phần vỏ địa lí; dựng ít nhất ba mắt xích nguyên nhân hệ quả và nêu giới hạn mô hình.",
+    "minutes": 35,
+    "practical": false,
+    "threeD": false,
+    "topics": [
+      {
+        "id": "TH-17-01",
+        "vi": "Vỏ địa lí",
+        "en": "Geographical envelope",
+        "scene": "SCENE-17-01"
+      },
+      {
+        "id": "TH-17-02",
+        "vi": "Các thành phần tự nhiên",
+        "en": "Natural components",
+        "scene": "SCENE-17-02"
+      },
+      {
+        "id": "TH-17-03",
+        "vi": "Thống nhất và hoàn chỉnh",
+        "en": "Unity and integrity",
+        "scene": "SCENE-17-03"
+      },
+      {
+        "id": "TH-17-04",
+        "vi": "Tác động dây chuyền",
+        "en": "Cascading effects",
+        "scene": "SCENE-17-04"
+      }
+    ]
+  },
+  {
+    "id": "LES-18",
+    "n": 18,
+    "chapter": 7,
+    "title": "Quy luật địa đới và quy luật phi địa đới",
+    "titleEn": "Latitudinal zonality and azonality",
+    "goal": "Phân biệt địa đới và phi địa đới; giải thích phân hóa theo vĩ độ, độ cao và vị trí lục địa bằng dẫn chứng.",
+    "minutes": 35,
+    "practical": false,
+    "threeD": false,
+    "topics": [
+      {
+        "id": "TH-18-01",
+        "vi": "Quy luật địa đới",
+        "en": "Latitudinal zonality",
+        "scene": "SCENE-18-01"
+      },
+      {
+        "id": "TH-18-02",
+        "vi": "Quy luật phi địa đới",
+        "en": "Azonality",
+        "scene": "SCENE-18-02"
+      },
+      {
+        "id": "TH-18-03",
+        "vi": "Đai cao",
+        "en": "Altitudinal zonation",
+        "scene": "SCENE-18-03"
+      },
+      {
+        "id": "TH-18-04",
+        "vi": "Phân hóa theo vị trí lục địa",
+        "en": "Continentality related differentiation",
+        "scene": "SCENE-18-04"
+      }
+    ]
+  }
+]

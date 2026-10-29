@@ -8,6 +8,8 @@ Website được mở công khai. Khách có thể xem học liệu và tự đ�
 
 Giao diện ưu tiên ảnh chụp địa lí thật: 17 ảnh cho từng bài, ảnh nền Ngân Hà của ESO và địa cầu 3D dùng ảnh bề mặt/mây của NASA. Ảnh được lưu trong dự án, có các kích thước WebP phù hợp màn hình và tải khi cần. Thông tin tác giả, giấy phép và nguồn nằm trong `data/photos.json`, `NOTICE.md` và phần Thiết lập trên website.
 
+Bảng màu kem – xanh lá kết hợp địa cầu khám phá: phóng gần hiện ảnh của 6 cảnh quan tại tọa độ tương ứng; chọn địa điểm để đọc thông tin có nguồn và vào bài học liên quan. Bài 12 có cảnh bờ biển 3D cho sóng/thủy triều, lựa chọn pha Mặt Trăng, phát–dừng và đồ thị mực nước. Đây là mô hình học tập với đơn vị tương đối, không dự báo triều thực. Nguồn kiến thức: [NOAA](https://www.noaa.gov/jetstream/ocean/tides); nguồn cảnh quan được dẫn trực tiếp trong từng thẻ.
+
 ## Cách học
 
 Trang bắt đầu có một nút học chính; người mới bắt đầu từ Bài 2, người quay lại tiếp tục bài đang học. Trong mỗi bài: **Bắt đầu → Đọc hiểu → Khám phá → Giải thích → Luyện tập → Tổng kết**. Mỗi lần đọc một phần ngắn và làm một câu luyện tập. Lộ trình bên cạnh cho biết bước hiện tại; có thể quay lại bất cứ bước nào. Điểm thấp không khóa bài tiếp theo.

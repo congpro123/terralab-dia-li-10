@@ -5,6 +5,7 @@ body{background:radial-gradient(ellipse at 90% 0,#e6ecdb70,transparent 55%),#f6f
 button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible,summary:focus-visible,[tabindex]:focus-visible{outline-color:#467d61}
 input,textarea,select{background:#fffefa;border-color:#cbd7c8;color:#294638}
 input::placeholder,textarea::placeholder{color:#7c8a7c}
+input[type=range]{accent-color:#648650}
 .primary,.cream-button{background:#376c56;color:#fffef8;box-shadow:0 7px 20px #294e3a12}
 .primary:hover{background:#2b5946}
 .outline{border-color:#bccdb9;color:#365b45}.outline:hover{background:#e9efdf}

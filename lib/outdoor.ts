@@ -26,15 +26,11 @@ export function outdoorWorld(host:HTMLElement,position:THREE.Vector3,target:THRE
 
 export async function groundTextures(renderer:THREE.WebGLRenderer){
  const loader=new THREE.TextureLoader(),names=['grass','rock','sand'] as const;
- const sets=await Promise.all(names.map(async name=>{const [map,normalMap,roughnessMap]=await Promise.all(['color','normal','roughness'].map(part=>loader.loadAsync(`/textures/terrain/${name}-${part}.jpg`)));map.colorSpace=THREE.SRGBColorSpace;for(const texture of [map,normalMap,roughnessMap]){texture.wrapS=texture.wrapT=THREE.RepeatWrapping;texture.anisotropy=Math.min(8,renderer.capabilities.getMaxAnisotropy());}return {map,normalMap,roughnessMap};}));
+ const sets=await Promise.all(names.map(async name=>{const [map,normalMap,roughnessMap]=await Promise.all(['color','normal','roughness'].map(part=>loader.loadAsync(`/textures/terrain/${name==='grass'?'meadow':name}-${part}.jpg`)));map.colorSpace=THREE.SRGBColorSpace;for(const texture of [map,normalMap,roughnessMap]){texture.wrapS=texture.wrapT=THREE.RepeatWrapping;texture.anisotropy=Math.min(8,renderer.capabilities.getMaxAnisotropy());}return {map,normalMap,roughnessMap};}));
  return {grass:sets[0],rock:sets[1],sand:sets[2]};
 }
 
-/** Seamless, code-generated normal field for reflective water. */
-export function waterNormals(){
- const size=256,data=new Uint8Array(size*size*4);
- for(let z=0;z<size;z++)for(let x=0;x<size;x++){const u=x/size*Math.PI*2,v=z/size*Math.PI*2;let dx=0,dz=0;for(const [a,b,f] of [[3,5,.4],[7,-4,.22],[13,11,.09],[23,-19,.035]]){dx+=Math.cos(u*a+v*b)*a*f;dz+=Math.cos(u*a+v*b)*b*f;}const normal=new THREE.Vector3(-dx*.18,-dz*.18,1).normalize(),i=(z*size+x)*4;data[i]=(normal.x*.5+.5)*255;data[i+1]=(normal.y*.5+.5)*255;data[i+2]=(normal.z*.5+.5)*255;data[i+3]=255;}
- const texture=new THREE.DataTexture(data,size,size);texture.wrapS=texture.wrapT=THREE.RepeatWrapping;texture.magFilter=THREE.LinearFilter;texture.minFilter=THREE.LinearMipmapLinearFilter;texture.generateMipmaps=true;texture.needsUpdate=true;return texture;
-}
+/** Organic ripple normal map from the MIT-licensed Three.js example assets. */
+export function waterNormals(){const texture=new THREE.TextureLoader().load('/textures/water-normal.jpg');texture.wrapS=texture.wrapT=THREE.RepeatWrapping;texture.anisotropy=4;return texture;}
 
 export function disposeAsset(root:THREE.Object3D){root.traverse(o=>{const mesh=o as THREE.Mesh;mesh.geometry?.dispose();if(mesh.material)(Array.isArray(mesh.material)?mesh.material:[mesh.material]).forEach(m=>{for(const value of Object.values(m))if(value instanceof THREE.Texture)value.dispose();m.dispose();});});}

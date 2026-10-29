@@ -25,4 +25,12 @@ The following local rendering assets are CC0. Terrain is procedural, water and t
 - Grass Medium 02 — Poly Haven; https://polyhaven.com/a/grass_medium_02; CC0-1.0 (https://polyhaven.com/license). Authors: Rico Cilliers. Original 1K assets are bundled locally.
 - Leaf Set 016 — ambientCG; https://ambientcg.com/view?id=LeafSet016; CC0-1.0 (https://docs.ambientcg.com/license/). Authors: . Original 1K assets are bundled locally.
 
-Three.js Water/Sky and loaders are used under the Three.js MIT license. Water normals and procedural terrain/vegetation placement are original application code.
+Three.js Water/Sky and loaders are used under the Three.js MIT license. Procedural terrain and vegetation placement are original application code.
+
+### Additional field rendering assets
+
+- Pine Sapling Small — Poly Haven; https://polyhaven.com/a/pine_sapling_small; CC0-1.0 (https://polyhaven.com/license).
+- Grass 004 — ambientCG; https://ambientcg.com/view?id=Grass004; CC0-1.0 (https://docs.ambientcg.com/license/).
+- Water normal map — Three.js; https://github.com/mrdoob/three.js/blob/dev/examples/textures/waternormals.jpg; MIT (https://github.com/mrdoob/three.js/blob/dev/LICENSE).
+
+The scanned pine geometry is rendered to view-facing foliage cards for distant trees, while close trees retain the source geometry. This level of detail reduces rendering cost. The application terrain and forest placement are fictional teaching scenes.

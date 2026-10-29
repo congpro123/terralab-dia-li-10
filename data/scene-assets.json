@@ -112,5 +112,57 @@
       "/textures/foliage/oak-normal.jpg",
       "/textures/foliage/oak-roughness.jpg"
     ]
+  },
+  {
+    "id": "pine_sapling_small",
+    "title": "Pine Sapling Small",
+    "source": "https://polyhaven.com/a/pine_sapling_small",
+    "authors": {
+      "Rob Tuytel": "photography",
+      "Rico Cilliers": "modeling"
+    },
+    "license": "CC0-1.0",
+    "licenseUrl": "https://polyhaven.com/license",
+    "files": [
+      "/models/pine_sapling/pine_sapling.gltf",
+      "/models/pine_sapling/textures/pine_sapling_small_twig_arm_1k.jpg",
+      "/models/pine_sapling/textures/pine_sapling_small_twig_diff_1k.jpg",
+      "/models/pine_sapling/textures/pine_sapling_small_bark_nor_gl_1k.jpg",
+      "/models/pine_sapling/pine_sapling_small.bin",
+      "/models/pine_sapling/textures/pine_sapling_small_bark_diff_1k.jpg",
+      "/models/pine_sapling/textures/pine_sapling_small_bark_arm_1k.jpg",
+      "/models/pine_sapling/textures/pine_sapling_small_twig_nor_gl_1k.jpg"
+    ],
+    "publisher": "Poly Haven"
+  },
+  {
+    "id": "Grass004",
+    "title": "Grass 004",
+    "source": "https://ambientcg.com/view?id=Grass004",
+    "publisher": "ambientCG",
+    "authors": {
+      "Lennart Demes": "ambientCG"
+    },
+    "license": "CC0-1.0",
+    "licenseUrl": "https://docs.ambientcg.com/license/",
+    "files": [
+      "/textures/terrain/meadow-color.jpg",
+      "/textures/terrain/meadow-normal.jpg",
+      "/textures/terrain/meadow-roughness.jpg"
+    ]
+  },
+  {
+    "id": "three-water-normal",
+    "title": "Water normal map",
+    "source": "https://github.com/mrdoob/three.js/blob/dev/examples/textures/waternormals.jpg",
+    "publisher": "Three.js",
+    "authors": {
+      "Three.js authors": "Example texture"
+    },
+    "license": "MIT",
+    "licenseUrl": "https://github.com/mrdoob/three.js/blob/dev/LICENSE",
+    "files": [
+      "/textures/water-normal.jpg"
+    ]
   }
 ]

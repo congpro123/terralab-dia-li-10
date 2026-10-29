@@ -12,3 +12,17 @@
 - The teaching texts and the synthetic simulation datasets are original drafts. Source requirements came from the supplied geography backlog. The draft question bank has been edited for clearer geographical distractors; it remains subject to textbook and subject-expert review.
 
 The software dependencies retain their respective licenses in their packages. No paid data, proprietary model API, or advertising tracker is required by the app.
+
+## Scanned surfaces, foliage and outdoor lighting
+
+The following local rendering assets are CC0. Terrain is procedural, water and tectonic geometry are teaching models, and the virtual scenes do not claim to reproduce surveyed places.
+
+- Rocky Terrain 02 — Poly Haven; https://polyhaven.com/a/rocky_terrain_02; CC0-1.0 (https://polyhaven.com/license). Authors: Amal Kumar. Original 1K assets are bundled locally.
+- Leafy Grass — Poly Haven; https://polyhaven.com/a/leafy_grass; CC0-1.0 (https://polyhaven.com/license). Authors: Charlotte Baglioni. Original 1K assets are bundled locally.
+- Sand 01 — Poly Haven; https://polyhaven.com/a/sand_01; CC0-1.0 (https://polyhaven.com/license). Authors: Rob Tuytel. Original 1K assets are bundled locally.
+- Kloofendal 48d Partly Cloudy (Pure Sky) — Poly Haven; https://polyhaven.com/a/kloofendal_48d_partly_cloudy_puresky; CC0-1.0 (https://polyhaven.com/license). Authors: Greg Zaal, Jarod Guest. Original 1K assets are bundled locally.
+- Fern 02 — Poly Haven; https://polyhaven.com/a/fern_02; CC0-1.0 (https://polyhaven.com/license). Authors: Rob Tuytel, Rico Cilliers. Original 1K assets are bundled locally.
+- Grass Medium 02 — Poly Haven; https://polyhaven.com/a/grass_medium_02; CC0-1.0 (https://polyhaven.com/license). Authors: Rico Cilliers. Original 1K assets are bundled locally.
+- Leaf Set 016 — ambientCG; https://ambientcg.com/view?id=LeafSet016; CC0-1.0 (https://docs.ambientcg.com/license/). Authors: . Original 1K assets are bundled locally.
+
+Three.js Water/Sky and loaders are used under the Three.js MIT license. Water normals and procedural terrain/vegetation placement are original application code.

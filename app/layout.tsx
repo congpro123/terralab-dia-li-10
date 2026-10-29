@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import "./field-theme.css";
 import "./atlas.css";
+import "./field-lab.css";
 
 export const metadata: Metadata = {
   manifest: '/manifest.webmanifest',

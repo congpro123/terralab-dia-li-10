@@ -19,7 +19,7 @@ export default function LessonWorkspace({lesson,progress:p,module,focusId,mode,u
  useEffect(()=>{document.getElementById('study-section-heading')?.focus({preventScroll:true});},[module,unit?.id]);
  function finishUnit(){onProgress({units:[...new Set([...p.units,unit.id])]});if(index<lesson.units.length-1)open(2,lesson.units[index+1].id);else open(3);}
  function finishSummary(){onProgress({summary:true});notify(t('Đã lưu tổng kết. Bạn có thể học bài tiếp theo.','Summary saved. You can continue to the next lesson.'));}
- return <div className="lesson-workspace">
+ return <div className={`lesson-workspace ${module===3?'is-exploring':''}`}>
   <div className="lesson-topline"><button className="text-button" onClick={onCatalog}><ArrowLeft size={17}/>{t('Danh sách bài học','All lessons')}</button><span className="save-state"><span className="live-dot"/>{sync==='saving'?t('Đang lưu…','Saving…'):sync==='synced'?t('Đã lưu tiến độ','Progress saved'):sync==='offline'?t('Lưu trên máy · chờ mạng','Saved locally · waiting for connection'):t('Tự lưu trên thiết bị','Saved on this device')}</span></div>
   <header className="study-lesson-title"><span className="eyebrow">{t('BÀI','LESSON')} {lesson.n}</span><h1>{en?lesson.titleEn:lesson.title}</h1></header>
   <div className="lesson-columns">

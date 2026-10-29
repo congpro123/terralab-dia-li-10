@@ -1,0 +1,116 @@
+[
+  {
+    "id": "rocky_terrain_02",
+    "title": "Rocky Terrain 02",
+    "source": "https://polyhaven.com/a/rocky_terrain_02",
+    "publisher": "Poly Haven",
+    "authors": {
+      "Amal Kumar": "All"
+    },
+    "license": "CC0-1.0",
+    "licenseUrl": "https://polyhaven.com/license",
+    "files": [
+      "/textures/terrain/rock-color.jpg",
+      "/textures/terrain/rock-normal.jpg",
+      "/textures/terrain/rock-roughness.jpg"
+    ]
+  },
+  {
+    "id": "leafy_grass",
+    "title": "Leafy Grass",
+    "source": "https://polyhaven.com/a/leafy_grass",
+    "publisher": "Poly Haven",
+    "authors": {
+      "Charlotte Baglioni": "All"
+    },
+    "license": "CC0-1.0",
+    "licenseUrl": "https://polyhaven.com/license",
+    "files": [
+      "/textures/terrain/grass-color.jpg",
+      "/textures/terrain/grass-normal.jpg",
+      "/textures/terrain/grass-roughness.jpg"
+    ]
+  },
+  {
+    "id": "sand_01",
+    "title": "Sand 01",
+    "source": "https://polyhaven.com/a/sand_01",
+    "publisher": "Poly Haven",
+    "authors": {
+      "Rob Tuytel": "All"
+    },
+    "license": "CC0-1.0",
+    "licenseUrl": "https://polyhaven.com/license",
+    "files": [
+      "/textures/terrain/sand-color.jpg",
+      "/textures/terrain/sand-normal.jpg",
+      "/textures/terrain/sand-roughness.jpg"
+    ]
+  },
+  {
+    "id": "kloofendal_48d_partly_cloudy_puresky",
+    "title": "Kloofendal 48d Partly Cloudy (Pure Sky)",
+    "source": "https://polyhaven.com/a/kloofendal_48d_partly_cloudy_puresky",
+    "publisher": "Poly Haven",
+    "authors": {
+      "Greg Zaal": "Original",
+      "Jarod Guest": "Sky edits"
+    },
+    "license": "CC0-1.0",
+    "licenseUrl": "https://polyhaven.com/license",
+    "files": [
+      "/textures/environment/partly-cloudy-1k.hdr"
+    ]
+  },
+  {
+    "id": "fern_02",
+    "title": "Fern 02",
+    "source": "https://polyhaven.com/a/fern_02",
+    "publisher": "Poly Haven",
+    "authors": {
+      "Rob Tuytel": "scanning",
+      "Rico Cilliers": "modeling"
+    },
+    "license": "CC0-1.0",
+    "licenseUrl": "https://polyhaven.com/license",
+    "files": [
+      "/models/fern_02/fern_02.gltf",
+      "/models/fern_02/textures/fern_02_arm_1k.jpg",
+      "/models/fern_02/textures/fern_02_diff_1k.jpg",
+      "/models/fern_02/textures/fern_02_nor_gl_1k.jpg",
+      "/models/fern_02/fern_02.bin"
+    ]
+  },
+  {
+    "id": "grass_medium_02",
+    "title": "Grass Medium 02",
+    "source": "https://polyhaven.com/a/grass_medium_02",
+    "publisher": "Poly Haven",
+    "authors": {
+      "Rico Cilliers": "All"
+    },
+    "license": "CC0-1.0",
+    "licenseUrl": "https://polyhaven.com/license",
+    "files": [
+      "/models/grass_medium_02/grass_medium_02.gltf",
+      "/models/grass_medium_02/textures/grass_medium_02_nor_gl_1k.jpg",
+      "/models/grass_medium_02/textures/grass_medium_02_diff_1k.jpg",
+      "/models/grass_medium_02/textures/grass_medium_02_arm_1k.jpg",
+      "/models/grass_medium_02/grass_medium_02.bin"
+    ]
+  },
+  {
+    "id": "LeafSet016",
+    "title": "Leaf Set 016",
+    "source": "https://ambientcg.com/view?id=LeafSet016",
+    "publisher": "ambientCG",
+    "license": "CC0-1.0",
+    "licenseUrl": "https://docs.ambientcg.com/license/",
+    "files": [
+      "/textures/foliage/oak-color.jpg",
+      "/textures/foliage/oak-alpha.jpg",
+      "/textures/foliage/oak-normal.jpg",
+      "/textures/foliage/oak-roughness.jpg"
+    ]
+  }
+]

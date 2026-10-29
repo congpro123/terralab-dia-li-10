@@ -1,6 +1,6 @@
 'use client';
 import {LUNAR_DAY,tideState} from '@/lib/exploration';
-import CoastalScene from './CoastalScene';
+import CoastalScene from './CoastExperience';
 export function TideEvidence({hour,phase,english=false}:{hour:number;phase:number;english?:boolean}){
  const points=Array.from({length:121},(_,i)=>{const h=i/120*LUNAR_DAY;return `${35+i/120*490},${83-tideState(h,phase).level*29}`;}).join(' '),current=tideState(hour,phase);
  const moonX=92-Math.cos(phase*Math.PI/180)*52,moonY=78-Math.sin(phase*Math.PI/180)*52;

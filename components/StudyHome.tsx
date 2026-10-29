@@ -3,7 +3,7 @@ import {ArrowRight,BookOpen,Check,FlaskConical,Target} from 'lucide-react';
 import catalog from '@/data/catalog.json';
 import type {Progress} from '@/lib/types';
 import {resumeModule,studySteps} from '@/lib/learning';
-import Globe from './Globe';
+import GlobeExplorer from './GlobeExplorer';
 import {PhotoArt} from './Photos';
 
 export default function StudyHome({english=false,recent,onOpen,onCatalog}:{english?:boolean;recent?:Progress;onOpen:(n:number,m?:number)=>void;onCatalog:()=>void}){
@@ -19,7 +19,7 @@ export default function StudyHome({english=false,recent,onOpen,onCatalog}:{engli
     <div className="home-actions"><button className="primary large" onClick={()=>onOpen(start.n,current?resumeModule(recent):1)}>{current?t('Tiếp tục bài đang học','Continue learning'):t('Bắt đầu học từ Bài 2','Start with Lesson 2')}<ArrowRight size={20}/></button><button className="text-button" onClick={onCatalog}>{t('Chọn bài khác','Choose a lesson')}</button></div>
     <div className="home-reassurance"><span><Check size={16}/>{t('Học thử không cần đăng nhập','Explore without signing in')}</span><span><Check size={16}/>{t('Có hướng dẫn ở mỗi bước','Guidance at every step')}</span></div>
    </div>
-   <div className="home-orbit"><Globe/><span className="orbit-label">{t('TRÁI ĐẤT CỦA CHÚNG TA','OUR HOME PLANET')}</span><span className="orbit-help">{t('Kéo để xoay · Ảnh vệ tinh NASA','Drag to rotate · NASA satellite imagery')}</span></div>
+   <GlobeExplorer english={english} onOpen={onOpen}/>
   </section>
   <section className="how-to-start" aria-label={t('Cách học với TerraLab','How to learn with TerraLab')}>
    {[[BookOpen,t('Đọc để hiểu','Read to understand'),t('Từng ý ngắn, kèm ví dụ dễ hình dung.','Short ideas with concrete examples.')],[FlaskConical,t('Thử để thấy','Experiment to see'),t('Tự thay đổi điều kiện và quan sát kết quả.','Change a condition and see the result.')],[Target,t('Luyện để nhớ','Practise to remember'),t('Làm từng câu và xem giải thích sau khi nộp.','Answer one question at a time, then review.')]].map(([Icon,title,body],i)=>{const I=Icon as typeof BookOpen;return <div key={i}><span className="how-icon"><I size={22}/></span><div><h2>{String(title)}</h2><p>{String(body)}</p></div></div>;})}

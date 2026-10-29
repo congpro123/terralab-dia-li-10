@@ -42,3 +42,4 @@ body{background:#f6f5f0}.home-copy>p{color:#566c5c;max-width:480px}.home-copy h1
 @media(max-width:520px){.atlas-stage .is-photo .hotspot-preview{width:112px;height:98px}.atlas-stage .is-photo .hotspot-preview img{height:60px}.atlas-stage .is-photo .hotspot-preview>span{font-size:9px;padding:4px 6px}.landscape-scene{height:315px}.landscape-evidence{font-size:10px}}
 @media(prefers-reduced-motion:reduce){.atlas-stage .is-photo .hotspot-preview{transition:none}}
 .atlas-stage .is-photo .hotspot-preview{width:var(--preview-width);height:var(--preview-height)}.atlas-stage .is-photo .hotspot-preview img{height:calc(var(--preview-height) - 40px)}
+.atlas-stage:has(.is-photo) .hotspot-name{opacity:0}.atlas-stage .is-photo::before{content:'';position:absolute;left:19px;top:19px;width:var(--photo-line-length);height:1px;background:#e5f3d2b3;transform:rotate(var(--photo-line-angle));transform-origin:left center;pointer-events:none;z-index:-1}

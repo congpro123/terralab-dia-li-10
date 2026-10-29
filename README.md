@@ -2,9 +2,11 @@
 
 Không gian học và khám phá Địa lí 10 Kết nối tri thức, Bài 2–18. Bản demo dự thi gồm lý thuyết Việt–Anh, hoạt động trực quan 2D/3D, tự luyện, lưu tiến độ và quản trị học liệu.
 
-**Trải nghiệm:** https://terralab-dia-li-10.cherrybetta14.chatgpt.site
+**Trải nghiệm:** https://terralab.cherrybetta14.chatgpt.site
 
 Website được mở công khai. Khách có thể xem học liệu và tự đăng ký tài khoản để lưu tiến độ. Kho GitHub quản lý mã nguồn; đẩy mã lên GitHub chưa tự triển khai bản mới lên Sites.
+
+Giao diện ưu tiên ảnh chụp địa lí thật: 17 ảnh cho từng bài, ảnh nền Ngân Hà của ESO và địa cầu 3D dùng ảnh bề mặt/mây của NASA. Ảnh được lưu trong dự án, có các kích thước WebP phù hợp màn hình và tải khi cần. Thông tin tác giả, giấy phép và nguồn nằm trong `data/photos.json`, `NOTICE.md` và phần Thiết lập trên website.
 
 ## Mở trên máy hiện tại
 

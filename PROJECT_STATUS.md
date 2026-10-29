@@ -9,3 +9,5 @@ Nội dung là bản tự biên soạn chờ đối chiếu sách. Dữ liệu s
 Máy chủ local dùng D1 trong .wrangler/state. Không ghi đè/xóa dữ liệu người dùng. Tài khoản demo riêng nằm ở outputs/TAI_KHOAN_DEMO.txt; không được đưa lên Git. Bản trực tuyến và bản local có cơ sở dữ liệu riêng.
 
 Đã đổi nhãn URL thành terralab. Bản trực tuyến công khai. GitHub công khai: https://github.com/congpro123/terralab-dia-li-10. Giao diện chuyển sang ảnh chụp thật, có ghi nguồn; bề mặt và lớp mây địa cầu dùng ảnh NASA, nền Ngân Hà dùng ảnh ESO.
+
+Đợt cải tiến bố cục theo phản hồi: điều hướng ngang, trang bắt đầu một hành động chính, lộ trình 6 bước, mỗi màn hình một phần đọc và mỗi màn hình một câu luyện. Giữ ảnh thật và địa cầu NASA; chuyển nội dung phụ sang phần mở rộng. Đã thêm kiểm thử dẫn đường đọc/tiếp tục/hoàn thành cho cả 17 bài.

@@ -8,6 +8,12 @@ Website được mở công khai. Khách có thể xem học liệu và tự đ�
 
 Giao diện ưu tiên ảnh chụp địa lí thật: 17 ảnh cho từng bài, ảnh nền Ngân Hà của ESO và địa cầu 3D dùng ảnh bề mặt/mây của NASA. Ảnh được lưu trong dự án, có các kích thước WebP phù hợp màn hình và tải khi cần. Thông tin tác giả, giấy phép và nguồn nằm trong `data/photos.json`, `NOTICE.md` và phần Thiết lập trên website.
 
+## Cách học
+
+Trang bắt đầu có một nút học chính; người mới bắt đầu từ Bài 2, người quay lại tiếp tục bài đang học. Trong mỗi bài: **Bắt đầu → Đọc hiểu → Khám phá → Giải thích → Luyện tập → Tổng kết**. Mỗi lần đọc một phần ngắn và làm một câu luyện tập. Lộ trình bên cạnh cho biết bước hiện tại; có thể quay lại bất cứ bước nào. Điểm thấp không khóa bài tiếp theo.
+
+Ảnh thật và địa cầu NASA được giữ ở trang đầu, thư viện và phần giới thiệu. Ảnh quan sát bổ sung trong mô phỏng được mở khi cần. Bố cục tham khảo cách chia chức năng và dẫn từng bước của ScamCheck, thay vì xếp nhiều khối giới thiệu lên cùng màn hình.
+
 ## Mở trên máy hiện tại
 
 Nhấp đúp **Mo_TerraLab.cmd**, giữ cửa sổ đó mở và truy cập **http://127.0.0.1:5173**. Nếu máy chủ đã chạy, dùng địa chỉ hiện có. Học sinh tự đăng ký bằng tên đăng nhập và mật khẩu, không cần email.

@@ -3,6 +3,7 @@ import {useEffect,useRef,useState} from 'react';
 import {earthSunDirection} from '@/lib/models';
 import {geographicVector,type Destination} from '@/lib/exploration';
 import {photos} from './Photos';
+import {arrangePhotoBubbles} from '@/lib/atlas-layout';
 export type GlobeView={x:number;y:number;z:number};
 export default function Globe({kind='globe',day=80,hour=12,tilt=23.5,playing=true,boundary='divergent',continental=false,speed=1,onFailure,places,focusPlace,zoomCommand,onSelectPlace,english=false,expanded=false,initialView,activePlaceId,onViewChange,onApproach}:{kind?:string;day?:number;hour?:number;tilt?:number;playing?:boolean;boundary?:string;continental?:boolean;speed?:number;onFailure?:()=>void;places?:Destination[];focusPlace?:{place:Destination;sequence:number}|null;zoomCommand?:{direction:number;sequence:number};onSelectPlace?:(p:Destination)=>void;english?:boolean;expanded?:boolean;initialView?:GlobeView|null;activePlaceId?:string;onViewChange?:(view:GlobeView)=>void;onApproach?:(view:GlobeView)=>void}){
  const host=useRef<HTMLDivElement>(null);const [failed,setFailed]=useState(false);
@@ -19,7 +20,7 @@ export default function Globe({kind='globe',day=80,hour=12,tilt=23.5,playing=tru
     const scene=new THREE.Scene();const camera=new THREE.PerspectiveCamera(36,1,.1,100);camera.position.set(0,kind==='plates'?1:.35,kind==='plates'?9:7.1);
     const controls=new OrbitControls(camera,renderer.domElement);controls.enableDamping=true;controls.enablePan=false;controls.minDistance=places?2.1:4.5;controls.maxDistance=12;controls.autoRotate=kind==='globe';controls.autoRotateSpeed=.45;
     let autoSpin=!places,canExpand=false,requestedExpansion=false,lastView=0;const stopSpin=()=>{autoSpin=false;flight=null;canExpand=true;};controls.addEventListener('start',stopSpin);
-    let lastFocus=-1,lastZoom=commands.current.zoomCommand?.sequence??-1,flight:import('three').Vector3|null=null;
+    let lastFocus=-1,lastZoom=commands.current.zoomCommand?.sequence??-1,flight:import('three').Vector3|null=null;let previousPhotos=new Set<string>();
     scene.add(new THREE.AmbientLight(0xffffff,kind==='earth'?.035:kind==='plates'?1.1:1.3));const key=new THREE.DirectionalLight(0xfff5e8,3.3);key.position.set(-3,2,5);scene.add(key);const rim=new THREE.DirectionalLight(0x609fff,kind==='earth'?.035:.65);rim.position.set(3,0,-3);scene.add(rim);
     const objects:import('three').Object3D[]=[];const arrows:import('three').ArrowHelper[]=[];const earthGroup=new THREE.Group();scene.add(earthGroup);
     let earth:import('three').Mesh|undefined,clouds:import('three').Mesh|undefined;const textures:import('three').Texture[]=[];
@@ -72,10 +73,15 @@ export default function Globe({kind='globe',day=80,hour=12,tilt=23.5,playing=tru
        if(canExpand&&!ui.expanded&&!requestedExpansion&&distance<5.15){requestedExpansion=true;ui.onApproach?.(view);}
        const near=distance<6.2,occupied:{x:number;y:number}[]=[];
        const candidates=places.map(p=>{const g=geographicVector(p.lat,p.lon,1.68),world=earth.localToWorld(new THREE.Vector3(g.x,g.y,g.z)),front=world.clone().normalize().dot(camera.position.clone().sub(world).normalize())>.10,screen=world.clone().project(camera);return {p,front,screen,x:(screen.x*.5+.5)*el.clientWidth,y:(-screen.y*.5+.5)*el.clientHeight};}).sort((a,b)=>(a.p.id===ui.activePlaceId?-1:b.p.id===ui.activePlaceId?1:Math.hypot(a.x-el.clientWidth/2,a.y-el.clientHeight/2)-Math.hypot(b.x-el.clientWidth/2,b.y-el.clientHeight/2)));
-       let visibleCount=0,labelCount=0;
+       let visibleCount=0,labelCount=0;const shown:typeof candidates=[];
        for(const {p,front,screen,x,y} of candidates){const node=markerRefs.current[p.id];if(!node)continue;const active=p.id===ui.activePlaceId,inside=screen.z<1&&x>25&&x<el.clientWidth-25&&y>45&&y<el.clientHeight-45,clear=occupied.every(v=>Math.hypot(v.x-x,v.y-y)>(near?28:19)),visible=front&&inside&&clear&&visibleCount<(ui.expanded?24:12),label=visible&&near&&ui.expanded&&(active||labelCount<3);
-        node.style.left=x+'px';node.style.top=y+'px';node.style.visibility=visible?'visible':'hidden';node.style.pointerEvents=visible?'auto':'none';node.tabIndex=visible?0:-1;node.setAttribute('aria-hidden',String(!visible));node.classList.toggle('is-near',label);node.classList.toggle('is-selected',active);if(visible){occupied.push({x,y});visibleCount++;if(label)labelCount++;}
+        node.style.left=x+'px';node.style.top=y+'px';node.style.visibility=visible?'visible':'hidden';node.style.pointerEvents=visible?'auto':'none';node.tabIndex=visible?0:-1;node.setAttribute('aria-hidden',String(!visible));node.classList.toggle('is-near',label);node.classList.toggle('is-selected',active);node.classList.remove('is-photo');if(visible){occupied.push({x,y});shown.push({p,front,screen,x,y});visibleCount++;if(label)labelCount++;}
        }
+       // Prefer existing bubbles while dragging so neighbouring names do not flicker.
+       shown.sort((a,b)=>(a.p.id===ui.activePlaceId?-1:b.p.id===ui.activePlaceId?1:Number(previousPhotos.has(b.p.id))-Number(previousPhotos.has(a.p.id))));
+       const bubbles=arrangePhotoBubbles(shown.map(v=>({id:v.p.id,x:v.x,y:v.y})),el.clientWidth,el.clientHeight,distance,ui.expanded);
+       previousPhotos=new Set(bubbles.map(b=>b.id));
+       for(const bubble of bubbles){const node=markerRefs.current[bubble.id];if(!node)continue;node.style.setProperty('--preview-left',`${19+bubble.left-bubble.x}px`);node.style.setProperty('--preview-top',`${19+bubble.top-bubble.y}px`);node.style.setProperty('--preview-width',`${bubble.width}px`);node.style.setProperty('--preview-height',`${bubble.height}px`);node.classList.add('is-photo');node.classList.remove('is-near');}
       }
     });
     cleanup=()=>{renderer.setAnimationLoop(null);observer.disconnect();controls.removeEventListener('start',stopSpin);controls.dispose();renderer.domElement.removeEventListener('webglcontextlost',lost);scene.traverse(o=>{const m=o as import('three').Mesh;m.geometry?.dispose();if(m.material){for(const material of Array.isArray(m.material)?m.material:[m.material])material.dispose();}});textures.forEach(t=>t.dispose());renderer.dispose();renderer.forceContextLoss();renderer.domElement.remove();};

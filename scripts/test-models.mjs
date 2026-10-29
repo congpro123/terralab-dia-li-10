@@ -3,6 +3,14 @@ import {daylightHours,dotCount,annualClimate,catchmentIndices,earthSunDirection,
 import {grade,selfAssess,roundedScore} from '../lib/grading.ts';
 import {readFile} from 'node:fs/promises';
 import {destinations,filterDestinations,geographicVector,LUNAR_DAY,tideState} from '../lib/exploration.ts';
+import {arrangePhotoBubbles} from '../lib/atlas-layout.ts';
+const anchors=Array.from({length:40},(_,i)=>({id:String(i),x:40+i%8*75,y:100+Math.floor(i/8)*100}));
+assert.equal(arrangePhotoBubbles(anchors,720,650,7,true).length,0);
+assert.equal(arrangePhotoBubbles(anchors,720,650,4,false).length,0);
+for(const [w,h,cap] of [[720,650,3],[390,405,2]]){
+ const bubbles=arrangePhotoBubbles(anchors,w,h,4.3,true);assert.ok(bubbles.length>0&&bubbles.length<=cap);
+ for(const [i,b] of bubbles.entries()){assert.ok(b.left>=14&&b.top>=48&&b.left+b.width<=w-14&&b.top+b.height<=h-64);for(const a of bubbles.slice(i+1))assert.ok(b.left+b.width+16<=a.left||a.left+a.width+16<=b.left||b.top+b.height+16<=a.top||a.top+a.height+16<=b.top);}
+}
 const near=(a,b)=>assert.ok(Math.abs(a-b)<1e-9,`${a} != ${b}`);
 // Geographic anchors follow the same coordinate convention as the satellite texture.
 assert.deepEqual(geographicVector(0,0),{x:1,y:0,z:-0});

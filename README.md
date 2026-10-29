@@ -2,6 +2,10 @@
 
 Không gian học và khám phá Địa lí 10 Kết nối tri thức, Bài 2–18. Bản demo dự thi gồm lý thuyết Việt–Anh, hoạt động trực quan 2D/3D, tự luyện, lưu tiến độ và quản trị học liệu.
 
+**Trải nghiệm:** https://terralab-dia-li-10.cherrybetta14.chatgpt.site
+
+Website được mở công khai. Khách có thể xem học liệu và tự đăng ký tài khoản để lưu tiến độ. Kho GitHub quản lý mã nguồn; đẩy mã lên GitHub chưa tự triển khai bản mới lên Sites.
+
 ## Mở trên máy hiện tại
 
 Nhấp đúp **Mo_TerraLab.cmd**, giữ cửa sổ đó mở và truy cập **http://127.0.0.1:5173**. Nếu máy chủ đã chạy, dùng địa chỉ hiện có. Học sinh tự đăng ký bằng tên đăng nhập và mật khẩu, không cần email.
@@ -18,6 +22,8 @@ Cần Node.js từ 22.13 và npm. Chạy npm ci, sau đó npm run build. Áp d�
 
 ## Kiểm tra
 
+Chạy `npm run check` để kiểm tra TypeScript, mô hình và quy tắc chấm điểm. Có thể bật kiểm tra tự động trước khi đẩy mã bằng `git config core.hooksPath .githooks` (đã bật trên máy phát triển hiện tại).
+
     npx tsc --noEmit
     node scripts/test-models.mjs
     node scripts/test-api.mjs
@@ -31,4 +37,4 @@ Hai kiểm thử API cần máy chủ local đang chạy; kiểm thử quản tr
 
 Học liệu tự biên soạn đang chờ đối chiếu sách. Các bộ số liệu minh họa và mô hình giản lược có nhãn ngay trong hoạt động. Chưa có quản lý lớp học, chấm thủ công của giáo viên hay ngân hàng mở rộng 340 câu. Bản local và trực tuyến lưu dữ liệu riêng.
 
-Ứng dụng dùng React, TypeScript, Vinext/Vite, Three.js và Cloudflare D1/Drizzle. Phông chữ và đường bờ được lưu cùng ứng dụng; xem NOTICE.md. Bản trực tuyến dùng quy trình Sites và giữ quyền truy cập riêng của chủ sở hữu.
+Ứng dụng dùng React, TypeScript, Vinext/Vite, Three.js và Cloudflare D1/Drizzle. Phông chữ và đường bờ được lưu cùng ứng dụng; xem NOTICE.md. Bản trực tuyến dùng quy trình Sites. Quyền quản trị học liệu được kiểm tra ở máy chủ.

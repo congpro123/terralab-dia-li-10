@@ -12,4 +12,4 @@ export function geographicVector(lat:number,lon:number,radius=1){const p=lat*Mat
 export const LUNAR_DAY=24+50/60;
 // Idealised equilibrium tide: lunar component + smaller solar component.
 // phase=0/new, 90/first quarter, 180/full, 270/last quarter; no local basin response.
-export function tideState(hour:number,phase:number){const theta=hour/LUNAR_DAY*Math.PI*2,phi=phase*Math.PI/180;const level=Math.cos(2*theta)+.46*Math.cos(2*(theta+phi));const derivative=-Math.sin(2*theta)-.46*Math.sin(2*(theta+phi));const amplitude=Math.sqrt(1+.46**2+2*.46*Math.cos(2*phi));return {level,amplitude,rising:derivative>0,range:2*amplitude};}
+export function tideState(hour:number,phase:number){const theta=hour/LUNAR_DAY*Math.PI*2,phi=phase*Math.PI/180;const level=Math.cos(2*theta)+.46*Math.cos(2*(theta+phi));const derivative=-Math.sin(2*theta)-.46*Math.sin(2*(theta+phi));const amplitude=Math.sqrt(1+.46**2+2*.46*Math.cos(2*phi));return {level,amplitude,rising:derivative>0,stationary:Math.abs(derivative)<1e-6,range:2*amplitude};}

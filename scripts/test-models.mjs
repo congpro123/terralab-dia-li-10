@@ -2,13 +2,18 @@ import assert from 'node:assert/strict';
 import {daylightHours,dotCount,annualClimate,catchmentIndices,earthSunDirection,solarDeclination} from '../lib/models.ts';
 import {grade,selfAssess,roundedScore} from '../lib/grading.ts';
 import {readFile} from 'node:fs/promises';
-import {destinations,geographicVector,LUNAR_DAY,tideState} from '../lib/exploration.ts';
+import {destinations,filterDestinations,geographicVector,LUNAR_DAY,tideState} from '../lib/exploration.ts';
 const near=(a,b)=>assert.ok(Math.abs(a-b)<1e-9,`${a} != ${b}`);
 // Geographic anchors follow the same coordinate convention as the satellite texture.
 assert.deepEqual(geographicVector(0,0),{x:1,y:0,z:-0});
 near(geographicVector(0,90).z,-1);near(geographicVector(90,0).y,1);
-for(const p of destinations){assert.ok(Math.abs(p.lat)<=90&&Math.abs(p.lon)<=180);assert.ok(p.lesson>=2&&p.lesson<=18);const v=geographicVector(p.lat,p.lon);near(v.x*v.x+v.y*v.y+v.z*v.z,1);}
+for(const p of destinations){assert.ok(Math.abs(p.lat)<=90&&Math.abs(p.lon)<=180);if(p.lesson)assert.ok(p.lesson>=2&&p.lesson<=18);const v=geographicVector(p.lat,p.lon);near(v.x*v.x+v.y*v.y+v.z*v.z,1);}
 assert.equal(new Set(destinations.map(p=>p.id)).size,destinations.length);
+assert.ok(destinations.length>=50);assert.ok(destinations.some(p=>!p.lesson));
+assert.equal(filterDestinations(destinations,'hoi an','all')[0].id,'hoian');assert.equal(filterDestinations(destinations,'Giza','africa')[0].id,'pyramids');assert.equal(filterDestinations(destinations,'Rome','all',true).length,0);assert.ok(filterDestinations(destinations,'','vietnam').every(p=>p.region==='vietnam'));
+const atlasPhotos=JSON.parse(await readFile(new URL('../data/photos.json',import.meta.url),'utf8'));
+for(const place of destinations){const photo=atlasPhotos[place.photo];assert.ok(photo?.source&&photo.author&&photo.licenseUrl,'Every place has a credited photograph');assert.match(photo.license,/^(CC BY|CC0|Public domain|NASA educational media use)/);for(const suffix of ['','-480','-960'])assert.ok((await readFile(new URL('../public'+photo.src.replace('.webp',suffix+'.webp'),import.meta.url))).length>0);}
+assert.equal(destinations.find(p=>p.id==='hoian').lesson,undefined);assert.equal(destinations.find(p=>p.id==='halong').lesson,12);
 // The idealised semidiurnal model repeats twice per lunar day, with reinforcing
 // lunar/solar components at new/full moon and a smaller range at quarter moons.
 for(const phase of [0,90,180,270])for(const hour of [0,3,8,14,22]){near(tideState(hour,phase).level,tideState(hour+LUNAR_DAY,phase).level);near(tideState(hour,phase).level,tideState(hour+LUNAR_DAY/2,phase).level);assert.ok(Math.abs(tideState(hour,phase).level)<=tideState(hour,phase).amplitude+1e-9);}

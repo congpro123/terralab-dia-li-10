@@ -250,5 +250,590 @@
     "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
     "title": "ESO - Milky Way.jpg",
     "changes": "Resized and converted to WebP; cropped in the interface."
+  },
+  "place-phongnha": {
+    "src": "/images/places/phongnha.webp",
+    "caption": {
+      "vi": "Phong Nha – Kẻ Bàng",
+      "en": "Phong Nha-Ke Bang National Park"
+    },
+    "source": "https://commons.wikimedia.org/wiki/File:Phong_Nha_cave_entrance.jpg",
+    "author": "[Tycho] talk , http://shansov.net",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "title": "Phong Nha cave entrance.jpg",
+    "changes": "Resized and converted to WebP; cropped in the interface."
+  },
+  "place-trangan": {
+    "src": "/images/places/trangan.webp",
+    "caption": {
+      "vi": "Tràng An",
+      "en": "Trang An Landscape Complex"
+    },
+    "source": "https://commons.wikimedia.org/wiki/File:Trang_An_Landscape_Complex,_Ninh_Binh_Province,_Vietnam,_20240202_1447_5310.jpg",
+    "author": "Jakub Hałun",
+    "license": "CC BY 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+    "title": "Trang An Landscape Complex, Ninh Binh Province, Vietnam, 20240202 1447 5310.jpg",
+    "changes": "Resized and converted to WebP; cropped in the interface."
+  },
+  "place-hoian": {
+    "src": "/images/places/hoian.webp",
+    "caption": {
+      "vi": "Phố cổ Hội An",
+      "en": "Hoi An Ancient Town"
+    },
+    "source": "https://commons.wikimedia.org/wiki/File:H%E1%BB%99i_An,_Ancient_Town,_2020-01_CN-15.jpg",
+    "author": "Steffen Schmitz ( more photos )",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "title": "Hội An, Ancient Town, 2020-01 CN-15.jpg",
+    "changes": "Resized and converted to WebP; cropped in the interface."
+  },
+  "place-hue": {
+    "src": "/images/places/hue.webp",
+    "caption": {
+      "vi": "Quần thể di tích Huế",
+      "en": "Complex of Hue Monuments"
+    },
+    "source": "https://commons.wikimedia.org/wiki/File:Gate_in_Imperial_City,_Hu%E1%BA%BF_(III).jpg",
+    "author": "This Photo was taken by Supanut Arunoprayote . Feel free to use any of my images, but please mention me as the author and may send me a message. (สามารถใช้ภาพได้อิสระ แต่กรุณาใส่เครดิตผู้ถ่ายและอาจส่ง ข้อความบอกกล่าวด้วย ) Please do not upload an updated image here without consultation with the Author. The author would like to make corrections only at his own source. This ensures that the changes are preserved. Please if you think that any changes should be required, please inform the author. Otherwise you can upload a new image with a new name. Please use one of the templates derivative or extract .",
+    "license": "CC BY 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+    "title": "Gate in Imperial City, Huế (III).jpg",
+    "changes": "Resized and converted to WebP; cropped in the interface."
+  },
+  "place-myson": {
+    "src": "/images/places/myson.webp",
+    "caption": {
+      "vi": "Thánh địa Mỹ Sơn",
+      "en": "My Son Sanctuary"
+    },
+    "source": "https://commons.wikimedia.org/wiki/File:2024_-_M%E1%BB%B9_S%C6%A1n_Sanctuary_Temple_E7_-_img_01.jpg",
+    "author": "Chainwit.",
+    "license": "CC BY 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+    "title": "2024 - Mỹ Sơn Sanctuary Temple E7 - img 01.jpg",
+    "changes": "Resized and converted to WebP; cropped in the interface."
+  },
+  "place-thanglong": {
+    "src": "/images/places/thanglong.webp",
+    "caption": {
+      "vi": "Hoàng thành Thăng Long",
+      "en": "Imperial Citadel of Thang Long"
+    },
+    "source": "https://commons.wikimedia.org/wiki/File:Central_Sector_of_the_Imperial_Citadel_of_Thang_Long_-_Hanoi.jpg",
+    "author": "katiebordner",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+    "title": "Central Sector of the Imperial Citadel of Thang Long - Hanoi.jpg",
+    "changes": "Resized and converted to WebP; cropped in the interface."
+  },
+  "place-greatwall": {
+    "src": "/images/places/greatwall.webp",
+    "caption": {
+      "vi": "Vạn Lý Trường Thành",
+      "en": "The Great Wall"
+    },
+    "source": "https://commons.wikimedia.org/wiki/File:Badaling_China_Great-Wall-of-China-01.jpg",
+    "author": "CEphoto, Uwe Aranas",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "title": "Badaling China Great-Wall-of-China-01.jpg",
+    "changes": "Resized and converted to WebP; cropped in the interface."
+  },
+  "place-jiuzhaigou": {
+    "src": "/images/places/jiuzhaigou.webp",
+    "caption": {
+      "vi": "Cửu Trại Câu",
+      "en": "Jiuzhaigou Valley"
+    },
+    "source": "https://commons.wikimedia.org/wiki/File:Jiuzhaigou_Sichuan_China_Panda-Lake-02.jpg",
+    "author": "CEphoto, Uwe Aranas",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "title": "Jiuzhaigou Sichuan China Panda-Lake-02.jpg",
+    "changes": "Resized and converted to WebP; cropped in the interface."
+  },
+  "place-huangshan": {
+    "src": "/images/places/huangshan.webp",
+    "caption": {
+      "vi": "Hoàng Sơn",
+      "en": "Mount Huangshan"
+    },
+    "source": "https://commons.wikimedia.org/wiki/File:Huangshan_Mountains_-_panoramio.jpg",
+    "author": "Raki_Man",
+    "license": "CC BY 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
+    "title": "Huangshan Mountains - panoramio.jpg",
+    "changes": "Resized and converted to WebP; cropped in the interface."
+  },
+  "place-tajmahal": {
+    "src": "/images/places/tajmahal.webp",
+    "caption": {
+      "vi": "Taj Mahal",
+      "en": "Taj Mahal"
+    },
+    "source": "https://commons.wikimedia.org/wiki/File:Taj_Mahal_Front_View_with_Shadow_in_Water.jpg",
+    "author": "Envision Studio",
+    "license": "CC BY-SA 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+    "title": "Taj Mahal Front View with Shadow in Water.jpg",
+    "changes": "Resized and converted to WebP; cropped in the interface."
+  },
+  "place-angkor": {
+    "src": "/images/places/angkor.webp",
+    "caption": {
+      "vi": "Angkor",
+      "en": "Angkor"
+    },
+    "source": "https://commons.wikimedia.org/wiki/File:Angkor_Wat_at_sunrise_1.jpg",
+    "author": "Christophe95",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "title": "Angkor Wat at sunrise 1.jpg",
+    "changes": "Resized and converted to WebP; cropped in the interface."
+  },
+  "place-borobudur": {
+    "src": "/images/places/borobudur.webp",
+    "caption": {
+      "vi": "Borobudur",
+      "en": "Borobudur Temple Compounds"
+    },
+    "source": "https://commons.wikimedia.org/wiki/File:Borobudur-Temple-Park_View_of_the_temple-01.jpg",
+    "author": "CEphoto, Uwe Aranas",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "title": "Borobudur-Temple-Park View of the temple-01.jpg",
+    "changes": "Resized and converted to WebP; cropped in the interface."
+  },
+  "place-komodo": {
+    "src": "/images/places/komodo.webp",
+    "caption": {
+      "vi": "Vườn quốc gia Komodo",
+      "en": "Komodo National Park"
+    },
+    "source": "https://commons.wikimedia.org/wiki/File:Padar_Island,_Komodo_National_Park,_Indonesia,_20250822_0929_2659.jpg",
+    "author": "Jakub Hałun",
+    "license": "CC BY 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+    "title": "Padar Island, Komodo National Park, Indonesia, 20250822 0929 2659.jpg",
+    "changes": "Resized and converted to WebP; cropped in the interface."
+  },
+  "place-petra": {
+    "src": "/images/places/petra.webp",
+    "caption": {
+      "vi": "Thành cổ Petra",
+      "en": "Petra"
+    },
+    "source": "https://commons.wikimedia.org/wiki/File:The_Treasury,_Petra,_Jordan6.jpg",
+    "author": "Diego Delso",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "title": "The Treasury, Petra, Jordan6.jpg",
+    "changes": "Resized and converted to WebP; cropped in the interface."
+  },
+  "place-wadirum": {
+    "src": "/images/places/wadirum.webp",
+    "caption": {
+      "vi": "Sa mạc Wadi Rum",
+      "en": "Wadi Rum Protected Area"
+    },
+    "source": "https://commons.wikimedia.org/wiki/File:Wadi_rum_desert.jpg",
+    "author": "Peter Chisholm",
+    "license": "CC0",
+    "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "title": "Wadi rum desert.jpg",
+    "changes": "Resized and converted to WebP; cropped in the interface."
+  },
+  "place-cappadocia": {
+    "src": "/images/places/cappadocia.webp",
+    "caption": {
+      "vi": "Cappadocia",
+      "en": "Goreme National Park and the Rock Sites of Cappadocia"
+    },
+    "source": "https://commons.wikimedia.org/wiki/File:Fairy_chimneys_in_Cappadocia.JPG",
+    "author": "This Photo was taken by Wolfgang Moroder . Feel free to use my photos, but please mention me as the author and send me a message . This image is not in the public domain . Please respect the copyright protection. It may only be used according to the rules mentioned here. This specifically excludes use in social media , if applicable terms of the licenses listed here are not appropriate. Please do not upload an updated image here without consultation with the Author. The author would like to make corrections only at his own source. This ensures that the changes are preserved. Please if you think that any changes should be required, please inform the author. Otherwise you can upload a new image with a new name. Please use one of the templates derivative or extract .",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "title": "Fairy chimneys in Cappadocia.JPG",
+    "changes": "Resized and converted to WebP; cropped in the interface."
+  },
+  "place-pamukkale": {
+    "src": "/images/places/pamukkale.webp",
+    "caption": {
+      "vi": "Pamukkale",
+      "en": "Hierapolis-Pamukkale"
+    },
+    "source": "https://commons.wikimedia.org/wiki/File:Pamukkale_sunset2.jpg",
+    "author": "Vadim Istratov",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+    "title": "Pamukkale sunset2.jpg",
+    "changes": "Resized and converted to WebP; cropped in the interface."
+  },
+  "place-pyramids": {
+    "src": "/images/places/pyramids.webp",
+    "caption": {
+      "vi": "Kim tự tháp Giza",
+      "en": "Pyramids of Giza"
+    },
+    "source": "https://commons.wikimedia.org/wiki/File:Sphinx_and_pyramids_of_Giza_panorama.jpg",
+    "author": "kallerna",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "title": "Sphinx and pyramids of Giza panorama.jpg",
+    "changes": "Resized and converted to WebP; cropped in the interface."
+  },
+  "place-serengeti": {
+    "src": "/images/places/serengeti.webp",
+    "caption": {
+      "vi": "Serengeti",
+      "en": "Serengeti National Park"
+    },
+    "source": "https://commons.wikimedia.org/wiki/File:040_Blue_wildebeest_with_wattled_starlings_in_the_Serengeti_National_Park_Photo_by_Giles_Laurent.jpg",
+    "author": "Giles Laurent",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "title": "040 Blue wildebeest with wattled starlings in the Serengeti National Park Photo by Giles Laurent.jpg",
+    "changes": "Resized and converted to WebP; cropped in the interface."
+  },
+  "place-ngorongoro": {
+    "src": "/images/places/ngorongoro.webp",
+    "caption": {
+      "vi": "Ngorongoro",
+      "en": "Ngorongoro Conservation Area"
+    },
+    "source": "https://commons.wikimedia.org/wiki/File:Ngorongoro_Crater_Panorama.jpg",
+    "author": "[Thomas Huston]",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
+    "title": "Ngorongoro Crater Panorama.jpg",
+    "changes": "Resized and converted to WebP; cropped in the interface."
+  },
+  "place-kilimanjaro": {
+    "src": "/images/places/kilimanjaro.webp",
+    "caption": {
+      "vi": "Kilimanjaro",
+      "en": "Kilimanjaro National Park"
+    },
+    "source": "https://commons.wikimedia.org/wiki/File:Mountain_at_the_border_of_Kenya_and_Tanzania-_Mount_Kilimanjaro_10.jpg",
+    "author": "RVBS",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "title": "Mountain at the border of Kenya and Tanzania- Mount Kilimanjaro 10.jpg",
+    "changes": "Resized and converted to WebP; cropped in the interface."
+  },
+  "place-victoria": {
+    "src": "/images/places/victoria.webp",
+    "caption": {
+      "vi": "Thác Victoria",
+      "en": "Victoria Falls"
+    },
+    "source": "https://commons.wikimedia.org/wiki/File:Victoria_Falls_Waterfall-West.jpg",
+    "author": "Ralf Junghanns",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "title": "Victoria Falls Waterfall-West.jpg",
+    "changes": "Resized and converted to WebP; cropped in the interface."
+  },
+  "place-namib": {
+    "src": "/images/places/namib.webp",
+    "caption": {
+      "vi": "Biển cát Namib",
+      "en": "Namib Sand Sea"
+    },
+    "source": "https://commons.wikimedia.org/wiki/File:006_Dune_45_in_Sossusvlei_at_sunrise_Photo_by_Giles_Laurent.jpg",
+    "author": "Giles Laurent",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "title": "006 Dune 45 in Sossusvlei at sunrise Photo by Giles Laurent.jpg",
+    "changes": "Resized and converted to WebP; cropped in the interface."
+  },
+  "place-yellowstone": {
+    "src": "/images/places/yellowstone.webp",
+    "caption": {
+      "vi": "Yellowstone",
+      "en": "Yellowstone National Park"
+    },
+    "source": "https://commons.wikimedia.org/wiki/File:Yellowstone_National_Park_(WY,_USA),_Grand_Prismatic_Spring_--_2022_--_2514.jpg",
+    "author": "Dietmar Rabich",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "title": "Yellowstone National Park (WY, USA), Grand Prismatic Spring -- 2022 -- 2514.jpg",
+    "changes": "Resized and converted to WebP; cropped in the interface."
+  },
+  "place-yosemite": {
+    "src": "/images/places/yosemite.webp",
+    "caption": {
+      "vi": "Yosemite",
+      "en": "Yosemite National Park"
+    },
+    "source": "https://commons.wikimedia.org/wiki/File:Tunnel_View,_Yosemite_Valley,_Yosemite_NP_-_Diliff.jpg",
+    "author": "Diliff",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "title": "Tunnel View, Yosemite Valley, Yosemite NP - Diliff.jpg",
+    "changes": "Resized and converted to WebP; cropped in the interface."
+  },
+  "place-galapagos": {
+    "src": "/images/places/galapagos.webp",
+    "caption": {
+      "vi": "Quần đảo Galápagos",
+      "en": "Galapagos Islands"
+    },
+    "source": "https://commons.wikimedia.org/wiki/File:Piquero_patiazul_(Sula_nebouxii),_isla_Lobos,_islas_Gal%C3%A1pagos,_Ecuador,_2015-07-25,_DD_35.JPG",
+    "author": "Diego Delso",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "title": "Piquero patiazul (Sula nebouxii), isla Lobos, islas Galápagos, Ecuador, 2015-07-25, DD 35.JPG",
+    "changes": "Resized and converted to WebP; cropped in the interface."
+  },
+  "place-iguazu": {
+    "src": "/images/places/iguazu.webp",
+    "caption": {
+      "vi": "Thác Iguazú",
+      "en": "Iguazu National Park"
+    },
+    "source": "https://commons.wikimedia.org/wiki/File:Iguazu_Falls_Panorama_2009.jpg",
+    "author": "Mariordo (Mario Roberto Durán Ortiz)",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "title": "Iguazu Falls Panorama 2009.jpg",
+    "changes": "Resized and converted to WebP; cropped in the interface."
+  },
+  "place-machupicchu": {
+    "src": "/images/places/machupicchu.webp",
+    "caption": {
+      "vi": "Machu Picchu",
+      "en": "Historic Sanctuary of Machu Picchu"
+    },
+    "source": "https://commons.wikimedia.org/wiki/File:Machu_Picchu_panorama.jpg",
+    "author": "Brian Jeffery Beggerly",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+    "title": "Machu Picchu panorama.jpg",
+    "changes": "Resized and converted to WebP; cropped in the interface."
+  },
+  "place-rapanui": {
+    "src": "/images/places/rapanui.webp",
+    "caption": {
+      "vi": "Đảo Phục Sinh · Rapa Nui",
+      "en": "Rapa Nui National Park"
+    },
+    "source": "https://commons.wikimedia.org/wiki/File:Ahu_Tongariki_quince_moais.jpg",
+    "author": "Rocío Mantis",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "title": "Ahu Tongariki quince moais.jpg",
+    "changes": "Resized and converted to WebP; cropped in the interface."
+  },
+  "place-glaciares": {
+    "src": "/images/places/glaciares.webp",
+    "caption": {
+      "vi": "Los Glaciares",
+      "en": "Los Glaciares National Park"
+    },
+    "source": "https://commons.wikimedia.org/wiki/File:Perito_Moreno_Glacier_Patagonia_Argentina_Luca_Galuzzi_2005.JPG",
+    "author": "Luca Galuzzi ( Lucag )",
+    "license": "CC BY-SA 2.5",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.5",
+    "title": "Perito Moreno Glacier Patagonia Argentina Luca Galuzzi 2005.JPG",
+    "changes": "Resized and converted to WebP; cropped in the interface."
+  },
+  "place-barrierreef": {
+    "src": "/images/places/barrierreef.webp",
+    "caption": {
+      "vi": "Rạn san hô Great Barrier",
+      "en": "Great Barrier Reef"
+    },
+    "source": "https://commons.wikimedia.org/wiki/File:Agincourt_Reef,_Great_Barrier_Reef,_Queensland_(483734)_(9443489258).jpg",
+    "author": "Robert Linsdell from St. Andrews, Canada",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+    "title": "Agincourt Reef, Great Barrier Reef, Queensland (483734) (9443489258).jpg",
+    "changes": "Resized and converted to WebP; cropped in the interface."
+  },
+  "place-uluru": {
+    "src": "/images/places/uluru.webp",
+    "caption": {
+      "vi": "Uluru – Kata Tjuta",
+      "en": "Uluru-Kata Tjuta National Park"
+    },
+    "source": "https://commons.wikimedia.org/wiki/File:Ulu%E1%B9%9Fu_(Ayers_Rock),_Sunset.jpg",
+    "author": "Weyf",
+    "license": "CC0",
+    "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "title": "Uluṟu (Ayers Rock), Sunset.jpg",
+    "changes": "Resized and converted to WebP; cropped in the interface."
+  },
+  "place-tewahipounamu": {
+    "src": "/images/places/tewahipounamu.webp",
+    "caption": {
+      "vi": "Te Wāhipounamu",
+      "en": "Te Wahipounamu"
+    },
+    "source": "https://commons.wikimedia.org/wiki/File:Milford_Sound_and_Sinbad_Gully_-New_Zealand-9Jan2009.jpg",
+    "author": "archiescat",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+    "title": "Milford Sound and Sinbad Gully -New Zealand-9Jan2009.jpg",
+    "changes": "Resized and converted to WebP; cropped in the interface."
+  },
+  "place-tongariro": {
+    "src": "/images/places/tongariro.webp",
+    "caption": {
+      "vi": "Tongariro",
+      "en": "Tongariro National Park"
+    },
+    "source": "https://commons.wikimedia.org/wiki/File:Mt._Tongariro,_Red_Crater_%26_the_descent_to_Emerald_Lakes_from_Central_Crater.jpg",
+    "author": "Blueromulan",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "title": "Mt. Tongariro, Red Crater & the descent to Emerald Lakes from Central Crater.jpg",
+    "changes": "Resized and converted to WebP; cropped in the interface."
+  },
+  "place-sydney": {
+    "src": "/images/places/sydney.webp",
+    "caption": {
+      "vi": "Nhà hát Opera Sydney",
+      "en": "Sydney Opera House"
+    },
+    "source": "https://commons.wikimedia.org/wiki/File:Sydney_Opera_House_-_Dec_2008.jpg",
+    "author": "Diliff",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "title": "Sydney Opera House - Dec 2008.jpg",
+    "changes": "Resized and converted to WebP; cropped in the interface."
+  },
+  "place-venice": {
+    "src": "/images/places/venice.webp",
+    "caption": {
+      "vi": "Venice và đầm phá",
+      "en": "Venice and its Lagoon"
+    },
+    "source": "https://commons.wikimedia.org/wiki/File:Panorama_of_Canal_Grande_and_Ponte_di_Rialto,_Venice_-_September_2017.jpg",
+    "author": "Martin Falbisoner",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "title": "Panorama of Canal Grande and Ponte di Rialto, Venice - September 2017.jpg",
+    "changes": "Resized and converted to WebP; cropped in the interface."
+  },
+  "place-rome": {
+    "src": "/images/places/rome.webp",
+    "caption": {
+      "vi": "Trung tâm lịch sử Rome",
+      "en": "Historic Centre of Rome"
+    },
+    "source": "https://commons.wikimedia.org/wiki/File:Rome_Colosseum_exterior_panorama.jpg",
+    "author": "Nicholas Hartmann",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "title": "Rome Colosseum exterior panorama.jpg",
+    "changes": "Resized and converted to WebP; cropped in the interface."
+  },
+  "place-acropolis": {
+    "src": "/images/places/acropolis.webp",
+    "caption": {
+      "vi": "Acropolis Athens",
+      "en": "Acropolis of Athens"
+    },
+    "source": "https://commons.wikimedia.org/wiki/File:Acropolis_Parthenon_Athens_Greece.jpg",
+    "author": "Jebulon",
+    "license": "CC0",
+    "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "title": "Acropolis Parthenon Athens Greece.jpg",
+    "changes": "Resized and converted to WebP; cropped in the interface."
+  },
+  "place-meteora": {
+    "src": "/images/places/meteora.webp",
+    "caption": {
+      "vi": "Meteora",
+      "en": "Meteora"
+    },
+    "source": "https://commons.wikimedia.org/wiki/File:Meteora_Agios_Triadas_IMG_7632.jpg",
+    "author": "Dido3",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
+    "title": "Meteora Agios Triadas IMG 7632.jpg",
+    "changes": "Resized and converted to WebP; cropped in the interface."
+  },
+  "place-jungfrau": {
+    "src": "/images/places/jungfrau.webp",
+    "caption": {
+      "vi": "Dãy Alps · Jungfrau",
+      "en": "Swiss Alps Jungfrau-Aletsch"
+    },
+    "source": "https://commons.wikimedia.org/wiki/File:Aletsch_glacier_panorama_-_panoramio.jpg",
+    "author": "Frans-Banja Mulder",
+    "license": "CC BY 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
+    "title": "Aletsch glacier panorama - panoramio.jpg",
+    "changes": "Resized and converted to WebP; cropped in the interface."
+  },
+  "place-plitvice": {
+    "src": "/images/places/plitvice.webp",
+    "caption": {
+      "vi": "Hồ Plitvice",
+      "en": "Plitvice Lakes National Park"
+    },
+    "source": "https://commons.wikimedia.org/wiki/File:Plitvice_lakes_waterfalls_from_top.jpg",
+    "author": "Naval S",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+    "title": "Plitvice lakes waterfalls from top.jpg",
+    "changes": "Resized and converted to WebP; cropped in the interface."
+  },
+  "place-fjord": {
+    "src": "/images/places/fjord.webp",
+    "caption": {
+      "vi": "Các vịnh hẹp Na Uy",
+      "en": "West Norwegian Fjords"
+    },
+    "source": "https://commons.wikimedia.org/wiki/File:Panorama_of_Geirangerfjord_from_Skagefla.jpg",
+    "author": "Carsten Steger",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "title": "Panorama of Geirangerfjord from Skagefla.jpg",
+    "changes": "Resized and converted to WebP; cropped in the interface."
+  },
+  "place-causeway": {
+    "src": "/images/places/causeway.webp",
+    "caption": {
+      "vi": "Giant’s Causeway",
+      "en": "Giant's Causeway"
+    },
+    "source": "https://commons.wikimedia.org/wiki/File:Giant%27s_Causeway_Basalt_Columns_-_geograph.org.uk_-_7441466.jpg",
+    "author": "thejackrustles",
+    "license": "CC BY-SA 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+    "title": "Giant's Causeway Basalt Columns - geograph.org.uk - 7441466.jpg",
+    "changes": "Resized and converted to WebP; cropped in the interface."
+  },
+  "place-stonehenge": {
+    "src": "/images/places/stonehenge.webp",
+    "caption": {
+      "vi": "Stonehenge",
+      "en": "Stonehenge"
+    },
+    "source": "https://commons.wikimedia.org/wiki/File:Stonehenge,_the_prehistoric_monument_in_Wiltshire,_England_-_52059075996.jpg",
+    "author": "-JvL-",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+    "title": "Stonehenge, the prehistoric monument in Wiltshire, England - 52059075996.jpg",
+    "changes": "Resized and converted to WebP; cropped in the interface."
+  },
+  "place-montsaintmichel": {
+    "src": "/images/places/montsaintmichel.webp",
+    "caption": {
+      "vi": "Mont-Saint-Michel",
+      "en": "Mont-Saint-Michel and its Bay"
+    },
+    "source": "https://commons.wikimedia.org/wiki/File:Mont-Saint-Michel_with_the_rainbow.jpg",
+    "author": "Eric Kilby",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "title": "Mont-Saint-Michel with the rainbow.jpg",
+    "changes": "Resized and converted to WebP; cropped in the interface."
   }
 }

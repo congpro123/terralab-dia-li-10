@@ -1,5 +1,12 @@
 /* Self-hosted Google Fonts. Be Vietnam Pro and Lora are distributed under the SIL Open Font License. */
 @font-face {
+  font-family: 'Lora';
+  font-style: normal;
+  font-weight: 400 700;
+  font-display: swap;
+  src: url(/fonts/lora-regular-vietnamese.ttf) format('truetype');
+}
+@font-face {
   font-family: 'Be Vietnam Pro';
   font-style: normal;
   font-weight: 400;

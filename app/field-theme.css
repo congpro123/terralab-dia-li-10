@@ -1,5 +1,5 @@
 /* TerraLab's original cream, forest and sage palette, with the guided layout. */
-:root{--bg:#f6f5f0;--paper:#f6f5f0;--surface:#fffefa;--surface-soft:#edf1e6;--ink:#233d35;--muted:#66776b;--line:#dfe5d8;--mint:#376c56;--purple:#987c4f;color-scheme:light}
+:root{--bg:#f6f5f0;--paper:#f6f5f0;--surface:#fffefa;--surface-soft:#edf1e6;--ink:#233d35;--muted:#66776b;--line:#dfe5d8;--mint:#376c56;--purple:#987c4f;--font-serif:'Lora',Georgia,serif;color-scheme:light}
 body{background:radial-gradient(ellipse at 90% 0,#e6ecdb70,transparent 55%),#f6f5f0;color:var(--ink)}
 ::selection{background:#d2ddbb;color:#233d35}
 button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible,summary:focus-visible,[tabindex]:focus-visible{outline-color:#467d61}

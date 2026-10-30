@@ -14,3 +14,7 @@
 @media(max-width:520px){[data-language=parallel] .field-lab .lab-toolbar{flex-wrap:wrap;gap:7px}[data-language=parallel] .experiment-tabs{flex:1 1 100%;width:100%}[data-language=parallel] .experiment-tabs>button{flex:1;white-space:normal;line-height:1.5;min-height:38px}[data-language=parallel] .field-lab .lab-controls{grid-template-columns:1fr}.field-stage-note{padding:8px 13px;font-size:9px}}
 
 .language-picker select{padding:4px 0}.field-lab.is-immersive>*{flex-shrink:0}
+
+.scene-recovery{padding:13px 18px;background:#f6efd9;border-bottom:1px solid #dacfaa;color:#625638;font-size:12px;line-height:1.8}.render-mode{display:flex;align-items:center;min-width:28px;color:#4e6b51;font-size:10px;line-height:1.5}.coast-diagram{display:block;width:100%;height:400px;background:#bfd9d8}.coast-diagram+.ocean-scene-readout{top:90px}@media(max-width:520px){.render-mode{font-size:9px}.coast-diagram{height:350px}.scene-recovery{padding:12px 15px;font-size:11px}}
+
+.coast-diagram+.ocean-scene-readout{position:static;max-width:none;border:0;border-radius:0;box-shadow:none;padding:12px 17px;background:#f1f5e8}.coast-diagram+.ocean-scene-readout>strong{font-size:18px}

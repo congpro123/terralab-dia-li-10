@@ -1,23 +1,25 @@
 'use client';
 import {useT} from './Language';
+import {createSceneGuard,recoverStaleModule} from '@/lib/scene-lifecycle';
 import {useEffect,useRef,useState} from 'react';
 import {earthSunDirection} from '@/lib/models';
 import {geographicVector,type Destination} from '@/lib/exploration';
 import {photos} from './Photos';
 import {arrangePhotoBubbles} from '@/lib/atlas-layout';
 export type GlobeView={x:number;y:number;z:number};
-export default function Globe({kind='globe',day=80,hour=12,tilt=23.5,playing=true,boundary='divergent',continental=false,speed=1,onFailure,places,focusPlace,zoomCommand,onSelectPlace,english=false,expanded=false,initialView,activePlaceId,onViewChange,onApproach}:{kind?:string;day?:number;hour?:number;tilt?:number;playing?:boolean;boundary?:string;continental?:boolean;speed?:number;onFailure?:()=>void;places?:Destination[];focusPlace?:{place:Destination;sequence:number}|null;zoomCommand?:{direction:number;sequence:number};onSelectPlace?:(p:Destination)=>void;english?:boolean;expanded?:boolean;initialView?:GlobeView|null;activePlaceId?:string;onViewChange?:(view:GlobeView)=>void;onApproach?:(view:GlobeView)=>void}){const t=useT(english);
+export default function Globe({kind='globe',day=80,hour=12,tilt=23.5,playing=true,boundary='divergent',continental=false,speed=1,onFailure,places,focusPlace,zoomCommand,onSelectPlace,english=false,expanded=false,initialView,activePlaceId,onViewChange,onApproach}:{kind?:string;day?:number;hour?:number;tilt?:number;playing?:boolean;boundary?:string;continental?:boolean;speed?:number;onFailure?:(error?:unknown)=>void;places?:Destination[];focusPlace?:{place:Destination;sequence:number}|null;zoomCommand?:{direction:number;sequence:number};onSelectPlace?:(p:Destination)=>void;english?:boolean;expanded?:boolean;initialView?:GlobeView|null;activePlaceId?:string;onViewChange?:(view:GlobeView)=>void;onApproach?:(view:GlobeView)=>void}){const t=useT(english);
  const host=useRef<HTMLDivElement>(null);const [failed,setFailed]=useState(false);
  const markerRefs=useRef<Record<string,HTMLButtonElement|null>>({});const commands=useRef({focusPlace,zoomCommand});commands.current={focusPlace,zoomCommand};
  const display=useRef({expanded,activePlaceId,onViewChange,onApproach});display.current={expanded,activePlaceId,onViewChange,onApproach};
  const state=useRef({day,hour,tilt,playing,boundary,continental,speed});state.current={day,hour,tilt,playing,boundary,continental,speed};
+ const failureCallback=useRef(onFailure);failureCallback.current=onFailure;
  useEffect(()=>{
-  let cancelled=false;let cleanup=()=>{};
+  let cancelled=false;let cleanup=()=>{};const closeScene=()=>{const dispose=cleanup;cleanup=()=>{};dispose();};const guard=createSceneGuard(error=>{cancelled=true;try{closeScene();}finally{setFailed(true);console.warn('[TerraLab] Scene unavailable',error);if(failureCallback.current)failureCallback.current(error);else void recoverStaleModule(error);}});
   async function init(){
    try{
     const THREE=await import('three');const {OrbitControls}=await import('three/addons/controls/OrbitControls.js');
     if(cancelled||!host.current)return;
-    const el=host.current;const renderer=new THREE.WebGLRenderer({alpha:true,antialias:true,powerPreference:'low-power'});renderer.setPixelRatio(Math.min(devicePixelRatio,1.7));renderer.setClearColor(0,0);renderer.outputColorSpace=THREE.SRGBColorSpace;renderer.toneMapping=THREE.ACESFilmicToneMapping;renderer.toneMappingExposure=1.1;el.appendChild(renderer.domElement);
+    const el=host.current;const renderer=new THREE.WebGLRenderer({alpha:true,antialias:true,powerPreference:'low-power'});renderer.setPixelRatio(Math.min(devicePixelRatio,1.7));renderer.setClearColor(0,0);renderer.outputColorSpace=THREE.SRGBColorSpace;renderer.toneMapping=THREE.ACESFilmicToneMapping;renderer.toneMappingExposure=1.1;el.appendChild(renderer.domElement);guard.observe(renderer.domElement);renderer.debug.onShaderError=()=>{throw new Error('WebGL shader compilation failed');};cleanup=()=>{renderer.dispose();renderer.forceContextLoss();renderer.domElement.remove();};
     const scene=new THREE.Scene();const camera=new THREE.PerspectiveCamera(36,1,.1,100);camera.position.set(0,kind==='plates'?1:.35,kind==='plates'?9:7.1);
     const controls=new OrbitControls(camera,renderer.domElement);controls.enableDamping=true;controls.enablePan=false;controls.minDistance=places?2.1:4.5;controls.maxDistance=12;controls.autoRotate=kind==='globe';controls.autoRotateSpeed=.45;
     let autoSpin=!places,canExpand=false,requestedExpansion=false,lastView=0;const stopSpin=()=>{autoSpin=false;flight=null;canExpand=true;};controls.addEventListener('start',stopSpin);
@@ -25,7 +27,7 @@ export default function Globe({kind='globe',day=80,hour=12,tilt=23.5,playing=tru
     scene.add(new THREE.AmbientLight(0xffffff,kind==='earth'?.035:kind==='plates'?1.1:1.3));const key=new THREE.DirectionalLight(0xfff5e8,3.3);key.position.set(-3,2,5);scene.add(key);const rim=new THREE.DirectionalLight(0x609fff,kind==='earth'?.035:.65);rim.position.set(3,0,-3);scene.add(rim);
     const objects:import('three').Object3D[]=[];const arrows:import('three').ArrowHelper[]=[];const earthGroup=new THREE.Group();scene.add(earthGroup);
     let earth:import('three').Mesh|undefined,clouds:import('three').Mesh|undefined;const textures:import('three').Texture[]=[];
-    cleanup=()=>{controls.dispose();textures.forEach(t=>t.dispose());scene.traverse(o=>{const m=o as import('three').Mesh;m.geometry?.dispose();if(m.material)for(const mat of Array.isArray(m.material)?m.material:[m.material])mat.dispose();});renderer.dispose();renderer.domElement.remove();};
+    cleanup=()=>{controls.dispose();textures.forEach(t=>t.dispose());scene.traverse(o=>{const m=o as import('three').Mesh;m.geometry?.dispose();if(m.material)for(const mat of Array.isArray(m.material)?m.material:[m.material])mat.dispose();});renderer.dispose();renderer.forceContextLoss();renderer.domElement.remove();};
     const mat=(color:number)=>new THREE.MeshStandardMaterial({color,roughness:.75,metalness:.05});
     if(kind==='plates'){
      const plateA=new THREE.Group(),plateB=new THREE.Group();earthGroup.add(plateA,plateB);objects.push(plateA,plateB);
@@ -54,9 +56,8 @@ export default function Globe({kind='globe',day=80,hour=12,tilt=23.5,playing=tru
     }
     const starPositions=[];let seed=42;const rnd=()=>{seed=(seed*1664525+1013904223)>>>0;return seed/4294967296;};for(let i=0;i<160;i++)starPositions.push((rnd()-.5)*24,(rnd()-.5)*18,-4-rnd()*8);const sg=new THREE.BufferGeometry();sg.setAttribute('position',new THREE.Float32BufferAttribute(starPositions,3));scene.add(new THREE.Points(sg,new THREE.PointsMaterial({color:0xadc7c1,size:.018,transparent:true,opacity:.7})));
     const resize=()=>{if(!el.clientWidth||!el.clientHeight)return;camera.aspect=el.clientWidth/el.clientHeight;camera.updateProjectionMatrix();renderer.setSize(el.clientWidth,el.clientHeight);};const observer=new ResizeObserver(resize);observer.observe(el);resize();
-    const lost=(e:Event)=>{e.preventDefault();setFailed(true);onFailure?.();};renderer.domElement.addEventListener('webglcontextlost',lost);
     const reduced=matchMedia('(prefers-reduced-motion: reduce)').matches;let elapsed=0;let last=performance.now();
-    renderer.setAnimationLoop(()=>{
+    renderer.setAnimationLoop(guard.frame(()=>{
       if(cancelled)return;const s=state.current;const now=performance.now();const dt=Math.min((now-last)/1000,.05);last=now;if(s.playing&&!reduced)elapsed+=dt*s.speed;
       if(earth&&clouds){if(kind==='earth'){earthGroup.rotation.z=-s.tilt*Math.PI/180;earth.rotation.y=s.hour/24*Math.PI*2+elapsed*.17;const sun=earthSunDirection(s.day,s.tilt);key.position.set(sun.x*5,0,sun.z*5);}else{earthGroup.rotation.z=places?0:.12;earth.rotation.y=places?.length ? .55 : .55+elapsed*.035;}clouds.rotation.y=earth.rotation.y+elapsed*.007;for(const object of earthGroup.children){const m=(object as import('three').Mesh).material;if(m instanceof THREE.ShaderMaterial&&m.uniforms.sun)m.uniforms.sun.value.copy(key.position).normalize();}}
       if(kind==='plates'){const [a,b]=objects;const movement=Math.sin(elapsed*.35)*.35;if(s.boundary==='transform'){a.position.set(-1.25,0,movement);b.position.set(1.25,0,-movement);a.rotation.z=0;b.rotation.z=0;arrows[0].setDirection(new THREE.Vector3(0,0,-1));arrows[1].setDirection(new THREE.Vector3(0,0,1));}else{const divergent=s.boundary==='divergent';const sign=divergent?1:-1;a.position.set(-1.3-sign*movement,divergent||s.continental?0:-.17,0);b.position.set(1.3+sign*movement,0,0);a.rotation.z=divergent?0:s.continental?.12:-.23;b.rotation.z=!divergent&&s.continental?-.12:0;arrows[0].setDirection(new THREE.Vector3(-sign,0,0));arrows[1].setDirection(new THREE.Vector3(sign,0,0));}}
@@ -67,7 +68,7 @@ export default function Globe({kind='globe',day=80,hour=12,tilt=23.5,playing=tru
        if(flight){const amount=reduced?1:Math.min(1,dt*4.5),radius=camera.position.length(),direction=camera.position.clone().normalize(),rotation=new THREE.Quaternion().setFromUnitVectors(direction,flight.clone().normalize());direction.applyQuaternion(new THREE.Quaternion().slerp(rotation,amount));camera.position.copy(direction).multiplyScalar(THREE.MathUtils.lerp(radius,flight.length(),amount));if(camera.position.distanceTo(flight)<.015)flight=null;}
        key.position.copy(camera.position).add(new THREE.Vector3(-3,3,1));
       }
-      controls.autoRotate=kind==='globe'&&!reduced&&s.playing&&autoSpin;controls.update();renderer.render(scene,camera);
+      controls.autoRotate=kind==='globe'&&!reduced&&s.playing&&autoSpin;controls.update();renderer.render(scene,camera);guard.ready();
       if(places&&earth){
        const ui=display.current,distance=camera.position.length(),view={x:camera.position.x,y:camera.position.y,z:camera.position.z};
        if(now-lastView>200){lastView=now;ui.onViewChange?.(view);}
@@ -85,10 +86,10 @@ export default function Globe({kind='globe',day=80,hour=12,tilt=23.5,playing=tru
        for(const p of places)markerRefs.current[p.id]?.classList.toggle('is-photo',previousPhotos.has(p.id));
        for(const bubble of bubbles){const node=markerRefs.current[bubble.id];if(!node)continue;const endX=THREE.MathUtils.clamp(bubble.x,bubble.left,bubble.left+bubble.width),endY=THREE.MathUtils.clamp(bubble.y,bubble.top,bubble.top+bubble.height);node.style.setProperty('--photo-line-length',`${Math.hypot(endX-bubble.x,endY-bubble.y)}px`);node.style.setProperty('--photo-line-angle',`${Math.atan2(endY-bubble.y,endX-bubble.x)}rad`);node.style.setProperty('--preview-left',`${19+bubble.left-bubble.x}px`);node.style.setProperty('--preview-top',`${19+bubble.top-bubble.y}px`);node.style.setProperty('--preview-width',`${bubble.width}px`);node.style.setProperty('--preview-height',`${bubble.height}px`);node.classList.add('is-photo');node.classList.remove('is-near');}
       }
-    });
-    cleanup=()=>{renderer.setAnimationLoop(null);observer.disconnect();controls.removeEventListener('start',stopSpin);controls.dispose();renderer.domElement.removeEventListener('webglcontextlost',lost);scene.traverse(o=>{const m=o as import('three').Mesh;m.geometry?.dispose();if(m.material){for(const material of Array.isArray(m.material)?m.material:[m.material])material.dispose();}});textures.forEach(t=>t.dispose());renderer.dispose();renderer.forceContextLoss();renderer.domElement.remove();};
-   }catch{cleanup();if(!cancelled){setFailed(true);onFailure?.();}}
-  }init();return()=>{cancelled=true;cleanup();};
+    }));
+    cleanup=()=>{renderer.setAnimationLoop(null);observer.disconnect();controls.removeEventListener('start',stopSpin);controls.dispose();scene.traverse(o=>{const m=o as import('three').Mesh;m.geometry?.dispose();if(m.material){for(const material of Array.isArray(m.material)?m.material:[m.material])material.dispose();}});textures.forEach(t=>t.dispose());renderer.dispose();renderer.forceContextLoss();renderer.domElement.remove();};
+   }catch(error){if(!cancelled)guard.fail(error);}
+  }init();return()=>{guard.close();cancelled=true;closeScene();};
  },[kind,onFailure]);
  return <div className="globe-host" ref={host} role={places?'group':'img'} aria-label={kind==='plates'?'Mô hình tương tác ranh giới mảng':'Địa cầu với ảnh vệ tinh NASA — kéo để xoay, cuộn để phóng to'}>{places&&!failed&&<div className="globe-hotspots">{places.map(p=><button key={p.id} ref={el=>{markerRefs.current[p.id]=el;}} className={`globe-hotspot ${p.category==='culture'?'is-cultural':''}`} style={{visibility:'hidden'}} onClick={()=>onSelectPlace?.(p)} aria-label={(t('Mở ','Open '))+(t(p.name,p.nameEn))}><span className="hotspot-dot"/><span className="hotspot-name">{t(p.name,p.nameEn)}</span><span className="hotspot-preview"><img src={photos[p.photo].src.replace('.webp','-480.webp')} alt="" width="64" height="45" loading="lazy"/><span>{t(p.name,p.nameEn)}</span></span></button>)}</div>}{failed&&<div className="globe-fallback"><img src="/images/lesson-5-960.webp" alt="Trái Đất được chụp từ Apollo 17"/><p>Ảnh Apollo 17 / NASA. Mở hoạt động 2D để tiếp tục khám phá.</p></div>}</div>;
 }

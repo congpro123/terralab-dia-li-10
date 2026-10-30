@@ -6,6 +6,7 @@ import type {Attempt,Mode,Pair,Progress,Question,Unit,User} from '@/lib/types';
 import {initialProgress} from '@/lib/types';
 import LangText from './LangText';
 import {LanguageContext,useT} from './Language';
+import {recoverStaleModule} from '@/lib/scene-lifecycle';
 import {translate,validMode} from '@/lib/language';
 import {PhotoCredits} from './Photos';
 import Admin from './Admin';
@@ -31,7 +32,8 @@ export default function TerraApp(){
  const notify=(message:string)=>{setToast(message);};
  useEffect(()=>{const change=()=>{const r=window.location.hash.replace(/^#\/?/,'')||'home';setRoute(r);setMobile(false);};change();window.addEventListener('hashchange',change);setMode(validMode(localStorage.getItem('terra-mode')));setLargeText(localStorage.getItem('terra-large-text')==='1');api('session').then(d=>setUser(d.user)).catch(()=>{}).finally(()=>setAuthReady(true));setOnline(navigator.onLine);const up=()=>{setOnline(navigator.onLine);};window.addEventListener('online',up);window.addEventListener('offline',up);return()=>{window.removeEventListener('hashchange',change);window.removeEventListener('online',up);window.removeEventListener('offline',up);};},[]);
  useEffect(()=>{localStorage.setItem('terra-mode',mode);document.documentElement.lang=english?'en':'vi';},[mode]);
- useEffect(()=>{if(process.env.NODE_ENV==='production'&&'serviceWorker' in navigator)navigator.serviceWorker.register('/sw.js').catch(()=>{});},[]);
+ useEffect(()=>{if(process.env.NODE_ENV==='production'&&'serviceWorker' in navigator)navigator.serviceWorker.register('/sw.js',{updateViaCache:'none'}).catch(()=>{});},[]);
+ useEffect(()=>{const failed=(event:Event)=>{void recoverStaleModule((event as Event&{payload?:unknown;reason?:unknown}).payload??(event as PromiseRejectionEvent).reason);};window.addEventListener('vite:preloadError',failed);window.addEventListener('unhandledrejection',failed);return()=>{window.removeEventListener('vite:preloadError',failed);window.removeEventListener('unhandledrejection',failed);};},[]);
  useEffect(()=>{if(!toast)return;const id=setTimeout(()=>setToast(''),5500);return()=>clearTimeout(id);},[toast]);
  useEffect(()=>{
   if(!authReady)return;let active=true;const key='terra-progress:'+(user?.id??'guest');let local:Record<string,Progress>={};try{local=JSON.parse(localStorage.getItem(key)??'{}');}catch{}

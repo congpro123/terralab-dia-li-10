@@ -1,18 +1,20 @@
 'use client';
 import {useT} from './Language';
+import {createSceneGuard,recoverStaleModule} from '@/lib/scene-lifecycle';
 import {useEffect,useRef,useState} from 'react';
 import type * as ThreeTypes from 'three';
 import {Camera,Mountain,Navigation} from 'lucide-react';
 import {catchmentIndices} from '@/lib/models';
 import {floodedBankWidth,landscapeHeight,riverBankErosion,riverCenter,riverLevel,riverStage} from '@/lib/landscape';
-type Props={rain:number;cover:number;slope:number;playing:boolean;mode:'water'|'erosion'|'ecosystem'|'vegetation';heat?:number;english?:boolean};
-export default function RiverLandscape({rain,cover,slope,playing,mode,heat=50,english=false}:Props){
+type Props={rain:number;cover:number;slope:number;playing:boolean;mode:'water'|'erosion'|'ecosystem'|'vegetation';heat?:number;onFailure?:(error?:unknown)=>void;english?:boolean};
+export default function RiverLandscape({rain,cover,slope,playing,mode,heat=50,english=false,onFailure}:Props){
  const host=useRef<HTMLDivElement>(null),state=useRef({rain,cover,slope,playing,mode,heat}),view=useRef(0);state.current={rain,cover,slope,playing,mode,heat};const [failed,setFailed]=useState(false),[ready,setReady]=useState(false),[cameraView,setCameraView]=useState(0);const t=useT(english);
- useEffect(()=>{let cancelled=false,cleanup=()=>{};
+ const failureCallback=useRef(onFailure);failureCallback.current=onFailure;
+ useEffect(()=>{let cancelled=false,cleanup=()=>{};const closeScene=()=>{const dispose=cleanup;cleanup=()=>{};dispose();};const guard=createSceneGuard(error=>{cancelled=true;try{closeScene();}finally{setFailed(true);console.warn('[TerraLab] Scene unavailable',error);if(failureCallback.current)failureCallback.current(error);else void recoverStaleModule(error);}});
   async function init(){try{
    const [THREE,{Water},{outdoorWorld,groundTextures,waterNormals},{plantForest}]=await Promise.all([import('three'),import('three/addons/objects/Water.js'),import('@/lib/outdoor'),import('@/lib/scanned-forest')]);if(cancelled||!host.current)return;
    const world=outdoorWorld(host.current,new THREE.Vector3(18,14,32),new THREE.Vector3(0,2,-25)),{scene,camera,controls,renderer,compact}=world;let forest:Awaited<ReturnType<typeof plantForest>>|undefined;cleanup=()=>{forest?.stop();world.dispose();};
-   const textures=await groundTextures(renderer);if(cancelled){Object.values(textures).flatMap(s=>Object.values(s)).forEach(t=>t.dispose());return;}world.textures.push(...Object.values(textures).flatMap(s=>Object.values(s)));
+   guard.observe(renderer.domElement);const textures=await groundTextures(renderer);if(cancelled){Object.values(textures).flatMap(s=>Object.values(s)).forEach(t=>t.dispose());return;}world.textures.push(...Object.values(textures).flatMap(s=>Object.values(s)));
    const terrain=new THREE.PlaneGeometry(250,290,compact?160:230,compact?180:250);terrain.rotateX(-Math.PI/2);terrain.translate(0,0,-30);const p=terrain.attributes.position;
    const moisture={value:.7},wetStage={value:0},rainfall={value:0};textures.grass.normalMap.repeat.set(90,100);textures.grass.roughnessMap.repeat.set(90,100);const material=new THREE.MeshStandardMaterial({map:textures.grass.map,normalMap:textures.grass.normalMap,roughnessMap:textures.grass.roughnessMap,normalScale:new THREE.Vector2(.85,.85),roughness:1});
    material.onBeforeCompile=shader=>{Object.assign(shader.uniforms,{terrainGrass:{value:textures.grass.map},terrainRock:{value:textures.rock.map},terrainSand:{value:textures.sand.map},terrainMoisture:moisture,terrainStage:wetStage,terrainRain:rainfall});shader.vertexShader=shader.vertexShader.replace('#include <common>','#include <common>\nvarying vec3 terrainP;varying vec3 terrainN;').replace('#include <begin_vertex>','#include <begin_vertex>\nterrainP=position;terrainN=normal;');shader.fragmentShader=shader.fragmentShader.replace('#include <common>','#include <common>\nuniform sampler2D terrainGrass;uniform sampler2D terrainRock;uniform sampler2D terrainSand;uniform float terrainMoisture;uniform float terrainStage;uniform float terrainRain;varying vec3 terrainP;varying vec3 terrainN;').replace('#include <map_fragment>',`vec3 grass=texture2D(terrainGrass,terrainP.xz*.32).rgb*vec3(.75,.9,.68);vec3 rock=texture2D(terrainRock,terrainP.xz*.055).rgb;vec3 sand=texture2D(terrainSand,terrainP.xz*.38).rgb;float ridge=1.-smoothstep(.55,.88,terrainN.y);float riverX=sin(terrainP.z*.035)*7.+sin(terrainP.z*.084)*1.4;float shore=1.-smoothstep(3.6,6.6,abs(terrainP.x-riverX));vec3 ground=mix(mix(sand*.83,grass,terrainMoisture),rock,ridge*.88);ground=mix(ground,sand*.72,shore*.85);float aboveWater=terrainP.y-(1.4-terrainP.z*.028+terrainStage);float wetFringe=1.-smoothstep(.05,1.05,aboveWater);ground=mix(ground,ground*.54+vec3(.045,.055,.035),wetFringe*.72);ground*=1.-terrainRain*.08;diffuseColor.rgb*=ground;`);};
@@ -33,16 +35,16 @@ export default function RiverLandscape({rain,cover,slope,playing,mode,heat=50,en
     }
     riverP.needsUpdate=true;riverGeometry.computeVertexNormals();water.position.y=riverLevel(-30)+stage;wetStage.value=stage;
    }
-   setReady(true);renderer.setAnimationLoop(()=>{if(cancelled)return;const now=performance.now(),dt=Math.min(.05,(now-last)/1000);last=now;const s=state.current;if(s.playing&&!reduced)elapsed+=dt;if(lastCamera!==view.current){lastCamera=view.current;desired=perspectives[view.current];}if(desired){camera.position.lerp(desired.position,reduced?1:.07);controls.target.lerp(desired.target,reduced?1:.07);if(camera.position.distanceTo(desired.position)<.02)desired=null;}
+   renderer.setAnimationLoop(guard.frame(()=>{if(cancelled)return;const now=performance.now(),dt=Math.min(.05,(now-last)/1000);last=now;const s=state.current;if(s.playing&&!reduced)elapsed+=dt;if(lastCamera!==view.current){lastCamera=view.current;desired=perspectives[view.current];}if(desired){camera.position.lerp(desired.position,reduced?1:.07);controls.target.lerp(desired.target,reduced?1:.07);if(camera.position.distanceTo(desired.position)<.02)desired=null;}
     const vegetation=s.mode==='vegetation',growth=s.cover/100*(s.heat>=25&&s.heat<=80?1:.4),density=vegetation?growth:s.mode==='water'?.8:s.cover/100,shape=[s.cover,s.slope,s.rain,s.heat,s.mode].join('/'),runoff=catchmentIndices(s.rain,s.cover).runoff;
     const eroding=s.mode==='erosion'||s.mode==='ecosystem';
     if(shape!==lastShape){lastShape=shape;for(let i=0;i<p.count;i++){const x=p.getX(i),z=p.getZ(i);p.setY(i,landscapeHeight(x,z,s.slope)-(eroding?riverBankErosion(x,z,runoff,s.cover):0));}p.needsUpdate=true;terrain.computeVertexNormals();moisture.value=.28+density*.72;rainfall.value=s.rain/100;forest?.update(density,s.slope,vegetation&&s.heat<25);for(const rock of rocks)rock.mesh.position.y=landscapeHeight(rock.x,rock.z,s.slope)-(eroding?riverBankErosion(rock.x,rock.z,runoff,s.cover):0)-rock.size*.15;water.material.uniforms.waterColor.value.set(runoff>38&&s.cover<72?'#66583d':'#28534c');rainGeo.setDrawRange(0,vegetation?0:Math.round(rainCount*s.rain/100)*2);flowGeo.setDrawRange(0,vegetation?50:Math.round(180*runoff/100));lastWaterStage=-1;}
     const target=vegetation?.25:riverStage(runoff);stage+=Math.min(1,dt*(reduced?10:4.8))*(target-stage);if(Math.abs(target-stage)<.003)stage=target;
     if(Math.abs(stage-lastWaterStage)>.004){updateWaterline(s,runoff,eroding);lastWaterStage=stage;}
-    forest?.animate(elapsed);water.material.uniforms.time.value=elapsed*.48;for(let i=0;i<rainCount;i++){const d=drops[i],x=d.x,z=d.z,y=landscapeHeight(x,z,s.slope)-(eroding?riverBankErosion(x,z,runoff,s.cover):0)+.3+((d.phase-elapsed*.6)%1+1)%1*20;rainP.set([x,y,z,x-.1,y-.7,z],i*6);}rainGeo.attributes.position.needsUpdate=true;for(let i=0;i<180;i++){const z=-125+((i/180+elapsed*(.006+runoff*.00012))%1)*250,x=riverCenter(z)+Math.sin(i*2.4)*1.5;flowP.set([x,riverLevel(z)+stage+.025,z],i*3);}flowGeo.attributes.position.needsUpdate=true;controls.update();renderer.render(scene,camera);
-   });
-  }catch{cleanup();if(!cancelled)setFailed(true);}}
-  init();return()=>{cancelled=true;cleanup();};
+    forest?.animate(elapsed);water.material.uniforms.time.value=elapsed*.48;for(let i=0;i<rainCount;i++){const d=drops[i],x=d.x,z=d.z,y=landscapeHeight(x,z,s.slope)-(eroding?riverBankErosion(x,z,runoff,s.cover):0)+.3+((d.phase-elapsed*.6)%1+1)%1*20;rainP.set([x,y,z,x-.1,y-.7,z],i*6);}rainGeo.attributes.position.needsUpdate=true;for(let i=0;i<180;i++){const z=-125+((i/180+elapsed*(.006+runoff*.00012))%1)*250,x=riverCenter(z)+Math.sin(i*2.4)*1.5;flowP.set([x,riverLevel(z)+stage+.025,z],i*3);}flowGeo.attributes.position.needsUpdate=true;controls.update();renderer.render(scene,camera);if(guard.ready())setReady(true);
+   }));
+  }catch(error){if(!cancelled)guard.fail(error);}}
+  init();return()=>{guard.close();cancelled=true;closeScene();};
  },[]);
  const budget=catchmentIndices(rain,cover);
  return <div className="landscape-view"><div className="landscape-scene field-scene" ref={host} role="group" aria-label={t('Thung lũng 3D: mực nước và vùng ngập bờ thay đổi theo lượng mưa','3D valley: water level and flooded banks respond to rainfall')}>

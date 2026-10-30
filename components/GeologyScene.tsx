@@ -1,15 +1,17 @@
 'use client';
 import {useT} from './Language';
+import {createSceneGuard,recoverStaleModule} from '@/lib/scene-lifecycle';
 import {useEffect,useRef,useState} from 'react';
 import type {PlateBoundary,PlateSide} from '@/lib/tectonic-geometry';
-type Props={kind:'earth'|'plates'|'soil';boundary?:string;continental?:boolean;layer?:number;playing?:boolean;progress?:number;english?:boolean;onSelectLayer?:(layer:number)=>void};
-export default function GeologyScene({kind,boundary='divergent',continental=false,layer=0,playing=false,progress=0,english=false,onSelectLayer}:Props){
+type Props={kind:'earth'|'plates'|'soil';boundary?:string;continental?:boolean;layer?:number;playing?:boolean;progress?:number;english?:boolean;onFailure?:(error?:unknown)=>void;onSelectLayer?:(layer:number)=>void};
+export default function GeologyScene({kind,boundary='divergent',continental=false,layer=0,playing=false,progress=0,english=false,onSelectLayer,onFailure}:Props){
  const host=useRef<HTMLDivElement>(null),state=useRef({boundary,continental,layer,playing,progress,onSelectLayer}),view=useRef(0);state.current={boundary,continental,layer,playing,progress,onSelectLayer};const [ready,setReady]=useState(false),[failed,setFailed]=useState(false),[cameraView,setCameraView]=useState(0);const t=useT(english);
- useEffect(()=>{let cancelled=false,cleanup=()=>{};
+ const failureCallback=useRef(onFailure);failureCallback.current=onFailure;
+ useEffect(()=>{let cancelled=false,cleanup=()=>{};const closeScene=()=>{const dispose=cleanup;cleanup=()=>{};dispose();};const guard=createSceneGuard(error=>{cancelled=true;try{closeScene();}finally{setFailed(true);console.warn('[TerraLab] Scene unavailable',error);if(failureCallback.current)failureCallback.current(error);else void recoverStaleModule(error);}});
   async function setup(){try{
    const [THREE,{outdoorWorld,groundTextures},{buildPlateSolid,platePose,plateHeight,plateBottom,riftTop,subductionMantleDepth,fittedTectonicView,tectonicCameraLimits}]=await Promise.all([import('three'),import('@/lib/outdoor'),import('@/lib/tectonic-geometry')]);if(cancelled||!host.current)return;
    const world=outdoorWorld(host.current,new THREE.Vector3(kind==='plates'?12:9,kind==='plates'?8:5,kind==='plates'?15:13),new THREE.Vector3(0,kind==='soil'?-1:0,0),false),{scene,camera,controls,renderer}=world;cleanup=world.dispose;scene.background=kind==='earth'?new THREE.Color('#12292c'):new THREE.Color('#e4e5db');scene.fog=null;controls.minDistance=kind==='plates'?tectonicCameraLimits.minDistance:6;controls.maxDistance=kind==='plates'?tectonicCameraLimits.maxDistance:21;controls.minPolarAngle=tectonicCameraLimits.minPolarAngle;controls.maxPolarAngle=kind==='plates'?tectonicCameraLimits.maxPolarAngle:Math.PI*.6;
-   const sets=await groundTextures(renderer);if(cancelled){Object.values(sets).flatMap(s=>Object.values(s)).forEach(t=>t.dispose());return;}world.textures.push(...Object.values(sets).flatMap(s=>Object.values(s)));for(const set of Object.values(sets))for(const map of Object.values(set))map.repeat.set(2,2);
+   guard.observe(renderer.domElement);const sets=await groundTextures(renderer);if(cancelled){Object.values(sets).flatMap(s=>Object.values(s)).forEach(t=>t.dispose());return;}world.textures.push(...Object.values(sets).flatMap(s=>Object.values(s)));for(const set of Object.values(sets))for(const map of Object.values(set))map.repeat.set(2,2);
    const soilMeshes:import('three').Mesh[]=[],plates:import('three').Group[]=[],veins:import('three').Mesh[]=[],plateMeshes:import('three').Mesh[]=[],newCrust:import('three').Mesh[]=[];let lava:import('three').Mesh|undefined,mantle:import('three').Mesh|undefined;
    function plateGeometry(side:PlateSide,boundary:PlateBoundary,continental:boolean){const solid=buildPlateSolid(side,boundary,continental,world.compact?32:48,0),geometry=new THREE.BufferGeometry();geometry.setAttribute('position',new THREE.Float32BufferAttribute(solid.positions,3));geometry.setAttribute('uv',new THREE.Float32BufferAttribute(solid.uvs,2));geometry.setIndex(solid.indices);for(const group of solid.groups)geometry.addGroup(group.start,group.count,group.materialIndex);geometry.userData.surfaceVertices=solid.positions.reduce<number[]>((out,y,i)=>{if(i%3===1&&y>=0)out.push((i-1)/3);return out;},[]);geometry.computeVertexNormals();return geometry;}
    if(kind==='earth'){
@@ -37,8 +39,8 @@ export default function GeologyScene({kind,boundary='divergent',continental=fals
     for(let i=0;i<2;i++){const crust=new THREE.Mesh(new THREE.BoxGeometry(1,fillHeight,6),new THREE.MeshStandardMaterial({...sets.rock,color:'#777563',roughness:1}));crust.position.y=fillCenter;crust.castShadow=true;crust.receiveShadow=true;scene.add(crust);newCrust.push(crust);}
     mantle=new THREE.Mesh(new THREE.BoxGeometry(16,1,10),new THREE.MeshStandardMaterial({...sets.rock,color:'#a8967c',roughness:1,transparent:true,depthWrite:false}));scene.add(mantle);
    }
-   let elapsed=0,last=performance.now(),shape='',lastLayer=-1,lastView=-1,lastProgress=-1,lastAspect=0;const reduced=matchMedia('(prefers-reduced-motion: reduce)').matches;let desired:{position:import('three').Vector3;target:import('three').Vector3}|null=null;controls.addEventListener('start',()=>{desired=null;});const lost=(event:Event)=>{event.preventDefault();setFailed(true);};renderer.domElement.addEventListener('webglcontextlost',lost);const priorCleanup=cleanup;cleanup=()=>{renderer.domElement.removeEventListener('webglcontextlost',lost);priorCleanup();};setReady(true);
-   renderer.setAnimationLoop(()=>{if(cancelled)return;const now=performance.now(),dt=Math.min(.05,(now-last)/1000);last=now;const s=state.current;if(s.playing&&!reduced)elapsed+=dt;if(kind==='soil'&&lastLayer!==s.layer){lastLayer=s.layer;soilMeshes.forEach((mesh,i)=>{const material=mesh.material as import('three').MeshStandardMaterial;material.emissive.set(i===s.layer?'#a47731':'#000000');material.emissiveIntensity=i===s.layer?.20:0;});}
+   let elapsed=0,last=performance.now(),shape='',lastLayer=-1,lastView=-1,lastProgress=-1,lastAspect=0;const reduced=matchMedia('(prefers-reduced-motion: reduce)').matches;let desired:{position:import('three').Vector3;target:import('three').Vector3}|null=null;controls.addEventListener('start',()=>{desired=null;});
+   renderer.setAnimationLoop(guard.frame(()=>{if(cancelled)return;const now=performance.now(),dt=Math.min(.05,(now-last)/1000);last=now;const s=state.current;if(s.playing&&!reduced)elapsed+=dt;if(kind==='soil'&&lastLayer!==s.layer){lastLayer=s.layer;soilMeshes.forEach((mesh,i)=>{const material=mesh.material as import('three').MeshStandardMaterial;material.emissive.set(i===s.layer?'#a47731':'#000000');material.emissiveIntensity=i===s.layer?.20:0;});}
     if(kind==='plates'){
      const boundary:PlateBoundary=s.boundary==='convergent'?'convergent':s.boundary==='transform'?'transform':'divergent',divergent=boundary==='divergent',progress=Math.max(0,Math.min(1,s.progress));
      const key=boundary+'/'+s.continental;if(shape!==key){shape=key;lastProgress=-1;plateMeshes.forEach((mesh,i)=>{const old=mesh.geometry;mesh.geometry=plateGeometry(i===0?-1:1,boundary,s.continental);old.dispose();});view.current=boundary==='transform'?2:1;setCameraView(view.current);}
@@ -51,10 +53,10 @@ export default function GeologyScene({kind,boundary='divergent',continental=fals
      if(lastView!==view.current||Math.abs(lastAspect-camera.aspect)>.02){lastView=view.current;lastAspect=camera.aspect;const v=fittedTectonicView(view.current,camera.aspect);desired={position:new THREE.Vector3().fromArray(v.position),target:new THREE.Vector3().fromArray(v.target)};}
      if(desired){const alpha=reduced?1:1-Math.exp(-dt*10);camera.position.lerp(desired.position,alpha);controls.target.lerp(desired.target,alpha);if(camera.position.distanceTo(desired.position)<.02)desired=null;}
     }
-    controls.update();renderer.render(scene,camera);
-   });
-  }catch{cleanup();if(!cancelled)setFailed(true);}}
-  setup();return()=>{cancelled=true;cleanup();};
+    controls.update();renderer.render(scene,camera);if(guard.ready())setReady(true);
+   }));
+  }catch(error){if(!cancelled)guard.fail(error);}}
+  setup();return()=>{guard.close();cancelled=true;closeScene();};
  },[kind]);
  return <div className={`geology-scene field-scene ${kind==='earth'?'earth-cutaway':''}`} ref={host} role="group" aria-label={kind==='earth'?t('Mặt cắt Trái Đất 3D với bề mặt vệ tinh và các lớp bên trong','3D Earth cutaway with satellite surface and interior layers'):kind==='soil'?t('Phẫu diện đất 3D có chất liệu thật, rễ cây và các tầng có thể chọn','3D textured soil profile with roots and selectable horizons'):t('Ranh giới kiến tạo 3D với chất liệu đá và địa hình biến dạng','3D tectonic boundary with rock textures and deforming terrain')}>
  {!ready&&!failed&&<div className="scene-loading"><span className="loading-orbit"/>{t('Đang mở mẫu quan sát…','Opening the model…')}</div>}<span className="coast-scene-label">{t('Kéo để xoay · Cuộn để tiến gần','Drag to orbit · Scroll to move closer')}</span>

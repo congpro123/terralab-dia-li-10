@@ -25,3 +25,9 @@ Bài 12: sóng và thủy triều có cảnh bờ biển WebGL 3D, mặt nước
 - Nội lực (bài 7) mở mô hình kiến tạo; các phần ngoại lực có nhiệm vụ quan sát riêng. Không giả lập rằng cảnh sông đã mô phỏng đầy đủ phong hóa/bồi tụ.
 - Bộ chọn VI/EN/VI–EN/dịch khi cần trên đầu trang; lý thuyết, ví dụ và kiểm tra nhanh hiển thị cặp ngôn ngữ; nhãn mô phỏng và khám phá hỗ trợ VI–EN. Đã soạn bản dịch cho 170 câu hỏi/lựa chọn và 170 giải thích/rubric. Dữ liệu giải thích lưu ở server, chỉ bổ sung vào lượt luyện đã nộp; câu trả lời tự viết không bị dịch hoặc đổi giá trị.
 - Kiểm tra: 17 luồng đan xen đọc–khám phá, phục hồi đúng phần, không hoàn thành sớm, không nhân bản kết quả, bảo toàn tiến độ cũ; các bất biến khoa học và 72 khối kiến tạo kín vẫn đạt.
+
+## Sửa lỗi mô phỏng chỉ hiện ảnh dự phòng — 30/10/2026
+- Nhật ký production ghi nhận 404 khi mã TerraApp cũ gọi module tách từ bản dựng trước. Service worker từng dùng chung cache v10 cho mọi lần phát hành.
+- Tự tính mã phát hành từ JS/CSS mỗi lần build; cache tách theo mã, nhận diện chunk 404/HTML và làm mới đúng tab một lần, giữ hash bài học. Không cache API, tài khoản hoặc release.json; cache hỏng vẫn cho phép tải qua mạng.
+- Các cảnh địa chất, sông, biển và địa cầu có giới hạn chờ, bắt lỗi vẽ và mất WebGL; tự chuyển sang mô phỏng 2D và có thông báo rõ, giữ các biến đang chọn. Biển có mô phỏng 2D sóng/triều thay đổi theo cùng tham số và thời gian.
+- Thêm kiểm tra hồi quy cho 4 kiểu lỗi cảnh, chunk cũ, gọi đồng thời, tránh tải lại lặp, cache khác phiên bản, offline và storage unavailable.

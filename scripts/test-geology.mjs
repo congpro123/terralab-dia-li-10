@@ -1,5 +1,5 @@
 import assert from 'node:assert/strict';
-import {buildPlateSolid,plateHeight,platePose,fittedTectonicView,tectonicCameraLimits} from '../lib/tectonic-geometry.ts';
+import {buildPlateSolid,plateHeight,platePose,plateBottom,subductionMantleDepth,fittedTectonicView,tectonicCameraLimits} from '../lib/tectonic-geometry.ts';
 
 // Weld only for the audit: rendered walls retain hard edges for their normals.
 function auditSolid(solid){
@@ -40,6 +40,7 @@ for(const progress of [0,.25,.5,.75,1]){
  const offset=platePose(1,'transform',false,progress).z-platePose(-1,'transform',false,progress).z;
  assert.ok(offset>previousOffset,'Transform motion must visibly offset the plates in one direction');previousOffset=offset;
  const oceanic=platePose(-1,'convergent',false,progress),depth=oceanic.y+3*Math.sin(oceanic.rotationZ)+plateHeight(3,0,-1,'convergent',false,progress)*Math.cos(oceanic.rotationZ);
+ const deepest=oceanic.y+3*Math.sin(oceanic.rotationZ)+plateBottom*Math.cos(oceanic.rotationZ);assert.ok(deepest>plateBottom-subductionMantleDepth,'The descending slab stays inside the displayed mantle volume');
  assert.ok(depth<previousDepth,'The oceanic inner edge must actually descend over time');previousDepth=depth;
  const continental=platePose(-1,'convergent',true,progress),mountain=continental.y+continental.scaleY*plateHeight(3,0,-1,'convergent',true,progress),collisionGap=-2*(continental.x+3*continental.scaleX);
  assert.ok(mountain>previousMountain&&collisionGap<previousCollisionGap,'Collision must shorten the gap and uplift the mountain');previousMountain=mountain;previousCollisionGap=collisionGap;

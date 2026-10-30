@@ -12,3 +12,5 @@
 
 .field-stage-note{padding:8px 15px;background:#f3f6ec;border-top:1px solid #dfe6d5;color:#637657;font-size:10px;line-height:1.8}
 @media(max-width:520px){[data-language=parallel] .field-lab .lab-toolbar{flex-wrap:wrap;gap:7px}[data-language=parallel] .experiment-tabs{flex:1 1 100%;width:100%}[data-language=parallel] .experiment-tabs>button{flex:1;white-space:normal;line-height:1.5;min-height:38px}[data-language=parallel] .field-lab .lab-controls{grid-template-columns:1fr}.field-stage-note{padding:8px 13px;font-size:9px}}
+
+.language-picker select{padding:4px 0}.field-lab.is-immersive>*{flex-shrink:0}

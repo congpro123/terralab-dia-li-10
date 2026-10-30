@@ -1,5 +1,5 @@
 import assert from 'node:assert/strict';
-import {buildPlateSolid,plateHeight,platePose} from '../lib/tectonic-geometry.ts';
+import {buildPlateSolid,plateHeight,platePose,tectonicViews,tectonicCameraLimits} from '../lib/tectonic-geometry.ts';
 
 // Weld only for the audit: rendered walls retain hard edges for their normals.
 function auditSolid(solid){
@@ -37,4 +37,5 @@ for(const boundary of ['divergent','convergent','transform'])for(const continent
 }
 const descending=platePose(-1,'convergent',false,0),innerHeight=plateHeight(3,0,-1,'convergent',false);
 assert.ok(descending.y+3*Math.sin(descending.rotationZ)+innerHeight*Math.cos(descending.rotationZ)<-.7,'The oceanic inner edge dips beneath the other plate');
-console.log('PASS sealed tectonic volumes, outward faces and non-degenerate geometry in all boundaries, crust types and mobile/desktop meshes.');
+for(const view of tectonicViews){const d=view.position.map((n,i)=>n-view.target[i]),radius=Math.hypot(...d),polar=Math.acos(d[1]/radius);assert.ok(radius>=tectonicCameraLimits.minDistance&&radius<=tectonicCameraLimits.maxDistance);assert.ok(polar>=tectonicCameraLimits.minPolarAngle&&polar<=tectonicCameraLimits.maxPolarAngle,'Camera presets must be reachable without fighting the orbit constraints');}
+console.log('PASS sealed tectonic volumes, outward faces and non-degenerate geometry in all boundaries, crust types and mobile/desktop meshes; reachable camera presets.');

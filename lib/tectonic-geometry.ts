@@ -1,6 +1,12 @@
 export type PlateBoundary='divergent'|'convergent'|'transform';
 export type PlateSide=-1|1;
 export type SolidGroup={start:number;count:number;materialIndex:number};
+export const tectonicCameraLimits={minDistance:10,maxDistance:27,minPolarAngle:.28,maxPolarAngle:Math.PI*.485};
+export const tectonicViews=[
+ {position:[12,8,15],target:[0,0,0]},
+ {position:[0,3.4,17],target:[0,-.2,0]},
+ {position:[0,19,6.2],target:[0,0,0]},
+] as const;
 
 /** Local topography and the cut faces share these exact boundary heights. */
 export function plateHeight(x:number,z:number,side:PlateSide,boundary:PlateBoundary,continental:boolean){

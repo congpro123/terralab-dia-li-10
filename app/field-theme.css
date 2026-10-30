@@ -23,7 +23,8 @@ progress,progress::-webkit-progress-bar{background:#e1e7d8}progress::-webkit-pro
 .home-reassurance svg{color:#6a8a58}.resume-card{background:#e9eedb85;border-color:#6b8a55}.resume-card>svg{color:#698952}.resume-card small,.resume-card div>span{color:#6e7f62}
 .study-home{align-items:start}.home-copy{padding-top:16px}
 .how-to-start{border-color:#dce3d3}.how-icon{background:#edf0e4;border-color:#dce4cf;color:#6c8656}
-.course-card{background:#fffefa;border-color:#dfe5d8;box-shadow:0 5px 17px #35483504}.course-card:hover{border-color:#9caf8b}
+.course-card{display:flex;flex-direction:column;align-items:stretch;justify-content:flex-start;background:#fffefa;border-color:#dfe5d8;box-shadow:0 5px 17px #35483504}.course-card:hover{border-color:#9caf8b}
+.course-card>.photo-art,.course-card>.course-image{flex:none;width:100%}.course-card>div:last-child{display:flex;flex-direction:column;flex:1;min-width:0}.course-card-foot{margin-top:auto}
 .course-card p,.course-meta>span:last-child,.catalog-count{color:#718164}.course-card-foot{border-color:#e3e8da;color:#557449}.course-done{background:#e6efdeee;color:#3e6a43}
 .search-field,.catalog-tools select{background:#fffefa;border-color:#d6dfcc;color:#718366}.search-field>button{color:#627851}.search-field:focus-within{border-color:#839d69}
 .empty-state{border-color:#cbd8bf;color:#6b7e5d}.empty-state h1,.empty-state h2{color:#35513f}

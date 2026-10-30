@@ -3,6 +3,7 @@ import "./globals.css";
 import "./field-theme.css";
 import "./atlas.css";
 import "./field-lab.css";
+import "./language.css";
 
 export const metadata: Metadata = {
   manifest: '/manifest.webmanifest',

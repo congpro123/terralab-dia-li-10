@@ -1,5 +1,5 @@
 import assert from 'node:assert/strict';
-import {buildPlateSolid,plateHeight,platePose,tectonicViews,tectonicCameraLimits} from '../lib/tectonic-geometry.ts';
+import {buildPlateSolid,plateHeight,platePose,fittedTectonicView,tectonicCameraLimits} from '../lib/tectonic-geometry.ts';
 
 // Weld only for the audit: rendered walls retain hard edges for their normals.
 function auditSolid(solid){
@@ -27,15 +27,24 @@ function auditSolid(solid){
  assert.equal(groups.reduce((n,g)=>n+g.count,0),indices.length,'All faces have a material');
 }
 
-for(const boundary of ['divergent','convergent','transform'])for(const continental of [false,true])for(const side of [-1,1])for(const segments of [32,48]){
- auditSolid(buildPlateSolid(side,boundary,continental,segments));
- for(const time of [0,3.5,10.5,40]){
-  const pose=platePose(side,boundary,continental,time);assert.ok(Object.values(pose).every(Number.isFinite));
-  if(boundary==='divergent')assert.ok(Math.abs(pose.x)-3>.2,'Separating plates retain an open rift throughout animation');
-  if(boundary==='transform'){assert.equal(pose.y,0);assert.equal(pose.rotationZ,0);}
- }
+for(const boundary of ['divergent','convergent','transform'])for(const continental of [false,true])for(const side of [-1,1])for(const segments of [32,48])for(const progress of [0,.5,1]){
+ auditSolid(buildPlateSolid(side,boundary,continental,segments,progress));
+ const pose=platePose(side,boundary,continental,progress);assert.ok(Object.values(pose).every(Number.isFinite));assert.ok(pose.scaleX>0&&pose.scaleY>0,'Deformation cannot invert a solid');
+ if(boundary==='divergent')assert.ok(Math.abs(pose.x)-3>.05,'Separating plates retain an open rift throughout animation');
+ if(boundary==='transform'){assert.equal(pose.y,0);assert.equal(pose.rotationZ,0);}
 }
-const descending=platePose(-1,'convergent',false,0),innerHeight=plateHeight(3,0,-1,'convergent',false);
-assert.ok(descending.y+3*Math.sin(descending.rotationZ)+innerHeight*Math.cos(descending.rotationZ)<-.7,'The oceanic inner edge dips beneath the other plate');
-for(const view of tectonicViews){const d=view.position.map((n,i)=>n-view.target[i]),radius=Math.hypot(...d),polar=Math.acos(d[1]/radius);assert.ok(radius>=tectonicCameraLimits.minDistance&&radius<=tectonicCameraLimits.maxDistance);assert.ok(polar>=tectonicCameraLimits.minPolarAngle&&polar<=tectonicCameraLimits.maxPolarAngle,'Camera presets must be reachable without fighting the orbit constraints');}
-console.log('PASS sealed tectonic volumes, outward faces and non-degenerate geometry in all boundaries, crust types and mobile/desktop meshes; reachable camera presets.');
+let previousGap=0,previousOffset=-1,previousDepth=1,previousMountain=-1,previousCollisionGap=1;
+for(const progress of [0,.25,.5,.75,1]){
+ const gap=platePose(1,'divergent',false,progress).x-platePose(-1,'divergent',false,progress).x-6;
+ assert.ok(gap>previousGap,'Divergence must keep opening rather than oscillating backwards');previousGap=gap;
+ const offset=platePose(1,'transform',false,progress).z-platePose(-1,'transform',false,progress).z;
+ assert.ok(offset>previousOffset,'Transform motion must visibly offset the plates in one direction');previousOffset=offset;
+ const oceanic=platePose(-1,'convergent',false,progress),depth=oceanic.y+3*Math.sin(oceanic.rotationZ)+plateHeight(3,0,-1,'convergent',false,progress)*Math.cos(oceanic.rotationZ);
+ assert.ok(depth<previousDepth,'The oceanic inner edge must actually descend over time');previousDepth=depth;
+ const continental=platePose(-1,'convergent',true,progress),mountain=continental.y+continental.scaleY*plateHeight(3,0,-1,'convergent',true,progress),collisionGap=-2*(continental.x+3*continental.scaleX);
+ assert.ok(mountain>previousMountain&&collisionGap<previousCollisionGap,'Collision must shorten the gap and uplift the mountain');previousMountain=mountain;previousCollisionGap=collisionGap;
+ assert.ok(Math.abs(continental.y-2.1*continental.scaleY+2.1)<1e-8,'Thickening remains anchored to the underlying layer');
+}
+assert.ok(previousGap>2&&previousOffset>2.5&&previousDepth<-1.8&&previousMountain>2,'Changes must be visible, not tiny arrow-only motions');
+for(const aspect of [.65,1,1.8,2.6])for(let i=0;i<3;i++){const view=fittedTectonicView(i,aspect),d=view.position.map((n,j)=>n-view.target[j]),radius=Math.hypot(...d),polar=Math.acos(d[1]/radius);assert.ok(radius>=tectonicCameraLimits.minDistance&&radius<=tectonicCameraLimits.maxDistance);assert.ok(polar>=tectonicCameraLimits.minPolarAngle&&polar<=tectonicCameraLimits.maxPolarAngle,'Camera presets must be reachable without fighting the orbit constraints');assert.ok(2*radius*Math.tan(24*Math.PI/180)*aspect>=16,'The moving model fits on portrait and landscape screens');}
+console.log('PASS 72 sealed tectonic solids across motion stages; one-way divergence, subduction, collision and lateral offset; fitted mobile/desktop cameras.');

@@ -1,6 +1,6 @@
 import {catchmentIndices,daylightHours} from './models';
 import {tideState} from './exploration';
-export type ExperimentState={a:number;b:number;c:number;hour:number;choice:string;month:number;layers:string[];dimension:string};
+export type ExperimentState={a:number;b:number;c:number;hour:number;choice:string;month:number;layers:string[];dimension:string;progress?:number};
 type Scenario={label:string;en:string;state:Partial<ExperimentState>};
 export const scenarios:Record<number,Scenario[]>={
  2:[{label:'Kí hiệu',en:'Symbols',state:{choice:'0'}},{label:'Dòng chuyển động',en:'Flow lines',state:{choice:'1'}},{label:'Chấm điểm',en:'Dots',state:{choice:'2'}}],
@@ -32,6 +32,6 @@ export function experimentReading(n:number,s:ExperimentState,english=false){
  if(n===9)return `A ${1000+s.a/5} hPa · B ${1000+s.b/5} hPa · Δ ${Math.abs(s.a-s.b)/5} hPa`;
  if(n===10||n===13)return `${t('Tháng','Month')} ${s.month+1}${n===10?' · '+(s.choice==='B'?'B':'A'):''}`;
  if(n===14)return `${t('Tầng','Horizon')} ${['O','A','B','C','R'][Number(s.choice)||0]}`;
- if(n===6)return (s.choice==='divergent'?t('Phân kì','Divergent'):s.choice==='transform'?t('Trượt bằng','Transform'):s.b>50?t('Va chạm lục địa','Continental collision'):t('Hút chìm','Subduction'));
+ if(n===6)return (s.choice==='divergent'?t('Phân kì','Divergent'):s.choice==='transform'?t('Trượt bằng','Transform'):s.b>50?t('Va chạm lục địa','Continental collision'):t('Hút chìm','Subduction'))+' · '+Math.round((s.progress??0)*100)+'%';
  return (scenarios[n]?.find(p=>Object.entries(p.state).every(([key,value])=>JSON.stringify(s[key as keyof ExperimentState])===JSON.stringify(value)))?.[english?'en':'label'])??t('Thiết lập tùy chỉnh','Custom settings');
 }

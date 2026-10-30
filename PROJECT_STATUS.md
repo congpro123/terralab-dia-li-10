@@ -28,6 +28,6 @@ Bài 12: sóng và thủy triều có cảnh bờ biển WebGL 3D, mặt nước
 
 ## Sửa lỗi mô phỏng chỉ hiện ảnh dự phòng — 30/10/2026
 - Nhật ký production ghi nhận 404 khi mã TerraApp cũ gọi module tách từ bản dựng trước. Service worker từng dùng chung cache v10 cho mọi lần phát hành.
-- Tự tính mã phát hành từ JS/CSS mỗi lần build; cache tách theo mã, nhận diện chunk 404/HTML và làm mới đúng tab một lần, giữ hash bài học. Không cache API, tài khoản hoặc release.json; cache hỏng vẫn cho phép tải qua mạng.
+- Tự tính mã phát hành từ JS/CSS mỗi lần build; cache tách theo mã, nhận diện chunk 404/HTML và thông báo cho trang tự làm mới một lần từ URL hiện tại, giữ hash bài học (không dùng Client.url của service worker vì có thể là URL lúc mở tab). Không cache API, tài khoản hoặc release.json; cache hỏng vẫn cho phép tải qua mạng.
 - Các cảnh địa chất, sông, biển và địa cầu có giới hạn chờ, bắt lỗi vẽ và mất WebGL; tự chuyển sang mô phỏng 2D và có thông báo rõ, giữ các biến đang chọn. Biển có mô phỏng 2D sóng/triều thay đổi theo cùng tham số và thời gian.
 - Thêm kiểm tra hồi quy cho 4 kiểu lỗi cảnh, chunk cũ, gọi đồng thời, tránh tải lại lặp, cache khác phiên bản, offline và storage unavailable.

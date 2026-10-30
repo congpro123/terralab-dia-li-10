@@ -5,7 +5,7 @@ import {HDRLoader} from 'three/addons/loaders/HDRLoader.js';
 
 export function outdoorWorld(host:HTMLElement,position:THREE.Vector3,target:THREE.Vector3,background=true){
  const compact=host.clientWidth<600;
- const renderer=new THREE.WebGLRenderer({antialias:true,powerPreference:'high-performance'});let emergencyDispose=()=>{};try{renderer.debug.onShaderError=()=>{throw new Error('WebGL shader compilation failed');};
+ let renderer:THREE.WebGLRenderer;try{renderer=new THREE.WebGLRenderer({antialias:true,powerPreference:'high-performance'});}catch{renderer=new THREE.WebGLRenderer({antialias:false,powerPreference:'default'});}let emergencyDispose=()=>{};try{renderer.debug.onShaderError=()=>{throw new Error('WebGL shader compilation failed');};
  renderer.setPixelRatio(Math.min(devicePixelRatio,compact?1.35:1.7));renderer.outputColorSpace=THREE.SRGBColorSpace;
  renderer.toneMapping=THREE.ACESFilmicToneMapping;renderer.toneMappingExposure=.95;
  renderer.shadowMap.enabled=true;renderer.shadowMap.type=THREE.PCFShadowMap;host.appendChild(renderer.domElement);

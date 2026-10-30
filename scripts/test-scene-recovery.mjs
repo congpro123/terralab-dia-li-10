@@ -1,7 +1,7 @@
 import assert from 'node:assert/strict';
 import {readFile} from 'node:fs/promises';
 import vm from 'node:vm';
-import {createSceneGuard,isModuleFailure} from '../lib/scene-lifecycle.ts';
+import {createSceneGuard,isModuleFailure,recoverStaleModule} from '../lib/scene-lifecycle.ts';
 import {diagramSurface} from '../lib/ocean-diagram.ts';
 
 function scheduler(){let next=0;const tasks=new Map();return {setTimeout(fn){tasks.set(++next,fn);return next;},clearTimeout(id){tasks.delete(id);},fire(){for(const fn of [...tasks.values()])fn();},get size(){return tasks.size;}};}
@@ -25,19 +25,19 @@ assert.ok(diagramSurface('wave',0,100,0).amplitude>diagramSurface('wave',0,0,0).
 assert.notEqual(diagramSurface('wave',0,50,0).buoy,diagramSurface('wave',0,50,1).buoy);
 assert.ok(diagramSurface('tide',2,0,0).mean<diagramSurface('tide',-2,0,0).mean,'Higher tides rise on screen');
 
-const release='abc123abc123',origin='https://terralab.example',handlers={},cachesByName=new Map(),navigations=[];
+const release='abc123abc123',origin='https://terralab.example',handlers={},cachesByName=new Map(),notifications=[];
 let clientId='old-tab',clientUrl=origin+'/#/lesson/6/3',network=()=>new Response('fresh module',{headers:{'Content-Type':'application/javascript'}}),quotaFailure=false;
 const key=r=>typeof r==='string'?r:r.url;
 const caches={async open(name){if(quotaFailure)throw Error('Storage unavailable');if(!cachesByName.has(name))cachesByName.set(name,new Map());const map=cachesByName.get(name);return {async match(r){return map.get(key(r))?.clone();},async put(r,response){if(quotaFailure)throw Error('Quota exceeded');map.set(key(r),response);},async addAll(){}};},async keys(){return [...cachesByName.keys()];},async delete(name){return cachesByName.delete(name);}};
-const self={location:{origin},addEventListener:(name,fn)=>handlers[name]=fn,skipWaiting:async()=>{},clients:{claim:async()=>{},get:async()=>({url:clientUrl,async navigate(url){navigations.push(url);clientUrl=url;}})}};
+const self={location:{origin},addEventListener:(name,fn)=>handlers[name]=fn,skipWaiting:async()=>{},clients:{claim:async()=>{},get:async()=>({url:clientUrl,postMessage(message){notifications.push(message);}})}};
 const source=(await readFile(new URL('../public/sw.js',import.meta.url),'utf8')).replaceAll('__TERRALAB_RELEASE__',release);
 vm.runInNewContext(source,{self,caches,URL,Request,Response,fetch:async(...args)=>network(...args)});
 async function dispatch(path,mode='cors'){let result;const pending=[];handlers.fetch({request:{url:origin+path,method:'GET',mode},clientId,respondWith:p=>result=p,waitUntil:p=>pending.push(p)});const response=await result;await Promise.all(pending);return response;}
 network=()=>new Response('missing',{status:404});
-await Promise.all([dispatch('/_next/static/chunks/old-geology.js'),dispatch('/_next/static/chunks/old-sky.js')]);assert.equal(navigations.length,1);assert.equal(new URL(navigations[0]).hash,'#/lesson/6/3');assert.equal(new URL(navigations[0]).searchParams.get('v'),release);
-await dispatch('/_next/static/chunks/another-missing.js');assert.equal(navigations.length,1,'Never reload-loop on a genuinely missing asset');
+await Promise.all([dispatch('/_next/static/chunks/old-geology.js'),dispatch('/_next/static/chunks/old-sky.js')]);assert.equal(notifications.length,1);assert.equal(notifications[0].type,'TERRALAB_ASSET_UPDATE');assert.equal(notifications[0].release,release);
+await dispatch('/_next/static/chunks/another-missing.js');assert.equal(notifications.length,1,'Never reload-loop on a genuinely missing asset');
 clientId='second-tab';clientUrl=origin+'/#/lesson/7/3';network=()=>new Response('<html>fallback</html>',{headers:{'Content-Type':'text/html'}});
-await dispatch('/_next/static/chunks/broken.js');assert.equal(navigations.length,2,'An HTML response is not a valid module');
+await dispatch('/_next/static/chunks/broken.js');assert.equal(notifications.length,2,'An HTML response is not a valid module');
 assert.equal(await dispatch('/api/progress'),undefined,'Private API data must not enter the worker cache');
 assert.equal(await dispatch('/release.json'),undefined,'Release checks must always reach the server');
 const old=await caches.open('terralab-shell-old');await old.put({url:origin+'/cached.js'},new Response('old'));
@@ -48,4 +48,12 @@ quotaFailure=true;network=()=>new Response('network still works',{headers:{'Cont
 assert.equal(await (await dispatch('/no-storage.js')).text(),'network still works','Cache failure must not break a successful asset request');
 quotaFailure=false;network=()=>new Response('new shell',{headers:{'Content-Type':'text/html'}});await dispatch('/','navigate');
 network=()=>{throw Error('Offline');};assert.equal(await (await dispatch('/','navigate')).text(),'new shell');
+// The page knows its current SPA hash; a service-worker Client URL can be stale.
+const oldWindow=Object.getOwnPropertyDescriptor(globalThis,'window'),oldNavigator=Object.getOwnPropertyDescriptor(globalThis,'navigator'),oldStorage=Object.getOwnPropertyDescriptor(globalThis,'sessionStorage'),oldFetch=globalThis.fetch;const refreshed=[],session=new Map();
+try{
+ Object.defineProperty(globalThis,'window',{configurable:true,value:{location:{href:origin+'/#/lesson/6/3/TH-06-02',replace:url=>refreshed.push(url)}}});
+ Object.defineProperty(globalThis,'navigator',{configurable:true,value:{onLine:true}});Object.defineProperty(globalThis,'sessionStorage',{configurable:true,value:{getItem:key=>session.get(key),setItem:(key,value)=>session.set(key,value)}});globalThis.fetch=async()=>new Response(JSON.stringify({release}));
+ await Promise.all([recoverStaleModule(new Error('Failed to fetch dynamically imported module')),recoverStaleModule(new Error('Failed to fetch dynamically imported module'))]);
+ assert.equal(refreshed.length,1);assert.equal(new URL(refreshed[0]).hash,'#/lesson/6/3/TH-06-02');assert.equal(new URL(refreshed[0]).searchParams.get('v'),release);
+}finally{for(const [name,descriptor]of [['window',oldWindow],['navigator',oldNavigator],['sessionStorage',oldStorage]]){if(descriptor)Object.defineProperty(globalThis,name,descriptor);else delete globalThis[name];}globalThis.fetch=oldFetch;}
 console.log('PASS scene initialisation/context/render/timeout recovery; interactive ocean fallback; stale-chunk refresh without loops; release isolation, offline and unavailable-cache paths.');

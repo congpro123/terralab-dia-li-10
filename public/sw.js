@@ -6,7 +6,7 @@ async function read(cache,key){try{return await cache?.match(key);}catch{return 
 async function remember(cache,key,response){try{await cache?.put(key,response);}catch{}}
 self.addEventListener('install',event=>{event.waitUntil(storage().then(async cache=>{try{await cache?.addAll([new Request('/',{cache:'reload'}),'/favicon.svg','/land-110m.json']);}catch{}await self.skipWaiting();}));});
 self.addEventListener('activate',event=>{event.waitUntil(caches.keys().catch(()=>[]).then(keys=>Promise.all(keys.filter(k=>k.startsWith('terralab-')&&k!==CACHE).map(k=>caches.delete(k)))).then(()=>self.clients.claim()));});
-async function refreshStaleClient(event){if(!event.clientId||RELEASE.startsWith('__')||refreshingClients.has(event.clientId))return;refreshingClients.add(event.clientId);const client=await self.clients.get(event.clientId);if(!client||!client.navigate)return;const url=new URL(client.url);if(url.origin!==self.location.origin||url.searchParams.get('v')===RELEASE)return;url.searchParams.set('v',RELEASE);await client.navigate(url.href);}
+async function refreshStaleClient(event){if(!event.clientId||RELEASE.startsWith('__')||refreshingClients.has(event.clientId))return;refreshingClients.add(event.clientId);const client=await self.clients.get(event.clientId);if(!client)return;client.postMessage({type:'TERRALAB_ASSET_UPDATE',release:RELEASE});}
 self.addEventListener('fetch',event=>{
  const r=event.request,u=new URL(r.url);if(r.method!=='GET'||u.origin!==self.location.origin)return;
  if(u.pathname.startsWith('/api/')||u.pathname.startsWith('/signin')||u.pathname.startsWith('/signout')||u.pathname.startsWith('/callback')||u.pathname==='/release.json')return;

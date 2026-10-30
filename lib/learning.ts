@@ -22,3 +22,20 @@ export function readingIndex(units:{id:string}[],read:string[],requested?:string
  return next<0?0:next;
 }
 export function resumeModule(progress:Progress|undefined){return Math.max(1,Math.min(6,Number.isInteger(progress?.module)?progress!.module:1));}
+
+// Topic records live inside the existing per-lesson simulation payload.
+export function exploredTopics(units:{id:string}[],progress:Progress):string[]{
+ const ids=units.map(u=>u.id),stored=progress.simState.exploredTopics;
+ return Array.isArray(stored)?stored.filter((id):id is string=>typeof id==='string'&&ids.includes(id)):progress.simDone?ids:[];
+}
+export function explorationIndex(units:{id:string}[],progress:Progress,requested?:string){
+ const active=units.findIndex(u=>u.id===(requested??progress.simState.activeTopicId));if(active>=0)return active;
+ const explored=exploredTopics(units,progress),pending=units.findIndex(u=>progress.units.includes(u.id)&&!explored.includes(u.id));
+ return pending>=0?pending:readingIndex(units,progress.units);
+}
+export function finishTopicExploration(units:{id:string}[],progress:Progress,index:number){
+ const explored=[...new Set([...exploredTopics(units,progress),units[index].id])];
+ const next=index+1<units.length?index+1:units.findIndex(u=>!explored.includes(u.id));
+ return {explored,simDone:units.every(u=>explored.includes(u.id)),next};
+}
+export function topicScene(lesson:number,index:number){return lesson===7&&index===0?6:lesson;}

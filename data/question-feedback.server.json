@@ -1,0 +1,784 @@
+{
+  "Q-02-001": {
+    "explanation": "Symbols locate individual deposits; the other methods do not directly show each deposit’s position.",
+    "rubric": "One point for the correct option; zero for an incorrect or blank answer."
+  },
+  "Q-02-002": {
+    "explanation": "Arrows indicate direction, while width represents magnitude as defined by the legend, not height, time or soil.",
+    "rubric": "One point for the correct option; zero for an incorrect or blank answer."
+  },
+  "Q-02-003": {
+    "explanation": "15 × 200 = 3,000 people. The other values do not follow the legend’s multiplication rule.",
+    "rubric": "One point for the correct option; zero for an incorrect or blank answer."
+  },
+  "Q-02-004": {
+    "explanation": "Regional charts show composition; simple points or arrows do not supply component shares.",
+    "rubric": "One point for the correct option; zero for an incorrect or blank answer."
+  },
+  "Q-02-005": {
+    "explanation": "A dot’s value depends on the legend of each map.",
+    "rubric": "Each statement is marked independently: one point for correct, zero for incorrect or blank. The four statements are not grouped.",
+    "answer": "False"
+  },
+  "Q-02-006": {
+    "explanation": "The legend defines meanings and measurement units.",
+    "rubric": "Each statement is marked independently: one point for correct, zero for incorrect or blank. The four statements are not grouped.",
+    "answer": "True"
+  },
+  "Q-02-007": {
+    "explanation": "The number of dots must change accordingly to preserve the original data.",
+    "rubric": "Each statement is marked independently: one point for correct, zero for incorrect or blank. The four statements are not grouped.",
+    "answer": "True"
+  },
+  "Q-02-008": {
+    "explanation": "Flow lines show direction and may also show movement magnitude.",
+    "rubric": "Each statement is marked independently: one point for correct, zero for incorrect or blank. The four statements are not grouped.",
+    "answer": "False"
+  },
+  "Q-02-009": {
+    "explanation": "Check the represented feature and the quantity and unit assigned to each dot.",
+    "rubric": "One point per correct idea; equivalent wording is accepted. Wording outside the approved variants requires semantic review; it is not incorrect merely because the words differ.",
+    "answer": "Check the represented feature and the quantity and unit assigned to each dot."
+  },
+  "Q-02-010": {
+    "explanation": "There are 60 and 30 dots. Doubling the dot value halves the dot count; both represent 6,000 people.",
+    "rubric": "One point for both correct numbers; one point for explaining their relationship. Wording outside the approved variants requires semantic review; it is not incorrect merely because the words differ.",
+    "answer": "There are 60 and 30 dots. Doubling the dot value halves the dot count; both represent 6,000 people."
+  },
+  "Q-03-001": {
+    "explanation": "GPS supports positioning; thematic information requires separate data sources.",
+    "rubric": "One point for the correct option; zero for an incorrect or blank answer."
+  },
+  "Q-03-002": {
+    "explanation": "Scale connects map distance with ground distance; the other features cannot replace it.",
+    "rubric": "One point for the correct option; zero for an incorrect or blank answer."
+  },
+  "Q-03-003": {
+    "explanation": "12 minutes is less than 20 minutes. A shorter route does not guarantee a shorter travel time.",
+    "rubric": "One point for the correct option; zero for an incorrect or blank answer."
+  },
+  "Q-03-004": {
+    "explanation": "A simulated position preserves the activity while respecting the user’s choice; do not bypass permission or lock the lesson.",
+    "rubric": "One point for the correct option; zero for an incorrect or blank answer."
+  },
+  "Q-03-005": {
+    "explanation": "GPS supports positioning; digital maps display and make use of spatial information.",
+    "rubric": "Each statement is marked independently: one point for correct, zero for incorrect or blank. The four statements are not grouped.",
+    "answer": "False"
+  },
+  "Q-03-006": {
+    "explanation": "Interpret symbols and units according to the legend.",
+    "rubric": "Each statement is marked independently: one point for correct, zero for incorrect or blank. The four statements are not grouped.",
+    "answer": "True"
+  },
+  "Q-03-007": {
+    "explanation": "Travel time depends on speed, route conditions and restrictions.",
+    "rubric": "Each statement is marked independently: one point for correct, zero for incorrect or blank. The four statements are not grouped.",
+    "answer": "False"
+  },
+  "Q-03-008": {
+    "explanation": "Reception conditions and equipment affect positional accuracy.",
+    "rubric": "Each statement is marked independently: one point for correct, zero for incorrect or blank. The four statements are not grouped.",
+    "answer": "True"
+  },
+  "Q-03-009": {
+    "explanation": "Examples include finding a route, locating yourself and finding a suitable destination.",
+    "rubric": "One point per suitable application; other correct examples are accepted. Wording outside the approved variants requires semantic review; it is not incorrect merely because the words differ.",
+    "answer": "Examples include finding a route, locating yourself and finding a suitable destination."
+  },
+  "Q-03-010": {
+    "explanation": "Choose 6 km/12 minutes from the supplied data; traffic and actual conditions may change the time.",
+    "rubric": "One point for the choice with a reason; one point for a data limitation. Wording outside the approved variants requires semantic review; it is not incorrect merely because the words differ.",
+    "answer": "Choose 6 km/12 minutes from the supplied data; traffic and actual conditions may change the time."
+  },
+  "Q-04-001": {
+    "explanation": "Rocks commonly contain one or more minerals. The other choices do not describe this classification.",
+    "rubric": "One point for the correct option; zero for an incorrect or blank answer."
+  },
+  "Q-04-002": {
+    "explanation": "The crust is the outermost layer of the solid Earth, not the core or atmosphere.",
+    "rubric": "One point for the correct option; zero for an incorrect or blank answer."
+  },
+  "Q-04-003": {
+    "explanation": "Igneous rocks form when molten material crystallises. Other rock groups involve different processes.",
+    "rubric": "One point for the correct option; zero for an incorrect or blank answer."
+  },
+  "Q-04-004": {
+    "explanation": "Use several kinds of evidence; colour, one photograph or a filename alone is insufficient.",
+    "rubric": "One point for the correct option; zero for an incorrect or blank answer."
+  },
+  "Q-04-005": {
+    "explanation": "They differ in thickness, composition and structure.",
+    "rubric": "Each statement is marked independently: one point for correct, zero for incorrect or blank. The four statements are not grouped.",
+    "answer": "False"
+  },
+  "Q-04-006": {
+    "explanation": "Mineral composition is a characteristic of rocks.",
+    "rubric": "Each statement is marked independently: one point for correct, zero for incorrect or blank. The four statements are not grouped.",
+    "answer": "True"
+  },
+  "Q-04-007": {
+    "explanation": "Read the exaggeration note before inferring actual dimensions.",
+    "rubric": "Each statement is marked independently: one point for correct, zero for incorrect or blank. The four statements are not grouped.",
+    "answer": "False"
+  },
+  "Q-04-008": {
+    "explanation": "Metamorphism is associated with appropriate heat and pressure conditions.",
+    "rubric": "Each statement is marked independently: one point for correct, zero for incorrect or blank. The four statements are not grouped.",
+    "answer": "True"
+  },
+  "Q-04-009": {
+    "explanation": "A mineral is a natural substance with characteristic properties; a rock is an aggregate of one or more minerals, subject to the curriculum’s reviewed definitions.",
+    "rubric": "One point per concept; equivalent wording consistent with the curriculum is accepted. Wording outside the approved variants requires semantic review; it is not incorrect merely because the words differ.",
+    "answer": "A mineral is a natural substance with characteristic properties; a rock is an aggregate of one or more minerals, subject to the curriculum’s reviewed definitions."
+  },
+  "Q-04-010": {
+    "explanation": "It may be metamorphic rock. Examine texture, mineral composition and geological context to confirm.",
+    "rubric": "One point for a conditional identification; one point for suitable evidence. Wording outside the approved variants requires semantic review; it is not incorrect merely because the words differ.",
+    "answer": "It may be metamorphic rock. Examine texture, mineral composition and geological context to confirm."
+  },
+  "Q-05-001": {
+    "explanation": "Rotation carries locations into light and darkness in turn; the other phenomena do not explain this cycle.",
+    "rubric": "One point for the correct option; zero for an incorrect or blank answer."
+  },
+  "Q-05-002": {
+    "explanation": "Axial tilt and orbital movement change illumination angle and day length; the other choices are insufficient.",
+    "rubric": "One point for the correct option; zero for an incorrect or blank answer."
+  },
+  "Q-05-003": {
+    "explanation": "8 + 7 = 15:00, without crossing into the next day.",
+    "rubric": "One point for the correct option; zero for an incorrect or blank answer."
+  },
+  "Q-05-004": {
+    "explanation": "The hemispheres have opposing seasons because of the axial orientation; they need not experience the same season.",
+    "rubric": "One point for the correct option; zero for an incorrect or blank answer."
+  },
+  "Q-05-005": {
+    "explanation": "Seasons mainly result from axial tilt and changing illumination during Earth’s orbit.",
+    "rubric": "Each statement is marked independently: one point for correct, zero for incorrect or blank. The four statements are not grouped.",
+    "answer": "False"
+  },
+  "Q-05-006": {
+    "explanation": "In the basic calculation, west-to-east rotation produces local solar time differences with longitude.",
+    "rubric": "Each statement is marked independently: one point for correct, zero for incorrect or blank. The four statements are not grouped.",
+    "answer": "True"
+  },
+  "Q-05-007": {
+    "explanation": "Playback speed shortens observation time without changing the demonstrated mechanism.",
+    "rubric": "Each statement is marked independently: one point for correct, zero for incorrect or blank. The four statements are not grouped.",
+    "answer": "False"
+  },
+  "Q-05-008": {
+    "explanation": "An illustrative scale must be labelled to avoid confusion with actual dimensions.",
+    "rubric": "Each statement is marked independently: one point for correct, zero for incorrect or blank. The four statements are not grouped.",
+    "answer": "True"
+  },
+  "Q-05-009": {
+    "explanation": "Earth rotates, taking the location between the sunlit side and the side facing away from sunlight.",
+    "rubric": "One point for rotation; one point for the location’s position relative to the light source. Wording outside the approved variants requires semantic review; it is not incorrect merely because the words differ.",
+    "answer": "Earth rotates, taking the location between the sunlit side and the side facing away from sunlight."
+  },
+  "Q-05-010": {
+    "explanation": "Seasonal illumination differences caused by tilt diminish greatly or disappear in the simplified model, which does not include every climate factor.",
+    "rubric": "One point for a prediction with a mechanism; one point for a limitation. Wording outside the approved variants requires semantic review; it is not incorrect merely because the words differ.",
+    "answer": "Seasonal illumination differences caused by tilt diminish greatly or disappear in the simplified model, which does not include every climate factor."
+  },
+  "Q-06-001": {
+    "explanation": "The lithosphere comprises the crust and rigid uppermost mantle; it is not identical to either alone.",
+    "rubric": "One point for the correct option; zero for an incorrect or blank answer."
+  },
+  "Q-06-002": {
+    "explanation": "Divergence means moving apart; convergence means moving together; transform movement is relative lateral sliding.",
+    "rubric": "One point for the correct option; zero for an incorrect or blank answer."
+  },
+  "Q-06-003": {
+    "explanation": "Fault movement and stress release are associated with earthquakes; the other phenomena have different mechanisms.",
+    "rubric": "One point for the correct option; zero for an incorrect or blank answer."
+  },
+  "Q-06-004": {
+    "explanation": "Subduction and continental collision have different consequences; the other options do not explain these mechanisms.",
+    "rubric": "One point for the correct option; zero for an incorrect or blank answer."
+  },
+  "Q-06-005": {
+    "explanation": "The lithosphere also includes the rigid uppermost mantle.",
+    "rubric": "Each statement is marked independently: one point for correct, zero for incorrect or blank. The four statements are not grouped.",
+    "answer": "False"
+  },
+  "Q-06-006": {
+    "explanation": "Moving apart is the characteristic relative motion at a divergent boundary.",
+    "rubric": "Each statement is marked independently: one point for correct, zero for incorrect or blank. The four statements are not grouped.",
+    "answer": "True"
+  },
+  "Q-06-007": {
+    "explanation": "Intraplate volcanism also occurs, so an absolute claim is inappropriate.",
+    "rubric": "Each statement is marked independently: one point for correct, zero for incorrect or blank. The four statements are not grouped.",
+    "answer": "False"
+  },
+  "Q-06-008": {
+    "explanation": "Models usually accelerate the process so learners can observe it.",
+    "rubric": "Each statement is marked independently: one point for correct, zero for incorrect or blank. The four statements are not grouped.",
+    "answer": "True"
+  },
+  "Q-06-009": {
+    "explanation": "Convergent plates move together; transform plates slide laterally relative to each other along a boundary.",
+    "rubric": "One point per correctly described boundary type. Wording outside the approved variants requires semantic review; it is not incorrect merely because the words differ.",
+    "answer": "Convergent plates move together; transform plates slide laterally relative to each other along a boundary."
+  },
+  "Q-06-010": {
+    "explanation": "Both involve convergence and deformation. Oceanic–continental convergence commonly involves oceanic subduction; continental collision thickens crust and uplifts mountains in the reviewed model.",
+    "rubric": "One point for a similarity; one point for a mechanistic difference. Wording outside the approved variants requires semantic review; it is not incorrect merely because the words differ.",
+    "answer": "Both involve convergence and deformation. Oceanic–continental convergence commonly involves oceanic subduction; continental collision thickens crust and uplifts mountains in the reviewed model."
+  },
+  "Q-07-001": {
+    "explanation": "Weathering occurs in place; the other choices describe different phenomena.",
+    "rubric": "One point for the correct option; zero for an incorrect or blank answer."
+  },
+  "Q-07-002": {
+    "explanation": "Endogenic forces involve Earth’s internal energy; surface processes are not the internal energy source.",
+    "rubric": "One point for the correct option; zero for an incorrect or blank answer."
+  },
+  "Q-07-003": {
+    "explanation": "Material can settle when the transporting agent loses carrying capacity; the other processes do not explain settling.",
+    "rubric": "One point for the correct option; zero for an incorrect or blank answer."
+  },
+  "Q-07-004": {
+    "explanation": "A controlled comparison isolates the changed variable’s effect; the other methods do not test this relationship.",
+    "rubric": "One point for the correct option; zero for an incorrect or blank answer."
+  },
+  "Q-07-005": {
+    "explanation": "Weathering alters or breaks material in place; transport is a separate process.",
+    "rubric": "Each statement is marked independently: one point for correct, zero for incorrect or blank. The four statements are not grouped.",
+    "answer": "False"
+  },
+  "Q-07-006": {
+    "explanation": "Relief reflects the combined effects of several processes.",
+    "rubric": "Each statement is marked independently: one point for correct, zero for incorrect or blank. The four statements are not grouped.",
+    "answer": "True"
+  },
+  "Q-07-007": {
+    "explanation": "Deposition may occur where transporting energy decreases; it is not restricted to summits.",
+    "rubric": "Each statement is marked independently: one point for correct, zero for incorrect or blank. The four statements are not grouped.",
+    "answer": "False"
+  },
+  "Q-07-008": {
+    "explanation": "Quantification requires data and a calibrated model.",
+    "rubric": "Each statement is marked independently: one point for correct, zero for incorrect or blank. The four statements are not grouped.",
+    "answer": "True"
+  },
+  "Q-07-009": {
+    "explanation": "Weathering alters or breaks down material in place; transport moves it from one location to another.",
+    "rubric": "One point per correctly described process. Wording outside the approved variants requires semantic review; it is not incorrect merely because the words differ.",
+    "answer": "Weathering alters or breaks down material in place; transport moves it from one location to another."
+  },
+  "Q-07-010": {
+    "explanation": "Keep slope, rainfall and run duration equal. Change only cover; observe removal and accumulation. Limit the conclusion to the model.",
+    "rubric": "One point for controlling variables; one point for an indicator and the conclusion’s limits. Wording outside the approved variants requires semantic review; it is not incorrect merely because the words differ.",
+    "answer": "Keep slope, rainfall and run duration equal. Change only cover; observe removal and accumulation. Limit the conclusion to the model."
+  },
+  "Q-08-001": {
+    "explanation": "Both layers being compared are needed; the other layers do not supply the required features.",
+    "rubric": "One point for the correct option; zero for an incorrect or blank answer."
+  },
+  "Q-08-002": {
+    "explanation": "Different time periods and legends can invalidate a comparison; interface appearance cannot replace metadata.",
+    "rubric": "One point for the correct option; zero for an incorrect or blank answer."
+  },
+  "Q-08-003": {
+    "explanation": "The result describes only the filtered dataset and does not establish absolute safety or other regional characteristics.",
+    "rubric": "One point for the correct option; zero for an incorrect or blank answer."
+  },
+  "Q-08-004": {
+    "explanation": "Check quality and investigate exceptions; do not edit data to force a preferred conclusion.",
+    "rubric": "One point for the correct option; zero for an incorrect or blank answer."
+  },
+  "Q-08-005": {
+    "explanation": "Time coverage affects which events appear in the dataset.",
+    "rubric": "Each statement is marked independently: one point for correct, zero for incorrect or blank. The four statements are not grouped.",
+    "answer": "True"
+  },
+  "Q-08-006": {
+    "explanation": "The distributions are related but do not coincide completely.",
+    "rubric": "Each statement is marked independently: one point for correct, zero for incorrect or blank. The four statements are not grouped.",
+    "answer": "False"
+  },
+  "Q-08-007": {
+    "explanation": "A map may include only events within a particular period or recording threshold.",
+    "rubric": "Each statement is marked independently: one point for correct, zero for incorrect or blank. The four statements are not grouped.",
+    "answer": "False"
+  },
+  "Q-08-008": {
+    "explanation": "Evidence makes reasoning checkable and prevents vague descriptions.",
+    "rubric": "Each statement is marked independently: one point for correct, zero for incorrect or blank. The four statements are not grouped.",
+    "answer": "True"
+  },
+  "Q-08-009": {
+    "explanation": "Display both layers over the same extent, compare distributions and record evidence from specific regions.",
+    "rubric": "One point for layers and extent; one point for an evidence-based comparison. Wording outside the approved variants requires semantic review; it is not incorrect merely because the words differ.",
+    "answer": "Display both layers over the same extent, compare distributions and record evidence from specific regions."
+  },
+  "Q-08-010": {
+    "explanation": "No. A short period and detection threshold limit the dataset. Check a longer record, sources and appropriate tectonic information.",
+    "rubric": "One point for rejecting an absolute inference; one point for further checks. Wording outside the approved variants requires semantic review; it is not incorrect merely because the words differ.",
+    "answer": "No. A short period and detection threshold limit the dataset. Check a longer record, sources and appropriate tectonic information."
+  },
+  "Q-09-001": {
+    "explanation": "Temperature describes hotness or coldness; the other variables measure other properties.",
+    "rubric": "One point for the correct option; zero for an incorrect or blank answer."
+  },
+  "Q-09-002": {
+    "explanation": "Under the stated assumptions, pressure differences drive motion from high to low pressure; this cannot be applied mechanically to all real winds.",
+    "rubric": "One point for the correct option; zero for an incorrect or blank answer."
+  },
+  "Q-09-003": {
+    "explanation": "Changing humidity alone supports a controlled comparison; colour or multiple simultaneous changes do not establish the effect.",
+    "rubric": "One point for the correct option; zero for an incorrect or blank answer."
+  },
+  "Q-09-004": {
+    "explanation": "A teaching model illustrates relationships; without calibration it cannot replace observations or forecasts.",
+    "rubric": "One point for the correct option; zero for an incorrect or blank answer."
+  },
+  "Q-09-005": {
+    "explanation": "Weather describes short-term atmospheric conditions; climate concerns long-term characteristics.",
+    "rubric": "Each statement is marked independently: one point for correct, zero for incorrect or blank. The four statements are not grouped.",
+    "answer": "False"
+  },
+  "Q-09-006": {
+    "explanation": "Consider these variables as a system under specific conditions.",
+    "rubric": "Each statement is marked independently: one point for correct, zero for incorrect or blank. The four statements are not grouped.",
+    "answer": "True"
+  },
+  "Q-09-007": {
+    "explanation": "Rain also depends on condensation, droplet development and other conditions.",
+    "rubric": "Each statement is marked independently: one point for correct, zero for incorrect or blank. The four statements are not grouped.",
+    "answer": "False"
+  },
+  "Q-09-008": {
+    "explanation": "This helps identify the effect of the changed variable.",
+    "rubric": "Each statement is marked independently: one point for correct, zero for incorrect or blank. The four statements are not grouped.",
+    "answer": "True"
+  },
+  "Q-09-009": {
+    "explanation": "Examples include temperature in °C, air pressure in hPa and rainfall in mm; other approved pairs may be accepted.",
+    "rubric": "One point per valid variable–unit pair. Wording outside the approved variants requires semantic review; it is not incorrect merely because the words differ.",
+    "answer": "Examples include temperature in °C, air pressure in hPa and rainfall in mm; other approved pairs may be accepted."
+  },
+  "Q-09-010": {
+    "explanation": "Real winds also respond to Earth’s rotation, friction and relief. The experiment’s result applies within its stated assumptions.",
+    "rubric": "One point for an omitted factor; one point for a limit of applicability. Wording outside the approved variants requires semantic review; it is not incorrect merely because the words differ.",
+    "answer": "Real winds also respond to Earth’s rotation, friction and relief. The experiment’s result applies within its stated assumptions."
+  },
+  "Q-10-001": {
+    "explanation": "Rainfall is measured in mm; hPa measures pressure, °C temperature, and m³/s discharge.",
+    "rubric": "One point for the correct option; zero for an incorrect or blank answer."
+  },
+  "Q-10-002": {
+    "explanation": "Range is the difference between the maximum and minimum; the other operations do not define it.",
+    "rubric": "One point for the correct option; zero for an incorrect or blank answer."
+  },
+  "Q-10-003": {
+    "explanation": "28 − 20 = 8°C. The other values do not calculate the required difference.",
+    "rubric": "One point for the correct option; zero for an incorrect or blank answer."
+  },
+  "Q-10-004": {
+    "explanation": "Adding all 12 rainfall values gives 1,340 mm. 250 mm is one month, and the other totals do not match.",
+    "rubric": "One point for the correct option; zero for an incorrect or blank answer."
+  },
+  "Q-10-005": {
+    "explanation": "The two variables have different units and scales.",
+    "rubric": "Each statement is marked independently: one point for correct, zero for incorrect or blank. The four statements are not grouped.",
+    "answer": "True"
+  },
+  "Q-10-006": {
+    "explanation": "Missing data are different from an observed zero.",
+    "rubric": "Each statement is marked independently: one point for correct, zero for incorrect or blank. The four statements are not grouped.",
+    "answer": "False"
+  },
+  "Q-10-007": {
+    "explanation": "The monthly distribution of rainfall can differ.",
+    "rubric": "Each statement is marked independently: one point for correct, zero for incorrect or blank. The four statements are not grouped.",
+    "answer": "True"
+  },
+  "Q-10-008": {
+    "explanation": "An annual characteristic series and additional evidence are needed.",
+    "rubric": "Each statement is marked independently: one point for correct, zero for incorrect or blank. The four statements are not grouped.",
+    "answer": "False"
+  },
+  "Q-10-009": {
+    "explanation": "July, with 250 mm.",
+    "rubric": "One point for the month; one point for the value and unit. Wording outside the approved variants requires semantic review; it is not incorrect merely because the words differ.",
+    "answer": "July, with 250 mm."
+  },
+  "Q-10-010": {
+    "explanation": "The information is insufficient. Compare temperature regime, wet and dry seasons, location and the reviewed classification criteria.",
+    "rubric": "One point for recognising insufficient evidence; one point for at least two additional pieces of evidence. Wording outside the approved variants requires semantic review; it is not incorrect merely because the words differ.",
+    "answer": "The information is insufficient. Compare temperature regime, wet and dry seasons, location and the reviewed classification criteria."
+  },
+  "Q-11-001": {
+    "explanation": "The hydrosphere includes several water reservoirs and states; the other choices cover only part of it.",
+    "rubric": "One point for the correct option; zero for an incorrect or blank answer."
+  },
+  "Q-11-002": {
+    "explanation": "Evaporation changes liquid water into vapour; the other processes do not describe this transition.",
+    "rubric": "One point for the correct option; zero for an incorrect or blank answer."
+  },
+  "Q-11-003": {
+    "explanation": "Reduced infiltration can increase runoff. Hold other conditions constant and observe the model’s limits.",
+    "rubric": "One point for the correct option; zero for an incorrect or blank answer."
+  },
+  "Q-11-004": {
+    "explanation": "A river’s regime results from several factors; a single factor is insufficient.",
+    "rubric": "One point for the correct option; zero for an incorrect or blank answer."
+  },
+  "Q-11-005": {
+    "explanation": "The water enters the atmosphere and continues participating in the cycle.",
+    "rubric": "Each statement is marked independently: one point for correct, zero for incorrect or blank. The four statements are not grouped.",
+    "answer": "False"
+  },
+  "Q-11-006": {
+    "explanation": "They are important continental water reservoirs.",
+    "rubric": "Each statement is marked independently: one point for correct, zero for incorrect or blank. The four statements are not grouped.",
+    "answer": "True"
+  },
+  "Q-11-007": {
+    "explanation": "Different sources and catchment conditions produce different flow regimes.",
+    "rubric": "Each statement is marked independently: one point for correct, zero for incorrect or blank. The four statements are not grouped.",
+    "answer": "False"
+  },
+  "Q-11-008": {
+    "explanation": "Infiltration, runoff and storage capacity can change.",
+    "rubric": "Each statement is marked independently: one point for correct, zero for incorrect or blank. The four statements are not grouped.",
+    "answer": "True"
+  },
+  "Q-11-009": {
+    "explanation": "Rainwater may run into rivers and lakes or infiltrate the ground and replenish groundwater.",
+    "rubric": "One point per correct water pathway. Wording outside the approved variants requires semantic review; it is not incorrect merely because the words differ.",
+    "answer": "Rainwater may run into rivers and lakes or infiltrate the ground and replenish groundwater."
+  },
+  "Q-11-010": {
+    "explanation": "Runoff may increase while groundwater recharge decreases, under the model settings with other variables fixed.",
+    "rubric": "One point for two reasonable changes; one point for conditions and limitations. Wording outside the approved variants requires semantic review; it is not incorrect merely because the words differ.",
+    "answer": "Runoff may increase while groundwater recharge decreases, under the model settings with other variables fixed."
+  },
+  "Q-12-001": {
+    "explanation": "Salinity describes dissolved salt content; the other variables measure different properties.",
+    "rubric": "One point for the correct option; zero for an incorrect or blank answer."
+  },
+  "Q-12-002": {
+    "explanation": "Wind transfers energy to common surface waves; not every wave type has this cause.",
+    "rubric": "One point for the correct option; zero for an incorrect or blank answer."
+  },
+  "Q-12-003": {
+    "explanation": "Buoy oscillation distinguishes local particle motion from wave propagation; the other options do not fit this model.",
+    "rubric": "One point for the correct option; zero for an incorrect or blank answer."
+  },
+  "Q-12-004": {
+    "explanation": "Local tides depend on specific conditions and data; a teaching diagram cannot replace a forecast.",
+    "rubric": "One point for the correct option; zero for an incorrect or blank answer."
+  },
+  "Q-12-005": {
+    "explanation": "Tides involve lunar and solar gravity and the dynamics of the system.",
+    "rubric": "Each statement is marked independently: one point for correct, zero for incorrect or blank. The four statements are not grouped.",
+    "answer": "False"
+  },
+  "Q-12-006": {
+    "explanation": "Moving water masses help redistribute heat.",
+    "rubric": "Each statement is marked independently: one point for correct, zero for incorrect or blank. The four statements are not grouped.",
+    "answer": "True"
+  },
+  "Q-12-007": {
+    "explanation": "Evaporation, rainfall and freshwater inputs vary salinity.",
+    "rubric": "Each statement is marked independently: one point for correct, zero for incorrect or blank. The four statements are not grouped.",
+    "answer": "False"
+  },
+  "Q-12-008": {
+    "explanation": "In the basic description, waves propagate oscillation and energy, while currents involve directed water-mass movement.",
+    "rubric": "Each statement is marked independently: one point for correct, zero for incorrect or blank. The four statements are not grouped.",
+    "answer": "True"
+  },
+  "Q-12-009": {
+    "explanation": "Waves propagate oscillation and energy; ocean currents are directed flows of water masses at the scale considered.",
+    "rubric": "One point per correct idea. Wording outside the approved variants requires semantic review; it is not incorrect merely because the words differ.",
+    "answer": "Waves propagate oscillation and energy; ocean currents are directed flows of water masses at the scale considered."
+  },
+  "Q-12-010": {
+    "explanation": "The general model omits local coastal and seabed relief, tidal propagation and local data. Use validated forecasts or observations.",
+    "rubric": "One point for a model limitation; one point for identifying suitable data needs. Wording outside the approved variants requires semantic review; it is not incorrect merely because the words differ.",
+    "answer": "The general model omits local coastal and seabed relief, tidal propagation and local data. Use validated forecasts or observations."
+  },
+  "Q-13-001": {
+    "explanation": "m³/s measures the volume crossing a section each second; the other choices measure rainfall, volume and area.",
+    "rubric": "One point for the correct option; zero for an incorrect or blank answer."
+  },
+  "Q-13-002": {
+    "explanation": "Location, time and units define a dataset’s meaning; interface features alone are insufficient.",
+    "rubric": "One point for the correct option; zero for an incorrect or blank answer."
+  },
+  "Q-13-003": {
+    "explanation": "August reaches 6,000 m³/s, the maximum of the illustrative dataset. This is not a real-world Red River finding.",
+    "rubric": "One point for the correct option; zero for an incorrect or blank answer."
+  },
+  "Q-13-004": {
+    "explanation": "6,000 ÷ 800 = 7.5 times; the other values do not match the requested ratio.",
+    "rubric": "One point for the correct option; zero for an incorrect or blank answer."
+  },
+  "Q-13-005": {
+    "explanation": "DEMO-13 is constructed data. Real Red River data require a source and a clearly identified station and period.",
+    "rubric": "Each statement is marked independently: one point for correct, zero for incorrect or blank. The four statements are not grouped.",
+    "answer": "False"
+  },
+  "Q-13-006": {
+    "explanation": "These are two different data conditions.",
+    "rubric": "Each statement is marked independently: one point for correct, zero for incorrect or blank. The four statements are not grouped.",
+    "answer": "True"
+  },
+  "Q-13-007": {
+    "explanation": "Volume requires integrating discharge or converting it over the corresponding time intervals.",
+    "rubric": "Each statement is marked independently: one point for correct, zero for incorrect or blank. The four statements are not grouped.",
+    "answer": "False"
+  },
+  "Q-13-008": {
+    "explanation": "Do not infer a seasonal pattern from one extreme alone.",
+    "rubric": "Each statement is marked independently: one point for correct, zero for incorrect or blank. The four statements are not grouped.",
+    "answer": "True"
+  },
+  "Q-13-009": {
+    "explanation": "6,000 − 800 = 5,200 m³/s.",
+    "rubric": "One point for the calculation; one point for the result and unit. Numerical tolerance: 0.5 m³/s. Wording outside the approved variants requires semantic review; it is not incorrect merely because the words differ.",
+    "answer": "6,000 − 800 = 5,200 m³/s."
+  },
+  "Q-13-010": {
+    "explanation": "Add the station and data period or source. Regimes can differ by station and period, so the chart cannot represent the whole river without evidence.",
+    "rubric": "One point for two metadata items; one point for their effect on the conclusion. Wording outside the approved variants requires semantic review; it is not incorrect merely because the words differ.",
+    "answer": "Add the station and data period or source. Regimes can differ by station and period, so the chart cannot represent the whole river without evidence."
+  },
+  "Q-14-001": {
+    "explanation": "Soil is a system containing several components; a single-component choice is incomplete.",
+    "rubric": "One point for the correct option; zero for an incorrect or blank answer."
+  },
+  "Q-14-002": {
+    "explanation": "Parent material supplies mineral matter; the other factors are not the original mineral source.",
+    "rubric": "One point for the correct option; zero for an incorrect or blank answer."
+  },
+  "Q-14-003": {
+    "explanation": "Appropriate cover helps protect soil; the other options do not reduce the impact or provide effective protection.",
+    "rubric": "One point for the correct option; zero for an incorrect or blank answer."
+  },
+  "Q-14-004": {
+    "explanation": "Colour alone cannot establish soil group or age; additional evidence is needed.",
+    "rubric": "One point for the correct option; zero for an incorrect or blank answer."
+  },
+  "Q-14-005": {
+    "explanation": "Soil includes mineral matter, organic matter, water, air and biological activity.",
+    "rubric": "Each statement is marked independently: one point for correct, zero for incorrect or blank. The four statements are not grouped.",
+    "answer": "False"
+  },
+  "Q-14-006": {
+    "explanation": "Soil formation and development take place over time.",
+    "rubric": "Each statement is marked independently: one point for correct, zero for incorrect or blank. The four statements are not grouped.",
+    "answer": "True"
+  },
+  "Q-14-007": {
+    "explanation": "Profiles differ with conditions and soil groups.",
+    "rubric": "Each statement is marked independently: one point for correct, zero for incorrect or blank. The four statements are not grouped.",
+    "answer": "False"
+  },
+  "Q-14-008": {
+    "explanation": "Cover and roots can reduce erosion and support soil functions.",
+    "rubric": "Each statement is marked independently: one point for correct, zero for incorrect or blank. The four statements are not grouped.",
+    "answer": "True"
+  },
+  "Q-14-009": {
+    "explanation": "Examples include climate and parent material. Climate affects weathering, moisture and soil-forming processes.",
+    "rubric": "One point for two factors; one point for correctly explaining one effect. Wording outside the approved variants requires semantic review; it is not incorrect merely because the words differ.",
+    "answer": "Examples include climate and parent material. Climate affects weathering, moisture and soil-forming processes."
+  },
+  "Q-14-010": {
+    "explanation": "Different climate, organisms, relief, formation time or land use can produce different soils. Compare at least two relevant factors.",
+    "rubric": "One point for a multifactor explanation; one point for evidence to collect. Wording outside the approved variants requires semantic review; it is not incorrect merely because the words differ.",
+    "answer": "Different climate, organisms, relief, formation time or land use can produce different soils. Compare at least two relevant factors."
+  },
+  "Q-15-001": {
+    "explanation": "The biosphere concerns life and its extent; the other choices do not cover its full scope.",
+    "rubric": "One point for the correct option; zero for an incorrect or blank answer."
+  },
+  "Q-15-002": {
+    "explanation": "Environmental conditions act together; a name or a single factor is insufficient.",
+    "rubric": "One point for the correct option; zero for an incorrect or blank answer."
+  },
+  "Q-15-003": {
+    "explanation": "Different moisture may produce different vegetation; identical species cannot be assumed.",
+    "rubric": "One point for the correct option; zero for an incorrect or blank answer."
+  },
+  "Q-15-004": {
+    "explanation": "Vegetation distribution reflects several interacting factors; temperature, latitude or map colour alone is insufficient.",
+    "rubric": "One point for the correct option; zero for an incorrect or blank answer."
+  },
+  "Q-15-005": {
+    "explanation": "Life also occurs in water and suitable parts of the atmosphere.",
+    "rubric": "Each statement is marked independently: one point for correct, zero for incorrect or blank. The four statements are not grouped.",
+    "answer": "False"
+  },
+  "Q-15-006": {
+    "explanation": "Land use and other human actions can alter habitats.",
+    "rubric": "Each statement is marked independently: one point for correct, zero for incorrect or blank. The four statements are not grouped.",
+    "answer": "True"
+  },
+  "Q-15-007": {
+    "explanation": "Distribution depends on several factors and their interaction through time.",
+    "rubric": "Each statement is marked independently: one point for correct, zero for incorrect or blank. The four statements are not grouped.",
+    "answer": "False"
+  },
+  "Q-15-008": {
+    "explanation": "Habitats provide the conditions organisms need to survive.",
+    "rubric": "Each statement is marked independently: one point for correct, zero for incorrect or blank. The four statements are not grouped.",
+    "answer": "True"
+  },
+  "Q-15-009": {
+    "explanation": "Climate, soil or relief are relevant examples.",
+    "rubric": "One point per valid natural factor. Wording outside the approved variants requires semantic review; it is not incorrect merely because the words differ.",
+    "answer": "Climate, soil or relief are relevant examples."
+  },
+  "Q-15-010": {
+    "explanation": "Rainfall, dry season, soil, relief or human activity may differ. Compare at least two suitable variables.",
+    "rubric": "One point for a multifactor explanation; one point for two variables to check. Wording outside the approved variants requires semantic review; it is not incorrect merely because the words differ.",
+    "answer": "Rainfall, dry season, soil, relief or human activity may differ. Compare at least two suitable variables."
+  },
+  "Q-16-001": {
+    "explanation": "Legends and map extent define how to interpret and compare layers; the other details cannot replace them.",
+    "rubric": "One point for the correct option; zero for an incorrect or blank answer."
+  },
+  "Q-16-002": {
+    "explanation": "Record evidence using the same comparison criteria; the other actions do not create a valid comparison.",
+    "rubric": "One point for the correct option; zero for an incorrect or blank answer."
+  },
+  "Q-16-003": {
+    "explanation": "Different definitions can make comparisons misleading; a clear mapping reviewed by an expert is needed.",
+    "rubric": "One point for the correct option; zero for an incorrect or blank answer."
+  },
+  "Q-16-004": {
+    "explanation": "Overlay provides spatial evidence but cannot establish a sole cause.",
+    "rubric": "One point for the correct option; zero for an incorrect or blank answer."
+  },
+  "Q-16-005": {
+    "explanation": "Read each map’s own legend.",
+    "rubric": "Each statement is marked independently: one point for correct, zero for incorrect or blank. The four statements are not grouped.",
+    "answer": "False"
+  },
+  "Q-16-006": {
+    "explanation": "The level of detail affects conclusions drawn from a map.",
+    "rubric": "Each statement is marked independently: one point for correct, zero for incorrect or blank. The four statements are not grouped.",
+    "answer": "True"
+  },
+  "Q-16-007": {
+    "explanation": "Reasoning requires evidence from the data layers.",
+    "rubric": "Each statement is marked independently: one point for correct, zero for incorrect or blank. The four statements are not grouped.",
+    "answer": "False"
+  },
+  "Q-16-008": {
+    "explanation": "A table makes the same information available to keyboard and assistive-technology users.",
+    "rubric": "Each statement is marked independently: one point for correct, zero for incorrect or blank. The four statements are not grouped.",
+    "answer": "True"
+  },
+  "Q-16-009": {
+    "explanation": "Include soil name or group and vegetation type; climate may also help explain the pattern.",
+    "rubric": "One point per relevant field. Wording outside the approved variants requires semantic review; it is not incorrect merely because the words differ.",
+    "answer": "Include soil name or group and vegetation type; climate may also help explain the pattern."
+  },
+  "Q-16-010": {
+    "explanation": "Check scale, source and date, then consider climate, relief and land use. Do not edit data to force agreement.",
+    "rubric": "One point for checking quality; one point for a reasonable hypothesis or additional variable. Wording outside the approved variants requires semantic review; it is not incorrect merely because the words differ.",
+    "answer": "Check scale, source and date, then consider climate, relief and land use. Do not edit data to force agreement."
+  },
+  "Q-17-001": {
+    "explanation": "The lesson emphasises system relationships; an isolated component or denial of connections is insufficient.",
+    "rubric": "One point for the correct option; zero for an incorrect or blank answer."
+  },
+  "Q-17-002": {
+    "explanation": "Cover can affect infiltration and runoff under suitable conditions; the other explanations lack a mechanism.",
+    "rubric": "One point for the correct option; zero for an incorrect or blank answer."
+  },
+  "Q-17-003": {
+    "explanation": "Record the causal chain and result; the other information is insufficient for an explanation.",
+    "rubric": "One point for the correct option; zero for an incorrect or blank answer."
+  },
+  "Q-17-004": {
+    "explanation": "A simplified model cannot replace verification. Its coefficients and delays should not be treated as real measurements.",
+    "rubric": "One point for the correct option; zero for an incorrect or blank answer."
+  },
+  "Q-17-005": {
+    "explanation": "The components are connected and interact.",
+    "rubric": "Each statement is marked independently: one point for correct, zero for incorrect or blank. The four statements are not grouped.",
+    "answer": "False"
+  },
+  "Q-17-006": {
+    "explanation": "This is a consequence that should be analysed within a natural system.",
+    "rubric": "Each statement is marked independently: one point for correct, zero for incorrect or blank. The four statements are not grouped.",
+    "answer": "True"
+  },
+  "Q-17-007": {
+    "explanation": "The model selects relationships that serve its learning objective.",
+    "rubric": "Each statement is marked independently: one point for correct, zero for incorrect or blank. The four statements are not grouped.",
+    "answer": "False"
+  },
+  "Q-17-008": {
+    "explanation": "Effects depend on context and other variables.",
+    "rubric": "Each statement is marked independently: one point for correct, zero for incorrect or blank. The four statements are not grouped.",
+    "answer": "True"
+  },
+  "Q-17-009": {
+    "explanation": "Reduced cover → less ground protection or altered infiltration → greater runoff or erosion under suitable conditions.",
+    "rubric": "One point per link supported by a reasonable mechanism. Wording outside the approved variants requires semantic review; it is not incorrect merely because the words differ.",
+    "answer": "Reduced cover → less ground protection or altered infiltration → greater runoff or erosion under suitable conditions."
+  },
+  "Q-17-010": {
+    "explanation": "Reduced cover → less water retention or soil protection → greater runoff or erosion → more sediment downstream. Outcomes depend on rain, slope, soil and interventions.",
+    "rubric": "One point for a chain with at least three valid relationships; one point for multifactor limitations. Wording outside the approved variants requires semantic review; it is not incorrect merely because the words differ.",
+    "answer": "Reduced cover → less water retention or soil protection → greater runoff or erosion → more sediment downstream. Outcomes depend on rain, slope, soil and interventions."
+  },
+  "Q-18-001": {
+    "explanation": "Latitudinal zonality describes differentiation by latitude; the other patterns involve different mechanisms.",
+    "rubric": "One point for the correct option; zero for an incorrect or blank answer."
+  },
+  "Q-18-002": {
+    "explanation": "Elevation is a non-zonal factor, rather than a change in latitude.",
+    "rubric": "One point for the correct option; zero for an incorrect or blank answer."
+  },
+  "Q-18-003": {
+    "explanation": "A controlled pair clarifies elevation’s effect; state limitations where other conditions still differ.",
+    "rubric": "One point for the correct option; zero for an incorrect or blank answer."
+  },
+  "Q-18-004": {
+    "explanation": "Zone boundaries and components depend on several conditions, without invalidating the general pattern.",
+    "rubric": "One point for the correct option; zero for an incorrect or blank answer."
+  },
+  "Q-18-005": {
+    "explanation": "Elevation, land–ocean distribution and other factors also contribute.",
+    "rubric": "Each statement is marked independently: one point for correct, zero for incorrect or blank. The four statements are not grouped.",
+    "answer": "False"
+  },
+  "Q-18-006": {
+    "explanation": "The patterns combine to produce natural diversity.",
+    "rubric": "Each statement is marked independently: one point for correct, zero for incorrect or blank. The four statements are not grouped.",
+    "answer": "True"
+  },
+  "Q-18-007": {
+    "explanation": "Boundaries vary with latitude, slope exposure and local conditions.",
+    "rubric": "Each statement is marked independently: one point for correct, zero for incorrect or blank. The four statements are not grouped.",
+    "answer": "False"
+  },
+  "Q-18-008": {
+    "explanation": "This identifies the cause of differentiation being examined.",
+    "rubric": "Each statement is marked independently: one point for correct, zero for incorrect or blank. The four statements are not grouped.",
+    "answer": "True"
+  },
+  "Q-18-009": {
+    "explanation": "Latitudinal zonality is differentiation associated with latitude; altitudinal zonation is differentiation by elevation, classed as non-zonal in this lesson.",
+    "rubric": "One point per correct distinction. Wording outside the approved variants requires semantic review; it is not incorrect merely because the words differ.",
+    "answer": "Latitudinal zonality is differentiation associated with latitude; altitudinal zonation is differentiation by elevation, classed as non-zonal in this lesson."
+  },
+  "Q-18-010": {
+    "explanation": "Compare different latitudes at similar elevation, and different elevations at similar latitude. Record season, location, slope aspect and limits on control.",
+    "rubric": "One point for two comparisons; one point for control variables and limitations. Wording outside the approved variants requires semantic review; it is not incorrect merely because the words differ.",
+    "answer": "Compare different latitudes at similar elevation, and different elevations at similar latitude. Record season, location, slope aspect and limits on control."
+  }
+}

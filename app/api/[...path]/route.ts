@@ -1,5 +1,7 @@
 import {env} from 'cloudflare:workers';
 import curriculum from '@/data/curriculum.server.json';
+import questionTranslations from '@/data/question-translations.json';
+import questionFeedback from '@/data/question-feedback.server.json';
 import {lessonContent} from '@/data/content';
 import {database,getUser,randomId,randomSalt,hashPassword,sessionCookie,digest,auditLog,rateLimit} from '@/lib/auth';
 import {grade,selfAssess} from '@/lib/grading';
@@ -10,6 +12,7 @@ const json=(data:unknown,status=200,headers:Record<string,string>={})=>Response.
 const fail=(message:string,status=400)=>json({error:message},status);
 const validPair=(p:unknown):boolean=>!!p&&typeof p==='object'&&['vi','en'].every(k=>typeof (p as Record<string,unknown>)[k]==='string'&&String((p as Record<string,unknown>)[k]).trim().length>0&&String((p as Record<string,unknown>)[k]).length<=12000);
 function validUnit(raw:unknown):raw is Unit{if(!raw||typeof raw!=='object')return false;const u=raw as Unit;return typeof u.id==='string'&&[u.title,u.body,u.example,u.misconception,u.term,u.definition].every(validPair)&&!!u.check&&validPair(u.check.prompt)&&validPair(u.check.explanation)&&Array.isArray(u.check.options)&&u.check.options.length===2&&u.check.options.every(validPair)&&Number.isInteger(u.check.answer)&&u.check.answer>=0&&u.check.answer<2;}
+function translateAttempt(a:Attempt):Attempt{const texts=questionTranslations as Record<string,{stem:string;options:string[]}>;const feedback=questionFeedback as Record<string,{explanation:string;rubric:string;answer?:string}>;return {...a,questions:a.questions.map(q=>({...q,stemEn:texts[q.id]?.stem,optionsEn:texts[q.id]?.options,explanationEn:feedback[q.id]?.explanation,rubricEn:feedback[q.id]?.rubric,answerEn:feedback[q.id]?.answer}))};}
 async function handle(request:Request){
  try{
   const path=new URL(request.url).pathname.slice(5).split('/').filter(Boolean);
@@ -81,14 +84,14 @@ async function handle(request:Request){
   if(path[0]==='attempts'){
     if(method==='GET'){
       if(!user)return json({attempts:[]});
-      const rows=await database().prepare('SELECT data FROM attempts WHERE user_id=? ORDER BY created_at DESC LIMIT 200').bind(user.id).all<{data:string}>();return json({attempts:rows.results.map(r=>JSON.parse(r.data))});
+      const rows=await database().prepare('SELECT data FROM attempts WHERE user_id=? ORDER BY created_at DESC LIMIT 200').bind(user.id).all<{data:string}>();return json({attempts:rows.results.map(r=>translateAttempt(JSON.parse(r.data)))});
     }
     if(method==='POST'&&path.length===1){
       const b=await request.json() as {lessonId:string;id:string;responses:Record<string,string>};
       const l=curriculum.find(l=>l.id===b.lessonId);if(!l||!b.responses||typeof b.responses!=='object'||!/^[-a-zA-Z0-9]{12,80}$/.test(b.id))return fail('Bài nộp chưa hợp lệ.');
       if(!await rateLimit(`submit:${user?.id??request.headers.get('cf-connecting-ip')??'guest'}`,80,60000))return fail('Vui lòng chờ một phút trước khi nộp lại.',429);
-      if(user){const old=await database().prepare('SELECT user_id,data FROM attempts WHERE id=?').bind(b.id).first<{user_id:string;data:string}>();if(old)return old.user_id===user.id?json(JSON.parse(old.data)):fail('Mã lượt luyện không hợp lệ.',409);}
-      const result=grade(l.questions,b.responses,l.id,b.id);
+      if(user){const old=await database().prepare('SELECT user_id,data FROM attempts WHERE id=?').bind(b.id).first<{user_id:string;data:string}>();if(old)return old.user_id===user.id?json(translateAttempt(JSON.parse(old.data))):fail('Mã lượt luyện không hợp lệ.',409);}
+      const result=translateAttempt(grade(l.questions,b.responses,l.id,b.id));
       if(user)await database().prepare('INSERT INTO attempts (id,user_id,lesson_id,version,data,created_at) VALUES (?,?,?,?,?,?)').bind(result.id,user.id,l.id,result.version,JSON.stringify(result),result.createdAt).run();
       return json(result,201);
     }
@@ -96,7 +99,7 @@ async function handle(request:Request){
       if(!user)return fail('Cần đăng nhập để lưu điểm tự đánh giá.',401);
       const row=await database().prepare('SELECT data FROM attempts WHERE id=? AND user_id=?').bind(path[1],user.id).first<{data:string}>();if(!row)return fail('Không tìm thấy lượt luyện.',404);
       const b=await request.json() as {points:Record<string,number>};const result=selfAssess(JSON.parse(row.data),b.points??{});
-      await database().prepare('UPDATE attempts SET data=? WHERE id=? AND user_id=?').bind(JSON.stringify(result),path[1],user.id).run();return json(result);
+      await database().prepare('UPDATE attempts SET data=? WHERE id=? AND user_id=?').bind(JSON.stringify(result),path[1],user.id).run();return json(translateAttempt(result));
     }
   }
   if(path[0]==='admin'){

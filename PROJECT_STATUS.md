@@ -19,3 +19,9 @@ Tham khảo bố cục và mã nguồn công khai congpro123/ScamCheck: điều 
 Bài 12: sóng và thủy triều có cảnh bờ biển WebGL 3D, mặt nước shader, bãi cát, đá, phao và cọc cố định. Đổi pha trăng/giờ, phát–dừng và so sánh đồ thị bán nhật triều lí tưởng. Công thức gồm hai thành phần điều hòa, chu kì ngày âm lịch 24 giờ 50 phút; biên độ tương đối, không hiệu chỉnh theo trạm thực. Cảnh bờ biển tự dựng, không tái hiện Hạ Long hay địa điểm quan trắc cụ thể. Dòng biển vẫn là sơ đồ giảng dạy 2D. Cơ sở kiến thức NOAA; các thẻ cảnh quan dẫn nguồn UNESCO, NASA hoặc NPS.
 
 Đã kiểm thử tọa độ cầu đơn vị, địa điểm/bài học hợp lệ, tính tuần hoàn mực triều và biên độ triều cường lớn hơn triều kém. Kiểm tra trực tiếp trên trang công khai: phóng gần hiện ảnh, chọn Hạ Long chuyển Bài 12, chọn Grand Canyon trên điện thoại, đổi pha trăng và phát–dừng mô hình biển. Màn hình 390 × 844 không tràn ngang; không ghi nhận lỗi/cảnh báo trình duyệt ở các màn hình kiểm tra. Chưa đo hiệu năng trên điện thoại vật lí; WebGL có dự phòng văn bản/biểu đồ khi không khả dụng.
+
+## Cập nhật 30/10/2026 — đọc và khám phá theo từng phần
+- Đọc phần nào chuyển sang khám phá đúng phần đó; lưu rồi mới đọc phần kế tiếp. Tách trạng thái/đánh dấu khám phá theo mã phần trong simState, giữ tiến độ cũ và dữ liệu riêng của tài khoản.
+- Nội lực (bài 7) mở mô hình kiến tạo; các phần ngoại lực có nhiệm vụ quan sát riêng. Không giả lập rằng cảnh sông đã mô phỏng đầy đủ phong hóa/bồi tụ.
+- Bộ chọn VI/EN/VI–EN/dịch khi cần trên đầu trang; lý thuyết, ví dụ và kiểm tra nhanh hiển thị cặp ngôn ngữ; nhãn mô phỏng và khám phá hỗ trợ VI–EN. Đã soạn bản dịch cho 170 câu hỏi/lựa chọn và 170 giải thích/rubric. Dữ liệu giải thích lưu ở server, chỉ bổ sung vào lượt luyện đã nộp; câu trả lời tự viết không bị dịch hoặc đổi giá trị.
+- Kiểm tra: 17 luồng đan xen đọc–khám phá, phục hồi đúng phần, không hoàn thành sớm, không nhân bản kết quả, bảo toàn tiến độ cũ; các bất biến khoa học và 72 khối kiến tạo kín vẫn đạt.

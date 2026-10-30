@@ -1,4 +1,5 @@
 'use client';
+import {useT} from './Language';
 import {useEffect,useRef,useState} from 'react';
 import type * as ThreeTypes from 'three';
 import {Camera,Mountain,Navigation} from 'lucide-react';
@@ -6,7 +7,7 @@ import {catchmentIndices} from '@/lib/models';
 import {floodedBankWidth,landscapeHeight,riverBankErosion,riverCenter,riverLevel,riverStage} from '@/lib/landscape';
 type Props={rain:number;cover:number;slope:number;playing:boolean;mode:'water'|'erosion'|'ecosystem'|'vegetation';heat?:number;english?:boolean};
 export default function RiverLandscape({rain,cover,slope,playing,mode,heat=50,english=false}:Props){
- const host=useRef<HTMLDivElement>(null),state=useRef({rain,cover,slope,playing,mode,heat}),view=useRef(0);state.current={rain,cover,slope,playing,mode,heat};const [failed,setFailed]=useState(false),[ready,setReady]=useState(false),[cameraView,setCameraView]=useState(0);const t=(vi:string,en:string)=>english?en:vi;
+ const host=useRef<HTMLDivElement>(null),state=useRef({rain,cover,slope,playing,mode,heat}),view=useRef(0);state.current={rain,cover,slope,playing,mode,heat};const [failed,setFailed]=useState(false),[ready,setReady]=useState(false),[cameraView,setCameraView]=useState(0);const t=useT(english);
  useEffect(()=>{let cancelled=false,cleanup=()=>{};
   async function init(){try{
    const [THREE,{Water},{outdoorWorld,groundTextures,waterNormals},{plantForest}]=await Promise.all([import('three'),import('three/addons/objects/Water.js'),import('@/lib/outdoor'),import('@/lib/scanned-forest')]);if(cancelled||!host.current)return;

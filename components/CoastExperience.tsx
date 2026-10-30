@@ -1,10 +1,11 @@
 'use client';
+import {useT} from './Language';
 import {useEffect,useRef,useState} from 'react';
 import {Camera,Waves,Mountain} from 'lucide-react';
 type Props={level:number;wind:number;playing:boolean;mode:'wave'|'tide';english?:boolean;onFailure?:()=>void};
 const shore=(x:number,z:number)=>z*.13-.6+Math.sin(x*.18)*.38+Math.sin(x*.8+z*.4)*.07;
 export default function CoastExperience({level,wind,playing,mode,english=false,onFailure}:Props){
- const host=useRef<HTMLDivElement>(null),state=useRef({level,wind,playing,mode}),view=useRef(0);state.current={level,wind,playing,mode};const [failed,setFailed]=useState(false),[ready,setReady]=useState(false),[cameraView,setCameraView]=useState(0);const t=(vi:string,en:string)=>english?en:vi;
+ const host=useRef<HTMLDivElement>(null),state=useRef({level,wind,playing,mode}),view=useRef(0);state.current={level,wind,playing,mode};const [failed,setFailed]=useState(false),[ready,setReady]=useState(false),[cameraView,setCameraView]=useState(0);const t=useT(english);
  useEffect(()=>{let cancelled=false,cleanup=()=>{};
   async function setup(){try{
    const [THREE,{Water},{outdoorWorld,groundTextures,waterNormals},{GLTFLoader}]=await Promise.all([import('three'),import('three/addons/objects/Water.js'),import('@/lib/outdoor'),import('three/addons/loaders/GLTFLoader.js')]);if(cancelled||!host.current)return;

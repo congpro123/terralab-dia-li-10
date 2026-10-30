@@ -1,9 +1,11 @@
+'use client';
+import {useT} from './Language';
 import {plateHeight,platePose,type PlateBoundary} from '@/lib/tectonic-geometry';
 
 /** Accessible 2D fallback driven by the same one-way process as the 3D scene. */
-export default function TectonicDiagram({boundary,continental,progress,english}:{boundary:PlateBoundary;continental:boolean;progress:number;english:boolean}){
+export default function TectonicDiagram({boundary,continental,progress,english}:{boundary:PlateBoundary;continental:boolean;progress:number;english:boolean}){const t=useT(english);
  const transform=boundary==='transform',scale=32;
- return <svg viewBox="0 0 620 340" role="img" aria-label={english?'Moving tectonic plates at the selected process stage':'Hai mảng kiến tạo chuyển động theo giai đoạn đã chọn'}>
+ return <svg viewBox="0 0 620 340" role="img" aria-label={t('Hai mảng kiến tạo chuyển động theo giai đoạn đã chọn','Moving tectonic plates at the selected process stage')}>
   <defs><pattern id="plate-rock" width="170" height="130" patternUnits="userSpaceOnUse"><image href="/textures/terrain/rock-color.jpg" width="170" height="130" opacity=".65"/></pattern></defs>
   <rect width="620" height="340" fill="#e8e9df"/>
   {!transform&&<rect x="30" y="218" width="560" height="31" fill="#87745e"/>}
@@ -20,6 +22,6 @@ export default function TectonicDiagram({boundary,continental,progress,english}:
     <path d="M-96 20H96M-96 42H96" stroke="#6b5945" opacity=".8" strokeWidth="3"/>
    </g>;
   })}
-  <text x="310" y="306" textAnchor="middle" fill="#50684d" fontSize="13">{transform?(english?'The pale rock band becomes offset':'Dải đá sáng dịch lệch theo hai mảng'):(english?'Drag the timeline to inspect each stage':'Kéo thanh diễn tiến để xem từng giai đoạn')}</text>
+  <text x="310" y="306" textAnchor="middle" fill="#50684d" fontSize="13">{transform?(t('Dải đá sáng dịch lệch theo hai mảng','The pale rock band becomes offset')):(t('Kéo thanh diễn tiến để xem từng giai đoạn','Drag the timeline to inspect each stage'))}</text>
  </svg>;
 }

@@ -1,0 +1,1226 @@
+{
+  "Q-02-001": {
+    "stem": "Which method best shows the location of each mineral deposit?",
+    "options": [
+      "Symbols",
+      "Flow lines",
+      "Population dots",
+      "Regional composition charts"
+    ]
+  },
+  "Q-02-002": {
+    "stem": "What do different arrow widths on a freight-flow map usually represent?",
+    "options": [
+      "Relief height and slope",
+      "Flow direction and magnitude",
+      "Time of mineral extraction",
+      "Population age structure"
+    ]
+  },
+  "Q-02-003": {
+    "stem": "One dot represents 200 people. How many people do 15 dots represent?",
+    "options": [
+      "750 people",
+      "1,500 people",
+      "3,000 people",
+      "30,000 people"
+    ]
+  },
+  "Q-02-004": {
+    "stem": "Which method best compares the output shares of three sectors between regions?",
+    "options": [
+      "Flow lines without components",
+      "Dots of equal value",
+      "One unclassified point symbol",
+      "Composition charts placed in each region"
+    ]
+  },
+  "Q-02-005": {
+    "stem": "One dot on every map always represents 100 people.",
+    "options": [
+      "True",
+      "False"
+    ]
+  },
+  "Q-02-006": {
+    "stem": "Reading the legend helps you interpret symbols correctly.",
+    "options": [
+      "True",
+      "False"
+    ]
+  },
+  "Q-02-007": {
+    "stem": "Changing the dot value must preserve the total quantity represented.",
+    "options": [
+      "True",
+      "False"
+    ]
+  },
+  "Q-02-008": {
+    "stem": "Flow lines can only represent stationary locations.",
+    "options": [
+      "True",
+      "False"
+    ]
+  },
+  "Q-02-009": {
+    "stem": "Name two things to check in the legend before reading a dot map.",
+    "options": []
+  },
+  "Q-02-010": {
+    "stem": "A population is 6,000. Compare the numbers of dots at 100 and 200 people per dot, and explain why both maps represent the same total population.",
+    "options": []
+  },
+  "Q-03-001": {
+    "stem": "What does GPS primarily provide?",
+    "options": [
+      "Land-use composition",
+      "Air pollution levels",
+      "Receiver position",
+      "Regional population density"
+    ]
+  },
+  "Q-03-002": {
+    "stem": "What must you check to read distance on a paper map?",
+    "options": [
+      "Map scale",
+      "Displayed distance between symbols without converting the scale",
+      "Area of the whole map sheet",
+      "Number of features in the legend"
+    ]
+  },
+  "Q-03-003": {
+    "stem": "Two routes take 4 km/20 minutes and 6 km/12 minutes. Which arrives sooner?",
+    "options": [
+      "4 km, because shorter routes are always faster",
+      "6 km, because it takes 12 minutes",
+      "Both take the same time because their endpoints match",
+      "4 km, because distance is the only criterion"
+    ]
+  },
+  "Q-03-004": {
+    "stem": "What should a learning app do when location permission is denied?",
+    "options": [
+      "Lock the entire lesson without real coordinates",
+      "Infer an exact position without a source",
+      "Require location permission before reading",
+      "Offer a simulated position with clear guidance"
+    ]
+  },
+  "Q-03-005": {
+    "stem": "GPS and a digital map are the same component.",
+    "options": [
+      "True",
+      "False"
+    ]
+  },
+  "Q-03-006": {
+    "stem": "Read the legend before interpreting map symbols.",
+    "options": [
+      "True",
+      "False"
+    ]
+  },
+  "Q-03-007": {
+    "stem": "The shortest route is always the fastest.",
+    "options": [
+      "True",
+      "False"
+    ]
+  },
+  "Q-03-008": {
+    "stem": "A positioning result may contain errors.",
+    "options": [
+      "True",
+      "False"
+    ]
+  },
+  "Q-03-009": {
+    "stem": "Give two everyday uses of digital maps.",
+    "options": []
+  },
+  "Q-03-010": {
+    "stem": "Choose an emergency route between 4 km/20 minutes and 6 km/12 minutes. State your choice and one limitation of the conclusion.",
+    "options": []
+  },
+  "Q-04-001": {
+    "stem": "What usually makes up rocks?",
+    "options": [
+      "Only organic matter",
+      "Minerals",
+      "Only water and air",
+      "Only artificial materials"
+    ]
+  },
+  "Q-04-002": {
+    "stem": "Where is Earth’s crust?",
+    "options": [
+      "Below the inner core",
+      "Outside the entire atmosphere",
+      "At the outside of the solid Earth",
+      "All solid material from the surface to the centre"
+    ]
+  },
+  "Q-04-003": {
+    "stem": "Which rock group forms when magma cools and crystallises?",
+    "options": [
+      "Igneous rocks",
+      "Sedimentary rocks formed by deposition",
+      "Metamorphic rocks without melting",
+      "Soil formed by organisms"
+    ]
+  },
+  "Q-04-004": {
+    "stem": "What improves the reliability of rock classification?",
+    "options": [
+      "Using only colour in a photograph",
+      "Using only sample size",
+      "Using only where it was found",
+      "Combining composition, texture and formation process"
+    ]
+  },
+  "Q-04-005": {
+    "stem": "Continental and oceanic crust are completely identical.",
+    "options": [
+      "True",
+      "False"
+    ]
+  },
+  "Q-04-006": {
+    "stem": "A rock may contain one or more minerals.",
+    "options": [
+      "True",
+      "False"
+    ]
+  },
+  "Q-04-007": {
+    "stem": "An exaggerated cross-section model preserves every real-world proportion.",
+    "options": [
+      "True",
+      "False"
+    ]
+  },
+  "Q-04-008": {
+    "stem": "Heat and pressure can alter rocks.",
+    "options": [
+      "True",
+      "False"
+    ]
+  },
+  "Q-04-009": {
+    "stem": "Briefly distinguish a mineral from a rock.",
+    "options": []
+  },
+  "Q-04-010": {
+    "stem": "A sample has been altered by heat and pressure without fully melting. Suggest a rock group and additional evidence needed.",
+    "options": []
+  },
+  "Q-05-001": {
+    "stem": "Which movement directly produces alternating day and night?",
+    "options": [
+      "Orbit around the Sun",
+      "Changes in Earth–Sun distance",
+      "Rotation on Earth’s axis",
+      "Daily changes in orbital shape"
+    ]
+  },
+  "Q-05-002": {
+    "stem": "What mainly produces seasons in the model?",
+    "options": [
+      "Earth–Sun distance changing within one day",
+      "Earth’s rotation alone",
+      "Axial tilt and orbit around the Sun",
+      "Division into time zones"
+    ]
+  },
+  "Q-05-003": {
+    "stem": "It is 08:00 UTC. What is the time at UTC+7?",
+    "options": [
+      "01:00 the same day",
+      "15:00 the same day",
+      "08:00 the same day",
+      "17:00 the same day"
+    ]
+  },
+  "Q-05-004": {
+    "stem": "What is appropriate when the Northern Hemisphere tilts towards the Sun?",
+    "options": [
+      "Both hemispheres always receive identical illumination",
+      "The Southern Hemisphere has more favourable seasonal illumination",
+      "Both hemispheres enter winter together",
+      "The north tends towards summer and the south towards winter"
+    ]
+  },
+  "Q-05-005": {
+    "stem": "Summer always occurs because Earth is closest to the Sun.",
+    "options": [
+      "True",
+      "False"
+    ]
+  },
+  "Q-05-006": {
+    "stem": "Eastern locations have later local solar time than western locations.",
+    "options": [
+      "True",
+      "False"
+    ]
+  },
+  "Q-05-007": {
+    "stem": "Speeding up the animation changes the cause of seasons.",
+    "options": [
+      "True",
+      "False"
+    ]
+  },
+  "Q-05-008": {
+    "stem": "A model may enlarge Earth to make it easier to observe.",
+    "options": [
+      "True",
+      "False"
+    ]
+  },
+  "Q-05-009": {
+    "stem": "Explain why a location alternates between day and night.",
+    "options": []
+  },
+  "Q-05-010": {
+    "stem": "If the axis is perpendicular to the orbital plane in the model, how does seasonal contrast caused by tilt change? State a limitation.",
+    "options": []
+  },
+  "Q-06-001": {
+    "stem": "What makes up the lithosphere?",
+    "options": [
+      "Only continental crust",
+      "Only oceanic crust",
+      "All crust and all mantle",
+      "Crust and the rigid uppermost mantle"
+    ]
+  },
+  "Q-06-002": {
+    "stem": "Which boundary has two plates moving apart?",
+    "options": [
+      "Divergent",
+      "Convergent",
+      "Transform",
+      "Continental collision"
+    ]
+  },
+  "Q-06-003": {
+    "stem": "Two plates slide horizontally along a fault. Which phenomenon is most directly related?",
+    "options": [
+      "Hemispheric seasons",
+      "Earthquakes",
+      "Changes in local time",
+      "River deposition"
+    ]
+  },
+  "Q-06-004": {
+    "stem": "Why do not all convergent boundaries have identical volcanic activity?",
+    "options": [
+      "Because convergence never causes deformation",
+      "Because all plates have identical composition",
+      "Because plate types and convergence mechanisms differ",
+      "Because distance to the Sun changes"
+    ]
+  },
+  "Q-06-005": {
+    "stem": "The lithosphere and Earth’s crust mean exactly the same thing.",
+    "options": [
+      "True",
+      "False"
+    ]
+  },
+  "Q-06-006": {
+    "stem": "At a divergent boundary, two plates move apart.",
+    "options": [
+      "True",
+      "False"
+    ]
+  },
+  "Q-06-007": {
+    "stem": "Every volcano lies precisely on a plate boundary.",
+    "options": [
+      "True",
+      "False"
+    ]
+  },
+  "Q-06-008": {
+    "stem": "Animation speed must be distinguished from actual tectonic speed.",
+    "options": [
+      "True",
+      "False"
+    ]
+  },
+  "Q-06-009": {
+    "stem": "How do movements at convergent and transform boundaries differ?",
+    "options": []
+  },
+  "Q-06-010": {
+    "stem": "Compare oceanic–continental convergence with continental collision. Give one similarity and one difference.",
+    "options": []
+  },
+  "Q-07-001": {
+    "stem": "What is the breakdown of rock in place called?",
+    "options": [
+      "Weathering",
+      "Transport",
+      "Deposition",
+      "Subduction"
+    ]
+  },
+  "Q-07-002": {
+    "stem": "Which energy source is associated with endogenic forces?",
+    "options": [
+      "Energy generated by wind",
+      "Energy inside Earth",
+      "Energy of surface runoff",
+      "Energy of coastal waves"
+    ]
+  },
+  "Q-07-003": {
+    "stem": "Which process is likely when a flow can no longer carry its load?",
+    "options": [
+      "Earth’s rotation",
+      "Plate subduction",
+      "Deposition",
+      "Weathering in place"
+    ]
+  },
+  "Q-07-004": {
+    "stem": "How should you test the effect of vegetation cover on model erosion?",
+    "options": [
+      "Increase rain and reduce slope simultaneously",
+      "Change cover without observing material",
+      "Compare landscapes with every condition different",
+      "Keep rain and slope fixed; change only cover"
+    ]
+  },
+  "Q-07-005": {
+    "stem": "Weathering necessarily transports material far away.",
+    "options": [
+      "True",
+      "False"
+    ]
+  },
+  "Q-07-006": {
+    "stem": "Endogenic and exogenic forces both help shape relief.",
+    "options": [
+      "True",
+      "False"
+    ]
+  },
+  "Q-07-007": {
+    "stem": "Deposition occurs only on mountain summits.",
+    "options": [
+      "True",
+      "False"
+    ]
+  },
+  "Q-07-008": {
+    "stem": "A qualitative model should not be used to announce an exact quantity of soil loss.",
+    "options": [
+      "True",
+      "False"
+    ]
+  },
+  "Q-07-009": {
+    "stem": "Distinguish weathering from transport.",
+    "options": []
+  },
+  "Q-07-010": {
+    "stem": "Design a model experiment comparing slopes with and without vegetation cover.",
+    "options": []
+  },
+  "Q-08-001": {
+    "stem": "Which layers compare earthquakes with plate boundaries?",
+    "options": [
+      "Volcanoes only",
+      "Rainfall only",
+      "Earthquakes and plate boundaries",
+      "Earthquakes and rivers"
+    ]
+  },
+  "Q-08-002": {
+    "stem": "What should be checked before comparing two event maps?",
+    "options": [
+      "Their background colours",
+      "Time coverage and legends",
+      "Only the symbol count, ignoring time",
+      "Only the map titles"
+    ]
+  },
+  "Q-08-003": {
+    "stem": "A filter returns zero events. What is the best conclusion?",
+    "options": [
+      "No matching events occur in the dataset being viewed",
+      "The region has absolutely no risk",
+      "The region has no tectonic movement",
+      "The region will never have future earthquakes"
+    ]
+  },
+  "Q-08-004": {
+    "stem": "Some volcanoes lie outside the displayed boundaries. What should you do?",
+    "options": [
+      "Delete the points to fit the initial claim",
+      "Move them onto the boundaries",
+      "Treat all intraplate points as errors",
+      "Check sources, accuracy and possible intraplate activity"
+    ]
+  },
+  "Q-08-005": {
+    "stem": "Check the collection period of earthquake data.",
+    "options": [
+      "True",
+      "False"
+    ]
+  },
+  "Q-08-006": {
+    "stem": "Earthquake and volcano locations always coincide exactly.",
+    "options": [
+      "True",
+      "False"
+    ]
+  },
+  "Q-08-007": {
+    "stem": "No points on a map means no earthquake risk.",
+    "options": [
+      "True",
+      "False"
+    ]
+  },
+  "Q-08-008": {
+    "stem": "An interpretation should identify the observed area and supporting evidence.",
+    "options": [
+      "True",
+      "False"
+    ]
+  },
+  "Q-08-009": {
+    "stem": "Give two steps for checking the relationship between earthquakes and plate boundaries.",
+    "options": []
+  },
+  "Q-08-010": {
+    "stem": "A one-month map shows no earthquakes at X. Can you conclude that X has no risk? Explain and suggest further checks.",
+    "options": []
+  },
+  "Q-09-001": {
+    "stem": "Which variable describes how hot or cold air is?",
+    "options": [
+      "Temperature",
+      "Air pressure",
+      "Humidity",
+      "Rainfall"
+    ]
+  },
+  "Q-09-002": {
+    "stem": "How is wind described in an ideal experiment without rotation or friction?",
+    "options": [
+      "From low to high pressure",
+      "From high to low pressure",
+      "Always parallel to isobars in this model",
+      "Independent of pressure differences"
+    ]
+  },
+  "Q-09-003": {
+    "stem": "How should you test the effect of humidity on condensation?",
+    "options": [
+      "Vary humidity and temperature arbitrarily",
+      "Change location and ignore initial temperature",
+      "Keep other settings fixed and vary only humidity",
+      "Compare runs without recording conditions"
+    ]
+  },
+  "Q-09-004": {
+    "stem": "What is an appropriate use of a qualitative climate model?",
+    "options": [
+      "Predicting tomorrow’s exact rainfall",
+      "Replacing all weather observations",
+      "Determining a real station’s exact temperature",
+      "Explaining relationships under the stated assumptions"
+    ]
+  },
+  "Q-09-005": {
+    "stem": "Climate and weather are completely identical concepts.",
+    "options": [
+      "True",
+      "False"
+    ]
+  },
+  "Q-09-006": {
+    "stem": "Temperature, pressure, wind, humidity and rainfall are interrelated.",
+    "options": [
+      "True",
+      "False"
+    ]
+  },
+  "Q-09-007": {
+    "stem": "High humidity always guarantees rain at every moment.",
+    "options": [
+      "True",
+      "False"
+    ]
+  },
+  "Q-09-008": {
+    "stem": "A model comparison should record the variables kept constant.",
+    "options": [
+      "True",
+      "False"
+    ]
+  },
+  "Q-09-009": {
+    "stem": "Name two climate variables and their commonly used measures or units.",
+    "options": []
+  },
+  "Q-09-010": {
+    "stem": "The wind experiment ignores Earth’s rotation. Why should you not conclude that all real winds travel straight from high to low pressure?",
+    "options": []
+  },
+  "Q-10-001": {
+    "stem": "Which unit is usually used for rainfall on a climate chart?",
+    "options": [
+      "hPa",
+      "mm",
+      "°C",
+      "m³/s"
+    ]
+  },
+  "Q-10-002": {
+    "stem": "How is annual temperature range calculated?",
+    "options": [
+      "Sum of 12 monthly temperatures",
+      "Total rainfall divided by mean temperature",
+      "Highest minus lowest monthly temperature",
+      "First minus last monthly temperature in every case"
+    ]
+  },
+  "Q-10-003": {
+    "stem": "What is the annual temperature range of station A in DATA-10?",
+    "options": [
+      "8°C",
+      "28°C",
+      "48°C",
+      "4°C"
+    ]
+  },
+  "Q-10-004": {
+    "stem": "What is station A’s 12-month rainfall total in DATA-10?",
+    "options": [
+      "250 mm",
+      "1,200 mm",
+      "1,440 mm",
+      "1,340 mm"
+    ]
+  },
+  "Q-10-005": {
+    "stem": "Read the temperature and rainfall axis units separately.",
+    "options": [
+      "True",
+      "False"
+    ]
+  },
+  "Q-10-006": {
+    "stem": "A missing rainfall month may be silently treated as zero.",
+    "options": [
+      "True",
+      "False"
+    ]
+  },
+  "Q-10-007": {
+    "stem": "Two stations with equal annual rainfall may have different rainy seasons.",
+    "options": [
+      "True",
+      "False"
+    ]
+  },
+  "Q-10-008": {
+    "stem": "One month’s temperature is enough to classify a climate with certainty.",
+    "options": [
+      "True",
+      "False"
+    ]
+  },
+  "Q-10-009": {
+    "stem": "In DATA-10, name the rainiest month and its rainfall.",
+    "options": []
+  },
+  "Q-10-010": {
+    "stem": "Two stations have equal annual rainfall but different monthly distributions. Should you conclude that they have the same climate type? What further data are needed?",
+    "options": []
+  },
+  "Q-11-001": {
+    "stem": "What does the hydrosphere include?",
+    "options": [
+      "Only seas and oceans",
+      "Only liquid water",
+      "Earth’s water in its various forms",
+      "Only continental water"
+    ]
+  },
+  "Q-11-002": {
+    "stem": "What is the change of surface water into vapour called?",
+    "options": [
+      "Evaporation",
+      "Condensation",
+      "Infiltration",
+      "Deposition"
+    ]
+  },
+  "Q-11-003": {
+    "stem": "With equal rainfall, what can lower soil infiltration cause in the model?",
+    "options": [
+      "An immediate reduction in all flow",
+      "More runoff under the model assumptions",
+      "An identical increase in groundwater in every case",
+      "No possible change to water pathways"
+    ]
+  },
+  "Q-11-004": {
+    "stem": "Which factors help explain a river’s flow regime?",
+    "options": [
+      "Only temperature at its mouth",
+      "Only river length",
+      "Only cross-sectional area on one day",
+      "Rainfall, relief, ground materials, lakes and human activity"
+    ]
+  },
+  "Q-11-005": {
+    "stem": "Evaporated water is no longer part of the water cycle.",
+    "options": [
+      "True",
+      "False"
+    ]
+  },
+  "Q-11-006": {
+    "stem": "Lakes and groundwater are forms of continental water.",
+    "options": [
+      "True",
+      "False"
+    ]
+  },
+  "Q-11-007": {
+    "stem": "All rivers have completely identical flow regimes.",
+    "options": [
+      "True",
+      "False"
+    ]
+  },
+  "Q-11-008": {
+    "stem": "Land-use change can affect flow.",
+    "options": [
+      "True",
+      "False"
+    ]
+  },
+  "Q-11-009": {
+    "stem": "Name two pathways rainwater can follow after reaching the ground.",
+    "options": []
+  },
+  "Q-11-010": {
+    "stem": "Keep rainfall fixed and reduce soil infiltration. Predict two changes and state the conditions of your conclusion.",
+    "options": []
+  },
+  "Q-12-001": {
+    "stem": "Which variable describes dissolved salt in seawater?",
+    "options": [
+      "Salinity",
+      "Discharge",
+      "Air pressure",
+      "Air humidity"
+    ]
+  },
+  "Q-12-002": {
+    "stem": "What generates most ordinary surface waves studied here?",
+    "options": [
+      "Rivers",
+      "Wind",
+      "Only lunar gravity",
+      "Only temperature changes within water"
+    ]
+  },
+  "Q-12-003": {
+    "stem": "What does the buoy mainly demonstrate in the simplified wave model?",
+    "options": [
+      "Travelling forever with a wave crest",
+      "Moving straight towards shore at every moment",
+      "Oscillation as wave energy passes",
+      "Never moving when waves occur"
+    ]
+  },
+  "Q-12-004": {
+    "stem": "Which limitation should a general learning model of tides state?",
+    "options": [
+      "It gives exact tide times for every port",
+      "It replaces navigation tide tables",
+      "Depth and coastlines need not be considered",
+      "It must not predict local tide times"
+    ]
+  },
+  "Q-12-005": {
+    "stem": "Tides are produced only by wind.",
+    "options": [
+      "True",
+      "False"
+    ]
+  },
+  "Q-12-006": {
+    "stem": "Ocean currents can transport heat between regions.",
+    "options": [
+      "True",
+      "False"
+    ]
+  },
+  "Q-12-007": {
+    "stem": "Seawater salinity is identical everywhere and at all times.",
+    "options": [
+      "True",
+      "False"
+    ]
+  },
+  "Q-12-008": {
+    "stem": "Waves and ocean currents must be distinguished.",
+    "options": [
+      "True",
+      "False"
+    ]
+  },
+  "Q-12-009": {
+    "stem": "State a basic difference between ocean waves and ocean currents.",
+    "options": []
+  },
+  "Q-12-010": {
+    "stem": "Why should a four-phase Moon model not be used to determine exact high-water times at a port?",
+    "options": []
+  },
+  "Q-13-001": {
+    "stem": "Which unit is commonly used for river discharge?",
+    "options": [
+      "mm",
+      "m³/s",
+      "m³",
+      "km²"
+    ]
+  },
+  "Q-13-002": {
+    "stem": "What should be checked before analysing Red River data?",
+    "options": [
+      "Only the number of months in the table",
+      "Only the line colour",
+      "Station, period and units",
+      "Only the maximum discharge"
+    ]
+  },
+  "Q-13-003": {
+    "stem": "Which month has the highest discharge in the constructed DEMO-13 dataset?",
+    "options": [
+      "August",
+      "March",
+      "January",
+      "December"
+    ]
+  },
+  "Q-13-004": {
+    "stem": "DEMO-13 has a maximum of 6,000 and a minimum of 800 m³/s. What is their ratio?",
+    "options": [
+      "0.13 times",
+      "5.2 times",
+      "6.0 times",
+      "7.5 times"
+    ]
+  },
+  "Q-13-005": {
+    "stem": "DEMO-13 contains real Red River observations.",
+    "options": [
+      "True",
+      "False"
+    ]
+  },
+  "Q-13-006": {
+    "stem": "A missing month must be distinguished from zero discharge.",
+    "options": [
+      "True",
+      "False"
+    ]
+  },
+  "Q-13-007": {
+    "stem": "Adding monthly discharge values is sufficient to obtain annual water volume.",
+    "options": [
+      "True",
+      "False"
+    ]
+  },
+  "Q-13-008": {
+    "stem": "Identifying seasons requires a stated rule and the full monthly series.",
+    "options": [
+      "True",
+      "False"
+    ]
+  },
+  "Q-13-009": {
+    "stem": "Calculate the difference between maximum and minimum discharge in DEMO-13, including its unit.",
+    "options": []
+  },
+  "Q-13-010": {
+    "stem": "A river chart has no station name or year. State two details to add before drawing conclusions about the Red River, and explain why.",
+    "options": []
+  },
+  "Q-14-001": {
+    "stem": "What does soil usually contain?",
+    "options": [
+      "Only water and air",
+      "Only rock fragments",
+      "Mineral matter, organic matter, water and air",
+      "Only organic matter"
+    ]
+  },
+  "Q-14-002": {
+    "stem": "Which factor supplies the initial mineral material for soil formation?",
+    "options": [
+      "Parent material",
+      "Relief",
+      "Time",
+      "Wind direction"
+    ]
+  },
+  "Q-14-003": {
+    "stem": "Which choice reasonably reduces soil erosion on a slope?",
+    "options": [
+      "Remove all vegetation",
+      "Maintain appropriate cover",
+      "Increase concentrated surface runoff",
+      "Leave soil bare in the rainy season"
+    ]
+  },
+  "Q-14-004": {
+    "stem": "Two soil horizons have the same colour. What is the most cautious conclusion?",
+    "options": [
+      "They certainly belong to the same soil group",
+      "They certainly formed over the same duration",
+      "Composition need not be checked",
+      "More evidence about composition, structure and formation conditions is needed"
+    ]
+  },
+  "Q-14-005": {
+    "stem": "Soil consists only of rock fragments and has no organic matter.",
+    "options": [
+      "True",
+      "False"
+    ]
+  },
+  "Q-14-006": {
+    "stem": "Time is a soil-forming factor.",
+    "options": [
+      "True",
+      "False"
+    ]
+  },
+  "Q-14-007": {
+    "stem": "One soil-profile diagram represents every soil.",
+    "options": [
+      "True",
+      "False"
+    ]
+  },
+  "Q-14-008": {
+    "stem": "Protecting vegetation can help protect soil.",
+    "options": [
+      "True",
+      "False"
+    ]
+  },
+  "Q-14-009": {
+    "stem": "Name two soil-forming factors and explain how one operates.",
+    "options": []
+  },
+  "Q-14-010": {
+    "stem": "Two places share the same parent material but have different soils. Explain how this is possible and what data should be compared.",
+    "options": []
+  },
+  "Q-15-001": {
+    "stem": "What is the biosphere associated with?",
+    "options": [
+      "Organisms and the zone supporting life",
+      "Only land plants",
+      "Only animals on the ground",
+      "Only ocean organisms"
+    ]
+  },
+  "Q-15-002": {
+    "stem": "Which combination helps examine vegetation distribution?",
+    "options": [
+      "Mean temperature alone",
+      "Heat, moisture, soil and relief",
+      "Longitude alone",
+      "Surface soil colour alone"
+    ]
+  },
+  "Q-15-003": {
+    "stem": "Two regions have equal temperature but different moisture. What is appropriate?",
+    "options": [
+      "They certainly contain every same species",
+      "Neither can support plants",
+      "Their vegetation may differ because moisture differs",
+      "They certainly have the same growing season"
+    ]
+  },
+  "Q-15-004": {
+    "stem": "What helps reliably explain vegetation differences between two regions?",
+    "options": [
+      "Temperature alone",
+      "Latitude alone",
+      "Map colour alone",
+      "Heat, moisture, soil, relief and human activity together"
+    ]
+  },
+  "Q-15-005": {
+    "stem": "The biosphere includes only terrestrial organisms.",
+    "options": [
+      "True",
+      "False"
+    ]
+  },
+  "Q-15-006": {
+    "stem": "People can change the distribution of organisms.",
+    "options": [
+      "True",
+      "False"
+    ]
+  },
+  "Q-15-007": {
+    "stem": "Temperature alone explains every species distribution.",
+    "options": [
+      "True",
+      "False"
+    ]
+  },
+  "Q-15-008": {
+    "stem": "Habitat protection matters to the biosphere.",
+    "options": [
+      "True",
+      "False"
+    ]
+  },
+  "Q-15-009": {
+    "stem": "Name two natural factors affecting the distribution of organisms.",
+    "options": []
+  },
+  "Q-15-010": {
+    "stem": "Why can regions at equal temperature have different vegetation? Suggest two variables to compare.",
+    "options": []
+  },
+  "Q-16-001": {
+    "stem": "What should be read first when comparing soil and organisms on maps?",
+    "options": [
+      "Only the areas of coloured regions",
+      "Only the selected region’s name",
+      "Only national boundaries",
+      "Each layer’s legend and the map extent"
+    ]
+  },
+  "Q-16-002": {
+    "stem": "How should you create a table comparing two regions?",
+    "options": [
+      "Select A and B and record attributes from the same layers",
+      "Compare colours without reading legends",
+      "Compare different regions on each layer",
+      "Record attributes from only one layer"
+    ]
+  },
+  "Q-16-003": {
+    "stem": "Two maps use different classification systems. What should you do?",
+    "options": [
+      "Treat identical colours as equivalent",
+      "Compare definitions using a mapping approved by an expert",
+      "Rename groups merely to force a match",
+      "Ignore the classification differences"
+    ]
+  },
+  "Q-16-004": {
+    "stem": "Soil and vegetation regions overlap on a map. What can you reasonably conclude?",
+    "options": [
+      "Soil is the only cause",
+      "No further evidence is needed",
+      "There is spatial association; other factors need consideration",
+      "Soil and vegetation always coincide everywhere"
+    ]
+  },
+  "Q-16-005": {
+    "stem": "The same colour on two maps always means the same thing.",
+    "options": [
+      "True",
+      "False"
+    ]
+  },
+  "Q-16-006": {
+    "stem": "Check scale or data resolution when comparing maps.",
+    "options": [
+      "True",
+      "False"
+    ]
+  },
+  "Q-16-007": {
+    "stem": "A region’s name alone is sufficient evidence; attributes are unnecessary.",
+    "options": [
+      "True",
+      "False"
+    ]
+  },
+  "Q-16-008": {
+    "stem": "An attribute table can provide an accessible alternative to a drag-and-drop map.",
+    "options": [
+      "True",
+      "False"
+    ]
+  },
+  "Q-16-009": {
+    "stem": "Name two fields for a table comparing soils and organisms in two regions.",
+    "options": []
+  },
+  "Q-16-010": {
+    "stem": "A region’s soil and vegetation do not fit the general pattern. Suggest how to investigate this exception.",
+    "options": []
+  },
+  "Q-17-001": {
+    "stem": "How is the geographical envelope studied in this lesson?",
+    "options": [
+      "As unrelated separate components",
+      "As a system of interacting natural components",
+      "As soil and rock alone",
+      "As climate alone"
+    ]
+  },
+  "Q-17-002": {
+    "stem": "Why can reduced cover affect flow?",
+    "options": [
+      "It only changes map colour",
+      "It cannot alter water pathways",
+      "It can change infiltration and runoff",
+      "It always has identical effects in every catchment"
+    ]
+  },
+  "Q-17-003": {
+    "stem": "What should be recorded to demonstrate a chain of model effects?",
+    "options": [
+      "The changed variable, intermediate links and result",
+      "Only the final relief shape",
+      "Only the initial component’s name",
+      "Only the result, without conditions"
+    ]
+  },
+  "Q-17-004": {
+    "stem": "How should a qualitative system-model result be interpreted?",
+    "options": [
+      "It always accurately predicts every catchment",
+      "Every index is an observed measurement",
+      "Every effect is immediate and linear",
+      "It is a tendency under assumptions, requiring real-world data for verification"
+    ]
+  },
+  "Q-17-005": {
+    "stem": "Natural components are entirely independent.",
+    "options": [
+      "True",
+      "False"
+    ]
+  },
+  "Q-17-006": {
+    "stem": "One change can trigger a chain of consequences.",
+    "options": [
+      "True",
+      "False"
+    ]
+  },
+  "Q-17-007": {
+    "stem": "A model diagram always includes every real-world relationship.",
+    "options": [
+      "True",
+      "False"
+    ]
+  },
+  "Q-17-008": {
+    "stem": "Conditions should be stated when explaining cause and effect.",
+    "options": [
+      "True",
+      "False"
+    ]
+  },
+  "Q-17-009": {
+    "stem": "Give a chain of two links that may follow reduced cover in a catchment.",
+    "options": []
+  },
+  "Q-17-010": {
+    "stem": "Create a chain of at least three links from forest loss to changes in flow or soil, then state a limitation.",
+    "options": []
+  },
+  "Q-18-001": {
+    "stem": "Natural differentiation by latitude is mainly associated with which pattern?",
+    "options": [
+      "Latitudinal zonality",
+      "Altitudinal zonation",
+      "Slope-aspect differentiation",
+      "Ocean–continent differentiation"
+    ]
+  },
+  "Q-18-002": {
+    "stem": "Which group includes differentiation by elevation in this lesson?",
+    "options": [
+      "Latitudinal zonality only",
+      "Non-zonal differentiation",
+      "Longitude only",
+      "Distance from the sea only"
+    ]
+  },
+  "Q-18-003": {
+    "stem": "Which comparison better isolates elevation’s effect?",
+    "options": [
+      "Two locations differing in every condition",
+      "Two hemispheres differing in both season and elevation",
+      "Two locations at similar latitude but different elevation, with other conditions recorded",
+      "Two equally high locations at completely different latitudes"
+    ]
+  },
+  "Q-18-004": {
+    "stem": "Why can one elevation-zone diagram not represent every mountain range?",
+    "options": [
+      "Elevation does not affect nature",
+      "Only latitude matters",
+      "Every slope receives equal heat and moisture",
+      "Latitude, wind exposure and local conditions differ"
+    ]
+  },
+  "Q-18-005": {
+    "stem": "All natural differentiation is caused only by latitude.",
+    "options": [
+      "True",
+      "False"
+    ]
+  },
+  "Q-18-006": {
+    "stem": "Zonal and non-zonal differentiation can coexist in one area.",
+    "options": [
+      "True",
+      "False"
+    ]
+  },
+  "Q-18-007": {
+    "stem": "Elevation-zone boundaries are identical on every mountain.",
+    "options": [
+      "True",
+      "False"
+    ]
+  },
+  "Q-18-008": {
+    "stem": "A comparison should identify whether latitude or elevation is varied.",
+    "options": [
+      "True",
+      "False"
+    ]
+  },
+  "Q-18-009": {
+    "stem": "Briefly distinguish latitudinal zonality from altitudinal zonation.",
+    "options": []
+  },
+  "Q-18-010": {
+    "stem": "Design two comparisons separating latitude and elevation effects. State which conditions must be held constant or recorded.",
+    "options": []
+  }
+}

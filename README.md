@@ -12,9 +12,11 @@ Bảng màu kem – xanh lá kết hợp địa cầu khám phá: phóng gần h
 
 ## Cách học
 
-Trang bắt đầu có một nút học chính; người mới bắt đầu từ Bài 2, người quay lại tiếp tục bài đang học. Trong mỗi bài: **Bắt đầu → Đọc hiểu → Khám phá → Giải thích → Luyện tập → Tổng kết**. Mỗi lần đọc một phần ngắn và làm một câu luyện tập. Lộ trình bên cạnh cho biết bước hiện tại; có thể quay lại bất cứ bước nào. Điểm thấp không khóa bài tiếp theo.
+Trang bắt đầu có một nút học chính; người mới bắt đầu từ Bài 2, người quay lại tiếp tục bài đang học. Trong mỗi bài: **Bắt đầu → Đọc hiểu → Khám phá → Giải thích → Luyện tập → Tổng kết**. Trong bước Đọc hiểu–Khám phá: đọc phần 1 → khám phá phần 1 → đọc phần 2 → khám phá phần 2; hết các phần mới sang giải thích và luyện tập. Mỗi phần có nhiệm vụ quan sát và thông số mô phỏng riêng, tự lưu theo tài khoản hoặc thiết bị. Bài Nội lực và ngoại lực dùng cảnh kiến tạo cho phần Nội lực, cảnh sông cho các quá trình ngoại lực. Lộ trình bên cạnh cho biết bước hiện tại; có thể quay lại bất cứ bước nào. Điểm thấp không khóa bài tiếp theo.
 
 Ảnh thật và địa cầu NASA được giữ ở trang đầu, thư viện và phần giới thiệu. Ảnh quan sát bổ sung trong mô phỏng được mở khi cần. Bố cục tham khảo cách chia chức năng và dẫn từng bước của ScamCheck, thay vì xếp nhiều khối giới thiệu lên cùng màn hình.
+
+Chọn **VI–EN** ở thanh đầu trang để đọc đồng thời Việt–Anh. Đoạn đọc, ví dụ và kiểm tra nhanh trình bày hai ngôn ngữ; nhãn điều khiển mô phỏng, ảnh và địa cầu cũng có bản song ngữ. Đủ 170 câu tự luyện có câu hỏi, lựa chọn, giải thích và rubric Việt–Anh. Đáp án và cách chấm dùng chung, chỉ mở phần giải thích sau khi nộp.
 
 ## Mở trên máy hiện tại
 

@@ -1,9 +1,10 @@
 'use client';
+import {useT} from './Language';
 import {useEffect,useRef,useState} from 'react';
 import type {PlateBoundary,PlateSide} from '@/lib/tectonic-geometry';
 type Props={kind:'earth'|'plates'|'soil';boundary?:string;continental?:boolean;layer?:number;playing?:boolean;progress?:number;english?:boolean;onSelectLayer?:(layer:number)=>void};
 export default function GeologyScene({kind,boundary='divergent',continental=false,layer=0,playing=false,progress=0,english=false,onSelectLayer}:Props){
- const host=useRef<HTMLDivElement>(null),state=useRef({boundary,continental,layer,playing,progress,onSelectLayer}),view=useRef(0);state.current={boundary,continental,layer,playing,progress,onSelectLayer};const [ready,setReady]=useState(false),[failed,setFailed]=useState(false),[cameraView,setCameraView]=useState(0);const t=(vi:string,en:string)=>english?en:vi;
+ const host=useRef<HTMLDivElement>(null),state=useRef({boundary,continental,layer,playing,progress,onSelectLayer}),view=useRef(0);state.current={boundary,continental,layer,playing,progress,onSelectLayer};const [ready,setReady]=useState(false),[failed,setFailed]=useState(false),[cameraView,setCameraView]=useState(0);const t=useT(english);
  useEffect(()=>{let cancelled=false,cleanup=()=>{};
   async function setup(){try{
    const [THREE,{outdoorWorld,groundTextures},{buildPlateSolid,platePose,plateHeight,plateBottom,riftTop,subductionMantleDepth,fittedTectonicView,tectonicCameraLimits}]=await Promise.all([import('three'),import('@/lib/outdoor'),import('@/lib/tectonic-geometry')]);if(cancelled||!host.current)return;

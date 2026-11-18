@@ -1,4 +1,6 @@
-# TerraLab — trạng thái bàn giao
+# GeoSim — trạng thái bàn giao
+
+Cập nhật 19/11/2026: đổi tên GeoSim, đường dẫn https://geosim.thaileduyhung.chatgpt.site; giao diện sáng xanh ngọc, trang hướng dẫn song ngữ và đánh giá cuối bài lưu D1. Kiểm thử mới chạy API thật trên SQLite trong bộ test: kiểm tra dữ liệu, quyền sở hữu, kiểm duyệt giáo viên, cập nhật không nhân đôi, thống kê, tách bài và phân trang. API đọc trên bản công khai trả 200; kiểm tra trình duyệt xác nhận trang hướng dẫn, ví dụ thanh trượt, cuối bài, mở đăng nhập, song ngữ và màn hình 390px. Giữ khóa tiến độ/cookie cũ để tương thích.
 
 Bản demo Địa lí 10, phạm vi Bài 2–18: 17 bài, 102 mô-đun, 72 cụm lý thuyết Việt–Anh, 17 hoạt động khám phá, 170 câu luyện tập. Có tài khoản tự đăng ký, tiến độ cá nhân, lưu nháp, lịch sử, tự đánh giá tách điểm xác nhận, quản trị và duyệt học liệu độc lập.
 

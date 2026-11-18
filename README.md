@@ -1,14 +1,20 @@
-# TerraLab · Địa lí 10
+# GeoSim · Địa lí 10
 
 Không gian học và khám phá Địa lí 10 Kết nối tri thức, Bài 2–18. Bản demo dự thi gồm lý thuyết Việt–Anh, hoạt động trực quan 2D/3D, tự luyện, lưu tiến độ và quản trị học liệu.
 
-**Trải nghiệm:** https://terralab.cherrybetta14.chatgpt.site
+**Trải nghiệm:** https://geosim.thaileduyhung.chatgpt.site
 
 Website được mở công khai. Khách có thể xem học liệu và tự đăng ký tài khoản để lưu tiến độ. Kho GitHub quản lý mã nguồn; đẩy mã lên GitHub chưa tự triển khai bản mới lên Sites.
 
 Giao diện ưu tiên ảnh chụp địa lí thật: 17 ảnh cho từng bài, ảnh nền Ngân Hà của ESO và địa cầu 3D dùng ảnh bề mặt/mây của NASA. Ảnh được lưu trong dự án, có các kích thước WebP phù hợp màn hình và tải khi cần. Thông tin tác giả, giấy phép và nguồn nằm trong `data/photos.json`, `NOTICE.md` và phần Thiết lập trên website.
 
-Bảng màu kem – xanh lá kết hợp địa cầu khám phá: phóng gần hiện ảnh của 6 cảnh quan tại tọa độ tương ứng; chọn địa điểm để đọc thông tin có nguồn và vào bài học liên quan. Bài 12 có cảnh bờ biển 3D cho sóng/thủy triều, lựa chọn pha Mặt Trăng, phát–dừng và đồ thị mực nước. Đây là mô hình học tập với đơn vị tương đối, không dự báo triều thực. Nguồn kiến thức: [NOAA](https://www.noaa.gov/jetstream/ocean/tides); nguồn cảnh quan được dẫn trực tiếp trong từng thẻ.
+Bảng màu trắng – xanh ngọc kết hợp địa cầu khám phá: phóng gần hiện ảnh của 6 cảnh quan tại tọa độ tương ứng; chọn địa điểm để đọc thông tin có nguồn và vào bài học liên quan. Bài 12 có cảnh bờ biển 3D cho sóng/thủy triều, lựa chọn pha Mặt Trăng, phát–dừng và đồ thị mực nước. Đây là mô hình học tập với đơn vị tương đối, không dự báo triều thực. Nguồn kiến thức: [NOAA](https://www.noaa.gov/jetstream/ocean/tides); nguồn cảnh quan được dẫn trực tiếp trong từng thẻ.
+
+## GeoSim — hướng dẫn và trao đổi
+
+Trang `#/guide` giải thích sáu bước, có ví dụ điều khiển và các câu hỏi thường gặp. Phần cuối mỗi bài (`#/lesson/N/6`) có đánh giá 1–5 sao và bình luận lưu D1. Khách đọc được; tài khoản gửi/sửa một đánh giá mỗi bài; giáo viên và quản trị viên có thể gỡ nội dung. Không có đánh giá giả được tạo sẵn.
+
+Các khóa lưu trữ và cookie `terra_*` được giữ để tương thích tiến độ cũ.
 
 ## Cách học
 

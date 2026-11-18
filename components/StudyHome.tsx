@@ -7,7 +7,7 @@ import {resumeModule,studySteps} from '@/lib/learning';
 import PlanetAtlas from './PlanetAtlas';
 import {PhotoArt} from './Photos';
 
-export default function StudyHome({english=false,recent,onOpen,onCatalog}:{english?:boolean;recent?:Progress;onOpen:(n:number,m?:number)=>void;onCatalog:()=>void}){
+export default function StudyHome({english=false,recent,onOpen,onCatalog,onGuide}:{english?:boolean;recent?:Progress;onOpen:(n:number,m?:number)=>void;onCatalog:()=>void;onGuide:()=>void}){
  const t=useT(english);
  const current=catalog.find(l=>l.id===recent?.lessonId),start=current??catalog[0];
  return <>
@@ -18,7 +18,7 @@ export default function StudyHome({english=false,recent,onOpen,onCatalog}:{engli
     <p>{t('Đọc từng ý. Thử mô phỏng. Tự kiểm tra kiến thức. Một lộ trình rõ ràng để hiểu thế giới quanh bạn.','Read one idea. Try an experiment. Check your understanding. A clear path to the world around you.')}</p>
     {current&&<div className="resume-card"><BookOpen size={20}/><div><small>{t('BẠN ĐANG HỌC','CONTINUE WHERE YOU LEFT OFF')}</small><strong>{t('Bài','Lesson')} {current.n}. {t(current.title,current.titleEn)}</strong><span>{t('Bước','Step')} {resumeModule(recent)}/6 · {t(studySteps[resumeModule(recent)-1].vi,studySteps[resumeModule(recent)-1].en)}</span></div></div>}
     <div className="home-actions"><button className="primary large" onClick={()=>onOpen(start.n,current?resumeModule(recent):1)}>{current?t('Tiếp tục bài đang học','Continue learning'):t('Bắt đầu học từ Bài 2','Start with Lesson 2')}<ArrowRight size={20}/></button><button className="text-button" onClick={onCatalog}>{t('Chọn bài khác','Choose a lesson')}</button></div>
-    <div className="home-reassurance"><span><Check size={16}/>{t('Học thử không cần đăng nhập','Explore without signing in')}</span></div>
+    <button className="home-guide-link" onClick={onGuide}><BookOpen size={16}/>{t("Lần đầu sử dụng? Xem cách học", "New here? See how to learn")}<ArrowRight size={15}/></button><div className="home-reassurance"><span><Check size={16}/>{t('Học thử không cần đăng nhập','Explore without signing in')}</span></div>
    </div>
    <PlanetAtlas english={english} onOpen={onOpen}/>
   </section>

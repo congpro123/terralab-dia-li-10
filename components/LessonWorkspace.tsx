@@ -9,10 +9,11 @@ import {InlinePair,Bilingual} from './Language';
 import {translate} from '@/lib/language';
 import Simulation from './Simulations';
 import Quiz from './Quiz';
+import LessonReviews from './LessonReviews';
 import {PhotoBanner,PhotoObservation} from './Photos';
-type Props={lesson:Lesson;progress:Progress;module:number;focusId?:string;mode:Mode;user:User|null;attempts:Attempt[];sync:string;onMode:(m:Mode)=>void;onOpen:(n:number,m?:number,id?:string)=>void;onCatalog:()=>void;onProgress:(patch:Partial<Progress>)=>void;onAttempt:(a:Attempt)=>void;notify:(s:string)=>void};
+type Props={lesson:Lesson;progress:Progress;module:number;focusId?:string;mode:Mode;user:User|null;attempts:Attempt[];sync:string;onMode:(m:Mode)=>void;onOpen:(n:number,m?:number,id?:string)=>void;onCatalog:()=>void;onSignIn:()=>void;onProgress:(patch:Partial<Progress>)=>void;onAttempt:(a:Attempt)=>void;notify:(s:string)=>void};
 
-export default function LessonWorkspace({lesson,progress:p,module,focusId,mode,user,attempts,sync,onMode,onOpen,onCatalog,onProgress,onAttempt,notify}:Props){
+export default function LessonWorkspace({lesson,progress:p,module,focusId,mode,user,attempts,sync,onMode,onOpen,onCatalog,onSignIn,onProgress,onAttempt,notify}:Props){
  const [outlineOpen,setOutlineOpen]=useState(false);const en=mode==='en';const t=(vi:string,english:string)=>translate(mode,vi,english);
  const done=lessonStepStatus(lesson,p,attempts),count=done.filter(Boolean).length;
  const index=module===3?explorationIndex(lesson.units,p,focusId):readingIndex(lesson.units,p.units,focusId),unit=lesson.units[index],focusIndex=index;
@@ -74,6 +75,7 @@ export default function LessonWorkspace({lesson,progress:p,module,focusId,mode,u
     <div className="roadmap-body"><progress value={count} max={6} aria-label={t('Tiến độ các bước trong bài','Lesson step progress')}/><ol>{studySteps.map((s,i)=><li key={s.vi}><button className={module===i+1?'current':done[i]?'done':''} aria-current={module===i+1?'step':undefined} onClick={()=>open(i+1)}><span className="roadmap-number">{done[i]?<Check size={16}/>:i+1}</span><span><strong>{t(s.vi,s.en)}</strong><small>{module===i+1?t('Đang học','Current step'):done[i]?t('Đã xong','Done'):t(s.hint,s.hintEn)}</small></span></button></li>)}</ol><p>{t('Bạn có thể quay lại bất cứ bước nào.','You can return to any step.')}</p></div>
    </aside>
   </div>
+  {module===6&&<LessonReviews lessonId={lesson.id} user={user} onSignIn={onSignIn}/>}
  </div>;
 }
 

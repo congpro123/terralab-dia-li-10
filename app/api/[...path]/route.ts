@@ -5,6 +5,7 @@ import questionFeedback from '@/data/question-feedback.server.json';
 import {lessonContent} from '@/data/content';
 import {database,getUser,randomId,randomSalt,hashPassword,sessionCookie,digest,auditLog,rateLimit} from '@/lib/auth';
 import {grade,selfAssess} from '@/lib/grading';
+import {reviewInput} from '@/lib/feedback';
 import type {Attempt,Progress} from '@/lib/types';
 import type {Unit} from '@/lib/types';
 export const dynamic='force-dynamic';
@@ -24,7 +25,7 @@ async function handle(request:Request){
   }
   const user=await getUser(request);
   if(path[0]==='session'&&method==='GET')return json({user});
-  if(path[0]==='health'&&method==='GET'){await database().prepare('SELECT id FROM users LIMIT 1').first();return json({ok:true,app:'TerraLab',version:'demo-1'});}
+  if(path[0]==='health'&&method==='GET'){await database().prepare('SELECT id FROM users LIMIT 1').first();return json({ok:true,app:'GeoSim',version:'demo-1'});}
   if(path[0]==='auth'&&method==='POST'){
     const body=await request.json() as Record<string,string>;
     const username=String(body.username??'').trim().toLowerCase();
@@ -62,6 +63,36 @@ async function handle(request:Request){
     const override=await database().prepare("SELECT id,data FROM content_versions WHERE lesson_id=? AND status='published' ORDER BY created_at DESC LIMIT 1").bind(l.id).first<{id:string;data:string}>();
     const content=override?JSON.parse(override.data).units:lessonContent[l.n];
     return json({...l,version:override?.id??'demo-1',units:content,questions:l.questions.map(({answer,explanation,rubric,unit,tolerance,...q})=>q)});
+  }
+  if(path[0]==='reviews'){
+    const lesson=curriculum.find(l=>l.id===path[1]);if(!lesson)return fail('Không tìm thấy bài học.',404);
+    const db=database();
+    if(method==='GET'&&path.length===2){
+      const offset=Math.max(0,Math.min(10000,Math.floor(Number(new URL(request.url).searchParams.get('offset'))||0)));
+      const [rows,summary,mine]=await Promise.all([
+        db.prepare('SELECT r.*,u.name FROM lesson_reviews r JOIN users u ON u.id=r.user_id WHERE lesson_id=? ORDER BY r.created_at DESC,r.id DESC LIMIT 21 OFFSET ?').bind(lesson.id,offset).all<{id:string;user_id:string;name:string;rating:number;comment:string;created_at:string;updated_at:string}>(),
+        db.prepare('SELECT rating,COUNT(*) as count FROM lesson_reviews WHERE lesson_id=? GROUP BY rating').bind(lesson.id).all<{rating:number;count:number}>(),
+        user?db.prepare('SELECT rating,comment FROM lesson_reviews WHERE id=?').bind(user.id+':'+lesson.id).first():Promise.resolve(null)
+      ]);
+      const distribution=Array.from({length:5},(_,i)=>Number(summary.results.find(r=>r.rating===i+1)?.count??0));const total=distribution.reduce((a,b)=>a+b,0);
+      return json({reviews:rows.results.slice(0,20).map(r=>({id:r.id,name:r.name,rating:r.rating,comment:r.comment,createdAt:r.created_at,updatedAt:r.updated_at,canEdit:r.user_id===user?.id,canDelete:r.user_id===user?.id||user?.role==='admin'||user?.role==='teacher'})),summary:{total,average:total?distribution.reduce((a,b,i)=>a+b*(i+1),0)/total:0,distribution},mine,hasMore:rows.results.length>20});
+    }
+    if(method==='POST'){
+      if(!user)return fail('Đăng nhập để đánh giá và bình luận. / Sign in to review.',401);
+      if(path[2]==='remove'){
+        const b=await request.json() as {id:string};
+        if(typeof b.id!=='string')return fail('Đánh giá chưa hợp lệ.');
+        const result=await db.prepare('DELETE FROM lesson_reviews WHERE id=? AND lesson_id=?'+(['admin','teacher'].includes(user.role)?'':' AND user_id=?')).bind(...(['admin','teacher'].includes(user.role)?[b.id,lesson.id]:[b.id,lesson.id,user.id])).run();
+        if(!result.meta.changes)return fail('Không tìm thấy hoặc bạn không có quyền xóa. / Review not found or access denied.',404);
+        return json({ok:true});
+      }
+      if(path.length!==2)return fail('Không tìm thấy thao tác.',404);
+      const input=reviewInput(await request.json());if(!input)return fail('Chọn 1–5 sao, bình luận tối đa 2.000 ký tự. / Select 1–5 stars; comment limit is 2,000 characters.');
+      if(!await rateLimit('review:'+user.id,15,60000))return fail('Bạn thao tác quá nhanh. Thử lại sau một phút. / Please try again in a minute.',429);
+      const now=new Date().toISOString();
+      await db.prepare('INSERT INTO lesson_reviews (id,user_id,lesson_id,rating,comment,created_at,updated_at) VALUES (?,?,?,?,?,?,?) ON CONFLICT(id) DO UPDATE SET rating=excluded.rating,comment=excluded.comment,updated_at=excluded.updated_at').bind(user.id+':'+lesson.id,user.id,lesson.id,input.rating,input.comment,now,now).run();
+      return json({ok:true});
+    }
   }
   if(path[0]==='progress'){
     if(!user)return fail('Đăng nhập để đồng bộ tiến độ.',401);
@@ -143,6 +174,6 @@ async function handle(request:Request){
     }
   }
   return fail('Không tìm thấy dữ liệu.',404);
- }catch(error){if(error instanceof SyntaxError)return fail('Dữ liệu gửi lên chưa đúng định dạng.');console.error('TerraLab API error',error instanceof Error?error.message:'unknown');return fail('Chưa thể xử lý. Dữ liệu đang nhập vẫn được giữ; bạn có thể thử lại.',500);}
+ }catch(error){if(error instanceof SyntaxError)return fail('Dữ liệu gửi lên chưa đúng định dạng.');console.error('GeoSim API error',error instanceof Error?error.message:'unknown');return fail('Chưa thể xử lý. Dữ liệu đang nhập vẫn được giữ; bạn có thể thử lại.',500);}
 }
 export const GET=handle;export const POST=handle;export const PATCH=handle;

@@ -1,0 +1,29 @@
+/* Brief, purposeful motion; no perpetual decoration while studying. */
+@keyframes geosim-panel-in{from{opacity:.3;transform:translateY(9px)}to{opacity:1;transform:translateY(0)}}
+@keyframes geosim-dialog-in{from{opacity:0;transform:translateY(16px) scale(.98)}to{opacity:1;transform:translateY(0) scale(1)}}
+@keyframes geosim-backdrop-in{from{opacity:0}to{opacity:1}}
+@keyframes geosim-pop-in{from{opacity:0;transform:translateY(-6px) scale(.98)}to{opacity:1;transform:translateY(0) scale(1)}}
+@keyframes geosim-check-in{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}
+@media(prefers-reduced-motion:no-preference){
+ .primary,.outline,.cream-button,.icon-button,.header-login,.field-expand{transition:transform .22s cubic-bezier(.2,.75,.25,1),background .22s,box-shadow .22s,border-color .22s}
+ .primary:active:not(:disabled),.outline:active:not(:disabled),.icon-button:active:not(:disabled),.field-expand:active{transform:scale(.97)}
+ .site-nav>button,.topic-exploration-path button,.reading-parts button,.experiment-tabs>button,.lab-choice button,.scene-views button{transition:background .23s,border-color .23s,color .23s,box-shadow .23s,transform .2s}
+ .course-card,.field-station-cards>button{transition:transform .3s cubic-bezier(.2,.75,.25,1),box-shadow .3s,border-color .25s}
+ .course-image{overflow:hidden}.course-card .photo-art{transition:transform .65s cubic-bezier(.2,.75,.25,1)}
+ .course-card-foot>svg,.home-actions .primary>svg,.guide-bottom .primary>svg,.home-guide-link>svg{transition:transform .25s cubic-bezier(.2,.75,.25,1)}
+ .modal-backdrop{animation:geosim-backdrop-in .18s ease-out}.auth-modal,.modal{animation:geosim-dialog-in .32s cubic-bezier(.2,.75,.25,1)}
+ .resources-popover,.site-nav.open{animation:geosim-pop-in .23s cubic-bezier(.2,.75,.25,1);transform-origin:top right}
+ .quick-feedback,.review-success,.review-error,.review-remove,.term-definition,.scene-recovery,.field-comparison>div,.toast{animation:geosim-check-in .28s ease-out}
+ details[open]>*:not(summary){animation:geosim-panel-in .3s cubic-bezier(.2,.75,.25,1)}
+ .field-photo-panel,.review-item,.destination-card{animation:geosim-panel-in .35s cubic-bezier(.2,.75,.25,1)}
+ .rating-picker label{transition:transform .22s,color .22s}.rating-picker label.selected{animation:geosim-check-in .22s ease-out}
+ .guide-water{transition:height .35s cubic-bezier(.2,.75,.25,1)}
+}
+@media(hover:hover) and (prefers-reduced-motion:no-preference){
+ .primary:hover:not(:disabled){transform:translateY(-2px);box-shadow:0 9px 22px #11976625}
+ .course-card:hover .photo-art{transform:scale(1.035)}.course-card:hover .course-card-foot>svg,.home-actions .primary:hover>svg,.guide-bottom .primary:hover>svg,.home-guide-link:hover>svg{transform:translateX(4px)}
+ .rating-picker label:hover{transform:translateY(-3px) scale(1.08)}
+}
+@media(prefers-reduced-motion:reduce){
+ html{scroll-behavior:auto}*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}
+}

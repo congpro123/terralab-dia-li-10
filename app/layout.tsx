@@ -6,6 +6,7 @@ import "./field-lab.css";
 import "./language.css";
 import "./geosim.css";
 import "./motion.css";
+import "./review-preview.css";
 
 export const metadata: Metadata = {
   manifest: '/manifest.webmanifest',

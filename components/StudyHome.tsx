@@ -6,6 +6,7 @@ import type {Progress} from '@/lib/types';
 import {resumeModule,studySteps} from '@/lib/learning';
 import PlanetAtlas from './PlanetAtlas';
 import {PhotoArt} from './Photos';
+import {RatingSummary,ReviewPreviewButton} from './ReviewPreview';
 
 export default function StudyHome({english=false,recent,onOpen,onCatalog,onGuide}:{english?:boolean;recent?:Progress;onOpen:(n:number,m?:number)=>void;onCatalog:()=>void;onGuide:()=>void}){
  const t=useT(english);
@@ -22,6 +23,6 @@ export default function StudyHome({english=false,recent,onOpen,onCatalog,onGuide
    </div>
    <PlanetAtlas english={english} onOpen={onOpen}/>
   </section>
-  <section className="home-lessons"><div className="section-heading"><div><span className="eyebrow">{t('BẮT ĐẦU TỪ NỀN TẢNG','BUILD YOUR FOUNDATIONS')}</span><h2>{t('Những bài học đầu tiên','Your first lessons')}</h2></div><button className="text-button" onClick={onCatalog}>{t('Xem đủ 17 bài','View all 17 lessons')}<ArrowRight size={17}/></button></div><div className="course-grid">{catalog.slice(0,3).map(l=><button className="course-card" key={l.id} onClick={()=>onOpen(l.n,1)}><PhotoArt n={l.n}/><div><span className="eyebrow">{t('BÀI','LESSON')} {l.n}</span><h3>{<Bilingual vi={l.title} en={l.titleEn}/>}</h3><span className="course-card-foot">{l.topics.length} {t('phần kiến thức','short sections')}<ArrowRight size={18}/></span></div></button>)}</div></section>
+  <section className="home-lessons"><div className="section-heading"><div><span className="eyebrow">{t('BẮT ĐẦU TỪ NỀN TẢNG','BUILD YOUR FOUNDATIONS')}</span><h2>{t('Những bài học đầu tiên','Your first lessons')}</h2></div><button className="text-button" onClick={onCatalog}>{t('Xem đủ 17 bài','View all 17 lessons')}<ArrowRight size={17}/></button></div><div className="course-grid">{catalog.slice(0,3).map(l=><article className="course-card-shell" key={l.id}><button className="course-card" onClick={()=>onOpen(l.n,1)}><PhotoArt n={l.n}/><div><span className="eyebrow">{t('BÀI','LESSON')} {l.n}</span><h3>{<Bilingual vi={l.title} en={l.titleEn}/>}</h3><RatingSummary lessonId={l.id}/><span className="course-card-foot">{l.topics.length} {t('phần kiến thức','short sections')}<ArrowRight size={18}/></span></div></button><ReviewPreviewButton lesson={l}/></article>)}</div></section>
  </>;
 }

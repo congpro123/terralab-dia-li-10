@@ -12,6 +12,7 @@ import {translate,validMode} from '@/lib/language';
 import {PhotoCredits} from './Photos';
 import Admin from './Admin';
 import StudyHome from './StudyHome';
+import {ReviewPreviewProvider} from './ReviewPreview';
 import LearningGuide from './LearningGuide';
 import CourseCatalog from './CourseCatalog';
 import SceneCredits from './SceneCredits';
@@ -67,7 +68,7 @@ export default function TerraApp(){
  function addAttempt(a:Attempt){setAttempts(prev=>{const next=[a,...prev.filter(x=>x.id!==a.id)];if(!user)localStorage.setItem('terra-attempts:guest',JSON.stringify(next.slice(0,50)));return next;});}
  async function logout(){try{await api('auth/logout',{});if(user){localStorage.removeItem('terra-progress:'+user.id);localStorage.removeItem('terra-pending:'+user.id);Object.keys(localStorage).filter(k=>k.startsWith('terra-draft:'+user.id)).forEach(k=>localStorage.removeItem(k));}setUser(null);nav('home');notify('Đã đăng xuất.');}catch{notify('Chưa đăng xuất được. Vui lòng thử lại.');}}
  const navs=[['home',BookOpen,t('Bắt đầu','Start')],['curriculum',LayoutDashboard,t('Bài học','Lessons')],['lab',FlaskConical,t('Khám phá','Experiments')],['progress',TrendingUp,t('Tiến độ','Progress')],['guide',Info,t('Hướng dẫn','Guide')]] as const;
- return <LanguageContext.Provider value={mode}><div data-language={mode} className={'app-shell study-shell '+(mobile?'menu-open ':'')+(largeText?'large-text':'')}>
+ return <LanguageContext.Provider value={mode}><ReviewPreviewProvider onOpen={n=>openLesson(n,1)}><div data-language={mode} className={'app-shell study-shell '+(mobile?'menu-open ':'')+(largeText?'large-text':'')}>
   <a className="skip-link" href="#main-content" onClick={e=>{e.preventDefault();document.getElementById('main-content')?.focus();}}>{t('Bỏ qua điều hướng','Skip navigation')}</a>
   <header className="site-header">
    <button className="site-brand" onClick={()=>nav('home')} aria-label={t('Về trang bắt đầu GeoSim','GeoSim start page')}><span className="brand-mark"><Compass size={29}/></span><span><strong>GeoSim</strong><small>{t('HỌC ĐỂ HIỂU THẾ GIỚI','LEARN TO UNDERSTAND')}</small></span></button>
@@ -94,7 +95,7 @@ export default function TerraApp(){
   {conflict&&<div className="modal-backdrop"><section className="modal"><h2>Tiến độ khác nhau giữa hai thiết bị</h2><p>Bản trên máy chủ đã thay đổi. Chọn bản bạn muốn tiếp tục; không có bản nào bị ghi đè âm thầm.</p><div className="modal-actions"><button className="outline" onClick={()=>{setProgress(prev=>{const next={...prev,[conflict.remote.lessonId]:conflict.remote};localStorage.setItem('terra-progress:'+(user?.id??'guest'),JSON.stringify(next));return next;});delete pending.current[conflict.remote.lessonId];if(user)localStorage.setItem('terra-pending:'+user.id,JSON.stringify(pending.current));setConflict(null);setSync('synced');}}>Dùng bản máy chủ</button><button className="primary" onClick={()=>{const item={...conflict.local,revision:conflict.remote.revision};pending.current[item.lessonId]=item;if(user)localStorage.setItem('terra-pending:'+user.id,JSON.stringify(pending.current));setConflict(null);sendProgress(item);}}>Giữ khám phá trên máy này</button></div></section></div>}
   {toast&&<div className="toast" role="status"><CheckCircle2 size={18}/>{toast}<button aria-label="Đóng thông báo" onClick={()=>setToast('')}><X size={14}/></button></div>}
 
- </div></LanguageContext.Provider>;
+ </div></ReviewPreviewProvider></LanguageContext.Provider>;
 }
 function PageHeading({kicker,title,description}:{kicker:string;title:string;description:string}){return <div className="page-heading"><span className="eyebrow">{kicker}</span><h1>{title}</h1><p>{description}</p></div>;}
 function Empty({icon,text}:{icon:React.ReactNode;text:string}){return <div className="empty-state">{icon}<p>{text}</p></div>;}

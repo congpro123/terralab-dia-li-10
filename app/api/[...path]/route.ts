@@ -65,6 +65,11 @@ async function handle(request:Request){
     return json({...l,version:override?.id??'demo-1',units:content,questions:l.questions.map(({answer,explanation,rubric,unit,tolerance,...q})=>q)});
   }
   if(path[0]==='reviews'){
+    if(path[1]==='summary'&&path.length===2&&method==='GET'){
+      const rows=await database().prepare('SELECT lesson_id,COUNT(*) AS total,AVG(rating) AS average FROM lesson_reviews GROUP BY lesson_id').all<{lesson_id:string;total:number;average:number}>();
+      const valid=new Set(curriculum.map(l=>l.id));
+      return json({summaries:Object.fromEntries(rows.results.filter(r=>valid.has(r.lesson_id)).map(r=>[r.lesson_id,{total:Number(r.total),average:Number(r.average)}]))});
+    }
     const lesson=curriculum.find(l=>l.id===path[1]);if(!lesson)return fail('Không tìm thấy bài học.',404);
     const db=database();
     if(method==='GET'&&path.length===2){
